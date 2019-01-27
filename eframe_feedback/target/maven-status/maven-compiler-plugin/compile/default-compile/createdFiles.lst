@@ -1,0 +1,16 @@
+com\huayu\eframe\feedback\service\FeedBackService.class
+com\huayu\eframe\feedback\FeedBackRestfulServer.class
+com\huayu\eframe\feedback\response\FeedBackResponse.class
+com\huayu\eframe\feedback\atom\impl\FeedBackAtomImpl.class
+com\huayu\eframe\feedback\bo\FeedBackBO.class
+com\huayu\eframe\feedback\flow\DeleteFeedBackBusiness.class
+com\huayu\eframe\feedback\flow\AddFeedBackBusiness.class
+com\huayu\eframe\feedback\requset\DeleteFeedBackRequest.class
+com\huayu\eframe\feedback\atom\impl\FeedBackAtomImpl$1.class
+com\huayu\eframe\feedback\requset\FeedBackRequest.class
+com\huayu\eframe\feedback\atom\FeedBackAtom.class
+com\huayu\eframe\feedback\flow\QueryFeedBackBusiness.class
+com\huayu\eframe\feedback\repository\FeedBackRepository.class
+com\huayu\eframe\feedback\requset\QueryFeedBackRequest.class
+com\huayu\eframe\feedback\response\FeedBackDetail.class
+com\huayu\eframe\feedback\service\impl\FeedBackServiceImpl.class

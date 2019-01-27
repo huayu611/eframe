@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dicts>
+    <dict code="permission_status">
+        <value code="0" lang="PERMISSION_STATUS_NORMAL"/>
+        <value code="1" lang="PERMISSION_STATUS_LOCK"/>
+    </dict>
+    <dict code="permission_method">
+        <value code="ALL" name="ALL"/>
+        <value code="POST" name="POST"/>
+        <value code="PUT" name="PUT"/>
+        <value code="GET" name="GET"/>
+        <value code="DELETE" name="DELETE"/>
+    </dict>
+    <dict code="permission_white">
+        <value code="0" lang="PERMISSION_WHITE_Y"/>
+        <value code="1" lang="PERMISSION_WHITE_N"/>
+    </dict>
+</dicts>
