@@ -34,7 +34,7 @@ import java.util.List;
 public class AuthenticationRestServer
 {
     @ResponseBody
-    @RequestMapping(value = "/v1/login",
+    @RequestMapping(value = "/login",
             method = RequestMethod.POST,
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -45,7 +45,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/staff", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addStaff(@RequestBody AddStaffRequest staffinfo, EasyParam easyParam)
     {
         Object obj = Flow.execute(AddStaffBusiness.class, staffinfo, easyParam);
@@ -53,7 +53,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/staff", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryStaff(
             @RequestParam(name="size",required = false) Integer size,
             @RequestParam(name="page",required = false) Integer page,
@@ -74,7 +74,7 @@ public class AuthenticationRestServer
 
 
     @ResponseBody
-    @RequestMapping(value = "/v1/staff/{loginCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff/{loginCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryStaffByCode(@PathVariable String loginCode, EasyParam easyParam)
     {
         QueryStaffRequest queryStaffRequest = new QueryStaffRequest();
@@ -84,7 +84,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/staff/{loginCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff/{loginCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object deleteStaff(@PathVariable String loginCode, EasyParam easyParam)
     {
         DeleteStaffRequest deleteStaffRequest = new DeleteStaffRequest();
@@ -94,7 +94,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/staff", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object modifyStaff(@RequestBody ModifyStaffInformationRequest modifyStaffInfomation, EasyParam easyParam)
     {
         Object obj = Flow.execute(ModifyStaffBusiness.class, modifyStaffInfomation, easyParam);
@@ -102,7 +102,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/permission", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addPermission(@RequestBody AddPermissionRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(AddPermissionBusiness.class, request, easyParam);
@@ -110,7 +110,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/permission", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object modifyPermission(@RequestBody ModifyPermissionRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(ModifyPermissionBusiness.class, request, easyParam);
@@ -119,7 +119,7 @@ public class AuthenticationRestServer
 
 
     @ResponseBody
-    @RequestMapping(value = "/v1/permission/{permissionCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission/{permissionCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object batchDeletePermission(@PathVariable String permissionCode, EasyParam easyParam)
     {
         DeletePermissionRequest deletePermissionRequest = new DeletePermissionRequest();
@@ -129,7 +129,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/permission/{permissionCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission/{permissionCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryPermissionByCode(@PathVariable String permissionCode, EasyParam easyParam)
     {
         QueryPermissionRequest queryPermissionRequest = new QueryPermissionRequest();
@@ -139,7 +139,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/permission", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryPermission(
             @RequestParam(name="size",required=false) Integer size,
             @RequestParam(name="page",required=false) Integer page,
@@ -159,7 +159,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/role/{roleCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/role/{roleCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryRoleByCode(@PathVariable String roleCode, EasyParam easyParam)
     {
         QueryRoleRequest queryRoleRequest = new QueryRoleRequest();
@@ -169,7 +169,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/role", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/role", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryRoleLike(
             @RequestParam(name="size",required = false) Integer size,
             @RequestParam(name="page",required = false) Integer page,
@@ -190,7 +190,7 @@ public class AuthenticationRestServer
 
 
     @ResponseBody
-    @RequestMapping(value = "/v1/role", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/role", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addRole(@RequestBody AddRoleRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(AddRoleBusiness.class, request, easyParam);
@@ -198,7 +198,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/role", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/role", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addRole(@RequestBody ModifyRoleRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(ModifyRoleBusiness.class, request, easyParam);
@@ -206,7 +206,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/role/{roleCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/role/{roleCode}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object deleteRole(@PathVariable String roleCode, EasyParam easyParam)
     {
         DeleteRoleRequest deleteRoleRequest = new DeleteRoleRequest();
@@ -216,7 +216,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/menu", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/menu", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addMenu(@RequestBody AddMenuRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(AddMenuBusiness.class, request, easyParam);
@@ -224,14 +224,14 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryMenu(@RequestBody QueryMenuRequest request, EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
         return obj;
     }
     @ResponseBody
-    @RequestMapping(value = "/v1/staff/password/{changeType}", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/staff/password/{changeType}", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object changeLoginPassword(@RequestBody ModifyPasswordRequest request,@PathVariable String changeType, EasyParam easyParam)
     {
         if(StringUtils.equalString("reset",changeType))

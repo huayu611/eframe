@@ -18,9 +18,21 @@ public class SecurityUtils
 
     public static boolean checkWhitePermission(PermissionCache permissionCache, HttpServletRequest request)
     {
-        boolean result = false;
+
 
         List<Permission> permissions = permissionCache.getWhitePermission(request.getMethod());
+        boolean flag = checkCurrentMethodPermission(request, permissions);
+        if(!flag)
+        {
+            List<Permission> allPermissions = permissionCache.getWhitePermission("ALL");
+            flag = checkCurrentMethodPermission(request, allPermissions);
+        }
+       return flag;
+    }
+
+    private static boolean checkCurrentMethodPermission(HttpServletRequest request,  List<Permission> permissions)
+    {
+        boolean result = false;
         debug.log(request.getMethod());
         debug.log(permissions);
         if (CollectionUtils.isEmpty(permissions))
@@ -42,7 +54,6 @@ public class SecurityUtils
                 }
             }
         }
-
         StringBuilder urlPermissionLog = new StringBuilder();
         urlPermissionLog.append("URL : ").append(request.getRequestURL()).append(" check white url result is ").append(result);
         debug.log(urlPermissionLog.toString());

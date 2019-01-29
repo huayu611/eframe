@@ -60,8 +60,13 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         debug.log("getAttributes start");
         FilterInvocation filterInvocation = (FilterInvocation) object;
         HttpServletRequest request = filterInvocation.getRequest();
-        checkVersion(request);
+
         boolean isWhite = checkWhiteListUrl(filterInvocation.getRequest());
+        debug.log(isWhite);
+        if(!isWhite)
+        {
+            checkVersion(request);
+        }
         Object authorization = request.getHeader("Authorization");
         String tokenPackage = StringUtils.getString(authorization);
 

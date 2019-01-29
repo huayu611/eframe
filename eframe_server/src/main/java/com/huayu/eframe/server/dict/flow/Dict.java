@@ -5,18 +5,18 @@ package com.huayu.eframe.server.dict.flow;
  */
 public class Dict
 {
-    private String code;
+    private String key;
 
     private String name;
 
-    public String getCode()
+    public String getKey()
     {
-        return code;
+        return key;
     }
 
-    public void setCode(String code)
+    public void setKey(String key)
     {
-        this.code = code;
+        this.key = key;
     }
 
     public String getName()

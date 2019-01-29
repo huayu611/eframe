@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class CopRestfulServer
 {
     @ResponseBody
-    @RequestMapping(value = "/v1/information",
+    @RequestMapping(value = "/information",
             method = RequestMethod.POST,
             consumes= {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE,
@@ -33,7 +33,7 @@ public class CopRestfulServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/information",
+    @RequestMapping(value = "/information",
             method = RequestMethod.GET,
             consumes= {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE,
@@ -46,7 +46,7 @@ public class CopRestfulServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/v1/information",
+    @RequestMapping(value = "/information",
             method = RequestMethod.PUT,
             consumes= {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE,

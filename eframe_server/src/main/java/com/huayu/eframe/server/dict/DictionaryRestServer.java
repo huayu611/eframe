@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class DictionaryRestServer
 {
     @ResponseBody
-    @RequestMapping(value = "/v1/{code}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/{code}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryDictByCode(@PathVariable String code, EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryDictBusiness.class, code, easyParam);

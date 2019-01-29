@@ -23,7 +23,7 @@ public class GlobalRestServer
 
     private static final LogDebug debug = new LogDebug(GlobalRestServer.class);
     @ResponseBody
-    @RequestMapping(value = "/v1/upload/{type}",
+    @RequestMapping(value = "/upload/{type}",
             method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object upload(MultipartFile file,@PathVariable("type") String type,
@@ -37,7 +37,7 @@ public class GlobalRestServer
     }
 
     //文件下载相关代码
-    @RequestMapping(value = "/v1/download/{type}/{fileName:.+}*", method = RequestMethod.GET)
+    @RequestMapping(value = "/download/{type}/{fileName:.+}*", method = RequestMethod.GET)
     public String downloadImage(@PathVariable("type") String type,
                                 @PathVariable("fileName") String fileName,
                                 EasyParam easyParam)

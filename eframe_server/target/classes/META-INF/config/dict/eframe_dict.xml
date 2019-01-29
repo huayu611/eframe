@@ -12,7 +12,7 @@
         <value code="DELETE" name="DELETE"/>
     </dict>
     <dict code="permission_white">
-        <value code="0" lang="PERMISSION_WHITE_Y"/>
-        <value code="1" lang="PERMISSION_WHITE_N"/>
+        <value code="Y" lang="PERMISSION_WHITE_Y"/>
+        <value code="N" lang="PERMISSION_WHITE_N"/>
     </dict>
 </dicts>

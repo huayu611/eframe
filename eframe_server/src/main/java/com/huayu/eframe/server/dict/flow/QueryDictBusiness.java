@@ -42,7 +42,7 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
             for (DictDetail dictDetail : result)
             {
                 Dict dict = new Dict();
-                dict.setCode(dictDetail.getCode());
+                dict.setKey(dictDetail.getCode());
 
                 String value = buildDictName(dictDetail);
                 dict.setName(value);
