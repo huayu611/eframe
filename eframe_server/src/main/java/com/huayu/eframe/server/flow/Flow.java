@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.flow;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.common.HttpUtils;
 import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
 import com.huayu.eframe.server.context.LocalAttribute;
@@ -86,7 +87,7 @@ public class Flow
 
     private static void coverHttpCode(RestfulResponse error)
     {
-        String httpCode = RestErrorCodeMappingFacade.getHttpCode(error.getCode(), "400");
+        String httpCode = RestErrorCodeMappingFacade.getHttpCode(error.getCode(), ConfigurationUtils.getDefaultHttpErrorStatus());
         debug.log(httpCode);
         HttpServletResponse response = LocalAttribute.getValue(FlowConstant.HTTP_RESPONSE);
         if (null == response)
