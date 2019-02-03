@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.security.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.huayu.eframe.server.common.HttpUtils;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
 import com.huayu.eframe.server.log.LogDebug;
@@ -28,7 +29,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
     private static final LogDebug debug = new LogDebug(EFrameRestfulAuthenticationEntryPoint.class);
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException
     {
         try
         {
@@ -49,7 +50,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
 
     }
 
-    protected String buildAuthenticationFailedDescrption(HttpServletResponse response,AuthenticationException authException) throws IOException
+    private String buildAuthenticationFailedDescrption(HttpServletResponse response,AuthenticationException authException) throws IOException
     {
         RestfulResponse error = new RestfulResponse();
         String code = ErrorCode.UNKNOW_ERROR;
@@ -60,7 +61,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
             response.sendError(exceptionErrorCode.getHttpCode(), exceptionErrorCode.getHttpDesc());
 
         }
-        String result = "Authentication failed!";
+        String result;
         try
         {
             String resultCode = code + "_ERRORDESC";
@@ -69,19 +70,13 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
         }
         catch (Exception e)
         {
-            result = "Error!";
+            result = "Authentication failed!";
         }
         error.setCode(code);
         error.setMsg(result);
         response.addHeader("code",error.getCode());
-        String msg = error.getCode();
-        try
-        {
-            msg = URLEncoder.encode(error.getMsg(),"UTF-8");
-        }
-        catch (UnsupportedEncodingException e)
-        {
-        }
+        String msg =  HttpUtils.enccodeURL(error.getMsg());
+
         response.addHeader("msg",msg);
         String jsonResult = JSonUtils.coverToJson(error);
 

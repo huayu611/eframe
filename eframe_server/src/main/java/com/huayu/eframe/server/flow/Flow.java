@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.flow;
 
+import com.huayu.eframe.server.common.HttpUtils;
 import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
@@ -22,9 +23,10 @@ public class Flow
 {
     private static final LogDebug debug = new LogDebug(Flow.class);
 
+    @SuppressWarnings("unchecked")
     private static Object executeService(Class serviceName, Object request)
     {
-        Object result = null;
+        Object result;
 
         try
         {
@@ -94,14 +96,8 @@ public class Flow
         }
         response.setStatus(Integer.valueOf(httpCode));
         response.addHeader("code",error.getCode());
-        String msg = error.getCode();
-        try
-        {
-            msg = URLEncoder.encode(error.getMsg(),"UTF-8");
-        }
-        catch (UnsupportedEncodingException e)
-        {
-        }
+        String msg = HttpUtils.enccodeURL(error.getMsg());
+
         response.addHeader("msg",msg);
         debug.log(response);
     }
