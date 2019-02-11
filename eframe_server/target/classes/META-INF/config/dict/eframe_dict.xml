@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dicts>
     <dict code="permission_status">
-        <value code="0" lang="PERMISSION_STATUS_NORMAL"/>
-        <value code="1" lang="PERMISSION_STATUS_LOCK"/>
+        <value code="0" lang="COMMON_STATUS_NORMAL"/>
+        <value code="1" lang="COMMON_STATUS_LOCK"/>
     </dict>
     <dict code="permission_method">
         <value code="ALL" name="ALL"/>
@@ -14,5 +14,13 @@
     <dict code="permission_white">
         <value code="Y" lang="PERMISSION_WHITE_Y"/>
         <value code="N" lang="PERMISSION_WHITE_N"/>
+    </dict>
+    <dict code="role_status">
+        <value code="0" lang="COMMON_STATUS_NORMAL"/>
+        <value code="1" lang="COMMON_STATUS_LOCK"/>
+    </dict>
+    <dict code="staff_status">
+        <value code="0" lang="COMMON_STATUS_NORMAL"/>
+        <value code="1" lang="COMMON_STATUS_LOCK"/>
     </dict>
 </dicts>

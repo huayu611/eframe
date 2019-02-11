@@ -128,6 +128,7 @@ com\huayu\eframe\server\tool\basic\ClassUtils.class
 com\huayu\eframe\server\security\service\request\LoginRequest.class
 com\huayu\eframe\server\log\Debug.class
 com\huayu\eframe\server\security\service\repository\RolePermissionRepository.class
+com\huayu\eframe\server\common\ConfigurationUtils.class
 com\huayu\eframe\server\flow\restful\RestfulRequest.class
 com\huayu\eframe\server\common\i18n\table\bo\Lang.class
 com\huayu\eframe\server\security\config\EFrameRestfulAuthenticationEntryPoint.class
@@ -247,6 +248,7 @@ com\huayu\eframe\server\service\spring\BeanInpouring.class
 com\huayu\eframe\server\flow\FrameCommonAPI.class
 com\huayu\eframe\server\tool\util\CollectionExecute.class
 com\huayu\eframe\server\common\i18n\table\atom\LangAtom.class
+com\huayu\eframe\server\common\HttpUtils.class
 com\huayu\eframe\server\security\service\cache\impl\StaffCacheImpl$StaffLoginNameIndex.class
 com\huayu\eframe\server\flow\valid\ValidAnnotation.class
 com\huayu\eframe\server\tool\basic\StringUtils.class

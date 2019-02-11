@@ -12,13 +12,15 @@ import org.springframework.util.StringUtils;
 /**
  * Created by Leo on 2018/9/29.
  */
-@Service("DeleteRoleBusiness")
+@Service
 public class DeleteRoleBusiness extends AbstractExecuteBusiness
 {
     private static final LogDebug debug = new LogDebug(DeleteRoleBusiness.class);
 
     private static final String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
 
+
+    private final static String RESULT = "DeleteRoleBusiness_RESULT";
     @Autowired
     private RoleService roleService;
 
@@ -34,10 +36,25 @@ public class DeleteRoleBusiness extends AbstractExecuteBusiness
         {
             return;
         }
+        String result = "";
         for(String code : nameArr)
         {
-            roleService.deleteRole(code);
+            String roleCode = roleService.deleteRole(code);
+            result = result + roleCode + ",";
         }
+        if(result.endsWith(","))
+        {
+            result = result.substring(0,result.length()-1);
+        }
+        param.addParameter(RESULT,result);
+    }
 
+    @Override
+    protected Object tidyData(BusinessParameter param)
+    {
+        DeleteRoleResponse roleResponse = new DeleteRoleResponse();
+        String result = param.getParameter(RESULT);
+        roleResponse.setRoles(result);
+        return roleResponse;
     }
 }

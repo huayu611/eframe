@@ -18,7 +18,7 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
 
     private static final String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
 
-    private final static String STAFF_INFO = "DeleteStaffBusiness_StaffInfo";
+    private final static String RESULT = "DeleteStaffBusiness_RESULT";
     @Autowired
     private StaffService staffService;
 
@@ -33,16 +33,32 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
         {
             return;
         }
-        deleteStaffInBatch(codeArr);
+        String result = deleteStaffInBatch(codeArr);
+        param.addParameter(RESULT,result);
     }
 
-    private void deleteStaffInBatch(String[] codeArr)
+    private String deleteStaffInBatch(String[] codeArr)
     {
+        String result = "";
         for (String loginName : codeArr)
         {
             debug.log(loginName);
-            staffService.deleteStaff(loginName);
-
+            String login = staffService.deleteStaff(loginName);
+            result = result + login + ",";
         }
+        if(result.endsWith(","))
+        {
+            result = result.substring(0,result.length()-1);
+        }
+        return result;
+    }
+
+    @Override
+    protected Object tidyData(BusinessParameter param)
+    {
+        DeleteStaffResponse roleResponse = new DeleteStaffResponse();
+        String result = param.getParameter(RESULT);
+        roleResponse.setLogins(result);
+        return roleResponse;
     }
 }

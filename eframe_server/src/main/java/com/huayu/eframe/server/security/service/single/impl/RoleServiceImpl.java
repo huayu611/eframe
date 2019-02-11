@@ -78,7 +78,7 @@ public class RoleServiceImpl implements RoleService
     }
 
     @Override
-    public void deleteRole(String roleCode)
+    public String deleteRole(String roleCode)
     {
 
         Role role = getRoleByRoleCode(roleCode);
@@ -91,10 +91,11 @@ public class RoleServiceImpl implements RoleService
         Date now = DateUtils.getCurrentDate();
         role.setExpireTime(now);
         role.setLastUpdateTime(now);
-        roleAtom.update(role);
+        Role roleDeleteOri = roleAtom.update(role);
         deleteRolePermissionByRoleId(role.getId());
         deleteStaffRoleByRoleId(role.getId());
         SecurityCacheFacade.refreshByLocalFlow();
+        return null == roleDeleteOri?"":roleDeleteOri.getRoleCode();
     }
 
     @Override

@@ -161,6 +161,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request\ModifyPermissionRequest.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\TransactionFlow.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\staff\ModifyStaffBusiness.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\HttpUtils.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\mvc\token\SessionToken.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\service\exception\ErrorCode.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request\AddRoleRequest.java
@@ -192,6 +193,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\dict\f
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\service\exception\ExceptionCacheService.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\staff\AddStaffBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\permission\QueryPermissionBusiness.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\ConfigurationUtils.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\basic\ArrayUtils.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\cache\CacheObserver.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\service\ParameterService.java

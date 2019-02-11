@@ -43,7 +43,7 @@ public class Flow
             if (e instanceof IFPException)
             {
                 Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
-
+                debug.log(LocalAttribute.getToken());
                 error.setCode(((IFPException) e).getErrorCode());
                 error.setMsg(((IFPException) e).getErrorInfo(locale));
             }

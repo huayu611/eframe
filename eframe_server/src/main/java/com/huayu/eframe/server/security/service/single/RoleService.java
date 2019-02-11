@@ -19,7 +19,7 @@ public interface RoleService
 {
     RoleDetail addRole(RoleDetail request,String permissions);
 
-    void deleteRole(String roleCode);
+    String deleteRole(String roleCode);
 
     RoleDetail modifyRole(RoleDetail modifyRoleRequest,String permissions);
 

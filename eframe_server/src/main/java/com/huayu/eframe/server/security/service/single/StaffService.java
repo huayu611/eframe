@@ -18,7 +18,7 @@ public interface StaffService
 
     StaffDetail addStaff(StaffDetail staffDetail,String password,String roles);
 
-    void deleteStaff(String loginName);
+    String deleteStaff(String loginName);
 
     StaffDetail updateStaff(StaffDetail staffDetail,String roles);
 

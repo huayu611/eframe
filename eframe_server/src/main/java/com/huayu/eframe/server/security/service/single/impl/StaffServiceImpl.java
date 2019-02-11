@@ -165,15 +165,20 @@ public class StaffServiceImpl implements StaffService
 
 
     @Override
-    public void deleteStaff(String loginName)
+    public String deleteStaff(String loginName)
     {
         Staff staff = queryStaffByLoginName(loginName);
+        if(null == staff)
+        {
+            return "";
+        }
         staff.setExpireTime(LocalAttribute.getNow());
         staff.setLastUpdateTime(LocalAttribute.getNow());
         staff.setStatus("D");
-        staffAtom.update(staff);
+        Staff expiredStaff = staffAtom.update(staff);
         deleteRoleStaffByStaff(staff.getId());
         SecurityCacheFacade.refreshByLocalFlow();
+        return expiredStaff.getLoginName();
     }
 
     private Staff checkStaffExistOrNot(String loginName)
