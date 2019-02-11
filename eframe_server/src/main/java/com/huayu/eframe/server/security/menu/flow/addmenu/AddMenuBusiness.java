@@ -30,56 +30,56 @@ public class AddMenuBusiness extends AbstractExecuteBusiness
     @Override
     public void before(BusinessParameter param)
     {
-        debug.beginLog();
-        AddMenuRequest addMenuRequest = param.getRequest();
-        String parentMenuCode = addMenuRequest.getParentMenu();
-        if(StringUtils.isNotNullAndEmpty(parentMenuCode)&& StringUtils.equalString("0",parentMenuCode))
-        {
-            Menu parentMenu = menuService.queryMenuByCode(parentMenuCode);
-            if (null == parentMenu)
-            {
-                throw new IFPException(ErrorCode.ADD_MENU_PARENT_MENU_NOT_EXIST);
-            }
-            param.addParameter(PARENT_MENU,parentMenu);
-        }
-        debug.endLog();
+//        debug.beginLog();
+//        AddMenuRequest addMenuRequest = param.getRequest();
+//        String parentMenuCode = addMenuRequest.getParentMenu();
+//        if(StringUtils.isNotNullAndEmpty(parentMenuCode)&& StringUtils.equalString("0",parentMenuCode))
+//        {
+//            Menu parentMenu = menuService.queryMenuByCode(parentMenuCode);
+//            if (null == parentMenu)
+//            {
+//                throw new IFPException(ErrorCode.ADD_MENU_PARENT_MENU_NOT_EXIST);
+//            }
+//            param.addParameter(PARENT_MENU,parentMenu);
+//        }
+//        debug.endLog();
 
     }
 
     @Override
     public void execute(BusinessParameter param)
     {
-        debug.beginLog();
-        AddMenuRequest addMenuRequest = param.getRequest();
-        Menu menu = converMenuBO(addMenuRequest,param);
-        menuService.addMenu(menu, LocalAttribute.getNow());
-        debug.endLog();
+//        debug.beginLog();
+//        AddMenuRequest addMenuRequest = param.getRequest();
+//        Menu menu = converMenuBO(addMenuRequest,param);
+//        menuService.addMenu(menu, LocalAttribute.getNow());
+//        debug.endLog();
     }
 
-    private Menu converMenuBO(AddMenuRequest request,BusinessParameter param)
-    {
-        debug.beginLog();
-        Menu menu = new Menu();
-        menu.setMenuName(request.getMenuName());
-        menu.setCode(request.getMenuCode());
-        menu.setMenuUrl(request.getUrl());
-        Menu parentMenu = param.getParameter(PARENT_MENU);
-        if(null == parentMenu)
-        {
-            menu.setParentMenu(0l);
-            menu.setTopMenu(0l);
-        }
-        else
-        {
-            menu.setParentMenu(parentMenu.getMenuId());
-            menu.setTopMenu(parentMenu.getTopMenu());
-        }
-        menu.setEffectiveTime(DateUtils.stringToDate(request.getEffectiveTime()));
-        menu.setExpireTime(DateUtils.stringToDate(request.getExpireTime()));
-        menu.setStatus(StringUtils.isNullOrEmpty(request.getStatus())?"0":request.getStatus());
-        debug.log(menu);
-        debug.endLog();
-        return menu;
-
-    }
+//    private Menu converMenuBO(AddMenuRequest request,BusinessParameter param)
+//    {
+//        debug.beginLog();
+//        Menu menu = new Menu();
+//        menu.setMenuName(request.getMenuName());
+//        menu.setCode(request.getMenuCode());
+//        menu.setMenuUrl(request.getUrl());
+//        Menu parentMenu = param.getParameter(PARENT_MENU);
+//        if(null == parentMenu)
+//        {
+//            menu.setParentMenu(0l);
+//            menu.setTopMenu(0l);
+//        }
+//        else
+//        {
+//            menu.setParentMenu(parentMenu.getMenuId());
+//            menu.setTopMenu(parentMenu.getTopMenu());
+//        }
+//        menu.setEffectiveTime(DateUtils.stringToDate(request.getEffectiveTime()));
+//        menu.setExpireTime(DateUtils.stringToDate(request.getExpireTime()));
+//        menu.setStatus(StringUtils.isNullOrEmpty(request.getStatus())?"0":request.getStatus());
+//        debug.log(menu);
+//        debug.endLog();
+//        return menu;
+//
+//    }
 }

@@ -19,8 +19,17 @@ public class Menu
     @Column(name="MENU_NAME", length=128)
     private String menuName;
 
-    @Column(name="MENU_URL", length=128)
-    private String menuUrl;
+    @Column(name="MENU_PATH", length=128)
+    private String menuPath;
+
+    @Column(name="COMPONENT", length=255)
+    private String component;
+
+    @Column(name="REDIRECT", length=255)
+    private String redirect;
+
+    @Column(name="ICON", length=255)
+    private String icon;
 
     @Column(name="MENU_LEVEL", length=3)
     private Integer menuLevel;
@@ -57,6 +66,116 @@ public class Menu
 
     @Column(name="STATUS", length=2)
     private String status;
+
+    public Long getMenuId()
+    {
+        return menuId;
+    }
+
+    public void setMenuId(Long menuId)
+    {
+        this.menuId = menuId;
+    }
+
+    public String getMenuName()
+    {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName)
+    {
+        this.menuName = menuName;
+    }
+
+    public String getMenuPath()
+    {
+        return menuPath;
+    }
+
+    public void setMenuPath(String menuPath)
+    {
+        this.menuPath = menuPath;
+    }
+
+    public String getComponent()
+    {
+        return component;
+    }
+
+    public void setComponent(String component)
+    {
+        this.component = component;
+    }
+
+    public String getRedirect()
+    {
+        return redirect;
+    }
+
+    public void setRedirect(String redirect)
+    {
+        this.redirect = redirect;
+    }
+
+    public String getIcon()
+    {
+        return icon;
+    }
+
+    public void setIcon(String icon)
+    {
+        this.icon = icon;
+    }
+
+    public Integer getMenuLevel()
+    {
+        return menuLevel;
+    }
+
+    public void setMenuLevel(Integer menuLevel)
+    {
+        this.menuLevel = menuLevel;
+    }
+
+    public Long getParentMenu()
+    {
+        return parentMenu;
+    }
+
+    public void setParentMenu(Long parentMenu)
+    {
+        this.parentMenu = parentMenu;
+    }
+
+    public Long getTopMenu()
+    {
+        return topMenu;
+    }
+
+    public void setTopMenu(Long topMenu)
+    {
+        this.topMenu = topMenu;
+    }
+
+    public String getMenuDescription()
+    {
+        return menuDescription;
+    }
+
+    public void setMenuDescription(String menuDescription)
+    {
+        this.menuDescription = menuDescription;
+    }
+
+    public String getCode()
+    {
+        return code;
+    }
+
+    public void setCode(String code)
+    {
+        this.code = code;
+    }
 
     public Date getCreateTime()
     {
@@ -118,16 +237,6 @@ public class Menu
         this.extendsInfo = extendsInfo;
     }
 
-    public String getCode()
-    {
-        return code;
-    }
-
-    public void setCode(String code)
-    {
-        this.code = code;
-    }
-
     public String getStatus()
     {
         return status;
@@ -136,75 +245,5 @@ public class Menu
     public void setStatus(String status)
     {
         this.status = status;
-    }
-
-    public Long getMenuId()
-    {
-        return menuId;
-    }
-
-    public void setMenuId(Long menuId)
-    {
-        this.menuId = menuId;
-    }
-
-    public String getMenuName()
-    {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName)
-    {
-        this.menuName = menuName;
-    }
-
-    public String getMenuUrl()
-    {
-        return menuUrl;
-    }
-
-    public void setMenuUrl(String menuUrl)
-    {
-        this.menuUrl = menuUrl;
-    }
-
-    public Integer getMenuLevel()
-    {
-        return menuLevel;
-    }
-
-    public void setMenuLevel(Integer menuLevel)
-    {
-        this.menuLevel = menuLevel;
-    }
-
-    public Long getParentMenu()
-    {
-        return parentMenu;
-    }
-
-    public void setParentMenu(Long parentMenu)
-    {
-        this.parentMenu = parentMenu;
-    }
-
-    public Long getTopMenu()
-    {
-        return topMenu;
-    }
-
-    public void setTopMenu(Long topMenu)
-    {
-        this.topMenu = topMenu;
-    }
-
-    public String getMenuDescription()
-    {
-        return menuDescription;
-    }
-
-    public void setMenuDescription(String menuDescription)
-    {
-        this.menuDescription = menuDescription;
     }
 }

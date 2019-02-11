@@ -11,13 +11,8 @@ import java.util.List;
  */
 public interface MenuService
 {
-    List<Menu> queryAllMenu();
-
-    MenuTree getMenuTree(String code);
+    List<MenuDetail> queryAllMenu();
 
     Long addMenu(Menu menu,Date now);
-
-    Menu queryMenuByCode(String menuCode);
-
 
 }

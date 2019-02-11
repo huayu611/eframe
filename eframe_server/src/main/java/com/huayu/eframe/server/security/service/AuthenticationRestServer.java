@@ -225,9 +225,9 @@ public class AuthenticationRestServer
 
     @ResponseBody
     @RequestMapping(value = "/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryMenu(@RequestBody QueryMenuRequest request, EasyParam easyParam)
+    public Object queryMenu(EasyParam easyParam)
     {
-        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
+        Object obj = Flow.execute(QueryMenuBusiness.class, null, easyParam);
         return obj;
     }
     @ResponseBody

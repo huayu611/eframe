@@ -4,6 +4,7 @@ import com.huayu.eframe.server.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.server.flow.BusinessParameter;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.security.menu.bo.MenuTree;
+import com.huayu.eframe.server.security.menu.service.MenuDetail;
 import com.huayu.eframe.server.security.menu.service.MenuService;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,13 @@ import java.util.List;
 /**
  * Created by Administrator on 2018/8/12.
  */
-@Service("QueryMenuBusiness")
+@Service
 public class QueryMenuBusiness extends AbstractExecuteBusiness
 {
 
     private static final LogDebug debug = new LogDebug(QueryMenuBusiness.class);
 
-    private static final String QUERY_RESPONSE = "QueryMenuBusiness_Response";
+    private static final String RESULT = "QueryMenuBusiness_RESULT";
 
     @Autowired
     private MenuService menuService;
@@ -29,76 +30,70 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     @Override
     public void execute(BusinessParameter param)
     {
-        debug.beginLog();
-        QueryMenuRequest queryMenuRequest = param.getRequest();
-        String code = queryMenuRequest.getMenuCode();
-
-        MenuTree menuTree = menuService.getMenuTree(code);
-
-        QueryMenuResponse response = convertToResponse(menuTree);
-        debug.log(response);
-        param.addParameter(QUERY_RESPONSE,response );
-        debug.endLog();;
+        List<MenuDetail> menuResult = menuService.queryAllMenu();
+        param.addParameter(RESULT,menuResult);
 
     }
 
     @Override
-    public Object getResult(BusinessParameter param)
+    protected Object tidyData(BusinessParameter param)
     {
-        debug.beginLog();
-        QueryMenuResponse response =  param.getParameter(QUERY_RESPONSE);
-        return buildSuccessRestfulResponse(response);
+        QueryMenuResponse queryMenuResponse = new QueryMenuResponse();
+        List<MenuDetail> menuResult = param.getParameter(RESULT);
+        queryMenuResponse.setMenus(menuResult);
+        return queryMenuResponse;
     }
 
-    private QueryMenuResponse convertToResponse(MenuTree menuTree)
-    {
-        debug.beginLog();
 
-        QueryMenuResponse response = new QueryMenuResponse();
-        if(null == menuTree)
-        {
-            debug.endLog();
-            return response;
-        }
-        List<MenuDetail> menuDetails = null;
-        if (null == menuTree.getMenu())
-        {
-            menuDetails = converMenuDetail(menuTree.getSonMenu());
-        }
-        else
-        {
-            List<MenuTree>  mtl = new ArrayList<>();
-            mtl.add(menuTree);
-            menuDetails = converMenuDetail(mtl);
-        }
-        response.setMenuDetails(menuDetails);
-        debug.endLog();
-        return response;
-    }
-
-    private List<MenuDetail> converMenuDetail(List<MenuTree> menuTree)
-    {
-        debug.beginLog();
-        if(CollectionUtils.isEmpty(menuTree))
-        {
-            debug.endLog();
-            return null;
-        }
-        List<MenuDetail> menuDetails = new ArrayList<>();
-        for(MenuTree mt : menuTree)
-        {
-            MenuDetail ud = new MenuDetail();
-            ud.setStatus(mt.getMenu().getStatus());
-            ud.setMenuName(mt.getMenu().getMenuName());
-            ud.setMenuCode(mt.getMenu().getCode());
-            ud.setUrl(mt.getMenu().getMenuUrl());
-            if(mt.isHasSonMenu())
-            {
-                ud.setSonMenu(converMenuDetail(mt.getSonMenu()));
-            }
-            menuDetails.add(ud);
-        }
-        debug.endLog();
-        return menuDetails;
-    }
+    //    private QueryMenuResponse convertToResponse(MenuTree menuTree)
+//    {
+//        debug.beginLog();
+//
+//        QueryMenuResponse response = new QueryMenuResponse();
+//        if(null == menuTree)
+//        {
+//            debug.endLog();
+//            return response;
+//        }
+//        List<MenuDetail> menuDetails = null;
+//        if (null == menuTree.getMenu())
+//        {
+//            menuDetails = converMenuDetail(menuTree.getSonMenu());
+//        }
+//        else
+//        {
+//            List<MenuTree>  mtl = new ArrayList<>();
+//            mtl.add(menuTree);
+//            menuDetails = converMenuDetail(mtl);
+//        }
+//        response.setMenuDetails(menuDetails);
+//        debug.endLog();
+//        return response;
+//    }
+//
+//    private List<MenuDetail> converMenuDetail(List<MenuTree> menuTree)
+//    {
+//        debug.beginLog();
+//        if(CollectionUtils.isEmpty(menuTree))
+//        {
+//            debug.endLog();
+//            return null;
+//        }
+//        List<MenuDetail> menuDetails = new ArrayList<>();
+//        for(MenuTree mt : menuTree)
+//        {
+//            MenuDetail ud = new MenuDetail();
+//            ud.setStatus(mt.getMenu().getStatus());
+//            ud.setMenuName(mt.getMenu().getMenuName());
+//            ud.setMenuCode(mt.getMenu().getCode());
+//            ud.setUrl(mt.getMenu().getMenuUrl());
+//            if(mt.isHasSonMenu())
+//            {
+//                ud.setSonMenu(converMenuDetail(mt.getSonMenu()));
+//            }
+//            menuDetails.add(ud);
+//        }
+//        debug.endLog();
+//        return menuDetails;
+//    }
 }

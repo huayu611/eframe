@@ -1,23 +1,26 @@
 package com.huayu.eframe.server.security.menu.flow.querymenu;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
+import com.huayu.eframe.server.security.menu.service.MenuDetail;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2018/8/12.
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class QueryMenuResponse
 {
-    private List<MenuDetail> menuDetails;
+    private List<MenuDetail> menus;
 
-    public List<MenuDetail> getMenuDetails()
+    public List<MenuDetail> getMenus()
     {
-        return menuDetails;
+        return menus;
     }
 
-    public void setMenuDetails(List<MenuDetail> menuDetails)
+    public void setMenus(List<MenuDetail> menus)
     {
-        this.menuDetails = menuDetails;
+        this.menus = menus;
     }
 }
