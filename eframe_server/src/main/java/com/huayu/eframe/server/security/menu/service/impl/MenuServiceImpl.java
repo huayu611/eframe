@@ -146,7 +146,7 @@ public class MenuServiceImpl implements MenuService
         menu.setIcon(menuDetail.getIcon());
         menu.setMenuName(menuDetail.getName());
         menu.setStatus("0");
-
+        menu.setRedirect(menuDetail.getRedirect());
         //parent menu
         Menu parentMenu = getMenuByCode(menuDetail.getParentMenu());
         if(null != parentMenu)
