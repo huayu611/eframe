@@ -13,6 +13,9 @@ public interface MenuService
 {
     List<MenuDetail> queryAllMenu();
 
-    Long addMenu(Menu menu,Date now);
+    MenuDetail addMenu(MenuDetail menu);
 
+    MenuDetail modifyMenu(MenuDetail menu);
+
+    String deleteMenu(String menuCode);
 }

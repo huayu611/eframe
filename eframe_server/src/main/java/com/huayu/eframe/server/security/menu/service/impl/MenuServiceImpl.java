@@ -5,6 +5,8 @@ import com.huayu.eframe.server.security.menu.atom.MenuAtom;
 import com.huayu.eframe.server.security.menu.bo.Menu;
 import com.huayu.eframe.server.security.menu.service.MenuDetail;
 import com.huayu.eframe.server.security.menu.service.MenuService;
+import com.huayu.eframe.server.tool.basic.DateUtils;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,9 +44,51 @@ public class MenuServiceImpl implements MenuService
     }
 
     @Override
-    public Long addMenu(Menu menu, Date now)
+    public MenuDetail addMenu(MenuDetail menuDetail)
     {
-        return null;
+        Menu menu = buildMenu(menuDetail);
+        if(null == menu)
+        {
+            return null;
+        }
+        Menu resultMenu = menuAtom.addMenu(menu);
+        MenuDetail menuDetailResult = buildMenuDetail(resultMenu);
+        return menuDetailResult;
+    }
+
+    @Override
+    public MenuDetail modifyMenu(MenuDetail menuDetail)
+    {
+        Menu menu = getMenuByCode(menuDetail.getCode());
+        buildModifyMenu(menu,menuDetail);
+        Menu newMenu = menuAtom.updateMenu(menu);
+        MenuDetail newMenuDetail = buildMenuDetail(newMenu);
+        return newMenuDetail;
+    }
+
+    @Override
+    public String deleteMenu(String menuCode)
+    {
+        if(StringUtils.isNullOrEmpty(menuCode))
+        {
+            return "";
+        }
+        Menu menu = getMenuByCode(menuCode);
+        if(null != menu)
+        {
+            Menu expireMenu = expireMenu(menu);
+            return expireMenu.getCode();
+        }
+        return "";
+    }
+
+    private Menu expireMenu(Menu menu)
+    {
+        menu.setStatus("D");
+        menu.setExpireTime(LocalAttribute.getNow());
+        fixUpdateItem(menu);
+        Menu result = menuAtom.updateMenu(menu);
+        return result;
     }
 
     private MenuDetail buildMenuDetail(Menu menu)
@@ -79,98 +123,71 @@ public class MenuServiceImpl implements MenuService
         menuDetail.setRoutes(sonMenuDetail);
         return menuDetail;
     }
-//
-////    @Override
-//    public MenuTree getMenuTree(String menuCode)
-//    {
-//        Menu conditionMenu = null;
-//        if(StringUtils.isEmpty(menuCode))
-//        {
-//            conditionMenu = queryMenuByCode(menuCode);
-//        }
-//        List<Menu> allMenu = queryAllMenu();
-//        if (CollectionUtils.isEmpty(allMenu))
-//        {
-//            return null;
-//        }
-//
-//        Map<Long, List<Menu>> sonMenuMap = new HashMap<>();
-//        for (Menu menu : allMenu)
-//        {
-//            //parent menu
-//            List<Menu> parentMenu = sonMenuMap.get(menu.getParentMenu());
-//            if (null == parentMenu)
-//            {
-//                sonMenuMap.put(menu.getParentMenu(), new ArrayList<>());
-//            }
-//            sonMenuMap.get(menu.getParentMenu()).add(menu);
-//
-//        }
-//
-//        return mergeTree(conditionMenu,sonMenuMap);
-//    }
-//
-//    private MenuTree mergeTree(Menu rootMenu , Map<Long, List<Menu>> sonMenuMap)
-//    {
-//
-//        MenuTree menuTree = new MenuTree();
-//        if(null == rootMenu)
-//        {
-//            menuTree.setMenuLevel(0);
-//            menuTree.setSonMenu(createSonMenu(sonMenuMap, 0L));
-//            menuTree.setHasSonMenu(CollectionUtils.isNotEmpty(menuTree.getSonMenu()));
-//        }
-//        else
-//        {
-//            menuTree.setMenu(rootMenu);
-//            menuTree.setMenuLevel(rootMenu.getMenuLevel());
-//            menuTree.setSonMenu(createSonMenu(sonMenuMap, rootMenu.getMenuId()));
-//            menuTree.setHasSonMenu(CollectionUtils.isNotEmpty(menuTree.getSonMenu()));
-//        }
-//        return menuTree;
-//    }
-//    private List<MenuTree> createSonMenu(Map<Long, List<Menu>> sonMenuMap,Long parentId)
-//    {
-//        List<MenuTree> menuTreeList = new ArrayList<>();
-//        List<Menu> sonMenu = sonMenuMap.get(parentId);
-//        if(CollectionUtils.isEmpty(sonMenu))
-//        {
-//            return null;
-//        }
-//        for(Menu sonMenuSingle :sonMenu )
-//        {
-//            MenuTree mt = new MenuTree();
-//            mt.setMenuLevel(sonMenuSingle.getMenuLevel());
-//            mt.setMenu(sonMenuSingle);
-//            mt.setSonMenu(createSonMenu(sonMenuMap, sonMenuSingle.getMenuId()));
-//            mt.setHasSonMenu(CollectionUtils.isNotEmpty(mt.getSonMenu()));
-//            menuTreeList.add(mt);
-//        }
-//        return menuTreeList;
-//    }
-//
-//    @Override
-//    public Long addMenu(Menu menu, Date now)
-//    {
-//        now = null == now ? DateUtils.getCurrentDate() : now;
-//        menu.setCreateTime(now);
-//        menu.setEffectiveTime(null == menu.getEffectiveTime()?now : menu.getEffectiveTime());
-//        menu.setLastUpdateTime(now);
-//        menu.setExpireTime(null == menu.getExpireTime()?DateUtils.getDefaultExpireDate() : menu.getExpireTime());
-//        Menu menuPresist = menuRepository.save(menu);
-//        return menuPresist.getMenuId();
-//    }
-//
-//    public Menu queryMenuByCode(String menuCode)
-//    {
-//        Menu menu = new Menu();
-//        menu.setCode(menuCode);
-//
-//
-//        ExampleMatcher matcher = ExampleMatcher.matching();
-//        Example<Menu> example = Example.of(menu ,matcher);
-//
-//        List<Menu> staffRoleReturn = menuRepository.findAll(example);
-//        return CollectionUtils.getFirstElement(staffRoleReturn);
-//    }
+
+    private Menu buildMenu(MenuDetail menuDetail)
+    {
+        if(null == menuDetail)
+        {
+            return null;
+        }
+        Menu menu = new Menu();
+        buildBaseInfo(menuDetail, menu);
+
+        fixCreateItem(menu);
+        fixUpdateItem(menu);
+        return menu;
+    }
+
+    private void buildBaseInfo(MenuDetail menuDetail, Menu menu)
+    {
+        menu.setCode(menuDetail.getCode());
+        menu.setComponent(menuDetail.getComponent());
+        menu.setMenuPath(menuDetail.getPath());
+        menu.setIcon(menuDetail.getIcon());
+        menu.setMenuName(menuDetail.getName());
+        menu.setStatus("0");
+
+        //parent menu
+        Menu parentMenu = getMenuByCode(menuDetail.getParentMenu());
+        if(null != parentMenu)
+        {
+            menu.setParentMenu(parentMenu.getMenuId());
+            menu.setMenuLevel(parentMenu.getMenuLevel() + 1);
+        }
+        else
+        {
+            menu.setMenuLevel(TOP_LEVEL);
+        }
+    }
+
+    private void buildModifyMenu(Menu menu,MenuDetail menuDetail)
+    {
+        buildBaseInfo(menuDetail,menu);
+        fixUpdateItem(menu);
+
+        //parentMenu
+    }
+
+    private void fixCreateItem(Menu menu)
+    {
+        menu.setCreateTime(LocalAttribute.getNow());
+        menu.setEffectiveTime(LocalAttribute.getNow());
+        menu.setExpireTime(DateUtils.getDefaultExpireDate());
+    }
+
+    private void fixUpdateItem(Menu menu)
+    {
+        menu.setLastUpdateTime(LocalAttribute.getNow());
+    }
+
+    private Menu getMenuByCode(String code)
+    {
+        if(StringUtils.isNullOrEmpty(code))
+        {
+            return null;
+        }
+        Menu menu = menuAtom.queryMenuByCode(LocalAttribute.getNow(), code);
+        return menu;
+    }
+
 }

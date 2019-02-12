@@ -20,5 +20,7 @@ public interface MenuAtom
 
     Menu queryMenuById(Long id);
 
+    Menu queryMenuByCode(Date now,String code);
+
     void deleteMenu(Menu menu);
 }

@@ -1,26 +1,21 @@
-package com.huayu.eframe.server.security.menu.flow.addmenu;
+package com.huayu.eframe.server.security.menu.flow.modmenu;
 
 import com.huayu.eframe.server.flow.annotation.EFrameRequest;
-import com.huayu.eframe.server.flow.restful.EffectiveExpireDateTime;
-import com.huayu.eframe.server.flow.restful.RestfulRequest;
-import com.huayu.eframe.server.flow.restful.RestfulResponse;
 
 /**
- * Created by Administrator on 2018/8/12.
+ * Created by Leo on 2019/2/12.
  */
-public class AddMenuRequest
+public class ModifyMenuRequest
 {
-    @EFrameRequest(bean = "_e_eframe_menucode")
+    @EFrameRequest(required = true)
     private String code;
 
-    @EFrameRequest(required = true)
     private String name;
 
     private String path;
 
     private String parentMenu;
 
-    @EFrameRequest(defaultStrValue = "0")
     private String status;
 
     private String redirect;

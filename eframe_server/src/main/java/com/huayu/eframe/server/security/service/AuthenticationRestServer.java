@@ -7,6 +7,10 @@ import com.huayu.eframe.server.flow.restful.RestfulResponse;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.security.menu.flow.addmenu.AddMenuBusiness;
 import com.huayu.eframe.server.security.menu.flow.addmenu.AddMenuRequest;
+import com.huayu.eframe.server.security.menu.flow.delmenu.DeleteMenuBusiness;
+import com.huayu.eframe.server.security.menu.flow.delmenu.DeleteMenuRequest;
+import com.huayu.eframe.server.security.menu.flow.modmenu.ModifyMenuBusiness;
+import com.huayu.eframe.server.security.menu.flow.modmenu.ModifyMenuRequest;
 import com.huayu.eframe.server.security.menu.flow.querymenu.QueryMenuBusiness;
 import com.huayu.eframe.server.security.menu.flow.querymenu.QueryMenuRequest;
 import com.huayu.eframe.server.security.service.flow.login.LoginBusiness;
@@ -228,6 +232,24 @@ public class AuthenticationRestServer
     public Object queryMenu(EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryMenuBusiness.class, null, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/menu", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object modifyMenu(@RequestBody ModifyMenuRequest request, EasyParam easyParam)
+    {
+        Object obj = Flow.execute(ModifyMenuBusiness.class, request, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/menu/{menuCodes}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object deleteMenu(@PathVariable String menuCodes, EasyParam easyParam)
+    {
+        DeleteMenuRequest deleteMenuRequest = new DeleteMenuRequest();
+        deleteMenuRequest.setCodes(menuCodes);
+        Object obj = Flow.execute(DeleteMenuBusiness.class, deleteMenuRequest, easyParam);
         return obj;
     }
     @ResponseBody

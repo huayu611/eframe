@@ -62,6 +62,15 @@ public class MenuAtomImpl implements MenuAtom
     }
 
     @Override
+    public Menu queryMenuByCode(Date now, String code)
+    {
+        Menu  menu = new Menu();
+        menu.setCode(code);
+        List<Menu> resultMenu = queryValidPermissionByPage(now, menu);
+        return CollectionUtils.getFirstElement(resultMenu);
+    }
+
+    @Override
     public void deleteMenu(Menu menu)
     {
         menuRepository.delete(menu);

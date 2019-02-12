@@ -1,8 +1,7 @@
-package com.huayu.eframe.server.security.menu.flow.addmenu;
+package com.huayu.eframe.server.security.menu.flow.modmenu;
 
 import com.huayu.eframe.server.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.server.flow.BusinessParameter;
-import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.security.menu.flow.common.MenuResponse;
 import com.huayu.eframe.server.security.menu.service.MenuDetail;
 import com.huayu.eframe.server.security.menu.service.MenuService;
@@ -10,46 +9,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by Administrator on 2018/8/12.
+ * Created by Leo on 2019/2/12.
  */
 @Service
-public class AddMenuBusiness extends AbstractExecuteBusiness
+public class ModifyMenuBusiness extends AbstractExecuteBusiness
 {
-
-    private static final LogDebug debug = new LogDebug(AddMenuBusiness.class);
-
-    private static final String RESULT = "AddMenuBusiness_RESULT";
-
+    private final static String RESULT = "ModifyMenuBusiness_RESULT";
     @Autowired
     private MenuService menuService;
-
 
     @Override
     public void execute(BusinessParameter param)
     {
-        AddMenuRequest addMenuRequest = param.getRequest();
-        MenuDetail menuDetail = buildMenuDetail(addMenuRequest);
-        MenuDetail menuResult = menuService.addMenu(menuDetail);
-        param.addParameter(RESULT,menuResult);
+        ModifyMenuRequest modifyMenuRequest = param.getRequest();
+        MenuDetail menuDetail = buildMenuDetail(modifyMenuRequest);
+        MenuDetail updateResult = menuService.modifyMenu(menuDetail);
+        param.addParameter(RESULT,updateResult);
+
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
+        MenuDetail result = param.getParameter(RESULT);
         MenuResponse menuResponse = new MenuResponse();
-        MenuDetail menuDetail = param.getParameter(RESULT);
-        menuResponse.setMenuDetail(menuDetail);
+        menuResponse.setMenuDetail(result);
         return menuResponse;
     }
 
-    private MenuDetail buildMenuDetail(AddMenuRequest request)
+    private MenuDetail buildMenuDetail(ModifyMenuRequest request)
     {
         MenuDetail menuDetail = new MenuDetail();
         menuDetail.setParentMenu(request.getParentMenu());
         menuDetail.setIcon(request.getIcon());
         menuDetail.setRedirect(request.getRedirect());
-        menuDetail.setName(request.getName());
         menuDetail.setPath(request.getPath());
+        menuDetail.setName(request.getName());
         menuDetail.setComponent(request.getComponent());
         menuDetail.setCode(request.getCode());
         menuDetail.setStatus(request.getStatus());

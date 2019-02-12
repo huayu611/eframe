@@ -28,6 +28,8 @@ public class MenuDetail
 
     private String parentMenu;
 
+    private String status;
+
     @JsonProperty(value = "children")
     private List<MenuDetail> routes;
 
@@ -119,5 +121,15 @@ public class MenuDetail
     public void setKey(String key)
     {
         this.key = key;
+    }
+
+    public String getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(String status)
+    {
+        this.status = status;
     }
 }

@@ -2,22 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="562a283c-fdf9-48ea-8bc7-3aad7cb50e73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuExecuteBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/MenuDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/repository/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/repository/MenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffBusiness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/StaffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/StaffService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/StaffServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/StaffServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/MenuDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/repository/MenuRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/repository/MenuRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/AuthenticationRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/AuthenticationRestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,13 +60,13 @@
     <session id="-952359348">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="55" />
+          <entry key="project.closed" value="56" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="10" />
           <entry key="project.open.time.10640" value="1" />
           <entry key="project.open.time.11" value="10" />
           <entry key="project.open.time.12" value="5" />
-          <entry key="project.open.time.13" value="6" />
+          <entry key="project.open.time.13" value="7" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="2" />
@@ -64,7 +75,7 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="58" />
+          <entry key="project.opened" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,7 +85,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="91" />
           <entry key="iml" value="1" />
-          <entry key="java" value="1557" />
+          <entry key="java" value="1584" />
           <entry key="js" value="33" />
           <entry key="pom" value="4" />
           <entry key="properties" value="67" />
@@ -88,7 +99,7 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="91" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="1557" />
+          <entry key="JAVA" value="1584" />
           <entry key="JavaScript" value="33" />
           <entry key="Properties" value="67" />
           <entry key="TypeScript" value="1" />
@@ -101,10 +112,10 @@
           <entry key="class" value="1" />
           <entry key="dummy" value="38" />
           <entry key="html" value="2699" />
-          <entry key="java" value="29060" />
+          <entry key="java" value="31395" />
           <entry key="js" value="834" />
           <entry key="properties" value="1738" />
-          <entry key="txt" value="32" />
+          <entry key="txt" value="49" />
           <entry key="xml" value="342" />
         </counts>
       </usages-collector>
@@ -112,9 +123,9 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="HTML" value="2699" />
-          <entry key="JAVA" value="29060" />
+          <entry key="JAVA" value="31395" />
           <entry key="JavaScript" value="834" />
-          <entry key="PLAIN_TEXT" value="70" />
+          <entry key="PLAIN_TEXT" value="87" />
           <entry key="Properties" value="1738" />
           <entry key="XML" value="342" />
         </counts>
@@ -127,37 +138,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="184">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1298#1299#0" expanded="true" />
-                <element signature="e#1334#1335#0" expanded="true" />
-                <element signature="e#1489#1490#0" expanded="true" />
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#1560#1561#0" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1698#1699#0" expanded="true" />
-                <element signature="e#1754#1755#0" expanded="true" />
-                <element signature="e#1798#1799#0" expanded="true" />
-                <element signature="e#1857#1858#0" expanded="true" />
-                <element signature="e#1883#1884#0" expanded="true" />
-                <element signature="e#1925#1926#0" expanded="true" />
-                <element signature="e#1955#1956#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,87 +156,95 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="161">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1311">
+              <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+            <state relative-caret-position="964">
+              <caret line="264" column="9" lean-forward="true" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/DeleteRoleRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="161">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#222#223#0" expanded="true" />
+                <element signature="e#268#269#0" expanded="true" />
+                <element signature="e#302#303#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
-                <element signature="e#989#990#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1218#1219#0" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-              <folding>
-                <element signature="e#2501#2502#0" expanded="true" />
-                <element signature="e#2533#2534#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="469">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="51" selection-start-column="2" selection-end-line="58" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+              <folding>
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#308#309#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -262,14 +260,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>a8ec8a13632762d0bd1f73a0a0ec08fa513dc688.</find>
-      <find>v1</find>
-      <find>/v1</find>
-      <find>sys_eframe_valid_version_header</find>
-      <find>NEED_VALID_VERSION_HEADER</find>
-      <find>permission_status</find>
-      <find>white</find>
-      <find>sys_staff_lang_default</find>
       <find>登陆名或密码</find>
       <find>unc</find>
       <find>电子邮件格</find>
@@ -292,6 +282,14 @@
       <find>JsonInclude</find>
       <find>JsonProperty</find>
       <find>Optional</find>
+      <find>_e_eframe_rolecode</find>
+      <find>menu</find>
+      <find>_e_eframe_menucode</find>
+      <find>@Bean(</find>
+      <find>DeleteRoleRequest</find>
+      <find>.DELETE</find>
+      <find>DELETE</find>
+      <find>equestMethod.DELETE</find>
     </findStrings>
     <replaceStrings>
       <replace>data.code</replace>
@@ -321,16 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/ModifyStaffInformationRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/bo/StaffDetail.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/bo/PermissionDetail.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/PermissionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/SecurityServiceImplUtil.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/ModifyPasswordRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/ChangePasswordBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/RestPasswordBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/DownLoadBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadRequest.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/RandomUtils.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadResponse.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/download/DownLoadBusiness.java" />
@@ -363,15 +351,25 @@
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/MenuAtom.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtomImpl.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/repository/MenuRepository.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/ModifyMenuBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/MenuExecuteBean.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/MenuResponse.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/DeleteMenuBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" />
       </list>
     </option>
   </component>
@@ -435,7 +433,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -492,6 +490,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -565,31 +564,6 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="security" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
-              <item name="atom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-              <item name="atom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
               <item name="flow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -603,7 +577,46 @@
               <item name="security" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
               <item name="flow" type="462c0819:PsiDirectoryNode" />
-              <item name="querymenu" type="462c0819:PsiDirectoryNode" />
+              <item name="addmenu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="delmenu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="modmenu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
@@ -651,7 +664,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="security" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="atom" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
@@ -663,20 +676,8 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="security" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="atom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="role" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
@@ -694,7 +695,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,9 +704,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549895604406" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549980664369" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -873,7 +873,8 @@
       <workItem from="1549180365326" duration="3918000" />
       <workItem from="1549195540969" duration="3319000" />
       <workItem from="1549795650943" duration="4284000" />
-      <workItem from="1549858171560" duration="16387000" />
+      <workItem from="1549858171560" duration="17478000" />
+      <workItem from="1549945806371" duration="8178000" />
     </task>
     <task id="LOCAL-00001" summary="modify by lizhihua">
       <created>1548778065715</created>
@@ -896,17 +897,24 @@
       <option name="project" value="LOCAL" />
       <updated>1549868926155</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modify by lizhihua&#10;添加menu功能，完成phase1">
+      <created>1549895991561</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549895991561</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372393000" />
+    <option name="totallyTimeSpent" value="381662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.34517425" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.34986594" />
       <window_info id="Structure" order="1" sideWeight="0.76379067" side_tool="true" weight="0.21849866" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -916,7 +924,7 @@
       <window_info id="Web" order="7" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6407355" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.601983" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.601983" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -983,7 +991,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modify by lizhihua" />
     <MESSAGE value="modify by lizhihua&#10;修改删除时返回code序列" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify by lizhihua&#10;修改删除时返回code序列" />
+    <MESSAGE value="modify by lizhihua&#10;添加menu功能，完成phase1" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify by lizhihua&#10;添加menu功能，完成phase1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1029,122 +1038,21 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/LoginRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/login/LoginBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/properties/SystemConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/LocalAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/service/exception/IFPException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenMirror.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="61" column="31" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/ManagerToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties">
-      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
+      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties">
-      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
+      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/QueryRoleByCodeBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1174,20 +1082,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/AddRoleBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties">
-      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
+      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1214,25 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,16 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="51" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -1274,38 +1146,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/MenuDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="55" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/MenuDetail.java" />
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/AddPermissionRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/response/ModifyStaffResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="250" column="21" lean-forward="true" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1337,28 +1182,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#2501#2502#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="115">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="33" />
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="82" />
+          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="e#1790#1791#0" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#2501#2502#0" expanded="true" />
+            <element signature="e#2533#2534#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1372,73 +1233,282 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+        <state relative-caret-position="377">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/RequestExecuteBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="401">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/RandomUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/AddRoleBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/AddRoleRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/response/ModifyStaffResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="217">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1698#1699#0" expanded="true" />
-            <element signature="e#1754#1755#0" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1857#1858#0" expanded="true" />
-            <element signature="e#1883#1884#0" expanded="true" />
-            <element signature="e#1925#1926#0" expanded="true" />
-            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#2070#2071#0" expanded="true" />
+            <element signature="e#2118#2119#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="18" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1523#1524#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+            <element signature="e#1752#1753#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuExecuteBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+        <state relative-caret-position="515">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/DeleteRoleRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="51" selection-start-column="2" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="964">
+          <caret line="264" column="9" lean-forward="true" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
         </state>
       </provider>
     </entry>
