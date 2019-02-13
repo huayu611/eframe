@@ -231,7 +231,18 @@ public class AuthenticationRestServer
     @RequestMapping(value = "/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryMenu(EasyParam easyParam)
     {
-        Object obj = Flow.execute(QueryMenuBusiness.class, null, easyParam);
+        QueryMenuRequest request = new QueryMenuRequest();
+        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/menu/{code}", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object queryMenuByCode(@PathVariable String code,EasyParam easyParam)
+    {
+        QueryMenuRequest request = new QueryMenuRequest();
+        request.setCode(code);
+        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
         return obj;
     }
 

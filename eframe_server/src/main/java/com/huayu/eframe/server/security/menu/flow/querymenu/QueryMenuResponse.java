@@ -14,6 +14,8 @@ public class QueryMenuResponse
 {
     private List<MenuDetail> menus;
 
+    private MenuDetail menu;
+
     public List<MenuDetail> getMenus()
     {
         return menus;
@@ -22,5 +24,15 @@ public class QueryMenuResponse
     public void setMenus(List<MenuDetail> menus)
     {
         this.menus = menus;
+    }
+
+    public MenuDetail getMenu()
+    {
+        return menu;
+    }
+
+    public void setMenu(MenuDetail menu)
+    {
+        this.menu = menu;
     }
 }

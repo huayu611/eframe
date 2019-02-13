@@ -5,27 +5,15 @@ package com.huayu.eframe.server.security.menu.flow.querymenu;
  */
 public class QueryMenuRequest
 {
-    private String menuCode;
+    private String code;
 
-    private String url;
-
-    public String getMenuCode()
+    public String getCode()
     {
-        return menuCode;
+        return code;
     }
 
-    public void setMenuCode(String menuCode)
+    public void setCode(String code)
     {
-        this.menuCode = menuCode;
-    }
-
-    public String getUrl()
-    {
-        return url;
-    }
-
-    public void setUrl(String url)
-    {
-        this.url = url;
+        this.code = code;
     }
 }

@@ -44,6 +44,18 @@ public class MenuServiceImpl implements MenuService
     }
 
     @Override
+    public MenuDetail queryMenuByCode(String code)
+    {
+        Menu menu = getMenuByCode(code);
+        if(null == menu)
+        {
+            return null;
+        }
+        MenuDetail menuDetail = buildMenuDetail(menu);
+        return menuDetail;
+    }
+
+    @Override
     public MenuDetail addMenu(MenuDetail menuDetail)
     {
         Menu menu = buildMenu(menuDetail);

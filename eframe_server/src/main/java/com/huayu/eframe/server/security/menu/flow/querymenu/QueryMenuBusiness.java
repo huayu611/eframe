@@ -6,6 +6,7 @@ import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.security.menu.bo.MenuTree;
 import com.huayu.eframe.server.security.menu.service.MenuDetail;
 import com.huayu.eframe.server.security.menu.service.MenuService;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,9 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
 
     private static final LogDebug debug = new LogDebug(QueryMenuBusiness.class);
 
-    private static final String RESULT = "QueryMenuBusiness_RESULT";
+    private static final String RESULT_LIST = "QueryMenuBusiness_RESULT_List";
+
+    private static final String RESULT_SINGLE = "QueryMenuBusiness_RESULT_Single";
 
     @Autowired
     private MenuService menuService;
@@ -30,8 +33,18 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     @Override
     public void execute(BusinessParameter param)
     {
-        List<MenuDetail> menuResult = menuService.queryAllMenu();
-        param.addParameter(RESULT,menuResult);
+        QueryMenuRequest queryMenuRequest = param.getRequest();
+        if(StringUtils.isNullOrEmpty(queryMenuRequest.getCode()))
+        {
+            List<MenuDetail> menuResult = menuService.queryAllMenu();
+            param.addParameter(RESULT_LIST,menuResult);
+        }
+        else
+        {
+            MenuDetail menuQuery = menuService.queryMenuByCode(queryMenuRequest.getCode());
+            param.addParameter(RESULT_SINGLE,menuQuery);
+        }
+
 
     }
 
@@ -39,8 +52,10 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     protected Object tidyData(BusinessParameter param)
     {
         QueryMenuResponse queryMenuResponse = new QueryMenuResponse();
-        List<MenuDetail> menuResult = param.getParameter(RESULT);
+        List<MenuDetail> menuResult = param.getParameter(RESULT_LIST);
         queryMenuResponse.setMenus(menuResult);
+        MenuDetail menuDetail = param.getParameter(RESULT_SINGLE);
+        queryMenuResponse.setMenu(menuDetail);
         return queryMenuResponse;
     }
 

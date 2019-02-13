@@ -13,6 +13,8 @@ public interface MenuService
 {
     List<MenuDetail> queryAllMenu();
 
+    MenuDetail queryMenuByCode(String code);
+
     MenuDetail addMenu(MenuDetail menu);
 
     MenuDetail modifyMenu(MenuDetail menu);
