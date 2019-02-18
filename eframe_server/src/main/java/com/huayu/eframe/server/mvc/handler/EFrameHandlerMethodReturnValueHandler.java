@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.mvc.handler;
 
+import com.alibaba.dubbo.common.utils.IOUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -9,6 +10,9 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,6 +23,8 @@ import java.util.Map;
  */
 public class EFrameHandlerMethodReturnValueHandler implements HandlerMethodArgumentResolver
 {
+
+    private static final String JSONBODYATTRIBUTE = "JSON_REQUEST_BODY";
 
     @Override
     public boolean supportsParameter(MethodParameter methodParameter)
@@ -55,10 +61,25 @@ public class EFrameHandlerMethodReturnValueHandler implements HandlerMethodArgum
 
         easyParam.setRequestHeader(map);
         easyParam.setRequestHeaders(mapValues);
+
+        getRequestBody(nativeWebRequest);
         return easyParam;
     }
 
+    private String getRequestBody(NativeWebRequest webRequest){
+        HttpServletRequest servletRequest = webRequest.getNativeRequest(HttpServletRequest.class);
 
+        String jsonBody = "";
+            try {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(servletRequest.getInputStream()));
+                jsonBody = IOUtils.read(bufferedReader);
+                webRequest.setAttribute(JSONBODYATTRIBUTE, jsonBody, NativeWebRequest.SCOPE_REQUEST);
+            } catch (IOException e) {
+//                throw new RuntimeException(e);
+            }
+
+        return jsonBody;
+    }
 
 
 }

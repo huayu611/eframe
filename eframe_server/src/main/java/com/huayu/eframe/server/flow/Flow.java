@@ -6,11 +6,13 @@ import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
 import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.server.log.presist.logic.LogRecordLogic;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.service.spring.BeanPool;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
@@ -23,6 +25,7 @@ import java.util.Locale;
 public class Flow
 {
     private static final LogDebug debug = new LogDebug(Flow.class);
+
 
     @SuppressWarnings("unchecked")
     private static Object executeService(Class serviceName, Object request)
@@ -66,6 +69,8 @@ public class Flow
         LocalAttribute.addValue(FlowConstant.HTTP_REQUEST, easyParam.getRequest());
 
         LocalAttribute.addValue(FlowConstant.HTTP_RESPONSE, easyParam.getResponse());
+
+        LocalAttribute.addValue(FlowConstant.EASY_SERVLET, easyParam);
 
         Token token = (Token) easyParam.getRequest().getAttribute(FlowConstant.HTTP_TOKEN);
 

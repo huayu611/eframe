@@ -23,4 +23,10 @@
         <value code="0" lang="COMMON_STATUS_NORMAL"/>
         <value code="1" lang="COMMON_STATUS_LOCK"/>
     </dict>
+    <dict code="operator_log_status">
+        <value code="E" lang="OPERATOR_LOG_STATUS_ERROR"/>
+        <value code="F" lang="OPERATOR_LOG_STATUS_FINISH"/>
+        <value code="I" lang="OPERATOR_LOG_STATUS_INIT"/>
+        <value code="R" lang="OPERATOR_LOG_STATUS_RUNNING"/>
+    </dict>
 </dicts>

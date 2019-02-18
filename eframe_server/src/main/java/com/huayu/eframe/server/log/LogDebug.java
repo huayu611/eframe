@@ -2,6 +2,7 @@ package com.huayu.eframe.server.log;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.huayu.eframe.server.tool.basic.ObjectUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -112,7 +113,7 @@ public class LogDebug
         if (!LogUtils.isDebugOpen()) {
             return;
         }
-        String trace = getTrace(e);
+        String trace = ObjectUtils.getTrace(e);
         debug.error(trace);
 
     }
@@ -145,12 +146,4 @@ public class LogDebug
         return jsonlist;
     }
 
-    public static String getTrace(Throwable t)
-    {
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter writer = new PrintWriter(stringWriter);
-        t.printStackTrace(writer);
-        StringBuffer buffer = stringWriter.getBuffer();
-        return buffer.toString();
-    }
 }

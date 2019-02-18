@@ -1,11 +1,14 @@
 package com.huayu.eframe.server.security.service.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.huayu.eframe.server.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.security.service.constant.SecurityConstant;
 
 /**
  * Created by Administrator on 2018/7/18.
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class LoginRequest
 {
     @EFrameRequest(required = true)

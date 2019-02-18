@@ -1,5 +1,7 @@
 package com.huayu.eframe.server.tool.basic;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.Field;
 import java.util.*;
 
@@ -65,6 +67,15 @@ public class ObjectUtils
 	public static boolean isNotNull(Object obj)
 	{
 		return !isNull(obj);
+	}
+
+	public static String getTrace(Throwable t)
+	{
+		StringWriter stringWriter = new StringWriter();
+		PrintWriter writer = new PrintWriter(stringWriter);
+		t.printStackTrace(writer);
+		StringBuffer buffer = stringWriter.getBuffer();
+		return buffer.toString();
 	}
 
 }

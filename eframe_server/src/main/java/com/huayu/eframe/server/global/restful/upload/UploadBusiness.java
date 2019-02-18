@@ -68,19 +68,5 @@ public class UploadBusiness extends AbstractExecuteBusiness
         return name;
     }
 
-    private  String getImageStr(MultipartFile file) {
 
-        InputStream inputStream = null;
-        byte[] data = null;
-        try {
-            inputStream = file.getInputStream();
-            data = new byte[inputStream.available()];
-            inputStream.read(data);
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BASE64Encoder encoder = new BASE64Encoder();
-        return encoder.encode(data);
-    }
 }

@@ -1,15 +1,19 @@
 package com.huayu.eframe.server.flow;
 
 import com.huayu.eframe.server.cache.CacheObserver;
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.restful.EffectiveExpireDateTime;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
 import com.huayu.eframe.server.flow.valid.EffExpValid;
 import com.huayu.eframe.server.flow.valid.ValidAnnotation;
 import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.server.log.presist.constant.LogConstants;
+import com.huayu.eframe.server.log.presist.logic.LogRecordLogic;
 import com.huayu.eframe.server.service.exception.ExceptionCacheService;
 import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.NumberUtils;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -19,6 +23,7 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -31,6 +36,10 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 {
     private static final LogDebug debug = new LogDebug(AbstractExecuteBusiness.class);
 
+
+    @Autowired
+    private LogRecordLogic logRecordLogic;
+
     @Autowired
     private ValidAnnotation validAnnotation;
 
@@ -41,11 +50,15 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     public void process(BusinessParameter param)
     {
 
+        recordLog(LogConstants.LOG_INIT_STATUS,param.getRequest());
         init(param);
+
+        recordLog(LogConstants.LOG_RUNNING_STATUS);
         checkRequestField(param.getRequest());
         before(param);
 
         doTrans(param);
+
 
     }
 
@@ -117,7 +130,20 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         response.setMsg(getSuccessResultDescrption());
         response.setData(tidyData(param));
         tidyResponse(response,param);
+        recordLog(LogConstants.LOG_FINISH_STATUS,response);
         return response;
+    }
+
+    @Override
+    public void exception(BusinessParameter param, Exception e)
+    {
+        doException(param,e);
+        recordLog(LogConstants.LOG_ERROR_STATUS,e);
+    }
+
+    protected void doException(BusinessParameter param, Exception e)
+    {
+
     }
 
     protected Object tidyData(BusinessParameter param)
@@ -188,4 +214,43 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         }
     }
 
+    private void recordLog(String flow)
+    {
+        recordLog(flow,null);
+    }
+    private void recordLog(String flow,Object obj)
+    {
+        if(!getLogFlag())
+        {
+            return ;
+        }
+        if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_INIT_STATUS,flow))
+        {
+            logRecordLogic.initLog(obj);
+        }
+        else if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_RUNNING_STATUS,flow))
+        {
+            logRecordLogic.startLog();
+        }
+        else  if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_FINISH_STATUS,flow))
+        {
+            logRecordLogic.finishLog(obj);
+        }
+        else  if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_ERROR_STATUS,flow))
+        {
+            Throwable t = (Throwable)obj;
+            logRecordLogic.errorLog(t);
+        }
+
+    }
+
+    protected boolean getLogFlag()
+    {
+        HttpServletRequest request = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
+        String method = request.getMethod();
+
+        List<String> methods = ConfigurationUtils.getRecordLogMethod();
+
+        return methods.contains(method);
+    }
 }

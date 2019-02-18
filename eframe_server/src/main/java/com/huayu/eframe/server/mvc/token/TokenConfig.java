@@ -81,8 +81,7 @@ public class TokenConfig
         //添加Token过期时间
         if (duration >= 0)
         {
-//            long expMillis = nowMillis + Long.valueOf(duration) * 1000l;
-//            Date exp = new Date(expMillis);
+
             Date nowTime  = DateUtils.getCurrentDate();
             expireTime = DateUtils.modifySeconds(nowTime,duration);
             builder.setExpiration(expireTime).setNotBefore(nowTime);

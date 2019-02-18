@@ -5,6 +5,8 @@ import com.huayu.eframe.server.flow.Flow;
 import com.huayu.eframe.server.flow.restful.PagingRequest;
 import com.huayu.eframe.server.flow.restful.RestfulResponse;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
+import com.huayu.eframe.server.security.log.flow.QueryOperatorLogBusiness;
+import com.huayu.eframe.server.security.log.message.QueryOperatorLogRequest;
 import com.huayu.eframe.server.security.menu.flow.addmenu.AddMenuBusiness;
 import com.huayu.eframe.server.security.menu.flow.addmenu.AddMenuRequest;
 import com.huayu.eframe.server.security.menu.flow.delmenu.DeleteMenuBusiness;
@@ -27,6 +29,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -274,6 +277,33 @@ public class AuthenticationRestServer
         else{
             return Flow.execute(ChangePasswordBusiness.class, request, easyParam);
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/log", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object queryLog(
+            @RequestParam(name="size",required = false) Integer size,
+            @RequestParam(name="page",required = false) Integer page,
+            @RequestParam(name="operatorCode",required = false) String operatorCode,
+            @RequestParam(name="operatorType",required = false) String operatorType,
+            @RequestParam(name="url",required = false) String url,
+            @RequestParam(name="inTime",required = false) Date inTime,
+            @RequestParam(name="outTime",required = false) Date outTime,
+            EasyParam easyParam)
+    {
+        QueryOperatorLogRequest queryOperatorLogRequest = new QueryOperatorLogRequest();
+        queryOperatorLogRequest.setInTime(inTime);
+        queryOperatorLogRequest.setOutTime(outTime);
+        queryOperatorLogRequest.setOperatorCode(operatorCode);
+        queryOperatorLogRequest.setOperatorType(operatorType);
+        queryOperatorLogRequest.setUrl(url);
+
+        PagingRequest pagingRequest = new PagingRequest();
+        pagingRequest.setSize(size);
+        pagingRequest.setPage(page);
+        queryOperatorLogRequest.setPage(pagingRequest);
+        Object obj = Flow.execute(QueryOperatorLogBusiness.class, queryOperatorLogRequest, easyParam);
+        return obj;
     }
 
     private RestfulResponse buildError(String code, String desc)

@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.mvc.token;
 
 import com.huayu.eframe.server.config.properties.SystemConfig;
+import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,8 @@ public class Token
     }
     private String primaryCode;
 
+    private String primaryType;
+
     private Date loginTime;
 
     private Date lastUpdateTime;
@@ -39,6 +42,8 @@ public class Token
     private String token;
 
     private String type;
+
+    private TokenInstance tokenInstance;
 
     private SessionToken session;
 
@@ -152,5 +157,25 @@ public class Token
     public void setLocale(Locale locale)
     {
         this.locale = locale;
+    }
+
+    public String getPrimaryType()
+    {
+        return primaryType;
+    }
+
+    public void setPrimaryType(String primaryType)
+    {
+        this.primaryType = primaryType;
+    }
+
+    public TokenInstance getTokenInstance()
+    {
+        return tokenInstance;
+    }
+
+    public void setTokenInstance(TokenInstance tokenInstance)
+    {
+        this.tokenInstance = tokenInstance;
     }
 }

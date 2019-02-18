@@ -187,5 +187,17 @@ public class StringUtils
         return null == obj ? false : obj.getClass().isAssignableFrom(String.class);
     }
 
+    public static String getStringByLength(String value,int length)
+    {
+        if(null == value)
+        {
+            return null;
+        }
+        if(value.length()<=length)
+        {
+            return value;
+        }
+        return value.substring(0,length);
+    }
 
 }

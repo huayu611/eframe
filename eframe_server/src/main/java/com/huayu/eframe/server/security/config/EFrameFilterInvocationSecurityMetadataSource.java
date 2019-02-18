@@ -38,13 +38,13 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
 {
     private static final LogDebug debug = new LogDebug(EFrameFilterInvocationSecurityMetadataSource.class);
 
-    private static final String DEFAULT_VERISON_CONFIG = "sys_eframe_version";
+    private static final String DEFAULT_VERSION_CONFIG = "sys_eframe_version";
 
-    private static final String DEFAULT_VERISON_CONFIG_VALUE = "v1";
+    private static final String DEFAULT_VERSION_CONFIG_VALUE = "v1";
 
-    private static final String DEFAULT_VERISON_HEADER_PARAME = "sys_eframe_version_header_param";
+    private static final String DEFAULT_VERSION_HEADER_PARAME = "sys_eframe_version_header_param";
 
-    private static final String DEFAULT_VERISON_HEADER_PARAME_DEFAULT = "EVersion";
+    private static final String DEFAULT_VERSION_HEADER_PARAME_DEFAULT = "EVersion";
 
 
     private static final String NEED_VALID_VERSION_HEADER = "sys_eframe_valid_version_header";
@@ -100,8 +100,8 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
 
     private void checkVersion(HttpServletRequest request)
     {
-        String versionHeaderName = SystemConfig.getValue(DEFAULT_VERISON_HEADER_PARAME, DEFAULT_VERISON_HEADER_PARAME_DEFAULT);
-        String versionConfig = SystemConfig.getValue(DEFAULT_VERISON_CONFIG, DEFAULT_VERISON_CONFIG_VALUE);
+        String versionHeaderName = SystemConfig.getValue(DEFAULT_VERSION_HEADER_PARAME, DEFAULT_VERSION_HEADER_PARAME_DEFAULT);
+        String versionConfig = SystemConfig.getValue(DEFAULT_VERSION_CONFIG, DEFAULT_VERSION_CONFIG_VALUE);
         String isValid = SystemConfig.getValue(NEED_VALID_VERSION_HEADER,DO_NOT_NEED_VALID_VERSION_HEADER);
         debug.log(versionHeaderName,versionConfig,isValid);
         if(StringUtils.equalStringNoCareUpperAndLower(isValid,DO_NOT_NEED_VALID_VERSION_HEADER))
@@ -180,6 +180,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
             return null;
         }
         Token token = loginInner(auths[0], auths[1], easyParam);
+        filterInvocation.getHttpRequest().setAttribute(FlowConstant.HTTP_TOKEN, token);
         return token;
 
     }

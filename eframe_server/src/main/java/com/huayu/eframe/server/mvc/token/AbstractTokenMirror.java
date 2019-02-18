@@ -2,13 +2,17 @@ package com.huayu.eframe.server.mvc.token;
 
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
+import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
 import com.huayu.eframe.server.security.service.constant.SecurityConstant;
+import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.encrypt.Encrypt;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
 
@@ -25,6 +29,8 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
 
     public final static String TOKEN_TYPE_KEY = "TOKEN_TYPE_KEY";
 
+    public final static String TOKEN_OWNER_TYPE = "TOKEN_OWNER_TYPE";
+
     public static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
 
     public static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
@@ -37,6 +43,9 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
     {
         tokenMap = new TokenMap();
     }
+
+    @Autowired
+    private TokenObjectMap tokenObjectMap;
 
     @Override
     public Token createToken(String primary, String type, Locale locale)
@@ -59,6 +68,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
                 map.put(LOCALE, locale.getLanguage());
                 map.put(PRIMARY, primary);
                 map.put(TOKEN_TYPE_KEY, getTokenType());
+                map.put(TOKEN_OWNER_TYPE,getObjType());//
                 extendMap(map);
                 return TokenConfig.generateJWTToken(primary, cycle(), map);
             }
@@ -81,6 +91,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
         token.setLastUpdateTime(nowDate);
         token.setType(type);
         token.setLocale(locale);
+        token.setPrimaryType(getObjType());
         StringBuffer tokenBuffer = new StringBuffer();
         //token 拼接方法
         //token类型+"|"+（启动时长+6位随机数+UUID）
@@ -197,6 +208,8 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
         Token token = new Token(this);
         Object locale = jwtClaim.get(LOCALE);
         Object primary = jwtClaim.get(PRIMARY);
+
+        Object ownType = jwtClaim.get(TOKEN_OWNER_TYPE);
         if (null == primary)
         {
             return null;
@@ -207,8 +220,19 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
             debug.log(locale);
             token.setLocale(locale1);
         }
+        TokenInstance tokenInstance  = tokenObjectMap.getTokenInstance(StringUtils.getString(ownType));
+
+        if(null == tokenInstance)
+        {
+            tokenInstance = BeanPool.getService("StaffTokenInstance");
+        }
+        token.setTokenInstance(tokenInstance);
         token.setPrimaryCode(StringUtils.getString(primary));
+        token.setPrimaryType(StringUtils.getString(ownType));
         token.setAllAuthView(loadAuthView(StringUtils.getString(primary)));
+
+        //token type
+
         return token;
     }
 
@@ -251,6 +275,18 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
     protected boolean needStartTimeTaskCleanSession()
     {
         return false;
+    }
+
+    //Token操作员类型
+    public String getObjType()
+    {
+        return "STAFF";
+    }
+
+    //Token操作员类型对应的对象
+    public TokenInstance getObjTypeInstance()
+    {
+        return tokenObjectMap.getTokenInstance(getObjType());
     }
 
 }

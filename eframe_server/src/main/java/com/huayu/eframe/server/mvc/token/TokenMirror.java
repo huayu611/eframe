@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.mvc.token;
 
+import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 import io.jsonwebtoken.Claims;
 
 import java.util.List;
@@ -66,6 +67,12 @@ public interface TokenMirror
      * @param token
      */
     default void updateTokenExpireTime(Token token){};
+
+    //Token操作员类型
+    String getObjType();
+
+    //Token操作员类型对应的对象
+    TokenInstance getObjTypeInstance();
 
 
 }

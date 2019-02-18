@@ -2,20 +2,342 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="562a283c-fdf9-48ea-8bc7-3aad7cb50e73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/http/HttpLocalAttribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/atom/LogAtom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/atom/impl/LogAtomImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/constant/LogConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/LogRecordLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/impl/LogRecordLogicImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/repository/LogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameRequestBodyAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/StaffTokenInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/TokenInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/TokenObjectMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/flow/QueryOperatorLogBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/boot/StartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/boot/StartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/CopRestfulServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/CopRestfulServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/atom/CopBaseInfoAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/atom/CopBaseInfoAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/atom/impl/CopBaseInfoAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/atom/impl/CopBaseInfoAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/bo/CopBaseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/bo/CopBaseInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/QueryCopBaseInfoBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/QueryCopBaseInfoBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/QueryCopInfoResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/flow/copbaseinfo/QueryCopInfoResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/CopBaseInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/CopBaseInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/bo/CopBaseInfoDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/bo/CopBaseInfoDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/impl/CopBaseInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_copinfo/target/classes/com/huayu/eframe/copinfo/server/serivce/impl/CopBaseInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/FeedBackRestfulServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/FeedBackRestfulServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/FeedBackAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/FeedBackAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/bo/FeedBackBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/bo/FeedBackBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/FeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/FeedBackRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/FeedBackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/FeedBackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/common/ConfigurationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/common/ConfigurationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/FlowConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/FlowConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogDebug.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogDebug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenMirror.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenMirror.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/ObjectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/eframe_common_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/eframe_common_config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/eframe_dict.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/eframe_dict.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_zh.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/eframe_common_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/eframe_common_config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/boot/StartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/boot/StartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheConfigurationExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheConfigurationExecute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/EFrameCacheManagerCustomizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/EFrameCacheManagerCustomizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/AbstractFrameCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/AbstractFrameCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/CacheElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/CacheElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/DefaultIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/DefaultIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/Index.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/Index.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/BusinessHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/BusinessHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/FramePaging.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/FramePaging.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/LanguageCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/LanguageCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/PropertiesReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/PropertiesReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/StaticCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/StaticCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/EmailAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/EmailAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/impl/EmailAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/impl/EmailAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/bo/EmailBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/bo/EmailBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/EmailCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/EmailCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl$EmailCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl$EmailCodeIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/impl/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/impl/EmailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/LangAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/LangAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/impl/LangAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/impl/LangAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Lang.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Lang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/LangValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/LangValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Languages.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Languages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/StandardLang.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/StandardLang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/LangCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/LangCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl$LangCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl$LangCodeIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/LangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/LangService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/impl/LangServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/impl/LangServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/InternationalServiceFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/InternationalServiceFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/LangUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/LangUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/standard/StandardFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/standard/StandardFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/ParameterServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/ParameterServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/PropertiesLoadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/PropertiesLoadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/SystemConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/SystemConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/HttpErrorCodeMapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/HttpErrorCodeMapping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/RestErrorCodeMappingFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/RestErrorCodeMappingFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/ParameterAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/ParameterAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/impl/ParameterAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/impl/ParameterAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/Parameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterDescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterDescription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/ParameterCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/ParameterCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl$ParameterCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl$ParameterCodeIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Description.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Description.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterDescriptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterDescriptionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterDescriptionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterDescriptionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/util/ParameterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/util/ParameterUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/DictionaryRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/DictionaryRestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/Dict.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/Dict.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/DictResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/DictResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/QueryDictBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/QueryDictBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictLangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictLangService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/Dictionaries.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/Dictionaries.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictionaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictionaryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/AbstractExecuteBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/AbstractExecuteBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/BusinessParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/BusinessParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/Flow.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/Flow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FlowConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FlowConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FrameCommonAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FrameCommonAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/TransactionFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/TransactionFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PageObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/RestfulResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/RestfulResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/AbstractExecuteEFrameRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/AbstractExecuteEFrameRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/EffExpValid.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/EffExpValid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/RestfulResultValid.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/RestfulResultValid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidBeanDefined.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidBeanDefined.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeanProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeanProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeansProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeansProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeCheckLength.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeCheckLength.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultInteger.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultInteger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultLong.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultLong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultStringValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultStringValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeEnumCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeEnumCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeMetaCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeMetaCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeRequired.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeRequired.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/GlobalRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/GlobalRestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/IFPListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/IFPListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/ServletContextSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/ServletContextSave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/StartIFP.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/StartIFP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/Debug.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/Debug.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/LogDebug.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/LogDebug.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/EframeWebMvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/EframeWebMvcConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParamCreation.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParamCreation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror$CleanSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror$CleanSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AuthView.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AuthView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/DefaultTokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/DefaultTokenMirror.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/SessionToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/SessionToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMirror.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameConfigAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameConfigAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterSecurityInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterSecurityInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EframeWebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EframeWebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/ManagerToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/ManagerToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/SecurityUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/SecurityUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/MenuTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/MenuTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/AuthenticationRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/AuthenticationRestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/PermissionAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/PermissionAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RoleAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RoleAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RolePermissionAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RolePermissionAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RoleStaffAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/RoleStaffAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/StaffAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/StaffAtom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RolePermissionAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RolePermissionAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleStaffAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/RoleStaffAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/atom/impl/StaffAtomImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Permission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/RolePermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/RolePermission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/RoleStaff.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/RoleStaff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/bo/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/PermissionCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/PermissionCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RoleCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RoleCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RolePermissionCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RolePermissionCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RoleStaffCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/RoleStaffCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/StaffCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/StaffCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionCodeIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionWhiteUrlIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl$PermissionWhiteUrlIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/PermissionCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl$RoleCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl$RoleCodeIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl$RoleIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl$RoleIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionPermissionAndRoleIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionPermissionAndRoleIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionPermissionIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionPermissionIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionRoleIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl$RolePermissionRoleIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RolePermissionCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl$RoleStaffRoleIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl$RoleStaffRoleIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl$RoleStaffStaffIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl$RoleStaffStaffIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/RoleStaffCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl$StaffIdIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl$StaffIdIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl$StaffLoginNameIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl$StaffLoginNameIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/cache/impl/StaffCacheImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/login/LoginBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/login/LoginBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/login/LoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/login/LoginResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/AddPermissionBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/AddPermissionBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/DeletePermissionBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/DeletePermissionBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/ModifyPermissionBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/ModifyPermissionBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/QueryPermissionBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/QueryPermissionBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/QueryPermissionByCodeBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/permission/QueryPermissionByCodeBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/QueryRoleBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/QueryRoleBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/QueryRoleByCodeBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/role/QueryRoleByCodeBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/AddStaffBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/AddStaffBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/ChangePasswordBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/ChangePasswordBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/ModifyStaffBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/ModifyStaffBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/QueryStaffBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/QueryStaffBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/QueryStaffByCodeBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/QueryStaffByCodeBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/RestPasswordBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/flow/staff/RestPasswordBusiness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/repository/PermissionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/repository/PermissionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/repository/StaffRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/repository/StaffRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddPermissionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddPermissionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddRoleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddRoleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddStaffRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/AddStaffRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeletePermissionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeletePermissionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeleteRoleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeleteRoleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeleteStaffRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/DeleteStaffRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyPasswordRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyPasswordRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyPermissionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyPermissionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyRoleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyRoleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyStaffInformationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/ModifyStaffInformationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryPermissionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryPermissionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryRoleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryRoleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryStaffRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/QueryStaffRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/RequestExecuteBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/request/RequestExecuteBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/ModifyStaffResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/ModifyStaffResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/PermissionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/PermissionResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryPermissionListResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryPermissionListResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryPermissionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryPermissionResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryRoleListResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryRoleListResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryRoleResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryRoleResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryStaffByCodeResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryStaffByCodeResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryStaffResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/QueryStaffResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/RoleResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/RoleResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/StaffResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/response/StaffResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/PermissionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/PermissionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/PermissionDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/PermissionDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/RoleDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/RoleDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/StaffDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/bo/StaffDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/PermissionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/PermissionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/SecurityServiceImplUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/service/single/impl/SecurityServiceImplUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/ExceptionCacheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/ExceptionCacheService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/IFPException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/IFPException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/NoRightAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/NoRightAuthenticationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenErrorAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenErrorAuthenticationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenExpireAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenExpireAuthenticationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/VersionNotRightException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/VersionNotRightException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanInpouring.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanInpouring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringBootStartBeanPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringBootStartBeanPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringInitForServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringInitForServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ArrayUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ClassUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ClassUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/DateUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/JSonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/JSonUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/Null.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/Null.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/NumberUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/NumberUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ObjectUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ObjectUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/PropertiesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/PropertiesUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/RandomUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/RandomUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StreamUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StreamUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/XmlUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/XmlUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/AESEncrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/AESEncrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/Encrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/Encrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/MD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/MD5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionExecute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/Execute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapExecute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,74 +369,74 @@
     <session id="-952359348">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="57" />
+          <entry key="project.closed" value="60" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="10" />
           <entry key="project.open.time.10640" value="1" />
           <entry key="project.open.time.11" value="10" />
-          <entry key="project.open.time.12" value="5" />
+          <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="7" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="60" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="UploadBusiness" value="1" />
-          <entry key="class" value="87" />
+          <entry key="class" value="154" />
           <entry key="css" value="2" />
           <entry key="html" value="91" />
           <entry key="iml" value="1" />
-          <entry key="java" value="1594" />
+          <entry key="java" value="1845" />
           <entry key="js" value="33" />
           <entry key="pom" value="4" />
-          <entry key="properties" value="67" />
+          <entry key="properties" value="73" />
           <entry key="ts" value="1" />
-          <entry key="xml" value="47" />
+          <entry key="xml" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="87" />
+          <entry key="CLASS" value="154" />
           <entry key="CSS" value="2" />
           <entry key="HTML" value="91" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="1594" />
+          <entry key="JAVA" value="1845" />
           <entry key="JavaScript" value="33" />
-          <entry key="Properties" value="67" />
+          <entry key="Properties" value="73" />
           <entry key="TypeScript" value="1" />
           <entry key="UML" value="1" />
-          <entry key="XML" value="51" />
+          <entry key="XML" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="class" value="1" />
+          <entry key="class" value="2" />
           <entry key="dummy" value="38" />
           <entry key="html" value="2699" />
-          <entry key="java" value="31815" />
+          <entry key="java" value="40994" />
           <entry key="js" value="834" />
-          <entry key="properties" value="1738" />
-          <entry key="txt" value="57" />
-          <entry key="xml" value="342" />
+          <entry key="properties" value="1832" />
+          <entry key="txt" value="66" />
+          <entry key="xml" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CLASS" value="1" />
+          <entry key="CLASS" value="2" />
           <entry key="HTML" value="2699" />
-          <entry key="JAVA" value="31815" />
+          <entry key="JAVA" value="40994" />
           <entry key="JavaScript" value="834" />
-          <entry key="PLAIN_TEXT" value="95" />
-          <entry key="Properties" value="1738" />
-          <entry key="XML" value="342" />
+          <entry key="PLAIN_TEXT" value="104" />
+          <entry key="Properties" value="1832" />
+          <entry key="XML" value="412" />
         </counts>
       </usages-collector>
     </session>
@@ -124,84 +446,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
-              <folding>
-                <element signature="e#5596#5597#0" expanded="true" />
-                <element signature="e#5659#5660#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="235" column="19" lean-forward="true" selection-start-line="235" selection-start-column="19" selection-end-line="235" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EasyParam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/bind/annotation/PathVariable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#665#666#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-                <element signature="e#772#773#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/impl/LogRecordLogicImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="216">
+              <caret line="102" column="30" lean-forward="true" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,19 +459,89 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/bo/ParameterDescription.java">
+        <entry file="file://$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/FeedBackRestfulServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="409">
+              <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogDebug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="115">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/regex/Matcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="494" column="18" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
+              <folding>
+                <element signature="e#17066#17067#0" expanded="true" />
+                <element signature="e#17097#17098#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/LogRecordLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="1220" column="49" selection-start-line="1220" selection-start-column="44" selection-end-line="1220" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="148" column="18" lean-forward="true" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -238,36 +557,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sys_eframe_version_header_param</find>
-      <find>DEFAULT_VERISON_HEADER_PARAME</find>
-      <find>_e_validLang</find>
-      <find>MANAGER_SESSION_TIMEOUT</find>
-      <find>locale</find>
-      <find>LocalAttribute</find>
-      <find>addToken</find>
-      <find>HTTP_TOKEN</find>
-      <find>easyParam.getRequest()</find>
-      <find>getLoginName</find>
-      <find>deletero</find>
-      <find>expireTime</find>
-      <find>menuLevel</find>
-      <find>status</find>
-      <find>@JsonInclude</find>
-      <find>JsonInclude</find>
-      <find>JsonProperty</find>
-      <find>Optional</find>
-      <find>_e_eframe_rolecode</find>
-      <find>menu</find>
-      <find>_e_eframe_menucode</find>
-      <find>@Bean(</find>
-      <find>DeleteRoleRequest</find>
-      <find>.DELETE</find>
-      <find>DELETE</find>
-      <find>equestMethod.DELETE</find>
-      <find>setRedirect</find>
-      <find>menucode</find>
-      <find>null</find>
-      <find>@Entity</find>
+      <find>addArgumentResolvers</find>
+      <find>EFrameHandlerMethodReturnValueHandler</find>
+      <find>advi</find>
+      <find>adv</find>
+      <find>ada</find>
+      <find>adapt</find>
+      <find>RequestMappingHandlerAdapter</find>
+      <find>adapter</find>
+      <find>requestMappingHandlerAdapter</find>
+      <find>advise</find>
+      <find>Position</find>
+      <find>requestResponseBodyAdvice</find>
+      <find>Detected @InitBinder methods i</find>
+      <find>ControllerAdvice</find>
+      <find>bean</find>
+      <find>MappingJacksonInputMessage</find>
+      <find>huayu</find>
+      <find>body</find>
+      <find>readJavaType</find>
+      <find>EmptyBodyCheckingHttpInputMessage</find>
+      <find>readWithMessageConverters</find>
+      <find>reset</find>
+      <find>getInputS</find>
+      <find>json</find>
+      <find>log</find>
+      <find>@RequestParam(name=&quot;size&quot;</find>
+      <find>respnse</find>
+      <find>TOKEN_OWNER_TYPE</find>
+      <find>recordLog</find>
+      <find>requs</find>
     </findStrings>
     <replaceStrings>
       <replace>data.code</replace>
@@ -289,6 +608,8 @@
       <dir>D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security</dir>
       <dir>D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request</dir>
       <dir>D:\source\code\eframe\eframe_copinfo</dir>
+      <dir>D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service</dir>
+      <dir>D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\atom\impl</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -297,57 +618,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eframe_copinfo/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/GlobalRestServer.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/dict/flow/Dict.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/dict/flow/QueryDictBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/SecurityUtils.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/common/HttpUtils.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/exception/eframe_exception_zh.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/common/ConfigurationUtils.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/eframe_common_config.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/RoleService.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/StaffService.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffResponse.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/RoleResponse.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/StaffServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/MenuAtom.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtomImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/repository/MenuRepository.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/ModifyMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/MenuExecuteBean.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/MenuResponse.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/DeleteMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogEntity.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenInstance.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenMirror.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/TokenObjectMap.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/Token.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/TokenConfig.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/TokenInstance.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/instance/StaffTokenInstance.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/atom/LogAtom.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/atom/impl/LogAtomImpl.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/LogRecordLogic.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/LogRecordLogicImpl.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/LogConstants.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/constant/LogConstants.java" />
+        <option value="$PROJECT_DIR$/eframe_server/pom.xml" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/ObjectUtils.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogDebug.java" />
         <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/FlowConstant.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/eframe_common_config.properties" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/common/ConfigurationUtils.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/impl/LogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/global/restful/upload/UploadBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/JSonRecord.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameControllerAdviceBean.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/HttpLocalAttribute.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/http/HttpLocalAttribute.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/LogRecordLogic.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameRequestBodyAdvice.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/QueryOperatorLogBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/flow/QueryOperatorLogRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogResponse.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/flow/QueryOperatorLogBusiness.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogDetail.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/LoginRequest.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteLogic.java" />
+        <option value="$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/Test.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java" />
+        <option value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/impl/LogRecordLogicImpl.java" />
       </list>
     </option>
   </component>
@@ -411,6 +732,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -468,7 +790,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -479,6 +800,41 @@
             <path>
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
               <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_feedback" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_feedback" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_feedback" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_feedback" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_feedback" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="feedback" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
               <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -510,6 +866,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
@@ -520,6 +886,60 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="presist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="presist" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="presist" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eframe" type="462c0819:PsiDirectoryNode" />
+              <item name="eframe_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -534,9 +954,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550066413966" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550481353278" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -568,13 +988,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.StartApplication (1)">
+  <component name="RunManager" selected="Spring Boot.StartApplication">
     <configuration name="DateUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.server.tool.basic.DateUtils" />
       <module name="eframe_server" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.huayu.eframe.server.tool.basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.feedback.Test" />
+      <module name="eframe_feedback" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.huayu.eframe.feedback.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -626,11 +1059,13 @@
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Application.DateUtils" />
       <item itemvalue="Spring Boot.StartApplication (1)" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.StartApplication (1)" />
         <item itemvalue="Spring Boot.StartApplication" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Spring Boot.StartApplication (1)" />
         <item itemvalue="Application.DateUtils" />
         <item itemvalue="Spring Boot.Application" />
       </list>
@@ -705,7 +1140,10 @@
       <workItem from="1549795650943" duration="4284000" />
       <workItem from="1549858171560" duration="17478000" />
       <workItem from="1549945806371" duration="9608000" />
-      <workItem from="1550045233799" duration="4230000" />
+      <workItem from="1550045233799" duration="5460000" />
+      <workItem from="1550132185831" duration="2999000" />
+      <workItem from="1550387766322" duration="7997000" />
+      <workItem from="1550449502398" duration="27618000" />
     </task>
     <task id="LOCAL-00001" summary="modify by lizhihua">
       <created>1548778065715</created>
@@ -749,17 +1187,33 @@
       <option name="project" value="LOCAL" />
       <updated>1549982712282</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modify by lizhihua&#10;添加menu功能，完成phase3(完成)">
+      <created>1550066438250</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1550066438250</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387322000" />
+    <option name="totallyTimeSpent" value="427166000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.35455763" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.36930296" />
       <window_info id="Structure" order="1" sideWeight="0.76379067" side_tool="true" weight="0.21849866" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -768,12 +1222,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6407355" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.601983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6388102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.49291784" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.6817539" />
@@ -793,7 +1247,7 @@
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.34517425" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23620933" visible="true" weight="0.36930296" />
       <window_info id="Structure" order="1" sideWeight="0.76379067" side_tool="true" weight="0.21849866" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -802,12 +1256,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6407355" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.601983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6388102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.49291784" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.6817539" />
@@ -839,7 +1293,8 @@
     <MESSAGE value="modify by lizhihua&#10;添加menu功能，完成phase1" />
     <MESSAGE value="modify by lizhihua&#10;添加menu功能，完成phase2" />
     <MESSAGE value="modify by lizhihua&#10;添加menu功能，完成phase2(修改BUG)" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify by lizhihua&#10;添加menu功能，完成phase2(修改BUG)" />
+    <MESSAGE value="modify by lizhihua&#10;添加menu功能，完成phase3(完成)" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify by lizhihua&#10;添加menu功能，完成phase3(完成)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -849,6 +1304,14 @@
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+            body = IOUtils.read(reader);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="breakpointLogExpression">
       <expression>
         <expression-string>@Override
@@ -863,7 +1326,22 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>querySpecific</expression-string>
+        <expression-string>token</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>token.getPrimaryCode()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>token.getType()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>easyParam.getRequest().getAttribute(FlowConstant.HTTP_TOKEN)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -873,413 +1351,454 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>LocalAttribute</expression-string>
+        <expression-string>converterType</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>LocalAttribute.getToken()</expression-string>
+        <expression-string>targetType</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>parameter</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>adviceBean</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/RoleServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/http/server/ServerHttpRequest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+        <state relative-caret-position="138">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/atom/RoleAtom.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/http/server/ServletServerHttpRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2829">
+          <caret line="160" column="30" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameRequestBodyAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-419">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1114">
+          <caret line="73" column="66" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/login/LoginBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestResponseBodyMethodProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="156" column="41" lean-forward="true" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/QueryRoleBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/login/LoginResponse.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/FrameCommonAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="290" column="45" lean-forward="true" selection-start-line="290" selection-start-column="45" selection-end-line="290" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/flow/QueryOperatorLogBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <caret line="22" column="73" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/http/HttpLocalAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#242#250#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1090">
+          <caret line="199" column="41" selection-start-line="199" selection-start-column="41" selection-end-line="199" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/QueryRoleRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/response/QueryStaffResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/bo/StaffDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="21" column="63" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/log/message/QueryOperatorLogResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/LocalAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/FlowConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31-sources.jar!/javax/servlet/ServletRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+          <folding>
+            <element signature="e#2585#2586#0" expanded="true" />
+            <element signature="e#2639#2640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/mock/web/MockHttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="200" column="23" lean-forward="true" selection-start-line="200" selection-start-column="23" selection-end-line="200" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31-sources.jar!/javax/servlet/ServletRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="63" column="30" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/impl/LogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/service/LogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="166" column="16" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+          <folding>
+            <element signature="e#2140#2141#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#3017#3018#0" expanded="true" />
+            <element signature="e#3051#3052#0" expanded="true" />
+            <element signature="e#3109#3110#0" expanded="true" />
+            <element signature="e#3155#3156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/constant/LogConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/eframe_common_config.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JsonInclude.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="224" column="8" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JsonIgnore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/lang/eframe_dict_zh.properties">
       <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="184">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/config/dict/eframe_dict.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/StaffService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/AddStaffBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/single/impl/StaffServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="172" column="22" selection-start-line="172" selection-start-column="22" selection-end-line="172" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/staff/DeleteStaffBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/MenuTree.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/response/QueryRoleListResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/repository/PermissionRepository.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/LoginRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="16" column="114" lean-forward="true" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="114" />
+        <state relative-caret-position="124">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/MenuDetail.java" />
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/AddPermissionRequest.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.8.RELEASE/spring-data-jpa-2.0.8.RELEASE.jar!/org/springframework/data/jpa/repository/JpaSpecificationExecutor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final-sources.jar!/javax/persistence/criteria/CriteriaBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="417" column="14" selection-start-line="417" selection-start-column="14" selection-end-line="417" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final-sources.jar!/javax/persistence/criteria/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/repository/MenuRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/atom/impl/PermissionAtomImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/bo/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
-          <folding>
-            <element signature="e#1790#1791#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#2501#2502#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/impl/MenuAtomImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/RequestExecuteBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/RandomUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/AddRoleBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/AddRoleRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/response/ModifyStaffResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#2041#2042#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2118#2119#0" expanded="true" />
-            <element signature="e#2154#2155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="399">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/AbstractExecuteBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="323">
+          <caret line="148" column="18" lean-forward="true" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuRequest.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/Flow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="506">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/flow/ExecuteLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="18" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="828">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="254">
+          <caret line="1220" column="49" selection-start-line="1220" selection-start-column="44" selection-end-line="1220" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuExecuteBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/common/MenuResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/modmenu/ModifyMenuBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/request/DeleteRoleRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleResponse.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/LogDebug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/flow/role/DeleteRoleBusiness.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/regex/Matcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="58" column="5" selection-start-line="51" selection-start-column="2" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="109">
+          <caret line="494" column="18" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
           <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#17066#17067#0" expanded="true" />
+            <element signature="e#17097#17098#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/atom/MenuAtom.java">
+    <entry file="file://$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="538">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/delmenu/DeleteMenuResponse.java">
+    <entry file="file://$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/FeedBackRestfulServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="409">
+          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/bind/annotation/PathVariable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/mvc/handler/EasyParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/service/AuthenticationRestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="235" column="19" lean-forward="true" selection-start-line="235" selection-start-column="19" selection-end-line="235" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/MenuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
-          <folding>
-            <element signature="e#5596#5597#0" expanded="true" />
-            <element signature="e#5659#5660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/bo/ParameterDescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/bo/LogEntity.java">
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/LogRecordLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/log/presist/logic/impl/LogRecordLogicImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="102" column="30" lean-forward="true" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

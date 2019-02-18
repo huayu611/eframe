@@ -35,11 +35,13 @@ public class ExecuteLogic
         catch(IFPException e)
         {
             debug.printErr(e);
+            busniessInstance.exception(param,e);
             throw e ;
         }
         catch(Exception e)
         {
             debug.printErr(e);
+            busniessInstance.exception(param,e);
             throw new IFPException(ErrorCode.UNKNOW_ERROR,"Unknow Error!");
         }
         try
