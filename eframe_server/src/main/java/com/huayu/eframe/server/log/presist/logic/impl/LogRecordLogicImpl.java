@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.log.presist.logic.impl;
 
 import com.huayu.eframe.server.common.BusinessHelper;
+import com.huayu.eframe.server.common.sensitive.Sensitive;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.FlowConstant;
 import com.huayu.eframe.server.log.LogDebug;
@@ -10,16 +11,13 @@ import com.huayu.eframe.server.log.presist.service.LogDetail;
 import com.huayu.eframe.server.log.presist.service.LogService;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.mvc.token.Token;
-import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
-import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
 import com.huayu.eframe.server.tool.basic.*;
 import com.huayu.eframe.server.tool.util.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -36,10 +34,12 @@ public class LogRecordLogicImpl implements LogRecordLogic
     private static final Integer MAXLENGTH = Integer.valueOf("2047");
 
     @Autowired
-    private LogService logService;
+    private Sensitive sensitive;
 
     @Autowired
-    private TokenObjectMap tokenObjectMap;
+    private LogService logService;
+
+
 
     @Override
     public void initLog(Object request)
@@ -47,7 +47,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
         debug.log("Start Record Oper Log");
         LogDetail logDetail = buildLogDetail(request);
         LogDetail logDetailNew = logService.addLog(logDetail);
-        LocalAttribute.addValue(LOG_CONTENT,logDetailNew);
+        LocalAttribute.addValue(LOG_CONTENT, logDetailNew);
 
     }
 
@@ -57,7 +57,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
         LogDetail logDetail = LocalAttribute.getValue(LOG_CONTENT);
         logDetail.setStatus(LogConstants.LOG_RUNNING_STATUS);
         LogDetail logDetailNew = logService.updateLog(logDetail);
-        LocalAttribute.addValue(LOG_CONTENT,logDetailNew);
+        LocalAttribute.addValue(LOG_CONTENT, logDetailNew);
     }
 
     @Override
@@ -65,23 +65,43 @@ public class LogRecordLogicImpl implements LogRecordLogic
     {
         String responseJson = JSonUtils.coverToJson(response);
         LogDetail logDetail = LocalAttribute.getValue(LOG_CONTENT);
-        logDetail.setResponse(StringUtils.getStringByLength(responseJson,MAXLENGTH));
-        logDetail.setOutTime(DateUtils.getCurrentDate());
+        String responseJsonData = StringUtils.getStringByLength(responseJson, MAXLENGTH);
+        logDetail.setResponse(sensitive.filterJsonSensitive(responseJsonData));
+        Date now = DateUtils.getCurrentDate();
+        logDetail.setOutTime(now);
+        logDetail.setOutMillion(now.getTime());
         logDetail.setStatus(LogConstants.LOG_FINISH_STATUS);
+
+        if (null == logDetail.getOperObjCode() || null == logDetail.getOperObjType())
+        {
+            buildOperatorInfo(logDetail);
+        }
+
         LogDetail logDetailNew = logService.updateLog(logDetail);
-        LocalAttribute.addValue(LOG_CONTENT,logDetailNew);
+        LocalAttribute.addValue(LOG_CONTENT, logDetailNew);
     }
 
+    private void buildOperatorInfo(LogDetail logDetail)
+    {
+        Token token = LocalAttribute.getToken();
+        if (null != token)
+        {
+            logDetail.setOperObjType(token.getPrimaryType());
+            logDetail.setOperObjCode(token.getPrimaryCode());
+        }
+    }
     @Override
     public void errorLog(Throwable exception)
     {
         String stackError = ObjectUtils.getTrace(exception);
         LogDetail logDetail = LocalAttribute.getValue(LOG_CONTENT);
-        logDetail.setOutTime(DateUtils.getCurrentDate());
+        Date now = DateUtils.getCurrentDate();
+        logDetail.setOutTime(now);
+        logDetail.setOutMillion(now.getTime());
         logDetail.setStatus(LogConstants.LOG_ERROR_STATUS);
-        logDetail.setErrorStack(StringUtils.getStringByLength(stackError,MAXLENGTH));
+        logDetail.setErrorStack(StringUtils.getStringByLength(stackError, MAXLENGTH));
         LogDetail logDetailNew = logService.updateLog(logDetail);
-        LocalAttribute.addValue(LOG_CONTENT,logDetailNew);
+        LocalAttribute.addValue(LOG_CONTENT, logDetailNew);
     }
 
     private LogDetail buildLogDetail(Object requestBody)
@@ -90,40 +110,27 @@ public class LogRecordLogicImpl implements LogRecordLogic
 
         Token token = LocalAttribute.getToken();
         HttpServletRequest request = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
-        if(null != requestBody)
+        if (null != requestBody)
         {
             String requestJson = JSonUtils.coverToJson(requestBody);
-            String json = StringUtils.getStringByLength(requestJson,MAXLENGTH);
-            String lastJson = removeSensitiveData(json);
+            String json = StringUtils.getStringByLength(requestJson, MAXLENGTH);
+            String lastJson = sensitive.filterJsonSensitive(json);
             logDetail.setRequest(lastJson);
         }
         logDetail.setCode(generateLogCode());
         logDetail.setUrl(request.getRequestURI());
         logDetail.setMethod(request.getMethod());
         logDetail.setStatus(LogConstants.LOG_INIT_STATUS);
-        logDetail.setInTime(LocalAttribute.getNow());
+        Date now = LocalAttribute.getNow();
+        logDetail.setInTime(now);
+        logDetail.setInMillion(now.getTime());
 
         //IP
         String ip = BusinessHelper.getIpAddr(request);
         logDetail.setRequestIp(ip);
         logDetail.setRequestParameter(getRequestParameter());
-        if(null != token)
-        {
-            TokenInstance instance = token.getTokenInstance();
-            if(null != instance)
-            {
-                logDetail.setOperObjType(token.getPrimaryType());
-                logDetail.setOperObjCode( token.getPrimaryCode());
-            }
-        }
+        buildOperatorInfo(logDetail);
         return logDetail;
-    }
-
-    private String removeSensitiveData(String json)
-    {
-        List<String> sens = new ArrayList<>();
-        sens.add("password");
-        return JSonUtils.replaseSens(sens,json);
     }
 
     private String getRequestParameter()
@@ -131,10 +138,10 @@ public class LogRecordLogicImpl implements LogRecordLogic
         StringBuffer result = new StringBuffer();
         EasyParam easyParam = LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
         Map<String, String[]> requestHeader = easyParam.getRequestHeaders();
-       if(MapUtils.isEmpty(requestHeader))
-       {
-           return "{}";
-       }
+        if (MapUtils.isEmpty(requestHeader))
+        {
+            return "{}";
+        }
         String parameterJson = JSonUtils.coverToJson(requestHeader);
         return parameterJson;
     }

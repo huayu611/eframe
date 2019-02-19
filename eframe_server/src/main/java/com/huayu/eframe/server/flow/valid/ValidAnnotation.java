@@ -2,12 +2,7 @@ package com.huayu.eframe.server.flow.valid;
 
 import com.huayu.eframe.server.common.StaticCache;
 import com.huayu.eframe.server.flow.annotation.EFrameRequest;
-import com.huayu.eframe.server.flow.restful.RestfulRequest;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
-import com.huayu.eframe.server.service.exception.IFPException;
-import com.huayu.eframe.server.tool.basic.NumberUtils;
-import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

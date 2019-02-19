@@ -13,6 +13,7 @@ import com.huayu.eframe.server.log.presist.service.LogService;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -131,17 +132,33 @@ public class LogServiceImpl implements LogService
         logEntity.setRequestParameter(logDetail.getRequestParameter());
         logEntity.setRequestIp(logDetail.getRequestIp());
         logEntity.setErrorStack(logDetail.getErrorStack());
+        logEntity.setInMillion(logDetail.getInMillion());
+        logEntity.setOutMillion(logDetail.getOutMillion());
         //operentity
         Token token = LocalAttribute.getToken();
         if(null != token)
         {
-            TokenInstance tokenInstance = token.getTokenInstance();
+            TokenInstance tokenInstance = getTokenInstance(token);
             if (null != tokenInstance)
             {
                 logEntity.setOperObjType(logDetail.getOperObjType());
                 logEntity.setOperObjId(tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode()));
             }
         }
+    }
+
+    private TokenInstance getTokenInstance(Token token)
+    {
+        TokenInstance instance = token.getTokenInstance();
+        if(null == instance)
+        {
+            String type = token.getPrimaryType();
+            if(StringUtils.isNotNullAndEmpty(type))
+            {
+                instance =  tokenObjectMap.getTokenInstance(type);
+            }
+        }
+        return instance;
     }
 
     private LogDetail buildLogDetail(LogEntity logEntity)
@@ -155,6 +172,8 @@ public class LogServiceImpl implements LogService
         logDetail.setErrorStack(logEntity.getErrorStack());
         logDetail.setInTime(logEntity.getInTime());
         logDetail.setOutTime(logEntity.getOutTime());
+        logDetail.setInMillion(logEntity.getInMillion());
+        logDetail.setOutMillion(logEntity.getOutMillion());
         logDetail.setMethod(logEntity.getMethod());
         logDetail.setRequest(logEntity.getRequest());
         logDetail.setResponse(logEntity.getResponse());

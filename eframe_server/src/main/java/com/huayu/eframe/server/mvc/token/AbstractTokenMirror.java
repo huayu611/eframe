@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.mvc.token;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
@@ -31,10 +32,6 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
 
     public final static String TOKEN_OWNER_TYPE = "TOKEN_OWNER_TYPE";
 
-    public static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
-
-    public static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
-
     private static final LogDebug debug = new LogDebug(AbstractTokenMirror.class);
 
     private TokenMap tokenMap;
@@ -53,8 +50,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
         String value = TokenConfig.getTokeIdGenType();
         if(null == locale)
         {
-            String langConfig = SystemConfig.getValue(SYSTEM_ENV_LANGUAGE, DEFAULT_SYSTEM_ENV_LANGUAGE);
-            locale = new Locale(langConfig);
+            locale = ConfigurationUtils.getDefaultLocal();
         }
         if (value.equals("R"))
         {

@@ -1,10 +1,12 @@
 package com.huayu.eframe.server.security.service.request;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.huayu.eframe.server.flow.annotation.EFrameRequest;
 
 /**
  * Created by Leo on 2018/12/23.
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ModifyPasswordRequest
 {
     private String oldPassword;

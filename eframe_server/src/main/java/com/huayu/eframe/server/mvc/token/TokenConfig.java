@@ -1,10 +1,12 @@
 package com.huayu.eframe.server.mvc.token;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.restful.TokenErrorAuthenticationException;
 import com.huayu.eframe.server.service.exception.restful.TokenExpireAuthenticationException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import io.jsonwebtoken.*;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -90,6 +92,19 @@ public class TokenConfig
         String result = builder.compact();
         token.setToken(result);
         token.setExpireTime(expireTime);
+        token.setPrimaryCode(primary);
+        token.setPrimaryType(StringUtils.getString(map.get(AbstractTokenMirror.TOKEN_OWNER_TYPE)));
+        String localObject = StringUtils.getString(map.get(AbstractTokenMirror.LOCALE));
+        if(StringUtils.isNotNullAndEmpty(localObject))
+        {
+            Locale local = new Locale(localObject);
+            token.setLocale(local);
+        }
+        else
+        {
+            token.setLocale(ConfigurationUtils.getDefaultLocal());
+        }
+
         return token;
     }
 }

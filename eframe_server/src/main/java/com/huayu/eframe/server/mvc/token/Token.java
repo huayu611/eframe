@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.mvc.token;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 
@@ -14,9 +15,6 @@ import java.util.Map;
 public class Token
 {
 
-    private static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
-
-    private static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
 
     public Token(TokenMirror tokenMirror)
     {
@@ -148,8 +146,7 @@ public class Token
     {
         if(null == locale)
         {
-            String langConfig = SystemConfig.getValue(SYSTEM_ENV_LANGUAGE, DEFAULT_SYSTEM_ENV_LANGUAGE);
-            return new Locale(langConfig);
+            return ConfigurationUtils.getDefaultLocal();
         }
         return locale;
     }

@@ -1,6 +1,8 @@
 package com.huayu.eframe.server.boot;
 
+import com.huayu.eframe.server.common.sensitive.Sensitive;
 import com.huayu.eframe.server.log.Debug;
+import com.huayu.eframe.server.service.spring.BeanPool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -28,8 +30,7 @@ public class StartApplication
 
     public static void main(String[] args) {
 
-        SpringApplication.run(StartApplication.class, args);
-
+        start(args);
     }
 
     public static void start(String[] args)

@@ -39,6 +39,12 @@ public class LogEntity
     @Column(name="IN_TIME")
     private Date inTime;
 
+    @Column(name="IN_MILLIONSECOND")
+    private Long inMillion;
+
+    @Column(name="OUT_MILLIONSECOND")
+    private Long outMillion;
+
     @Column(name="OUT_TIME")
     private Date outTime;
 
@@ -205,5 +211,25 @@ public class LogEntity
     public void setRequestIp(String requestIp)
     {
         this.requestIp = requestIp;
+    }
+
+    public Long getInMillion()
+    {
+        return inMillion;
+    }
+
+    public void setInMillion(Long inMillion)
+    {
+        this.inMillion = inMillion;
+    }
+
+    public Long getOutMillion()
+    {
+        return outMillion;
+    }
+
+    public void setOutMillion(Long outMillion)
+    {
+        this.outMillion = outMillion;
     }
 }

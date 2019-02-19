@@ -12,4 +12,5 @@ public interface LogRecordLogic
     void finishLog(Object response);
 
     void errorLog(Throwable exception);
+
 }

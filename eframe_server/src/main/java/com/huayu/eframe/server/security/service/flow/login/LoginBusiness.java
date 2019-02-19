@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.security.service.flow.login;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.flow.AbstractExecuteBusiness;
@@ -24,14 +25,10 @@ import java.util.Locale;
 /**
  * Created by Administrator on 2018/7/21.
  */
-@Service("LoginBusiness")
+@Service
 public class LoginBusiness extends AbstractExecuteBusiness
 {
     private static final LogDebug debug = new LogDebug(LoginBusiness.class);
-
-    private static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
-
-    private static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
 
     private static final String LOGIN_RESULT = "LoginBusiness_RESULT";
 
@@ -72,6 +69,8 @@ public class LoginBusiness extends AbstractExecuteBusiness
 
         Token etk = TokenManager.createToken(ManagerToken.class, staff.getLogin(), loginType,getLocale(request, staff));
 
+        LocalAttribute.addToken(etk);
+
         httpRequestConver(etk);
 
         response.setToken(etk.getToken());
@@ -91,8 +90,7 @@ public class LoginBusiness extends AbstractExecuteBusiness
         {
              return new Locale(lang);
         }
-        String langConfig = SystemConfig.getValue(SYSTEM_ENV_LANGUAGE, DEFAULT_SYSTEM_ENV_LANGUAGE);
-        return new Locale(langConfig);
+        return ConfigurationUtils.getDefaultLocal();
     }
 
     private void httpRequestConver(Token etk)

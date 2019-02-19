@@ -5,6 +5,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Leo on 2019/2/3.
@@ -19,6 +20,11 @@ public class ConfigurationUtils
 
     private final static String RECORD_OPERATOR_LOG_PARAMETER = "sys_record_operator_log_method";
     private final static String DEFAULT_OPERATOR_LOG_METHOD = "PUT,POST,DELETE";
+
+
+    private static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
+    private static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
+
 
     public static String getDefaultHttpErrorStatus()
     {
@@ -41,4 +47,15 @@ public class ConfigurationUtils
         }
         return result;
     }
+
+    public static Locale getDefaultLocal()
+    {
+        String langConfig = SystemConfig.getValue(SYSTEM_ENV_LANGUAGE, DEFAULT_SYSTEM_ENV_LANGUAGE);
+        if(LanguageCode.existLanguageCode(langConfig))
+        {
+            return new Locale(langConfig);
+        }
+        return new Locale(DEFAULT_SYSTEM_ENV_LANGUAGE);
+    }
+
 }

@@ -37,6 +37,10 @@ public class LogDetail
 
     private String errorStack;
 
+    private Long inMillion;
+
+    private Long outMillion;
+
     public String getUrl()
     {
         return url;
@@ -166,5 +170,25 @@ public class LogDetail
     public void setRequestIp(String requestIp)
     {
         this.requestIp = requestIp;
+    }
+
+    public Long getInMillion()
+    {
+        return inMillion;
+    }
+
+    public void setInMillion(Long inMillion)
+    {
+        this.inMillion = inMillion;
+    }
+
+    public Long getOutMillion()
+    {
+        return outMillion;
+    }
+
+    public void setOutMillion(Long outMillion)
+    {
+        this.outMillion = outMillion;
     }
 }
