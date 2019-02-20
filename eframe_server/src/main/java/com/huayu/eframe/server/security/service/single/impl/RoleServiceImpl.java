@@ -270,8 +270,14 @@ public class RoleServiceImpl implements RoleService
         roleDetail.setStatus(role.getStatus());
         Role parentRole = getRleByRoleID(role.getParentRoleId());
         Role topRole = getRleByRoleID(role.getTopRoleId());
-        roleDetail.setParent(parentRole.getRoleCode());
-        roleDetail.setTop(topRole.getRoleCode());
+        if(null != parentRole)
+        {
+            roleDetail.setParent(parentRole.getRoleCode());
+        }
+        if(null != topRole)
+        {
+            roleDetail.setTop(topRole.getRoleCode());
+        }
         roleDetail.setRemark(role.getRemark());
         roleDetail.setPermissions(coverPermissionDetailList(role.getId()));
         return roleDetail;
