@@ -9,6 +9,9 @@ import java.util.Date;
  */
 public class LogDetail
 {
+    //为react冗余一个字段
+    private String key;
+
     private String url;
 
     private String request;
@@ -190,5 +193,15 @@ public class LogDetail
     public void setOutMillion(Long outMillion)
     {
         this.outMillion = outMillion;
+    }
+
+    public String getKey()
+    {
+        return key;
+    }
+
+    public void setKey(String key)
+    {
+        this.key = key;
     }
 }

@@ -169,6 +169,7 @@ public class LogServiceImpl implements LogService
         }
         LogDetail logDetail = new LogDetail();
         logDetail.setCode(logEntity.getLogCode());
+        logDetail.setKey(logEntity.getLogCode());
         logDetail.setErrorStack(logEntity.getErrorStack());
         logDetail.setInTime(logEntity.getInTime());
         logDetail.setOutTime(logEntity.getOutTime());

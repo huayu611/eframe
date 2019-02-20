@@ -118,6 +118,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             logDetail.setRequest(lastJson);
         }
         logDetail.setCode(generateLogCode());
+        logDetail.setKey(logDetail.getCode());
         logDetail.setUrl(request.getRequestURI());
         logDetail.setMethod(request.getMethod());
         logDetail.setStatus(LogConstants.LOG_INIT_STATUS);
