@@ -9,5 +9,7 @@ public interface TokenInstance
 
     Long getInstanceIdByCode(String code);
 
+    Object getObject(String code);
+
     String getType();
 }

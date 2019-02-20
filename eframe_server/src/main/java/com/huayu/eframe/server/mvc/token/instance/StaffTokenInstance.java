@@ -2,6 +2,7 @@ package com.huayu.eframe.server.mvc.token.instance;
 
 import com.huayu.eframe.server.security.service.bo.Staff;
 import com.huayu.eframe.server.security.service.cache.StaffCache;
+import com.huayu.eframe.server.security.service.single.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class StaffTokenInstance implements TokenInstance
 {
     @Autowired
     private StaffCache staffCache;
+
+    @Autowired
+    private StaffService staffService;
 
 
     @Override
@@ -27,6 +31,12 @@ public class StaffTokenInstance implements TokenInstance
     {
         Staff staff = staffCache.getStaffByLoginName(code);
         return null == staff ? null : staff.getId();
+    }
+
+    @Override
+    public Object getObject(String code)
+    {
+        return staffService.queryStaffDetail(code);
     }
 
     @Override

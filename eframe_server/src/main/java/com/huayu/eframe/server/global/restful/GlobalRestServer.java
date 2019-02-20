@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.global.restful;
 
 import com.huayu.eframe.server.flow.Flow;
+import com.huayu.eframe.server.global.restful.current.QueryCurrentLoginBusiness;
 import com.huayu.eframe.server.global.restful.upload.UploadBusiness;
 import com.huayu.eframe.server.global.restful.upload.UploadRequest;
 import com.huayu.eframe.server.log.LogDebug;
@@ -99,4 +100,15 @@ public class GlobalRestServer
         return null;
     }
 
+
+    @ResponseBody
+    @RequestMapping(value = "/current/login",
+            method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object getCurrentLogin(EasyParam easyParam)
+    {
+        Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
+        return obj;
+    }
 }
