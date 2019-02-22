@@ -108,7 +108,6 @@ public class LogRecordLogicImpl implements LogRecordLogic
     {
         LogDetail logDetail = new LogDetail();
 
-        Token token = LocalAttribute.getToken();
         HttpServletRequest request = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
         if (null != requestBody)
         {
