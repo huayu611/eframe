@@ -32,7 +32,7 @@ public class StartApplication
 
     public static void start(String[] args)
     {
-        SpringApplication.run(StartApplication.class, args);
+        com.huayu.eframe.server.boot.StartApplication.start(args);
 
         debug.debug("Boot Start success");
     }

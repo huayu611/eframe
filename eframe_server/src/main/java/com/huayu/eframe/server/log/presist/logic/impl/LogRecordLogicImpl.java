@@ -126,7 +126,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
         logDetail.setInMillion(now.getTime());
 
         //IP
-        String ip = BusinessHelper.getIpAddr(request);
+        String ip = BusinessHelper.getIpFromEasyParam(request);
         logDetail.setRequestIp(ip);
         logDetail.setRequestParameter(getRequestParameter());
         buildOperatorInfo(logDetail);

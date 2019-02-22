@@ -5,6 +5,7 @@ import com.huayu.eframe.server.tool.util.MapUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,20 @@ public class PropertiesUtils
 		try
 		{
 			properties.load(StreamUtils.coverFileToStream(file));
+		}
+		catch (IOException e)
+		{
+			return null;
+		}
+		return properties;
+	}
+
+	public static Map<?, ?> readPropertiesInputStream(InputStream inputStream)
+	{
+		Properties properties = new Properties();
+		try
+		{
+			properties.load(inputStream);
 		}
 		catch (IOException e)
 		{
