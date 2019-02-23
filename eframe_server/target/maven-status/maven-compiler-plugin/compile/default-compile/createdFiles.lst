@@ -306,6 +306,7 @@ com\huayu\eframe\server\security\service\request\ModifyStaffInformationRequest.c
 com\huayu\eframe\server\security\service\atom\impl\RoleAtomImpl.class
 com\huayu\eframe\server\security\menu\flow\delmenu\DeleteMenuBusiness.class
 com\huayu\eframe\server\security\service\response\QueryStaffResponse.class
+com\huayu\eframe\server\mvc\token\TokenUtils.class
 com\huayu\eframe\server\security\service\request\ModifyPermissionRequest.class
 com\huayu\eframe\server\mvc\token\TokenMap.class
 com\huayu\eframe\server\mvc\token\TokenMirror.class

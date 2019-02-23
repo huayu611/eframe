@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.global.restful.upload;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.server.flow.BusinessParameter;
 import com.huayu.eframe.server.log.LogDebug;
@@ -47,7 +48,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         String fileName = file.getOriginalFilename();
         String name = RandomUtils.getUUID() + fileName;
         debug.log(name);
-        String filePath = "E:\\filesystem\\" + path ;
+        String filePath = ConfigurationUtils.getDefaultUploadFilePath()+  "\\" + path ;
 
         debug.log(filePath);
         File desFilePath = new File(filePath);

@@ -14,10 +14,10 @@ public class DictConfigurature
     @Bean("DictConfigurature")
     public MessageSource getExceptionResource()
     {
-        ReloadableResourceBundleMessageSource surce =  new ReloadableResourceBundleMessageSource();
-        surce.setBasename("classpath:META-INF/config/dict/lang/eframe_dict");
-        surce.setDefaultEncoding("UTF-8");
-        return surce;
+        ReloadableResourceBundleMessageSource source =  new ReloadableResourceBundleMessageSource();
+        source.setBasenames("classpath:META-INF/config/dict/lang/frame_dict");
+        source.setDefaultEncoding("UTF-8");
+        return source;
     }
 
 }

@@ -10,10 +10,8 @@ import com.huayu.eframe.server.log.presist.atom.LogAtom;
 import com.huayu.eframe.server.log.presist.bo.LogEntity;
 import com.huayu.eframe.server.log.presist.service.LogDetail;
 import com.huayu.eframe.server.log.presist.service.LogService;
-import com.huayu.eframe.server.mvc.token.Token;
+import com.huayu.eframe.server.mvc.token.TokenUtils;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
-import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
-import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,13 +31,11 @@ public class LogServiceImpl implements LogService
     @Autowired
     private LogAtom logAtom;
 
-    @Autowired
-    private TokenObjectMap tokenObjectMap;
 
     @Override
     public LogDetail addLog(LogDetail logDetail)
     {
-        LogEntity logEntity =  buildLogEntity(logDetail);
+        LogEntity logEntity = buildLogEntity(logDetail);
         fixCreateInfo(logEntity);
         LogEntity logEntityNew = logAtom.addLog(logEntity);
         debug.log(logEntityNew);
@@ -52,7 +48,7 @@ public class LogServiceImpl implements LogService
     {
         LogEntity logEntity = getLogEntityByCode(logDetail.getCode());
         debug.log(logEntity);
-        buildDetailEntity(logDetail,logEntity);
+        buildDetailEntity(logDetail, logEntity);
         LogEntity newLogEntity = logAtom.updateLog(logEntity);
         debug.log(newLogEntity);
         return buildLogDetail(newLogEntity);
@@ -66,16 +62,16 @@ public class LogServiceImpl implements LogService
     }
 
     @Override
-    public PageObject queryLogByPage(LogDetail permissionDetail, PagingRequest pagingRequest)
+    public PageObject queryLogByPage(LogDetail logDetail, PagingRequest pagingRequest)
     {
         FramePaging framePaging = new FramePaging();
-        if(null !=pagingRequest)
+        if (null != pagingRequest)
         {
             framePaging.setPage(pagingRequest.getPage());
             framePaging.setSize(pagingRequest.getSize());
         }
-        LogEntity entitiy = buildLogEntity(permissionDetail);
-        Page<LogEntity> logResult = logAtom.queryLog(framePaging, entitiy);
+        LogEntity entity = buildLogEntity(logDetail);
+        Page<LogEntity> logResult = logAtom.queryLog(framePaging, entity);
         PagingResponse pagingResponse = new PagingResponse();
         pagingResponse.setTotal(logResult.getTotalElements());
         pagingResponse.setCurrentPage(logResult.getNumber());
@@ -90,12 +86,12 @@ public class LogServiceImpl implements LogService
     private List<LogDetail> getLogEntityResponse(List<LogEntity> logEntities)
     {
 
-        if(CollectionUtils.isEmpty(logEntities))
+        if (CollectionUtils.isEmpty(logEntities))
         {
             return new ArrayList<>();
         }
         List<LogDetail> details = new ArrayList<>();
-        for(LogEntity backBo: logEntities)
+        for (LogEntity backBo : logEntities)
         {
             LogDetail detail = buildLogDetail(backBo);
             details.add(detail);
@@ -106,7 +102,7 @@ public class LogServiceImpl implements LogService
     private LogEntity buildLogEntity(LogDetail logDetail)
     {
         LogEntity logEntity = new LogEntity();
-        if(null == logDetail)
+        if (null == logDetail)
         {
             return logEntity;
         }
@@ -117,7 +113,7 @@ public class LogServiceImpl implements LogService
 
     private void buildDetailEntity(LogDetail logDetail, LogEntity logEntity)
     {
-        if(null == logEntity || null == logDetail)
+        if (null == logEntity || null == logDetail)
         {
             return;
         }
@@ -135,35 +131,22 @@ public class LogServiceImpl implements LogService
         logEntity.setInMillion(logDetail.getInMillion());
         logEntity.setOutMillion(logDetail.getOutMillion());
         //operentity
-        Token token = LocalAttribute.getToken();
-        if(null != token)
+
+        TokenInstance tokenInstance = TokenUtils.getTokenInstance();
+
+
+        if (null != tokenInstance)
         {
-            TokenInstance tokenInstance = getTokenInstance(token);
-            if (null != tokenInstance)
-            {
-                logEntity.setOperObjType(logDetail.getOperObjType());
-                logEntity.setOperObjId(tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode()));
-            }
+            logEntity.setOperObjType(logDetail.getOperObjType());
+            logEntity.setOperObjId(tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode()));
         }
+
     }
 
-    private TokenInstance getTokenInstance(Token token)
-    {
-        TokenInstance instance = token.getTokenInstance();
-        if(null == instance)
-        {
-            String type = token.getPrimaryType();
-            if(StringUtils.isNotNullAndEmpty(type))
-            {
-                instance =  tokenObjectMap.getTokenInstance(type);
-            }
-        }
-        return instance;
-    }
 
     private LogDetail buildLogDetail(LogEntity logEntity)
     {
-        if(null == logEntity)
+        if (null == logEntity)
         {
             return null;
         }
@@ -183,10 +166,10 @@ public class LogServiceImpl implements LogService
         logDetail.setOperObjType(logEntity.getOperObjType());
         logDetail.setRequestIp(logEntity.getRequestIp());
         logDetail.setRequestParameter(logEntity.getRequestParameter());
-        if(null != logEntity.getOperObjType() &&null != logEntity.getOperObjId() )
+        if (null != logEntity.getOperObjType() && null != logEntity.getOperObjId())
         {
-            TokenInstance tokenInstance = tokenObjectMap.getTokenInstance(logEntity.getOperObjType());
-            if(null != tokenInstance)
+            TokenInstance tokenInstance = TokenUtils.getTokenInstance();
+            if (null != tokenInstance)
             {
                 String code = tokenInstance.getInstanceCodeById(logEntity.getOperObjId());
                 logDetail.setOperObjCode(code);
@@ -202,12 +185,12 @@ public class LogServiceImpl implements LogService
     {
         return logAtom.getLogByCode(code);
     }
+
     private void fixCreateInfo(LogEntity logEntity)
     {
         logEntity.setCreateTime(LocalAttribute.getNow());
 
     }
-
 
 
 }

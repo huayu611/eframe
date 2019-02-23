@@ -14,5 +14,5 @@ public interface LogService
 
     LogDetail queryLogByCode(String logCode);
 
-    PageObject queryLogByPage(LogDetail permissionDetail, PagingRequest pagingRequest);
+    PageObject queryLogByPage(LogDetail logDetail, PagingRequest pagingRequest);
 }

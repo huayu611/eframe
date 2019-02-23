@@ -1,0 +1,36 @@
+package com.huayu.eframe.server.mvc.token;
+
+import com.huayu.eframe.server.context.LocalAttribute;
+import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
+import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
+import com.huayu.eframe.server.service.spring.BeanPool;
+import com.huayu.eframe.server.tool.basic.StringUtils;
+import org.springframework.stereotype.Service;
+
+/**
+ * Created by Leo on 2019/2/22.
+ */
+
+public class TokenUtils
+{
+
+    public static  TokenInstance getTokenInstance()
+    {
+        TokenObjectMap tokenObjectMap = BeanPool.getServiceByClass(TokenObjectMap.class);
+        Token token = LocalAttribute.getToken();
+        if(null == token)
+        {
+            return null;
+        }
+        TokenInstance instance = token.getTokenInstance();
+        if(null == instance)
+        {
+            String type = token.getPrimaryType();
+            if(StringUtils.isNotNullAndEmpty(type))
+            {
+                instance =  tokenObjectMap.getTokenInstance(type);
+            }
+        }
+        return instance;
+    }
+}

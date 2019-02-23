@@ -1,5 +1,6 @@
 package com.huayu.eframe.server.global.restful;
 
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.flow.Flow;
 import com.huayu.eframe.server.global.restful.current.QueryCurrentLoginBusiness;
 import com.huayu.eframe.server.global.restful.upload.UploadBusiness;
@@ -44,7 +45,7 @@ public class GlobalRestServer
                                 EasyParam easyParam)
     {
         String fileNameInSystem = type + "\\" + fileName;
-        File file = new File("E:\\filesystem\\" + fileNameInSystem);
+        File file = new File(ConfigurationUtils.getDefaultUploadFilePath() + "\\" + fileNameInSystem);
         debug.log(file.exists());
         debug.log(file.getAbsolutePath());
         if (file.exists())

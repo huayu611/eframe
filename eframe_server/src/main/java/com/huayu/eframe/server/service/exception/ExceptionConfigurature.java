@@ -15,7 +15,7 @@ public class ExceptionConfigurature
     public MessageSource getExceptionResource()
     {
         ReloadableResourceBundleMessageSource surce =  new ReloadableResourceBundleMessageSource();
-        surce.setBasename("classpath:META-INF/exception/eframe_exception");
+        surce.setBasename("classpath:META-INF/exception/*_eframe_exception");
         surce.setDefaultEncoding("UTF-8");
         return surce;
     }
