@@ -202,6 +202,7 @@ com\huayu\eframe\server\config\rest\HttpErrorCodeMapping.class
 com\huayu\eframe\server\config\table\bo\ParameterCategory.class
 com\huayu\eframe\server\tool\encrypt\MD5.class
 com\huayu\eframe\server\common\i18n\table\cache\impl\LangCacheImpl.class
+com\huayu\eframe\server\flow\FrameCommonAPI$DeleteInItem.class
 com\huayu\eframe\server\config\table\cache\impl\ParameterCacheImpl$ParameterCodeIndex.class
 com\huayu\eframe\server\service\exception\restful\ErrorCodeException.class
 com\huayu\eframe\server\security\service\flow\staff\QueryStaffByCodeBusiness.class
@@ -237,6 +238,7 @@ com\huayu\eframe\server\common\i18n\table\util\InternationalServiceFacade.class
 com\huayu\eframe\server\tool\basic\JSonUtils.class
 com\huayu\eframe\server\security\service\atom\StaffAtom.class
 com\huayu\eframe\server\common\i18n\table\bo\Languages.class
+com\huayu\eframe\server\common\request\Properties.class
 com\huayu\eframe\server\security\service\flow\role\ModifyRoleBusiness.class
 com\huayu\eframe\server\global\restful\upload\UploadResponse.class
 com\huayu\eframe\server\security\service\repository\RoleStaffRepository.class

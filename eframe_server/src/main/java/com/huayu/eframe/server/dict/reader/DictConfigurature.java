@@ -15,7 +15,7 @@ public class DictConfigurature
     public MessageSource getExceptionResource()
     {
         ReloadableResourceBundleMessageSource source =  new ReloadableResourceBundleMessageSource();
-        source.setBasenames("classpath:META-INF/config/dict/lang/frame_dict");
+        source.setBasenames("classpath:META-INF/config/dict/lang/eframe_dict");
         source.setDefaultEncoding("UTF-8");
         return source;
     }

@@ -27,6 +27,32 @@ public class NumberUtils
 
 	}
 
+	public static boolean isInteger(Object obj)
+	{
+		try
+		{
+			Integer.valueOf(StringUtils.getString(obj));
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean isLong(Object obj)
+	{
+		try
+		{
+			Long.valueOf(StringUtils.getString(obj));
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		return true;
+	}
+
 	public static byte getByteFromObject(Object obj)
 	{
 		String s = StringUtils.getString(obj);

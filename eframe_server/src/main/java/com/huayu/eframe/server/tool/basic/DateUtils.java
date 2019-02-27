@@ -238,15 +238,11 @@ public class DateUtils
     }
 
 
-    public static void main(String[] args)
-    {
-        System.out.println(checkStringDate("20640126001309"));
-    }
+
     public static boolean checkStringDate(String date)
     {
         if (StringUtils.isNullOrEmpty(date))
         {
-
             return false;
         }
         if (!STRING_DATE_LENGTH.equals(date.length()))
@@ -257,15 +253,24 @@ public class DateUtils
         {
             return false;
         }
-        //判断年
         String year = date.substring(0, 4);
+        String month = date.substring(4, 6);
+        String day = date.substring(6, 8);
+        String hour = date.substring(8, 10);
+        String min = date.substring(10, 12);
+        String sec = date.substring(12, 14);
+        return checkArrayDate(year,month,day,hour,min,sec);
+    }
+    public static boolean checkArrayDate(String year,String month,String day,String hour,String min,String second)
+    {
+
+        //判断年
         Integer yearInt = Integer.valueOf(year);
         if (SMALL_DATE.intValue() > yearInt.intValue() || BIG_DATE.intValue() < yearInt.intValue())
         {
             return false;
         }
         //判断月
-        String month = date.substring(4, 6);
         Integer monthInt = Integer.valueOf(month);
 
         if (BIG_MONTH.intValue() < monthInt.intValue() || SMALL_MONTH.intValue() > monthInt.intValue())
@@ -273,7 +278,6 @@ public class DateUtils
             return false;
         }
         //判断天
-        String day = date.substring(6, 8);
         Integer dayInt = Integer.valueOf(day);
 
         if (BIG_MONTH_DAY.contains(monthInt))
@@ -309,21 +313,18 @@ public class DateUtils
         }
 
         //判断时
-        String hour = date.substring(8, 10);
         Integer hourInt = Integer.valueOf(hour);
         if (24 < hourInt.intValue() || 0 > hourInt.intValue())
         {
             return false;
         }
         //判断分
-        String min = date.substring(10, 12);
         Integer minInt = Integer.valueOf(min);
         if (60 < minInt.intValue() || 0 > minInt.intValue())
         {
             return false;
         }
-        String sec = date.substring(12, 14);
-        Integer secInt = Integer.valueOf(sec);
+        Integer secInt = Integer.valueOf(second);
         if (60 < secInt.intValue() || 0 > secInt.intValue())
         {
             return false;

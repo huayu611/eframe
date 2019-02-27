@@ -302,6 +302,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\v
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\menu\flow\delmenu\DeleteMenuBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\atom\StaffAtom.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\single\impl\RoleServiceImpl.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\request\Properties.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\basic\DateUtils.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\util\ParameterUtils.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\single\impl\StaffServiceImpl.java

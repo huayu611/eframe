@@ -19,6 +19,10 @@ public class FrameCommonAPI
 
     protected final static String MAX_RETURN_DEFAULT_COUNT = "-1";
 
+
+    private static final String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
+
+
     protected void tidyPagingResponse(PageObject pageObject, RestfulResponse response)
     {
         PagingResponse pagingResponse = pageObject.getPagingResponse();
@@ -64,6 +68,32 @@ public class FrameCommonAPI
             }
         }
 
+    }
+
+
+    protected String deleteInBatch(DeleteInItem deleteInItem,String codes)
+    {
+        String[] nameArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
+        if(nameArr.length==0)
+        {
+            return "";
+        }
+        String result = "";
+        for(String code : nameArr)
+        {
+            String resultCode = deleteInItem.deleteByItem(code);
+            result = result + resultCode + ",";
+        }
+        if(result.endsWith(","))
+        {
+            result = result.substring(0,result.length()-1);
+        }
+        return result;
+    }
+
+    public  interface DeleteInItem
+    {
+        String deleteByItem(String code);
     }
 
 }
