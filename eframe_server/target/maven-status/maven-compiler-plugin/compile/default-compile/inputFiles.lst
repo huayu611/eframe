@@ -41,15 +41,19 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\ExecuteLogic.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\FlowConstant.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\addparameter\AddParameterBusiness.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\delete\DeleteParameterResponse.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\valid\impl\EframeRequired.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\util\MapUtils.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\modify\ModifyParameterRequest.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\valid\impl\EframeBeansProcess.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\service\exception\ExceptionInternationalReader.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\valid\impl\EframeDefaultStringValue.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\mvc\token\TokenConfig.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\config\EFrameRestfulAuthenticationEntryPoint.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request\DeleteRoleRequest.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\listener\StartIFP.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\util\CollectionExecute.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\query\QueryParameterBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\listener\start\Start.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\bo\Role.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\cache\impl\StaffCacheImpl.java
@@ -83,6 +87,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\util\MapExecute.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\dict\flow\QueryDictBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\cache\frame\AbstractFrameCache.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\common\ParameterResponse.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\single\bo\RoleDetail.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\service\exception\ExceptionConfigurature.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\mvc\token\instance\TokenInstance.java
@@ -107,6 +112,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\properties\PropertiesLoadService.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\role\AddRoleBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\staff\QueryStaffByCodeBusiness.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\i18n\property\InternationalReader.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\menu\service\impl\MenuServiceImpl.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\cache\frame\DefaultIndex.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\atom\RoleAtom.java
@@ -115,6 +121,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\Flow.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request\AddPermissionRequest.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\request\DeletePermissionRequest.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\delete\DeleteParameterBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\single\bo\StaffDetail.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\service\impl\ParameterCategoryServiceImpl.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\basic\StringUtils.java
@@ -229,9 +236,11 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\email\repository\EmailRepository.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\email\atom\impl\EmailAtomImpl.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\global\restful\current\QueryCurrentLoginResponse.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\modify\ModifyParameterBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\listener\ServletContextSave.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\flow\valid\impl\EframeMetaCheck.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\encrypt\MD5.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\flow\query\QueryParameterResponse.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\tool\encrypt\AESEncrypt.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\cache\CacheConfigurationExecute.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\CommonHelper.java
@@ -245,6 +254,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\securi
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\config\EFrameFilterInvocationSecurityMetadataSource.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\constant\SecurityConstant.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\i18n\table\service\LangService.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\dict\reader\DictInternationalReader.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\role\ModifyRoleBusiness.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\common\email\cache\impl\EmailCacheImpl.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\response\QueryRoleResponse.java
@@ -312,6 +322,7 @@ D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\cache\
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\listener\start\StartUpConfiguration.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\service\exception\restful\TokenExpireAuthenticationException.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\flow\staff\RestPasswordBusiness.java
+D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\config\table\service\ParameterDetail.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\cache\RolePermissionCache.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\log\presist\logic\LogRecordLogic.java
 D:\source\code\eframe\eframe_server\src\main\java\com\huayu\eframe\server\security\service\cache\impl\PermissionCacheImpl.java

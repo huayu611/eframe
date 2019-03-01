@@ -1,11 +1,11 @@
-package com.huayu.eframe.server.config.table.flow.addparameter;
+package com.huayu.eframe.server.config.table.flow.modify;
 
-import com.huayu.eframe.server.common.i18n.table.bo.Languages;
-import com.huayu.eframe.server.config.table.common.Category;
-import com.huayu.eframe.server.config.table.common.Description;
 import com.huayu.eframe.server.flow.annotation.EFrameRequest;
 
-public class AddParameterRequest
+/**
+ * Created by Leo on 2019/3/1.
+ */
+public class ModifyParameterRequest
 {
     @EFrameRequest(required = true)
     private String parameterCode;
@@ -13,7 +13,6 @@ public class AddParameterRequest
     @EFrameRequest(required = true)
     private String parameterValue;
 
-    @EFrameRequest(required = true)
     private String parameterName;
 
     public String getParameterCode()

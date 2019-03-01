@@ -10,6 +10,7 @@ import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,7 +39,8 @@ public class ParameterCacheImpl extends AbstractFrameCache<Parameter> implements
     @Override
     public List<Parameter> load()
     {
-        return parameterService.getAllParameter();
+//        return parameterService.getAllParameter();
+        return new ArrayList<>();
     }
 
     @Override

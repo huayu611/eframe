@@ -1,5 +1,7 @@
 package com.huayu.eframe.server.common;
 
+import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 
@@ -13,6 +15,7 @@ import java.util.Properties;
  */
 public abstract  class PropertiesReader implements InitializingBean
 {
+    private static final LogDebug debug = new LogDebug(PropertiesReader.class);
 
     private Map<Object,Object> systemMap;
 
@@ -36,10 +39,12 @@ public abstract  class PropertiesReader implements InitializingBean
 
         for (Resource res : requestResource)
         {
+
             try
             {
                 if (null != res)
                 {
+
                     Properties properties = new Properties();
                     properties.load(res.getInputStream());
                     systemMap.putAll(properties);

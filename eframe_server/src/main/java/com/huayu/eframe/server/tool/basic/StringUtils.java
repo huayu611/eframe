@@ -200,4 +200,14 @@ public class StringUtils
         return value.substring(0,length);
     }
 
+    public static String removeLastString(String value,String remove)
+    {
+        if(isNotNullAndEmpty(value) && value.endsWith(remove))
+        {
+           int pos = value.lastIndexOf(remove);
+           return value.substring(0,pos);
+        }
+        return value;
+    }
+
 }

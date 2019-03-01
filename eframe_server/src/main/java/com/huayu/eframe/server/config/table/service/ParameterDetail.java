@@ -1,19 +1,17 @@
-package com.huayu.eframe.server.config.table.flow.addparameter;
+package com.huayu.eframe.server.config.table.service;
 
-import com.huayu.eframe.server.common.i18n.table.bo.Languages;
-import com.huayu.eframe.server.config.table.common.Category;
-import com.huayu.eframe.server.config.table.common.Description;
-import com.huayu.eframe.server.flow.annotation.EFrameRequest;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class AddParameterRequest
+/**
+ * Created by Leo on 2019/2/28.
+ */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class ParameterDetail
 {
-    @EFrameRequest(required = true)
     private String parameterCode;
 
-    @EFrameRequest(required = true)
     private String parameterValue;
 
-    @EFrameRequest(required = true)
     private String parameterName;
 
     public String getParameterCode()

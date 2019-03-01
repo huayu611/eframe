@@ -4,6 +4,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 /**
  * Created by Leo on 2018/9/25.
@@ -12,10 +13,11 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 public class ExceptionConfigurature
 {
     @Bean("ExceptionMessageResource")
-    public MessageSource getExceptionResource()
+    public MessageSource getExceptionResource(ExceptionInternationalReader exceptionInternationalReader)
     {
         ReloadableResourceBundleMessageSource surce =  new ReloadableResourceBundleMessageSource();
-        surce.setBasename("classpath:META-INF/exception/*_eframe_exception");
+
+        surce.setBasenames(exceptionInternationalReader.getAllResource());
         surce.setDefaultEncoding("UTF-8");
         return surce;
     }

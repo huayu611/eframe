@@ -9,10 +9,12 @@ public interface ParameterService
 
     Parameter getParameterByCode(String code);
 
-    List<Parameter> getAllParameter();
+    List<ParameterDetail> getAllParameter();
 
-    public Parameter updateParameter(Parameter parameter);
+    public ParameterDetail updateParameter(ParameterDetail parameter);
 
-    Parameter save(Parameter parameter);
+    ParameterDetail addParameter(ParameterDetail parameter);
+
+    String deleteParameter(String parameterCode);
 
 }

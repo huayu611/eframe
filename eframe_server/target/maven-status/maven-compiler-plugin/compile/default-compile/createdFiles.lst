@@ -14,6 +14,7 @@ com\huayu\eframe\server\mvc\token\TokenConfig.class
 com\huayu\eframe\server\listener\start\StartConfig.class
 com\huayu\eframe\server\common\email\atom\impl\EmailAtomImpl.class
 com\huayu\eframe\server\security\menu\flow\delmenu\DeleteMenuResponse.class
+com\huayu\eframe\server\config\table\flow\query\QueryParameterBusiness.class
 com\huayu\eframe\server\flow\valid\RestfulResultValid.class
 com\huayu\eframe\server\security\service\cache\impl\StaffCacheImpl.class
 com\huayu\eframe\server\common\email\cache\EmailCache.class
@@ -49,6 +50,7 @@ com\huayu\eframe\server\security\service\single\impl\RoleServiceImpl.class
 com\huayu\eframe\server\tool\util\MapExecute.class
 com\huayu\eframe\server\config\table\service\impl\ParameterCategoryServiceImpl.class
 com\huayu\eframe\server\common\CommonHelper.class
+com\huayu\eframe\server\config\table\flow\query\QueryParameterResponse.class
 com\huayu\eframe\server\log\presist\service\LogService.class
 com\huayu\eframe\server\service\exception\restful\TokenExpireAuthenticationException.class
 com\huayu\eframe\server\security\menu\flow\modmenu\ModifyMenuRequest.class
@@ -161,6 +163,7 @@ com\huayu\eframe\server\security\service\flow\staff\RestPasswordBusiness.class
 com\huayu\eframe\server\flow\restful\EffectiveExpireDateTime.class
 com\huayu\eframe\server\config\table\cache\impl\ParameterCacheImpl.class
 com\huayu\eframe\server\config\table\util\ParameterUtils.class
+com\huayu\eframe\server\config\table\flow\modify\ModifyParameterRequest.class
 com\huayu\eframe\server\cache\frame\CacheElement.class
 com\huayu\eframe\server\flow\AbstractExecuteBusiness.class
 com\huayu\eframe\server\security\service\single\bo\RoleDetail.class
@@ -227,7 +230,9 @@ com\huayu\eframe\server\security\service\atom\RoleAtom.class
 com\huayu\eframe\server\flow\restful\PagingRequest.class
 com\huayu\eframe\server\service\exception\restful\VersionNotRightException.class
 com\huayu\eframe\server\cache\CacheConfigurationExecute.class
+com\huayu\eframe\server\config\table\flow\common\ParameterResponse.class
 com\huayu\eframe\server\security\service\request\ModifyRoleRequest.class
+com\huayu\eframe\server\config\table\flow\delete\DeleteParameterBusiness.class
 com\huayu\eframe\server\flow\TransactionFlow.class
 com\huayu\eframe\server\security\service\atom\impl\RoleAtomImpl$2.class
 com\huayu\eframe\server\flow\valid\impl\EframeDefaultInteger.class
@@ -238,10 +243,12 @@ com\huayu\eframe\server\common\i18n\table\util\InternationalServiceFacade.class
 com\huayu\eframe\server\tool\basic\JSonUtils.class
 com\huayu\eframe\server\security\service\atom\StaffAtom.class
 com\huayu\eframe\server\common\i18n\table\bo\Languages.class
+com\huayu\eframe\server\config\table\flow\modify\ModifyParameterBusiness.class
 com\huayu\eframe\server\common\request\Properties.class
 com\huayu\eframe\server\security\service\flow\role\ModifyRoleBusiness.class
 com\huayu\eframe\server\global\restful\upload\UploadResponse.class
 com\huayu\eframe\server\security\service\repository\RoleStaffRepository.class
+com\huayu\eframe\server\config\table\flow\delete\DeleteParameterResponse.class
 com\huayu\eframe\server\security\service\atom\impl\RolePermissionAtomImpl.class
 com\huayu\eframe\server\config\table\service\impl\ParameterDescriptionServiceImpl.class
 com\huayu\eframe\server\common\email\service\impl\EmailServiceImpl.class
@@ -261,6 +268,7 @@ com\huayu\eframe\server\security\service\atom\impl\RoleStaffAtomImpl.class
 com\huayu\eframe\server\service\spring\BeanPool.class
 com\huayu\eframe\server\mvc\token\AbstractTokenMirror$CleanSession.class
 com\huayu\eframe\server\mvc\token\TokenFacade.class
+com\huayu\eframe\server\config\table\service\ParameterDetail.class
 com\huayu\eframe\server\listener\start\StartUpConfiguration.class
 com\huayu\eframe\server\cache\CacheProvider.class
 com\huayu\eframe\server\common\email\atom\EmailAtom.class
@@ -304,6 +312,7 @@ com\huayu\eframe\server\security\service\cache\impl\PermissionCacheImpl$Permissi
 com\huayu\eframe\server\flow\FlowConstant.class
 com\huayu\eframe\server\security\service\request\DeleteStaffRequest.class
 com\huayu\eframe\server\tool\util\CollectionUtils.class
+com\huayu\eframe\server\common\i18n\property\InternationalReader.class
 com\huayu\eframe\server\security\service\request\ModifyStaffInformationRequest.class
 com\huayu\eframe\server\security\service\atom\impl\RoleAtomImpl.class
 com\huayu\eframe\server\security\menu\flow\delmenu\DeleteMenuBusiness.class
@@ -321,11 +330,13 @@ com\huayu\eframe\server\security\service\cache\impl\PermissionCacheImpl$Permissi
 com\huayu\eframe\server\security\service\cache\impl\RoleCacheImpl.class
 com\huayu\eframe\server\common\i18n\table\cache\LangCache.class
 com\huayu\eframe\server\dict\DictionaryRestServer.class
+com\huayu\eframe\server\dict\reader\DictInternationalReader.class
 com\huayu\eframe\server\security\menu\flow\common\MenuResponse.class
 com\huayu\eframe\server\security\service\flow\permission\ModifyPermissionBusiness.class
 com\huayu\eframe\server\tool\basic\DateUtils.class
 com\huayu\eframe\server\listener\start\StartUpConfiguration$1.class
 com\huayu\eframe\server\security\menu\service\impl\MenuServiceImpl.class
+com\huayu\eframe\server\service\exception\ExceptionInternationalReader.class
 com\huayu\eframe\server\security\config\SecurityUtils.class
 com\huayu\eframe\server\flow\valid\impl\EframeRequired.class
 com\huayu\eframe\server\log\presist\service\impl\LogServiceImpl.class
