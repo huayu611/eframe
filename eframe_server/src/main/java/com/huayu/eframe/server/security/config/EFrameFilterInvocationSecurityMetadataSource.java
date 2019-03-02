@@ -1,23 +1,14 @@
 package com.huayu.eframe.server.security.config;
 
 import com.huayu.eframe.server.config.properties.SystemConfig;
-import com.huayu.eframe.server.flow.Flow;
 import com.huayu.eframe.server.flow.FlowConstant;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.mvc.handler.EasyParam;
-import com.huayu.eframe.server.mvc.handler.EasyParamCreation;
 import com.huayu.eframe.server.mvc.token.AuthView;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.mvc.token.TokenManager;
-import com.huayu.eframe.server.security.service.cache.PermissionCache;
-import com.huayu.eframe.server.security.service.constant.SecurityConstant;
-import com.huayu.eframe.server.security.service.flow.login.LoginBusiness;
-import com.huayu.eframe.server.security.service.flow.login.LoginResponse;
-import com.huayu.eframe.server.security.service.request.LoginRequest;
 import com.huayu.eframe.server.service.exception.restful.NoRightAuthenticationException;
 import com.huayu.eframe.server.service.exception.restful.VersionNotRightException;
 import com.huayu.eframe.server.tool.basic.StringUtils;
-import com.huayu.eframe.server.tool.encrypt.Encrypt;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
@@ -52,7 +43,8 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
     private static final String DO_NOT_NEED_VALID_VERSION_HEADER = "false";
 
     @Autowired
-    private PermissionCache permissionCache;
+    private WhiteRequestCheck whiteRequestCheck;
+
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException
@@ -165,47 +157,18 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
             }
             filterInvocation.getHttpRequest().setAttribute(FlowConstant.HTTP_TOKEN, tokenVale);
             return tokenVale;
-        } else if (StringUtils.equalStringNoCareUpperAndLower(flag, "Basic")) {
-            EasyParam easyParam = EasyParamCreation.createEasyParam(filterInvocation.getHttpRequest(), filterInvocation.getHttpResponse());
-            return getAuthTokenByHeaderStaffNameAndPassword(filterInvocation, auth, easyParam);
         }
+//        else if (StringUtils.equalStringNoCareUpperAndLower(flag, "Basic")) {
+//            EasyParam easyParam = EasyParamCreation.createEasyParam(filterInvocation.getHttpRequest(), filterInvocation.getHttpResponse());
+//            return getAuthTokenByHeaderStaffNameAndPassword(filterInvocation, auth, easyParam);
+//        }
         return null;
     }
 
-    private Token getAuthTokenByHeaderStaffNameAndPassword(FilterInvocation filterInvocation, String auth, EasyParam easyParam)
-    {
-        String authDecode = Encrypt.decodeBase64(auth);
-        String[] auths = authDecode.split(":");
-        if (auths.length < 2) {
-            return null;
-        }
-        Token token = loginInner(auths[0], auths[1], easyParam);
-        filterInvocation.getHttpRequest().setAttribute(FlowConstant.HTTP_TOKEN, token);
-        return token;
-
-    }
-
-    private Token loginInner(String loginName, String password, EasyParam easyParam)
-    {
-        LoginRequest loginRequest = new LoginRequest();
-        loginRequest.setLogin(loginName);
-        loginRequest.setPassword(password);
-        loginRequest.setType(SecurityConstant.LOGIN_TYPE.LOGIN_ONCE);
-        Object obj = Flow.execute(LoginBusiness.class, loginRequest, easyParam);
-
-
-        debug.log(obj);
-        if (obj instanceof LoginResponse) {
-            Token token = (Token) easyParam.getRequest().getAttribute(FlowConstant.HTTP_TOKEN);
-            debug.log(token);
-            return token;
-        }
-        return null;
-    }
 
     private boolean checkWhiteListUrl(HttpServletRequest request)
     {
-        return SecurityUtils.checkWhitePermission(permissionCache, request);
+        return whiteRequestCheck.checkRequest(request);
 
     }
 

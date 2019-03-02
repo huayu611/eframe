@@ -17,6 +17,7 @@
         <module>eframe_server</module>
         <module>eframe_feedback</module>
         <module>eframe_copinfo</module>
+        <module>eframe_management</module>
     </modules>
 
 

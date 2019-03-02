@@ -1,11 +1,9 @@
 package com.huayu.eframe.server.mvc.token;
 
 import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
-import com.huayu.eframe.server.security.service.constant.SecurityConstant;
 import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
@@ -23,6 +21,12 @@ import java.util.*;
  */
 public abstract class AbstractTokenMirror implements TokenMirror, InitializingBean
 {
+
+    public final static String LOGIN_REFRESH_EXPIRE_TIME = "0";
+
+    public final static String LOGIN_ONCE = "1";
+
+    public final static String LOGIN_FIX_EXPIRE_TIME = "2";
 
     public final static String LOCALE = "E_LOCALE";
 
@@ -95,7 +99,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
         String tokenBase64 = Encrypt.encodeBase64(tokenBuffer.toString());
         token.setToken(tokenBase64);
         token.setAllAuthView(loadAuthView(primary));
-        if (StringUtils.equalString(SecurityConstant.LOGIN_TYPE.LOGIN_ONCE, token.getType()))
+        if (StringUtils.equalString(LOGIN_ONCE, token.getType()))
         {
             return token;
         }
@@ -107,7 +111,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
 
     public void updateTokenExpireTime(Token token)
     {
-        if (StringUtils.equalString(SecurityConstant.LOGIN_TYPE.LOGIN_REFRESH_EXPIRE_TIME, token.getType()))
+        if (StringUtils.equalString(LOGIN_REFRESH_EXPIRE_TIME, token.getType()))
         {
             token.setExpireTime(DateUtils.modifySeconds(token.getExpireTime(), cycle()));
         }

@@ -1,8 +1,6 @@
 package com.huayu.eframe.server.security.config;
 
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.security.service.bo.Permission;
-import com.huayu.eframe.server.security.service.cache.PermissionCache;
 import com.huayu.eframe.server.service.exception.restful.NoRightAuthenticationException;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
@@ -28,7 +26,7 @@ public class EFrameAccessDecisionManager implements AccessDecisionManager
     private static final LogDebug debug = new LogDebug(EFrameAccessDecisionManager.class);
 
     @Autowired
-    private PermissionCache permissionCache;
+    private WhiteRequestCheck whiteRequestCheck;
 
     @Override
     public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> collection) throws AccessDeniedException, InsufficientAuthenticationException
@@ -41,10 +39,6 @@ public class EFrameAccessDecisionManager implements AccessDecisionManager
             debug.log("It's static resource");
             return;
         }
-        if (checkWhiteListUrl(filterInvocation.getRequest()))
-        {
-            return;
-        }
         if (CollectionUtils.isEmpty(collection))
         {
             throw new NoRightAuthenticationException("no right");
@@ -55,8 +49,11 @@ public class EFrameAccessDecisionManager implements AccessDecisionManager
         {
             if (attr instanceof EFrameConfigAttribute)
             {
-
                 EFrameConfigAttribute eframeAttr = (EFrameConfigAttribute) attr;
+                if(eframeAttr.isWhite())
+                {
+                    return;
+                }
                 String authView = eframeAttr.getAttribute();
                 debug.log(authView);
                 if (StringUtils.isNotNullAndEmpty(authView))
@@ -75,11 +72,6 @@ public class EFrameAccessDecisionManager implements AccessDecisionManager
         throw new NoRightAuthenticationException("no right");
     }
 
-    private boolean checkWhiteListUrl(HttpServletRequest request)
-    {
-        return SecurityUtils.checkWhitePermission(permissionCache, request);
-
-    }
 
     private boolean checkIsStatic(HttpServletRequest url)
     {

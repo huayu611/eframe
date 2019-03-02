@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eframe_copinfo" />
         <module name="eframe_feedback" />
+        <module name="eframe_management" />
         <module name="eframe_server" />
       </profile>
     </annotationProcessing>
