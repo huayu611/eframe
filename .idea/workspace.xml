@@ -7,179 +7,16 @@
     <list default="true" id="562a283c-fdf9-48ea-8bc7-3aad7cb50e73" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-config/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/service/FeedBackService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-flow/eframe_flow.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-flow/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-global/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-integration/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-integration/src/main/java/com/huayu/eframe/integration/boot/Start.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/eframe-menu/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/classes/META-INF/exception/eframe_exception_zh.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/classes/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/FeedBackRestfulServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/FeedBackRestfulServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/FeedBackAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/FeedBackAtom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/bo/FeedBackBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/bo/FeedBackBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/repository/FeedBackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/repository/FeedBackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/FeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/FeedBackRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/service/FeedBackService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/classes/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/dict/eframe_dict.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/dict/lang/eframe_dict.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/dict/lang/eframe_dict_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/dict/lang/eframe_dict_zh.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/eframe_common_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/config/eframe_common_config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/exception/eframe_exception.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/exception/eframe_exception_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/META-INF/service/eframe_server_common_service.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/boot/StartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/boot/StartApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/Cache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/Cache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheConfigurationExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheConfigurationExecute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/CacheProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/EFrameCacheManagerCustomizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/EFrameCacheManagerCustomizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/AbstractFrameCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/AbstractFrameCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/CacheElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/CacheElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/DefaultIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/DefaultIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/Index.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/cache/frame/Index.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/BusinessHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/BusinessHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/CommonHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/CommonHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/EFrameServerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/EFrameServerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/FramePaging.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/FramePaging.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/LanguageCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/LanguageCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/PropertiesReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/PropertiesReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/atom/EmailAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/atom/EmailAtom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/atom/impl/EmailAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/atom/impl/EmailAtomImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/bo/EmailBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/bo/EmailBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/EmailCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/EmailCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl$EmailCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl$EmailCodeIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/repository/EmailRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/repository/EmailRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/service/EmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/service/impl/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/email/service/impl/EmailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/LangAtom.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/LangAtom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/impl/LangAtomImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/impl/LangAtomImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Lang.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Lang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/LangValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/LangValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Languages.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Languages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/StandardLang.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/StandardLang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/LangCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/LangCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl$LangCodeIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl$LangCodeIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/repository/LangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/repository/LangRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/service/LangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/service/LangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/service/impl/LangServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/service/impl/LangServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/util/InternationalServiceFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/util/InternationalServiceFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/util/LangUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/i18n/table/util/LangUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/standard/StandardFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/standard/StandardFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/standard/ValidTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/common/standard/ValidTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/properties/PropertiesLoadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/properties/PropertiesLoadService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/properties/SystemConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/properties/SystemConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/rest/HttpErrorCodeMapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/rest/HttpErrorCodeMapping.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/rest/RestErrorCodeMappingFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/config/rest/RestErrorCodeMappingFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/context/LocalAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/context/LocalAttribute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/context/LocalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/context/LocalContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/IFPListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/IFPListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/ServletContextSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/ServletContextSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/StartIFP.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/StartIFP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/ListenerStartUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/ListenerStartUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/Stop.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/listener/start/Stop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/Debug.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/Debug.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/LogDebug.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/LogDebug.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/LogUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/log/LogUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/EframeWebMvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/EframeWebMvcConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParamCreation.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParamCreation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror$CleanSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror$CleanSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AuthView.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/AuthView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/DefaultTokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/DefaultTokenMirror.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/SessionToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/SessionToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenMirror.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenMirror.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/mvc/token/TokenObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameConfigAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameConfigAttribute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterSecurityInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterSecurityInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EframeWebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/security/config/EframeWebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ErrorCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ExceptionCacheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ExceptionCacheService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ExceptionConfigurature.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/ExceptionConfigurature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/IFPException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/IFPException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/ErrorCodeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/ErrorCodeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/NoRightAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/NoRightAuthenticationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenErrorAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenErrorAuthenticationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenExpireAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenExpireAuthenticationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/VersionNotRightException.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/exception/restful/VersionNotRightException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/persist/JpaTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/persist/JpaTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/BeanInpouring.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/BeanInpouring.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/BeanPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/BeanPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/SpringBootStartBeanPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/SpringBootStartBeanPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/SpringInitForServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/service/spring/SpringInitForServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ArrayUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ClassUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ClassUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/JSonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/JSonUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/Null.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/Null.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/NumberUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/NumberUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ObjectUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/ObjectUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/PropertiesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/PropertiesUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/RandomUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/RandomUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/StreamUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/StreamUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/XmlUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/basic/XmlUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/AESEncrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/AESEncrypt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/Encrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/Encrypt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/MD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/encrypt/MD5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/CollectionExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/CollectionExecute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/CollectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/CollectionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/Execute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/MapExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/MapExecute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/MapUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/com/huayu/eframe/server/tool/util/MapUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/target/classes/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/src/main/java/com/huayu/eframe/copinfo/boot/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/boot/StartApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/src/main/java/com/huayu/eframe/copinfo/server/CopRestfulServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/CopRestfulServer.java" afterDir="false" />
@@ -202,6 +39,16 @@
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/src/main/resources/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/resources/META-INF/exception/eframe_exception_zh.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_copinfo/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/META-INF/exception/eframe_exception.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/META-INF/exception/eframe_exception_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/eframe_copinfo-0.0.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_copinfo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_feedback/eframe_feedback.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/eframe-feedback.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_feedback/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/FeedBackRestfulServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/FeedBackRestfulServer.java" afterDir="false" />
@@ -219,6 +66,27 @@
       <change beforePath="$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/response/FeedBackResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/response/FeedBackResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/service/FeedBackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/service/FeedBackService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_feedback/src/main/java/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/FeedBackRestfulServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/FeedBackAtom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/bo/FeedBackBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/repository/FeedBackRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/FeedBackRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/response/FeedBackResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/FeedBackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/classes/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/eframe_feedback-0.0.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_feedback/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_management/src/main/java/com/huayu/eframe/management/AuthenticationRestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/AuthenticationRestServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_management/src/main/java/com/huayu/eframe/management/atom/PermissionAtom.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/atom/PermissionAtom.java" afterDir="false" />
@@ -312,6 +180,7 @@
       <change beforePath="$PROJECT_DIR$/eframe_management/src/main/java/com/huayu/eframe/management/single/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/RoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_management/src/main/java/com/huayu/eframe/management/single/impl/SecurityServiceImplUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/SecurityServiceImplUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_management/src/main/java/com/huayu/eframe/management/single/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/StaffServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/eframe_server.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/boot/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/boot/StartApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/cache/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/cache/Cache.java" afterDir="false" />
@@ -392,6 +261,7 @@
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/service/impl/ParameterCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/service/impl/ParameterCategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/service/impl/ParameterDescriptionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/service/impl/ParameterDescriptionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/service/impl/ParameterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/service/impl/ParameterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/table/util/ParameterUtils.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/config/util/ParameterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/util/ParameterUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/LocalAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/context/LocalAttribute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/java/com/huayu/eframe/server/context/LocalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/context/LocalContext.java" afterDir="false" />
@@ -562,8 +432,222 @@
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/META-INF/exception/eframe_exception_zh.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/META-INF/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/sensitive/sensitive_eframe.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/META-INF/sensitive/sensitive_eframe.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/META-INF/service/eframe_server_common_service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/META-INF/service/eframe_server_common_service.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eframe_server/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/eframe_dict.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/dict/lang/eframe_dict_zh.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/config/eframe_common_config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/exception/eframe_exception.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/exception/eframe_exception_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/exception/eframe_exception_zh.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/META-INF/service/eframe_server_common_service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/boot/StartApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/Cache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheConfigurationExecute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/CacheProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/EFrameCacheManagerCustomizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/AbstractFrameCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/CacheElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/DefaultIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/cache/frame/Index.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/BusinessHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/CommonHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/EFrameServerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/FramePaging.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/LanguageCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/PropertiesReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/StaticCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/EmailAtom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/atom/impl/EmailAtomImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/bo/EmailBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/EmailCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl$EmailCodeIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/cache/impl/EmailCacheImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/repository/EmailRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/EmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/email/service/impl/EmailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/LangAtom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/atom/impl/LangAtomImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Lang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/LangValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/Languages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/bo/StandardLang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/LangCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl$LangCodeIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/cache/impl/LangCacheImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/repository/LangRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/LangService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/service/impl/LangServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/InternationalServiceFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/i18n/table/util/LangUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/standard/StandardFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/common/standard/ValidTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/ParameterServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/PropertiesLoadService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/properties/SystemConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/HttpErrorCodeMapping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/rest/RestErrorCodeMappingFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/ParameterAtom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/atom/impl/ParameterAtomImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/Parameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/bo/ParameterDescription.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/ParameterCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl$ParameterCodeIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/cache/impl/ParameterCacheImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/common/Description.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/flow/addparameter/AddParameterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/repository/ParameterCategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/repository/ParameterDescriptionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/repository/ParameterRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterCategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterDescriptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/ParameterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterCategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterDescriptionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/service/impl/ParameterServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/table/util/ParameterUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/config/util/ParameterUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalAttribute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/context/LocalContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/DictionaryRestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/Dict.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/DictResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/flow/QueryDictBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictConfigurature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictLangService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/Dictionaries.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/dict/reader/DictionaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/AbstractExecuteBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/BusinessParameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/ExecuteLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/Flow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FlowConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/FrameCommonAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/TransactionFlow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/annotation/EFrameRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/EffectiveExpireDateTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PageObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/PagingResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/restful/RestfulResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/AbstractExecuteEFrameRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/EffExpValid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/RestfulResultValid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidAnnotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidBeanDefined.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/ValidProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/CommonBeanProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeanProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeBeansProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeCheckLength.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultLong.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeDefaultStringValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeEnumCheck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeMetaCheck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/flow/valid/impl/EframeRequired.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/GlobalRestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/global/restful/upload/UploadResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/IFPListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/ServletContextSave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/StartIFP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/ListenerStartUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/Start.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/StartUpConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/listener/start/Stop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/Debug.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/LogDebug.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/log/LogUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/EframeWebMvcConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/handler/EasyParamCreation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror$CleanSession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/AuthView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/DefaultTokenMirror.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/SessionToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenMirror.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/mvc/token/TokenObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameConfigAttribute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameFilterSecurityInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EFrameRestfulAuthenticationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/config/EframeWebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/bo/MenuTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/addmenu/AddMenuRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuBusiness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/flow/querymenu/QueryMenuResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/repository/MenuRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/MenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/security/menu/service/impl/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/ErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/ExceptionCacheService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/ExceptionConfigurature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/IFPException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/ErrorCodeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/NoRightAuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenErrorAuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/TokenExpireAuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/exception/restful/VersionNotRightException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/persist/JpaTransaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanInpouring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/BeanPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringBootStartBeanPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/service/spring/SpringInitForServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ArrayUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ClassUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/JSonUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/Null.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/NumberUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/ObjectUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/PropertiesUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/RandomUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StreamUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/StringUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/basic/XmlUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/constants/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/AESEncrypt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/Encrypt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/encrypt/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionExecute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/CollectionUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/Execute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapExecute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/com/huayu/eframe/server/tool/util/MapUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/eframe_server-0.0.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -706,7 +790,7 @@
         <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/dict/reader/DictInternationalReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="141">
-              <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
               <folding>
                 <element signature="e#685#686#0" expanded="true" />
                 <element signature="e#748#749#0" expanded="true" />
@@ -718,11 +802,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="448" column="47" lean-forward="true" selection-start-line="448" selection-start-column="47" selection-end-line="448" selection-end-column="47" />
+            <state relative-caret-position="-8766">
+              <caret line="57" column="47" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
               <folding>
-                <element signature="e#228358#228362#0" expanded="true" />
-                <element signature="e#228366#228370#0" expanded="true" />
+                <element signature="e#213240#213244#0" expanded="true" />
+                <element signature="e#213248#213252#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1184,7 +1268,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551516414505" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551516749952" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/eframe-integration/src/main/java/com/huayu/eframe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1559,7 +1643,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="575463000" />
+    <option name="totallyTimeSpent" value="575778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2126,7 +2210,7 @@
     <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/dict/reader/DictInternationalReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
-          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
           <folding>
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#748#749#0" expanded="true" />
@@ -2168,11 +2252,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="448" column="47" lean-forward="true" selection-start-line="448" selection-start-column="47" selection-end-line="448" selection-end-column="47" />
+        <state relative-caret-position="-8766">
+          <caret line="57" column="47" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
           <folding>
-            <element signature="e#228358#228362#0" expanded="true" />
-            <element signature="e#228366#228370#0" expanded="true" />
+            <element signature="e#213240#213244#0" expanded="true" />
+            <element signature="e#213248#213252#0" expanded="true" />
           </folding>
         </state>
       </provider>
