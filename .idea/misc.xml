@@ -13,6 +13,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/eframe_mui/pom.xml" />
+        <option value="$PROJECT_DIR$/eframe_server/eframe_config/pom.xml" />
       </set>
     </option>
   </component>

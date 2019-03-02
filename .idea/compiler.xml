@@ -6,14 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eframe_copinfo" />
-        <module name="eframe_feedback" />
-        <module name="eframe_management" />
-        <module name="eframe_server" />
+        <module name="eframe-config" />
+        <module name="eframe-copinfo" />
+        <module name="eframe-feedback" />
+        <module name="eframe-flow" />
+        <module name="eframe-global" />
+        <module name="eframe-integration" />
+        <module name="eframe-management" />
+        <module name="eframe-menu" />
+        <module name="eframe-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="eframe_mui" target="1.8" />
+      <module name="eframe_flow" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

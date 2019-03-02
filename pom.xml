@@ -14,10 +14,15 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>eframe_server</module>
-        <module>eframe_feedback</module>
-        <module>eframe_copinfo</module>
-        <module>eframe_management</module>
+        <module>eframe-server</module>
+        <module>eframe-feedback</module>
+        <module>eframe-copinfo</module>
+        <module>eframe-management</module>
+        <module>eframe-flow</module>
+        <module>eframe-config</module>
+        <module>eframe-global</module>
+        <module>eframe-menu</module>
+        <module>eframe-integration</module>
     </modules>
 
 
