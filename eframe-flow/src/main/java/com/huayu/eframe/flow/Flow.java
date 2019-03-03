@@ -98,10 +98,10 @@ public class Flow
             return;
         }
         response.setStatus(Integer.valueOf(httpCode));
-        response.addHeader("code",error.getCode());
-        String msg = HttpUtils.enccodeURL(error.getMsg());
-
-        response.addHeader("msg",msg);
+//        response.addHeader("code",error.getCode());
+//        String msg = HttpUtils.enccodeURL(error.getMsg());
+//
+//        response.addHeader("msg",msg);
         debug.log(response);
     }
 

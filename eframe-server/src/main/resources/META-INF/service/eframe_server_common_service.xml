@@ -15,43 +15,6 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
-
-
-	<!--<bean id="cacheManager"-->
-		<!--class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">-->
-	<!--</bean>-->
-	<!--<bean id="cacheMachine" class="org.springframework.cache.ehcache.EhCacheFactoryBean">-->
-		<!--<property name="cacheManager" ref="cacheManager" />-->
-
-	<!--</bean>-->
-
-	<!--<bean id="cacheProvider" class="com.huayu.eframe.server.cache.CacheProvider">-->
-
-	<!--</bean>-->
-
-	<!--<bean id="StartUpConfiguration" class="com.huayu.eframe.server.listener.start.StartUpConfiguration">-->
-		<!--<property name="resource">-->
-			<!--<list>-->
-				<!--<value>classpath*:META-INF/startup/*_startup.xml</value>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
-
-	<!--<bean id="ExceptionStartUp" class="com.huayu.eframe.server.service.exception.ExceptionStartUp">-->
-		<!--<property name="resource">-->
-			<!--<list>-->
-				<!--<value>classpath*:META-INF/exception/*_exception.xml</value>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
-
-	<!--<bean id="PropertiesService" class="com.huayu.eframe.server.config.properties.PropertiesLoadService">-->
-		<!--<property name="resource">-->
-			<!--<list>-->
-				<!--<value>classpath*:META-INF/config/*system.properties</value>-->
-			<!--</list>-->
-		<!--</property>-->
-	<!--</bean>-->
 </beans>
 
  
