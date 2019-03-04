@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.huayu.eframe</groupId>
-            <artifactId>eframe_flow</artifactId>
+            <artifactId>eframe-flow</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

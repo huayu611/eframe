@@ -2,8 +2,10 @@ package com.huayu.eframe.config.service.impl;
 
 import com.huayu.eframe.config.atom.ParameterAtom;
 import com.huayu.eframe.config.bo.Parameter;
+import com.huayu.eframe.config.cache.ParameterCache;
 import com.huayu.eframe.config.service.ParameterDetail;
 import com.huayu.eframe.config.service.ParameterService;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +48,7 @@ public class ParameterServiceImpl implements ParameterService
             parameter.setParameterName(parameterDetail.getParameterName());
         }
         Parameter newParameter = parameterAtom.update(parameter);
+        LocalAttribute.addNeedRefreshCache(ParameterCache.CACHE);
         return buildParameterDetail(newParameter);
     }
 
@@ -56,6 +59,7 @@ public class ParameterServiceImpl implements ParameterService
         if(null != parameter)
         {
             Parameter newParameter = parameterAtom.insert(parameter);
+            LocalAttribute.addNeedRefreshCache(ParameterCache.CACHE);
             return buildParameterDetail(newParameter);
         }
         return null;
@@ -68,6 +72,7 @@ public class ParameterServiceImpl implements ParameterService
         if(null != parameter)
         {
             parameterAtom.delete(parameter);
+            LocalAttribute.addNeedRefreshCache(ParameterCache.CACHE);
             return parameterCode;
         }
         return "";

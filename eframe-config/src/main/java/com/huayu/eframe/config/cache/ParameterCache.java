@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface ParameterCache
 {
+    String CACHE = "SYS_PARAMETER";
+
     String getParameterValue(String parameterCode);
 
     Parameter getParameterByParameterCode(String parameterCode);

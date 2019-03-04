@@ -1,5 +1,6 @@
 package com.huayu.eframe.config.cache.impl;
 
+import com.huayu.eframe.config.atom.ParameterAtom;
 import com.huayu.eframe.server.cache.frame.AbstractFrameCache;
 import com.huayu.eframe.server.cache.frame.DefaultIndex;
 import com.huayu.eframe.server.cache.frame.Index;
@@ -19,8 +20,9 @@ import java.util.List;
 @Service
 public class ParameterCacheImpl extends AbstractFrameCache<Parameter> implements ParameterCache
 {
+
     @Autowired
-    private ParameterService parameterService;
+    private ParameterAtom parameterAtom;
 
     public ParameterCacheImpl()
     {
@@ -39,14 +41,13 @@ public class ParameterCacheImpl extends AbstractFrameCache<Parameter> implements
     @Override
     public List<Parameter> load()
     {
-//        return parameterService.getAllParameter();
-        return new ArrayList<>();
+        return parameterAtom.getAll();
     }
 
     @Override
     public String cacheName()
     {
-        return "SYS_PARAMETER";
+        return ParameterCache.CACHE;
     }
 
     @Override

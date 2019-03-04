@@ -17,8 +17,5 @@
         <module name="eframe-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="eframe_flow" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
