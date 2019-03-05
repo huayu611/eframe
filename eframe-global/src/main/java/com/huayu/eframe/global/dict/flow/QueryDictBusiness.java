@@ -1,12 +1,12 @@
 package com.huayu.eframe.global.dict.flow;
 
-import com.huayu.eframe.server.common.CommonHelper;
-import com.huayu.eframe.server.context.LocalAttribute;
+import com.huayu.eframe.flow.AbstractExecuteBusiness;
+import com.huayu.eframe.flow.BusinessParameter;
 import com.huayu.eframe.global.dict.reader.DictDetail;
 import com.huayu.eframe.global.dict.reader.DictLangService;
 import com.huayu.eframe.global.dict.reader.DictionaryService;
-import com.huayu.eframe.flow.AbstractExecuteBusiness;
-import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.server.common.CommonHelper;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
@@ -35,7 +35,6 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
         String code = param.getRequest();
         List<DictDetail> result = dictionaryService.getDict(code);
 
-        DictResponse dictResponse = new DictResponse();
         List<Dict> dicts = new ArrayList<>();
         if(CollectionUtils.isNotEmpty(result))
         {
@@ -49,8 +48,8 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
                 dicts.add(dict);
             }
         }
-        dictResponse.setDicts(dicts);
-        param.addParameter(RESULT,dictResponse);
+
+        param.addParameter(RESULT,dicts);
     }
 
     private String buildDictName(DictDetail dic)

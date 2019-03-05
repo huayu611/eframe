@@ -1,5 +1,6 @@
 package com.huayu.eframe.global.multipart.upload;
 
+import com.huayu.eframe.global.multipart.MultipartUtil;
 import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
@@ -45,7 +46,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         String fileName = file.getOriginalFilename();
         String name = RandomUtils.getUUID() + fileName;
         debug.log(name);
-        String filePath = ConfigurationUtils.getDefaultUploadFilePath()+  "\\" + path ;
+        String filePath = MultipartUtil.getSystemPath()+  "\\" + path ;
 
         debug.log(filePath);
         File desFilePath = new File(filePath);

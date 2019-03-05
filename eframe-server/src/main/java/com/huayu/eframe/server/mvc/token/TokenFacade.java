@@ -34,7 +34,7 @@ public class TokenFacade
         TokenMirror mirror = tokenObserver.getTokenMirror(tokenClass);
         if(null == mirror)
         {
-            throw new IFPException(ErrorCode.TOKEN_ERROR,"Token Error , please contract administrators ");
+            throw new IFPException(ErrorCode.T0KEN_SESSION_INVALID,"Token Error , please contract administrators ");
         }
         return mirror;
     }

@@ -1,9 +1,9 @@
 package com.huayu.eframe.flow.valid.impl;
 
 import com.huayu.eframe.flow.annotation.EFrameRequest;
+import com.huayu.eframe.flow.constant.FlowErrorCode;
 import com.huayu.eframe.flow.valid.AbstractExecuteEFrameRequest;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.stereotype.Service;
@@ -26,7 +26,7 @@ public class EframeCheckLength extends AbstractExecuteEFrameRequest
         if( ef.length() < fieldLength)
         {
             String[] exceptionParam = new String[]{field.getName(),value,StringUtils.getString(fieldLength),StringUtils.getString(ef.length())};
-            throw new IFPException(ErrorCode.REQUEST_FIELD_LENGTH_REACH_MAX_LENGTH, "The field reach max length",exceptionParam);
+            throw new IFPException(FlowErrorCode.REQUEST_FIELD_LENGTH_REACH_MAX_LENGTH, "The field reach max length",exceptionParam);
         }
     }
 

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/feedback")
+@RequestMapping(value = "/eframe/feedback")
 public class FeedBackRestfulServer
 {
     @ResponseBody

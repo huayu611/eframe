@@ -1,16 +1,16 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.presist.constant.LogConstants;
+import com.huayu.eframe.flow.presist.logic.LogRecordLogic;
+import com.huayu.eframe.flow.valid.EffExpValid;
+import com.huayu.eframe.flow.valid.ValidAnnotation;
 import com.huayu.eframe.server.cache.CacheObserver;
 import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.common.FlowConstant;
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
-import com.huayu.eframe.flow.valid.EffExpValid;
-import com.huayu.eframe.flow.valid.ValidAnnotation;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.log.presist.constant.LogConstants;
-import com.huayu.eframe.server.log.presist.logic.LogRecordLogic;
 import com.huayu.eframe.server.service.exception.ExceptionCacheService;
 import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.NumberUtils;
@@ -46,7 +46,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     {
 
         recordLog(LogConstants.LOG_INIT_STATUS,param.getRequest());
-        init(param);
+        this.init(param);
 
         recordLog(LogConstants.LOG_RUNNING_STATUS);
         checkRequestField(param.getRequest());

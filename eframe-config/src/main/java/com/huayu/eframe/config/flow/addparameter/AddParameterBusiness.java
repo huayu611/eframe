@@ -41,10 +41,9 @@ public class AddParameterBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        ParameterResponse parameterResponse = new ParameterResponse();
-        ParameterDetail parameterDetail = param.getParameter(RESULT);
-        parameterResponse.setDetail(parameterDetail);
-        return parameterResponse;
+
+       return param.getParameter(RESULT);
+
     }
 
     private ParameterDetail buildParameterDetail(AddParameterRequest addParameterRequest)

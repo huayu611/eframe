@@ -5,16 +5,16 @@ import com.huayu.eframe.management.atom.RolePermissionAtom;
 import com.huayu.eframe.management.bo.Permission;
 import com.huayu.eframe.management.bo.RolePermission;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.single.PermissionService;
 import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.server.common.FramePaging;
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
@@ -65,18 +65,19 @@ public class PermissionServiceImpl implements PermissionService
     }
 
     @Override
-    public void deletePermissionByCode(String code)
+    public String deletePermissionByCode(String code)
     {
         Permission permission = getPermissionByCode(code);
         throwPermissionNotExistException(permission, code);
         permission.setExpireTime(LocalAttribute.getNow());
         permission.setLastUpdateTime(LocalAttribute.getNow());
         permission.setStatus(SecurityConstant.STATUS.DELETE);
-        permissionAtom.update(permission);
+        Permission newPermission = permissionAtom.update(permission);
 
 
         deleteRolePermissionByPermission(permission.getId());
         SecurityCacheFacade.refreshByLocalFlow();
+        return newPermission.getPermissionCode();
     }
 
     @Override
@@ -216,7 +217,7 @@ public class PermissionServiceImpl implements PermissionService
         Permission permission = getPermissionByCode(permissionCode);
         if (null != permission) {
             String[] paramArr = new String[]{permissionCode};
-            throw new IFPException(ErrorCode.ADD_PERMISSION_CODE_EXIST_ALREADY, "Permission exist already!", paramArr);
+            throw new IFPException(ManagementErrorCode.ADD_PERMISSION_CODE_EXIST_ALREADY, "Permission exist already!", paramArr);
         }
 
     }
@@ -244,7 +245,7 @@ public class PermissionServiceImpl implements PermissionService
         if (null == permission)
         {
             String[] exceptionParam = new String[]{permissionCode};
-            throw new IFPException(ErrorCode.P0ERMISSION_CODE_EXIST, "Role code not exist", exceptionParam);
+            throw new IFPException(ManagementErrorCode.P0ERMISSION_CODE_EXIST, "Role code not exist", exceptionParam);
         }
     }
 

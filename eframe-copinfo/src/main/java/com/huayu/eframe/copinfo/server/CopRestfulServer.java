@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/enterprise")
+@RequestMapping(value = "/eframe/enterprise")
 public class CopRestfulServer
 {
     @ResponseBody

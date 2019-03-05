@@ -1,9 +1,9 @@
 package com.huayu.eframe.management.flow.staff;
 
-import com.huayu.eframe.management.request.DeleteStaffRequest;
-import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.DeleteStaffRequest;
+import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,9 +56,8 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        DeleteStaffResponse roleResponse = new DeleteStaffResponse();
-        String result = param.getParameter(RESULT);
-        roleResponse.setLogins(result);
-        return roleResponse;
+
+       return param.getParameter(RESULT);
+
     }
 }

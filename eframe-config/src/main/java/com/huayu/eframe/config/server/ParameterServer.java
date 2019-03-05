@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Configuration
 @RestController
-@RequestMapping(value = "/setting")
+@RequestMapping(value = "/eframe/setting")
 public class ParameterServer
 {
     @ResponseBody

@@ -1,9 +1,9 @@
 package com.huayu.eframe.management.flow.role;
 
-import com.huayu.eframe.management.request.DeleteRoleRequest;
-import com.huayu.eframe.management.single.RoleService;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.DeleteRoleRequest;
+import com.huayu.eframe.management.single.RoleService;
 import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,9 +52,8 @@ public class DeleteRoleBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        DeleteRoleResponse roleResponse = new DeleteRoleResponse();
-        String result = param.getParameter(RESULT);
-        roleResponse.setRoles(result);
-        return roleResponse;
+        return param.getParameter(RESULT);
+
+
     }
 }

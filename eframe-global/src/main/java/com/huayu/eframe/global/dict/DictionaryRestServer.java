@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/dict")
+@RequestMapping(value = "/eframe/dict")
 public class DictionaryRestServer
 {
     @ResponseBody

@@ -9,17 +9,17 @@ import com.huayu.eframe.management.bo.Role;
 import com.huayu.eframe.management.bo.RolePermission;
 import com.huayu.eframe.management.bo.RoleStaff;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.single.RoleService;
 import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.server.common.FramePaging;
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
@@ -84,7 +84,7 @@ public class RoleServiceImpl implements RoleService
         if (null == role)
         {
             String[] exceptionParam = new String[]{roleCode};
-            throw new IFPException(ErrorCode.ROLE_ROLE_CODE_NOT_EXIST, "Role code not exist", exceptionParam);
+            throw new IFPException(ManagementErrorCode.ROLE_ROLE_CODE_NOT_EXIST, "Role code not exist", exceptionParam);
         }
 
         Date now = DateUtils.getCurrentDate();
@@ -105,7 +105,7 @@ public class RoleServiceImpl implements RoleService
         if (null == role)
         {
             String[] exceptionParam = new String[]{modifyRole.getCode()};
-            throw new IFPException(ErrorCode.ROLE_ROLE_CODE_NOT_EXIST, "Role code not exist", exceptionParam);
+            throw new IFPException(ManagementErrorCode.ROLE_ROLE_CODE_NOT_EXIST, "Role code not exist", exceptionParam);
         }
         if (StringUtils.isNotNullAndEmpty(modifyRole.getName()))
         {
@@ -233,7 +233,7 @@ public class RoleServiceImpl implements RoleService
             if (null == parentRole)
             {
                 String[] exceptionParam = {roleDetail.getParent()};
-                throw new IFPException(ErrorCode.ADD_ROLE_PARENT_ROLE_NOT_EXIST, "Parent role not exist!", exceptionParam);
+                throw new IFPException(ManagementErrorCode.ADD_ROLE_PARENT_ROLE_NOT_EXIST, "Parent role not exist!", exceptionParam);
             }
         }
         if (null != parentRole)

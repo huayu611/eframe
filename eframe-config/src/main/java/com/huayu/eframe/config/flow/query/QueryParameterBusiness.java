@@ -19,19 +19,19 @@ public class QueryParameterBusiness extends AbstractExecuteBusiness
 
     @Autowired
     private ParameterService parameterService;
+
     @Override
     public void execute(BusinessParameter param)
     {
         List<ParameterDetail> parameters = parameterService.getAllParameter();
-        param.addParameter(RESULT,parameters);
+        param.addParameter(RESULT, parameters);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        QueryParameterResponse queryParameterResponse = new QueryParameterResponse();
-        List<ParameterDetail> parameters = param.getParameter(RESULT);
-        queryParameterResponse.setParameters(parameters);
-        return queryParameterResponse;
+
+        return param.getParameter(RESULT);
+
     }
 }

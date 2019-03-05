@@ -1,13 +1,12 @@
 package com.huayu.eframe.management.flow.role;
 
-import com.huayu.eframe.management.request.AddRoleRequest;
-import com.huayu.eframe.management.response.RoleResponse;
-import com.huayu.eframe.management.single.RoleService;
-import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
+import com.huayu.eframe.management.request.AddRoleRequest;
+import com.huayu.eframe.management.single.RoleService;
+import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +34,7 @@ public class AddRoleBusiness extends AbstractExecuteBusiness
         if(null != roleDetail)
         {
             String[] exceptionParam = {request.getCode()};
-            throw new IFPException(ErrorCode.ADD_ROLE_ROLE_CODE_EXIST,"Role exists already!",exceptionParam);
+            throw new IFPException(ManagementErrorCode.ADD_ROLE_ROLE_CODE_EXIST,"Role exists already!",exceptionParam);
         }
     }
 
@@ -53,10 +52,8 @@ public class AddRoleBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        RoleDetail roleDetail = param.getParameter(RESULT);
-        RoleResponse roleResponse = new RoleResponse();
-        roleResponse.setRole(roleDetail);
-        return roleResponse;
+        return param.getParameter(RESULT);
+
     }
 
     private RoleDetail buildRoleDetail(AddRoleRequest request)

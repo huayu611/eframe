@@ -1,8 +1,8 @@
 package com.huayu.eframe.global.system.currentlogin;
 
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 import com.huayu.eframe.server.mvc.token.instance.TokenObjectMap;
@@ -37,8 +37,6 @@ public class QueryCurrentLoginBusiness extends AbstractExecuteBusiness
     protected Object tidyData(BusinessParameter param)
     {
        Object obj =  param.getParameter(RESULT);
-       QueryCurrentLoginResponse queryCurrentLoginResponse = new QueryCurrentLoginResponse();
-       queryCurrentLoginResponse.setDetail(obj);
-       return queryCurrentLoginResponse;
+       return obj;
     }
 }

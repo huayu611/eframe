@@ -40,10 +40,7 @@ public class ModifyCopBaseInfoBusiness  extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        CopBaseInfoDetail detail = param.getParameter(RESULT);
-        QueryCopInfoResponse queryCopInfoResponse = new QueryCopInfoResponse();
-        queryCopInfoResponse.setDetail(detail);
-        debug.log(queryCopInfoResponse);
-        return queryCopInfoResponse;
+        return param.getParameter(RESULT);
+
     }
 }

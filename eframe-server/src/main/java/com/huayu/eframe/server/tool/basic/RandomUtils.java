@@ -85,10 +85,6 @@ public class RandomUtils
 		return UUID.randomUUID().toString();
 	}
 
-	public static void main(String[] args)
-	{
-		System.out.println(getRandomCharString(10));
-	}
 
 	public static String getRandomNumberString(int pos)
 	{

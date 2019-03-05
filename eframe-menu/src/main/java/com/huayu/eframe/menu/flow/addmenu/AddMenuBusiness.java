@@ -36,10 +36,8 @@ public class AddMenuBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        MenuResponse menuResponse = new MenuResponse();
-        MenuDetail menuDetail = param.getParameter(RESULT);
-        menuResponse.setMenuDetail(menuDetail);
-        return menuResponse;
+        return  param.getParameter(RESULT);
+
     }
 
     private MenuDetail buildMenuDetail(AddMenuRequest request)

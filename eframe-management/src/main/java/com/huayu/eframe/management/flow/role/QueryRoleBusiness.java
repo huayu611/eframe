@@ -1,17 +1,14 @@
 package com.huayu.eframe.management.flow.role;
 
-import com.huayu.eframe.management.request.QueryRoleRequest;
-import com.huayu.eframe.management.response.QueryRoleListResponse;
-import com.huayu.eframe.management.single.RoleService;
-import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.QueryRoleRequest;
+import com.huayu.eframe.management.single.RoleService;
+import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Leo on 2018/10/2.
@@ -41,9 +38,9 @@ public class QueryRoleBusiness extends AbstractExecuteBusiness
         RoleDetail roleDetail = buildRoleDetail(request);
         PageObject pageObject = roleService.queryRoleByCondition(roleDetail,request.getPage());
 
-        QueryRoleListResponse response = new QueryRoleListResponse();
-        response.setRoles((List<RoleDetail>)pageObject.getResponse());
-        param.addParameter(RESULT, response);
+
+
+        param.addParameter(RESULT, pageObject.getResponse());
         param.addParameter(PAGE_OBJECT,pageObject);
     }
 
@@ -51,8 +48,7 @@ public class QueryRoleBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        QueryRoleListResponse response =  param.getParameter(RESULT);
-        return response;
+        return   param.getParameter(RESULT);
     }
 
     @Override

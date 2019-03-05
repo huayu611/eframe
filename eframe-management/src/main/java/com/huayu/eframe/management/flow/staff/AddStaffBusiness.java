@@ -1,13 +1,12 @@
 package com.huayu.eframe.management.flow.staff;
 
-import com.huayu.eframe.management.request.AddStaffRequest;
-import com.huayu.eframe.management.response.StaffResponse;
-import com.huayu.eframe.management.single.StaffService;
-import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
+import com.huayu.eframe.management.request.AddStaffRequest;
+import com.huayu.eframe.management.single.StaffService;
+import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +34,7 @@ public class AddStaffBusiness extends AbstractExecuteBusiness
         if (result)
         {
             String[] exceptionParam = new String[]{addStaff.getLogin()};
-            throw new IFPException(ErrorCode.ADD_STAFF_LOGIN_NAME_EXIST, "Login name exist already!", exceptionParam);
+            throw new IFPException(ManagementErrorCode.ADD_STAFF_LOGIN_NAME_EXIST, "Login name exist already!", exceptionParam);
         }
         debug.endLog();
     }
@@ -54,10 +53,8 @@ public class AddStaffBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        StaffDetail staff = param.getParameter(STAFF_DETAIL_INFO_LOGIN);
-        StaffResponse staffResponse = new StaffResponse();
-        staffResponse.setStaff(staff);
-        return staffResponse;
+        return  param.getParameter(STAFF_DETAIL_INFO_LOGIN);
+
     }
 
     private StaffDetail buildStaffDetail(AddStaffRequest addStaff)

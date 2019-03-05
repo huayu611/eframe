@@ -1,8 +1,9 @@
 package com.huayu.eframe.flow.valid.impl;
 
+import com.huayu.eframe.flow.constant.FlowErrorCode;
+import com.huayu.eframe.flow.valid.ValidBeanDefined;
 import com.huayu.eframe.server.common.LanguageCode;
 import com.huayu.eframe.server.context.LocalAttribute;
-import com.huayu.eframe.flow.valid.ValidBeanDefined;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
@@ -41,11 +42,11 @@ public class CommonBeanProcess
                 if (!LanguageCode.existLanguageCode(valueString))
                 {
 
-                    throw new IFPException(ErrorCode.LANG_CODE_INCORRECT, "Lang code incorrect", new String[]{valueString});
+                    throw new IFPException(FlowErrorCode.LANG_CODE_INCORRECT, "Lang code incorrect", new String[]{valueString});
                 }
                 return;
             }
-            throw new IFPException(ErrorCode.LANG_CODE_INCORRECT, "Lang code incorrect", new String[]{field.getName()});
+            throw new IFPException(FlowErrorCode.LANG_CODE_INCORRECT, "Lang code incorrect", new String[]{field.getName()});
         };
 
         return v;
@@ -74,7 +75,7 @@ public class CommonBeanProcess
                 }
             }
 
-            throw new IFPException(ErrorCode.EMAIL_FORMATTING_INCORRECT, "Email formatting incorrect", new String[]{field.getName()});
+            throw new IFPException(FlowErrorCode.EMAIL_FORMATTING_INCORRECT, "Email formatting incorrect", new String[]{field.getName()});
 
         };
         return v;

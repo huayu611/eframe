@@ -48,12 +48,9 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        QueryMenuResponse queryMenuResponse = new QueryMenuResponse();
         List<MenuDetail> menuResult = param.getParameter(RESULT_LIST);
-        queryMenuResponse.setMenus(menuResult);
         MenuDetail menuDetail = param.getParameter(RESULT_SINGLE);
-        queryMenuResponse.setMenu(menuDetail);
-        return queryMenuResponse;
+        return null == menuResult?  menuDetail : menuResult;
     }
 
 

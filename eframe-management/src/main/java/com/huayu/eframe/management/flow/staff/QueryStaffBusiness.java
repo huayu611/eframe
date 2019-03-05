@@ -1,18 +1,15 @@
 package com.huayu.eframe.management.flow.staff;
 
-import com.huayu.eframe.management.request.QueryStaffRequest;
-import com.huayu.eframe.management.response.QueryStaffResponse;
-import com.huayu.eframe.management.single.StaffService;
-import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.QueryStaffRequest;
+import com.huayu.eframe.management.single.StaffService;
+import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Leo on 2018/10/2.
@@ -44,9 +41,9 @@ public class QueryStaffBusiness extends AbstractExecuteBusiness
         StaffDetail staffDetail = buildStaffDetail(request);
         PageObject pageObject = staffService.queryStaffListByPage(staffDetail,page);
 
-        QueryStaffResponse response = new QueryStaffResponse();
-        response.setStaffs((List<StaffDetail>)pageObject.getResponse());
-        param.addParameter(RESULT, response);
+//        QueryStaffResponse response = new QueryStaffResponse();
+//        response.setStaffs((List<StaffDetail>)pageObject.getResponse());
+        param.addParameter(RESULT, pageObject.getResponse());
         param.addParameter(PAGE_OBJECT,pageObject);
     }
 
@@ -54,8 +51,7 @@ public class QueryStaffBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        QueryStaffResponse response =  param.getParameter(RESULT);
-        return response;
+        return  param.getParameter(RESULT);
     }
 
     @Override

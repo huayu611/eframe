@@ -1,13 +1,12 @@
 package com.huayu.eframe.management.flow.staff;
 
-import com.huayu.eframe.management.request.QueryStaffRequest;
-import com.huayu.eframe.management.response.QueryStaffByCodeResponse;
-import com.huayu.eframe.management.single.StaffService;
-import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
+import com.huayu.eframe.management.request.QueryStaffRequest;
+import com.huayu.eframe.management.single.StaffService;
+import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +31,11 @@ public class QueryStaffByCodeBusiness extends AbstractExecuteBusiness
     {
         QueryStaffRequest request = param.getRequest();
         String loginName = request.getLogin();
-        if(StringUtils.isNullOrEmpty(loginName))
+        if (StringUtils.isNullOrEmpty(loginName))
         {
-            throw new IFPException(ErrorCode.LOGINNAME_CANNOT_NULL,"Login name can not be null or empty!");
+            throw new IFPException(ManagementErrorCode.LOGINNAME_CANNOT_NULL, "Login name can not be null or empty!");
         }
     }
-
 
 
     @Override
@@ -50,21 +48,15 @@ public class QueryStaffByCodeBusiness extends AbstractExecuteBusiness
 
         StaffDetail details = staffService.queryStaffDetail(request.getLogin());
 
-        QueryStaffByCodeResponse response = new QueryStaffByCodeResponse();
-        response.setDetail(details);
-        param.addParameter(RESULT ,response);
-        debug.log(response);
-        debug.endLog();
+
+        param.addParameter(RESULT, details);
+
     }
 
     @Override
-    public Object getResult(BusinessParameter param)
+    public Object tidyData(BusinessParameter param)
     {
-        debug.beginLog();
-        QueryStaffByCodeResponse response =  param.getParameter(RESULT);
-        debug.log(response);
-        return  buildSuccessRestfulResponse(response);
-
+        return param.getParameter(RESULT);
     }
 
 }

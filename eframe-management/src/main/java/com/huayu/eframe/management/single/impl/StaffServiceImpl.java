@@ -7,17 +7,17 @@ import com.huayu.eframe.management.bo.Role;
 import com.huayu.eframe.management.bo.RoleStaff;
 import com.huayu.eframe.management.bo.Staff;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.common.FramePaging;
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
@@ -67,14 +67,14 @@ public class StaffServiceImpl implements StaffService
         if(CollectionUtils.isEmpty(staffList))
         {
             debug.log("Staffname or password wrong");
-            throw new IFPException(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
+            throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
         }
         Staff staff = getCurrentValidStaff(staffList);
 
         if(null == staff)
         {
             debug.log("Staffname or password wrong");
-            throw new IFPException(ErrorCode.LOGIN_NAME_STATUS_ERROR,"Staff status incorrect");
+            throw new IFPException(ManagementErrorCode.LOGIN_NAME_STATUS_ERROR,"Staff status incorrect");
         }
 
         String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt()+loginName);
@@ -87,7 +87,7 @@ public class StaffServiceImpl implements StaffService
             return getStaffDetail(staff);
         }
         debug.log("Staffname or password wrong");
-        throw new IFPException(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
+        throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
     }
 
     private Staff queryStaffByLoginName(String staffname)
@@ -188,7 +188,7 @@ public class StaffServiceImpl implements StaffService
         if (null == staff)
         {
             String[] exceptionParam = new String[]{loginName};
-            throw new IFPException(ErrorCode.STAFF_LOGIN_NAME_NOT_EXIST, "Login name not exist!", exceptionParam);
+            throw new IFPException(ManagementErrorCode.STAFF_LOGIN_NAME_NOT_EXIST, "Login name not exist!", exceptionParam);
         }
         return staff;
     }
@@ -478,7 +478,7 @@ public class StaffServiceImpl implements StaffService
                     continue;
                 }
                 roleListExistRoleId.add(role.getId());
-                if(roleIdListRequest.contains(role.getId()))
+                if(isExistInList(roleIdListRequest,role.getId()))
                 {
                     continue;
                 }
@@ -502,6 +502,22 @@ public class StaffServiceImpl implements StaffService
         debug.log(removeRoleStaffRelationList);
         addStaffRoleRelation(staff,addRoleStaffRelationList);
         removeRolePermissionRelation(staff,removeRoleStaffRelationList);
+    }
+
+    private boolean isExistInList(List<Role> roleIdListRequest ,Long roleId)
+    {
+        if(CollectionUtils.isEmpty(roleIdListRequest))
+        {
+            return false;
+        }
+        for(Role role : roleIdListRequest)
+        {
+            if(role.getId().longValue() == roleId.longValue())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private List<Role> getRoleIdList( String[] codeArr)

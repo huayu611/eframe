@@ -1,11 +1,10 @@
 package com.huayu.eframe.management.flow.permission;
 
-import com.huayu.eframe.management.request.ModifyPermissionRequest;
-import com.huayu.eframe.management.response.PermissionResponse;
-import com.huayu.eframe.management.single.PermissionService;
-import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.ModifyPermissionRequest;
+import com.huayu.eframe.management.single.PermissionService;
+import com.huayu.eframe.management.single.bo.PermissionDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,9 +32,8 @@ public class ModifyPermissionBusiness extends AbstractExecuteBusiness
     protected Object tidyData(BusinessParameter param)
     {
         PermissionDetail permissionDetail = param.getParameter(RESPONSE);
-        PermissionResponse permissionResponse = new PermissionResponse();
-        permissionResponse.setPermission(permissionDetail);
-        return permissionResponse;
+
+        return permissionDetail;
     }
 
     private PermissionDetail buildPermissionDetail(ModifyPermissionRequest request)

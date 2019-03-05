@@ -18,7 +18,7 @@ public interface PermissionService
 
     PermissionDetail addPermission(PermissionDetail addPermissionRequest);
 
-    void deletePermissionByCode(String code);
+    String deletePermissionByCode(String code);
 
     PermissionDetail updatePermission(PermissionDetail request);
 

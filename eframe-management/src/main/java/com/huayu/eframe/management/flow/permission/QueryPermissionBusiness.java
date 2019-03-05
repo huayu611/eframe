@@ -1,18 +1,15 @@
 package com.huayu.eframe.management.flow.permission;
 
-import com.huayu.eframe.management.request.QueryPermissionRequest;
-import com.huayu.eframe.management.response.QueryPermissionListResponse;
-import com.huayu.eframe.management.single.PermissionService;
-import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.QueryPermissionRequest;
+import com.huayu.eframe.management.single.PermissionService;
+import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Leo on 2018/10/3.
@@ -65,10 +62,7 @@ public class QueryPermissionBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        QueryPermissionListResponse response = new QueryPermissionListResponse();
-        List<PermissionDetail> permissionDetails =  param.getParameter(RESULT);
-        response.setPermissions(permissionDetails);
-        return response;
+        return   param.getParameter(RESULT);
     }
 
     @Override

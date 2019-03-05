@@ -1,5 +1,6 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.constant.FlowErrorCode;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
@@ -24,7 +25,7 @@ public class ExecuteLogic
         if(null == busniessInstance)
         {
             debug.errorLog("without service");
-            throw new IFPException(ErrorCode.SERVICE_NOT_EXIST,"ServiceBeanNotExist");
+            throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST, "ServiceBeanNotExist");
         }
         try
         {

@@ -1,26 +1,16 @@
 package com.huayu.eframe.management;
 
 
+import com.huayu.eframe.flow.Flow;
+import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.flow.login.LoginBusiness;
 import com.huayu.eframe.management.flow.permission.*;
 import com.huayu.eframe.management.flow.role.*;
 import com.huayu.eframe.management.flow.staff.*;
 import com.huayu.eframe.management.request.*;
-import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
-import com.huayu.eframe.global.system.log.flow.QueryOperatorLogBusiness;
-import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
-import com.huayu.eframe.menu.flow.addmenu.AddMenuBusiness;
-import com.huayu.eframe.menu.flow.addmenu.AddMenuRequest;
-import com.huayu.eframe.menu.flow.delmenu.DeleteMenuBusiness;
-import com.huayu.eframe.menu.flow.delmenu.DeleteMenuRequest;
-import com.huayu.eframe.menu.flow.modmenu.ModifyMenuBusiness;
-import com.huayu.eframe.menu.flow.modmenu.ModifyMenuRequest;
-import com.huayu.eframe.menu.flow.querymenu.QueryMenuBusiness;
-import com.huayu.eframe.menu.flow.querymenu.QueryMenuRequest;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.encrypt.Encrypt;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
@@ -29,7 +19,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,7 +26,7 @@ import java.util.List;
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/manage")
+@RequestMapping(value = "/eframe/manage")
 public class AuthenticationRestServer
 {
     @ResponseBody
@@ -166,15 +155,6 @@ public class AuthenticationRestServer
         return obj;
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/role/{roleCode}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryRoleByCode(@PathVariable String roleCode, EasyParam easyParam)
-    {
-        QueryRoleRequest queryRoleRequest = new QueryRoleRequest();
-        queryRoleRequest.setCode(roleCode);
-        Object obj = Flow.execute(QueryRoleByCodeBusiness.class, queryRoleRequest, easyParam);
-        return obj;
-    }
 
     @ResponseBody
     @RequestMapping(value = "/role", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -182,10 +162,12 @@ public class AuthenticationRestServer
             @RequestParam(name="size",required = false) Integer size,
             @RequestParam(name="page",required = false) Integer page,
             @RequestParam(name="name",required = false) String name,
+            @RequestParam(name="code",required = false) String code,
             EasyParam easyParam)
     {
         QueryRoleRequest queryRoleRequest = new QueryRoleRequest();
         queryRoleRequest.setName(name);
+        queryRoleRequest.setCode(code);
 
         PagingRequest pagingRequest = new PagingRequest();
         pagingRequest.setSize(size);
@@ -224,50 +206,6 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/menu", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object addMenu(@RequestBody AddMenuRequest request, EasyParam easyParam)
-    {
-        Object obj = Flow.execute(AddMenuBusiness.class, request, easyParam);
-        return obj;
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryMenu(EasyParam easyParam)
-    {
-        QueryMenuRequest request = new QueryMenuRequest();
-        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
-        return obj;
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/menu/{code}", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryMenuByCode(@PathVariable String code,EasyParam easyParam)
-    {
-        QueryMenuRequest request = new QueryMenuRequest();
-        request.setCode(code);
-        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
-        return obj;
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/menu", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object modifyMenu(@RequestBody ModifyMenuRequest request, EasyParam easyParam)
-    {
-        Object obj = Flow.execute(ModifyMenuBusiness.class, request, easyParam);
-        return obj;
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/menu/{menuCodes}", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object deleteMenu(@PathVariable String menuCodes, EasyParam easyParam)
-    {
-        DeleteMenuRequest deleteMenuRequest = new DeleteMenuRequest();
-        deleteMenuRequest.setCodes(menuCodes);
-        Object obj = Flow.execute(DeleteMenuBusiness.class, deleteMenuRequest, easyParam);
-        return obj;
-    }
-    @ResponseBody
     @RequestMapping(value = "/staff/password/{changeType}", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object changeLoginPassword(@RequestBody ModifyPasswordRequest request,@PathVariable String changeType, EasyParam easyParam)
     {
@@ -280,32 +218,7 @@ public class AuthenticationRestServer
         }
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/log", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryLog(
-            @RequestParam(name="size",required = false) Integer size,
-            @RequestParam(name="page",required = false) Integer page,
-            @RequestParam(name="operatorCode",required = false) String operatorCode,
-            @RequestParam(name="operatorType",required = false) String operatorType,
-            @RequestParam(name="url",required = false) String url,
-            @RequestParam(name="inTime",required = false) Date inTime,
-            @RequestParam(name="outTime",required = false) Date outTime,
-            EasyParam easyParam)
-    {
-        QueryOperatorLogRequest queryOperatorLogRequest = new QueryOperatorLogRequest();
-        queryOperatorLogRequest.setInTime(inTime);
-        queryOperatorLogRequest.setOutTime(outTime);
-        queryOperatorLogRequest.setOperatorCode(operatorCode);
-        queryOperatorLogRequest.setOperatorType(operatorType);
-        queryOperatorLogRequest.setUrl(url);
 
-        PagingRequest pagingRequest = new PagingRequest();
-        pagingRequest.setSize(size);
-        pagingRequest.setPage(page);
-        queryOperatorLogRequest.setPage(pagingRequest);
-        Object obj = Flow.execute(QueryOperatorLogBusiness.class, queryOperatorLogRequest, easyParam);
-        return obj;
-    }
 
     private RestfulResponse buildError(String code, String desc)
     {
@@ -323,17 +236,17 @@ public class AuthenticationRestServer
             List<String> authorizationList = headers.get("Authorization");
             if (CollectionUtils.isEmpty(authorizationList))
             {
-                return buildError(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
+                return buildError(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
             }
             String basic = StringUtils.getString(authorizationList.get(0));
             if (StringUtils.isNullOrEmpty(basic))
             {
-                return buildError(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
+                return buildError(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
             }
             String[] com = basic.split(" ");
             if (com.length < 2)
             {
-                return buildError(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
+                return buildError(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
             }
             if (StringUtils.equalStringNoCareUpperAndLower(com[0], "Basic"))
             {
@@ -341,7 +254,7 @@ public class AuthenticationRestServer
                 String[] auths = authDecode.split("\\:");
                 if (auths.length < 2)
                 {
-                    return buildError(ErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
+                    return buildError(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
                 }
                 LoginRequest logReq = new LoginRequest();
                 logReq.setLogin(auths[0]);

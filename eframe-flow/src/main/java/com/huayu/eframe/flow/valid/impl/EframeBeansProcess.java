@@ -1,12 +1,11 @@
 package com.huayu.eframe.flow.valid.impl;
 
 import com.huayu.eframe.flow.annotation.EFrameRequest;
+import com.huayu.eframe.flow.constant.FlowErrorCode;
 import com.huayu.eframe.flow.valid.AbstractExecuteEFrameRequest;
 import com.huayu.eframe.flow.valid.ValidBeanDefined;
-import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.service.spring.BeanPool;
-import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
@@ -26,7 +25,7 @@ public class EframeBeansProcess extends AbstractExecuteEFrameRequest
             ValidBeanDefined valid = BeanPool.getService(bean);
             if (null == valid)
             {
-                throw new IFPException(ErrorCode.SERVICE_NOT_EXIST, "ServiceBeanNotExist");
+                throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST, "ServiceBeanNotExist");
             }
             valid.process(field, field.get(request), request);
         }

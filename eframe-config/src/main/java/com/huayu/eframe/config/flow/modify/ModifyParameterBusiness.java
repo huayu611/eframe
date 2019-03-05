@@ -1,6 +1,5 @@
 package com.huayu.eframe.config.flow.modify;
 
-import com.huayu.eframe.config.flow.common.ParameterResponse;
 import com.huayu.eframe.config.service.ParameterDetail;
 import com.huayu.eframe.config.service.ParameterService;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
@@ -30,10 +29,8 @@ public class ModifyParameterBusiness  extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        ParameterDetail parameterDetail = param.getParameter(RESULT);
-        ParameterResponse parameterResponse = new ParameterResponse();
-        parameterResponse.setDetail(parameterDetail);
-        return parameterResponse;
+       return param.getParameter(RESULT);
+
     }
 
     private ParameterDetail buildParameterDetail(ModifyParameterRequest modifyParameterRequest)

@@ -142,32 +142,4 @@ public class XmlUtils
 		}
 	}
 
-	public static void main(String[] args)
-	{
-//		String path = "C:\\Staffs\\Administrator\\Desktop\\exception.xml";
-//		NodeList nodeList = XmlUtils.paraseXMLForNodeListByTagNameAndFileName(path,"exception");
-//
-//		for(int i = 0;i<nodeList.getLength();i++)
-//		{
-//
-//			Node item = nodeList.item(i);
-//			Node languageNode = item.getAttributes().getNamedItem("language");
-//			String language = languageNode.getNodeValue();
-//
-//			NodeList childNodeList = item.getChildNodes();
-//			for(int j = 0;j<childNodeList.getLength();j++)
-//			{
-//				Node childItem = childNodeList.item(j);
-//				System.out.println(childItem.getNodeName());
-//				System.out.println(childItem.getAttributes().getNamedItem("name").getNodeValue());
-//			}
-//		}
-		//		ExceptionStartUp exception =  new ExceptionStartUp();
-		//        System.out.print("start");
-		//		exception.setFile(new File("E:\\product\\idea\\eframe\\eframe_server\\src\\main\\resources\\META-INF\\exception\\ipf_common_exception.xml"));
-		//		exception.read();
-//		File file = new File("E:\\product\\idea\\eframe\\eframe_server\\src\\main\\resources\\META-INF\\exception\\ipf_common_exception.xml");
-//		XMLExceptionBOMapping mapping = XmlUtils.paraseXMLFiles(XMLExceptionBOMapping.class,file);
-//		System.out.print(mapping.getException().get(0).getSingleException().get(1).getErrorCode());
-	}
 }

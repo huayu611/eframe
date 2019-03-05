@@ -25,9 +25,6 @@ public class ConfigurationUtils
     private static final String SYSTEM_ENV_LANGUAGE = "sys_staff_lang_default";
     private static final String DEFAULT_SYSTEM_ENV_LANGUAGE = "zh";
 
-    private static final String SYSTEM_UPLOAGFILE = "sys_upload_file_path";
-    private static final String SYSTEM_UPLOAGFILE_DEFAULT = "/filesystem";
-
 
     public static String getDefaultHttpErrorStatus()
     {
@@ -59,12 +56,6 @@ public class ConfigurationUtils
             return new Locale(langConfig);
         }
         return new Locale(DEFAULT_SYSTEM_ENV_LANGUAGE);
-    }
-
-    public static String getDefaultUploadFilePath()
-    {
-        String path = SystemConfig.getValue(SYSTEM_UPLOAGFILE, SYSTEM_UPLOAGFILE_DEFAULT);
-        return path;
     }
 
 }

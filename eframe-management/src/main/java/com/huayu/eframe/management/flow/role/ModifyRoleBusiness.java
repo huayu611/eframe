@@ -1,11 +1,10 @@
 package com.huayu.eframe.management.flow.role;
 
-import com.huayu.eframe.management.request.ModifyRoleRequest;
-import com.huayu.eframe.management.response.RoleResponse;
-import com.huayu.eframe.management.single.RoleService;
-import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.ModifyRoleRequest;
+import com.huayu.eframe.management.single.RoleService;
+import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,10 +33,7 @@ public class ModifyRoleBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        RoleDetail roleDetail = param.getParameter(RESULT);
-        RoleResponse roleResponse = new RoleResponse();
-        roleResponse.setRole(roleDetail);
-        return roleResponse;
+        return param.getParameter(RESULT);
     }
 
     private RoleDetail buildRoleDetail(ModifyRoleRequest roleRequest)
