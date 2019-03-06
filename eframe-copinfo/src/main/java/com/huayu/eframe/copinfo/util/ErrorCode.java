@@ -5,5 +5,5 @@ package com.huayu.eframe.copinfo.util;
  */
 public interface ErrorCode
 {
-    String COP_INFO_EXIST = String.valueOf("2101");
+    String COP_INFO_EXIST = String.valueOf("14001");
 }

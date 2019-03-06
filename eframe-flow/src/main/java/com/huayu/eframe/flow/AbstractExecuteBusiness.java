@@ -6,7 +6,7 @@ import com.huayu.eframe.flow.valid.EffExpValid;
 import com.huayu.eframe.flow.valid.ValidAnnotation;
 import com.huayu.eframe.server.cache.CacheObserver;
 import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.server.common.FlowConstant;
+import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.context.LocalAttribute;
@@ -158,8 +158,8 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
         debug.log(locale);
         try {
-            resultCode = resultCode + "_ERRORDESC";
-            result = ExceptionCacheService.getErrorInfo(resultCode, null, LocalAttribute.getToken().getLocale());
+            resultCode = resultCode + ".ERRORDESC";
+            result = ExceptionCacheService.getErrorInfo(resultCode, null, locale);
         } catch (Exception e) {
             result = "Success!";
         }

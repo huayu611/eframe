@@ -1,14 +1,14 @@
 package com.huayu.eframe.flow.presist.logic.impl;
 
-import com.huayu.eframe.server.common.BusinessHelper;
-import com.huayu.eframe.server.common.FlowConstant;
-import com.huayu.eframe.server.common.sensitive.Sensitive;
-import com.huayu.eframe.server.context.LocalAttribute;
-import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.flow.common.FlowConstant;
+import com.huayu.eframe.flow.common.HttpUtils;
 import com.huayu.eframe.flow.presist.constant.LogConstants;
 import com.huayu.eframe.flow.presist.logic.LogRecordLogic;
 import com.huayu.eframe.flow.presist.service.LogDetail;
 import com.huayu.eframe.flow.presist.service.LogService;
+import com.huayu.eframe.server.common.sensitive.Sensitive;
+import com.huayu.eframe.server.context.LocalAttribute;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.tool.basic.*;
@@ -126,7 +126,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
         logDetail.setInMillion(now.getTime());
 
         //IP
-        String ip = BusinessHelper.getIpFromEasyParam(request);
+        String ip = HttpUtils.getIpFromEasyParam(request);
         logDetail.setRequestIp(ip);
         logDetail.setRequestParameter(getRequestParameter());
         buildOperatorInfo(logDetail);

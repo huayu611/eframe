@@ -1,11 +1,11 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.common.HttpUtils;
 import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.server.common.FlowConstant;
-import com.huayu.eframe.server.common.HttpUtils;
+import com.huayu.eframe.flow.common.FlowConstant;
+import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
 import com.huayu.eframe.server.context.LocalAttribute;
-import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.mvc.token.Token;
@@ -43,6 +43,10 @@ public class Flow
             if (e instanceof IFPException)
             {
                 Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
+                if(null == locale)
+                {
+                    locale = new Locale(HttpUtils.getBrowserLang());
+                }
                 debug.log(LocalAttribute.getToken());
                 error.setCode(((IFPException) e).getErrorCode());
                 error.setMsg(((IFPException) e).getErrorInfo(locale));

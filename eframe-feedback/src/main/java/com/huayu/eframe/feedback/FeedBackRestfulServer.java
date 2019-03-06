@@ -6,8 +6,8 @@ import com.huayu.eframe.feedback.flow.QueryFeedBackBusiness;
 import com.huayu.eframe.feedback.requset.DeleteFeedBackRequest;
 import com.huayu.eframe.feedback.requset.FeedBackRequest;
 import com.huayu.eframe.feedback.requset.QueryFeedBackRequest;
-import com.huayu.eframe.server.common.BusinessHelper;
 import com.huayu.eframe.flow.Flow;
+import com.huayu.eframe.flow.common.HttpUtils;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.tool.basic.NumberUtils;
@@ -27,7 +27,7 @@ public class FeedBackRestfulServer
     @RequestMapping(value = "/addFeedBack",method = RequestMethod.POST,consumes ={MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object addFeedBack(@RequestBody FeedBackRequest feedBackRequest,  EasyParam easyParam)
     {
-        String ip = BusinessHelper.getIpAddr(easyParam.getRequest());
+        String ip = HttpUtils.getIpAddr(easyParam.getRequest());
         feedBackRequest.setIp(ip);
         Object obj = Flow.execute(AddFeedBackBusiness.class,feedBackRequest,easyParam);
         return obj;

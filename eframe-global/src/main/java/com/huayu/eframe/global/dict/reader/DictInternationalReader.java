@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class DictInternationalReader extends InternationalReader
 {
-    //\META-INF\config\dict\lang
     @Value(value = "classpath*:/META-INF/config/dict/lang/*_dict.properties")
     private Resource[] resource;
     @Override

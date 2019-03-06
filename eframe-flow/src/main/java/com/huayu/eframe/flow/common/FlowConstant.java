@@ -1,4 +1,4 @@
-package com.huayu.eframe.server.common;
+package com.huayu.eframe.flow.common;
 
 /**
  * Created by Administrator on 2018/7/17.

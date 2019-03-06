@@ -9,7 +9,7 @@ import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.common.FlowConstant;
+import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.mvc.token.TokenManager;

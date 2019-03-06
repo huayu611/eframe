@@ -35,7 +35,7 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
-    @EFrameRequest(bean = "_e_validLang")
+    @EFrameRequest(defaultStrValue = "zh",bean = "_e_validLang" )
     private String lang;
 
     @EFrameRequest(bean = "_e_validEmail")

@@ -1,6 +1,5 @@
 package com.huayu.eframe.server.security.config;
 
-import com.huayu.eframe.server.common.HttpUtils;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.ErrorCode;
@@ -58,7 +57,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
         String result;
         try
         {
-            String resultCode = code + "_ERRORDESC";
+            String resultCode = code + ".ERRORDESC";
             result = ExceptionCacheService.getErrorInfo(resultCode, null, null);
 
         }
@@ -68,10 +67,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
         }
         error.setCode(code);
         error.setMsg(result);
-        response.addHeader("code",error.getCode());
-        String msg =  HttpUtils.enccodeURL(error.getMsg());
 
-        response.addHeader("msg",msg);
         String jsonResult = JSonUtils.coverToJson(error);
 
         debug.log(jsonResult);

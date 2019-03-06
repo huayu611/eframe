@@ -19,7 +19,7 @@ import java.io.*;
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/eframe/multipart-manager/")
+@RequestMapping(value = "/eframe/multipart-manager")
 public class MultipartRestServer
 {
 

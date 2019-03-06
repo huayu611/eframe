@@ -83,7 +83,7 @@ public class IFPException extends RuntimeException
 	public String toString()
 	{
 
-		String code = errorCode + "_SOLUTION";
+		String code = errorCode + ".SOLUTION";
 
 		String exec = null;
 
@@ -100,7 +100,7 @@ public class IFPException extends RuntimeException
 	public String getErrorInfo(Locale locale)
 	{
 
-		String code = errorCode + "_ERRORDESC";
+		String code = errorCode + ".ERRORDESC";
 
 		String exec = null;
 

@@ -1,19 +1,50 @@
-package com.huayu.eframe.server.common;
+package com.huayu.eframe.flow.common;
 
+import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
+import com.huayu.eframe.server.tool.basic.StringUtils;
+import com.huayu.eframe.server.tool.util.MapUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
- * Created by Leo on 2018/11/24.
+ * Created by Leo on 2019/3/6.
  */
-public class BusinessHelper
+public class HttpUtils
 {
+    private static final LogDebug debug = new LogDebug(HttpUtils.class);
 
-    private static final LogDebug debug = new LogDebug(BusinessHelper.class);
+    public static String getBrowserLang()
+    {
+        EasyParam easyParam =  LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
+        if(null == easyParam)
+        {
+            return "";
+        }
+
+        Map<String, String> header = easyParam.getRequestHeader();
+        if(MapUtils.isEmpty(header))
+        {
+            return "";
+        }
+        String acceptLanguage = header.get("accept-language");
+        if(StringUtils.isNullOrEmpty(acceptLanguage))
+        {
+            return "";
+        }
+        String[] langs = org.springframework.util.StringUtils.tokenizeToStringArray(acceptLanguage, Constant.MULTI_VALUE_ATTRIBUTE_DELIMITERS);
+        if(langs.length > 0)
+        {
+            return langs[0];
+        }
+        return "";
+    }
+
+
+
     // 返回用IP地址
     public  static String getIpAddr(HttpServletRequest request) {
         String ip = request.getHeader("x-forwarded-for");

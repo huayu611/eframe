@@ -16,7 +16,6 @@ public class ExceptionConfigurature
     public MessageSource getExceptionResource(ExceptionInternationalReader exceptionInternationalReader)
     {
         ReloadableResourceBundleMessageSource surce =  new ReloadableResourceBundleMessageSource();
-
         surce.setBasenames(exceptionInternationalReader.getAllResource());
         surce.setDefaultEncoding("UTF-8");
         return surce;
