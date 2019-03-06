@@ -12,6 +12,4 @@ public interface FlowConstant
 
     String EASY_SERVLET = "_HTTP_EASY_SERVLET";
 
-    String HTTP_TOKEN = "_INNER_TOKEN";
-
 }

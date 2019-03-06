@@ -6,6 +6,7 @@ import com.huayu.eframe.management.request.LoginRequest;
 import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.common.ConfigurationUtils;
+import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
@@ -97,7 +98,7 @@ public class LoginBusiness extends AbstractExecuteBusiness
         HttpServletRequest httpRequest = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
         if (null != httpRequest) {
             debug.log("Success set http token in servlet");
-            httpRequest.setAttribute(FlowConstant.HTTP_TOKEN, etk);
+            httpRequest.setAttribute(Constant.HTTP_TOKEN, etk);
         }
         LocalAttribute.addToken(etk);
     }

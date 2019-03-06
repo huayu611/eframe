@@ -3,6 +3,7 @@ package com.huayu.eframe.flow;
 import com.huayu.eframe.flow.common.HttpUtils;
 import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.flow.common.FlowConstant;
+import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
 import com.huayu.eframe.server.context.LocalAttribute;
@@ -73,7 +74,7 @@ public class Flow
 
         LocalAttribute.addValue(FlowConstant.EASY_SERVLET, easyParam);
 
-        Token token = (Token) easyParam.getRequest().getAttribute(FlowConstant.HTTP_TOKEN);
+        Token token = (Token) easyParam.getRequest().getAttribute(Constant.HTTP_TOKEN);
 
         LocalAttribute.addToken(token);
 

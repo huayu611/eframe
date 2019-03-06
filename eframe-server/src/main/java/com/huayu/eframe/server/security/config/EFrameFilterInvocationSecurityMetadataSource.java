@@ -1,6 +1,6 @@
 package com.huayu.eframe.server.security.config;
 
-import com.huayu.eframe.server.common.FlowConstant;
+import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.AuthView;
@@ -155,7 +155,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
             {
                 TokenManager.updateToken(tokenVale);
             }
-            filterInvocation.getHttpRequest().setAttribute(FlowConstant.HTTP_TOKEN, tokenVale);
+            filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN, tokenVale);
             return tokenVale;
         }
 //        else if (StringUtils.equalStringNoCareUpperAndLower(flag, "Basic")) {
