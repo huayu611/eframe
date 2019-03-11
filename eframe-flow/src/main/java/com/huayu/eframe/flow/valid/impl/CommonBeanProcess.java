@@ -144,4 +144,33 @@ public class CommonBeanProcess
         };
         return v;
     }
+
+    @Bean("_e_validPhoneNumber")
+    public ValidBeanDefined validPhoneNumber()
+    {
+        ValidBeanDefined v = (field, value, request) ->
+        {
+
+            String valueString = StringUtils.getString(value);
+            if (StringUtils.isNullOrEmpty(valueString))
+            {
+                return;
+            }
+
+            if (value instanceof String)
+            {
+
+                String pattern = "^(1)\\d{10}$";
+                boolean isMatch = Pattern.matches(pattern, valueString);
+                if (isMatch)
+                {
+                    return;
+                }
+            }
+
+            throw new IFPException(FlowErrorCode.MOBILE_NUMBER_FORMATTING_INCORRECT, "Mobile number formatting incorrect!", new String[]{field.getName()});
+
+        };
+        return v;
+    }
 }

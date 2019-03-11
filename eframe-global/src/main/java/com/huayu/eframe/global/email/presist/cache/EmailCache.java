@@ -1,6 +1,6 @@
-package com.huayu.eframe.server.common.email.cache;
+package com.huayu.eframe.global.email.presist.cache;
 
-import com.huayu.eframe.server.common.email.bo.EmailBO;
+import com.huayu.eframe.global.email.presist.bo.EmailBO;
 
 /**
  * Created by Leo on 2018/9/28.

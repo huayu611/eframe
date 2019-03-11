@@ -17,4 +17,6 @@ public interface FlowErrorCode
     String REQUEST_FIELD_LENGTH_REACH_MAX_LENGTH = String.valueOf("11005");
 
     String SERVICE_NOT_EXIST = String.valueOf("11006");
+
+    String MOBILE_NUMBER_FORMATTING_INCORRECT = String.valueOf("11007");
 }

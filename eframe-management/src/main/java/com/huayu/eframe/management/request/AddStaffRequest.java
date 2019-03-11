@@ -21,10 +21,11 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @EFrameRequest(required = true)
     private String login;
 
+    @EFrameRequest(bean = "_e_validPhoneNumber")
     private String tel;
 
     //0:正常用户，1：锁定用户，锁定用户不能登陆和使用系统
-    @EFrameRequest(enumValue = {SecurityConstant.STATUS.NORMAL,SecurityConstant.STATUS.LOCKED}, defaultStrValue = SecurityConstant.STATUS.NORMAL)
+   @EFrameRequest(bean = "_dictionary(staff_status)")
     private String status;
 
     @EFrameRequest(bean = "_e_defaultNow")

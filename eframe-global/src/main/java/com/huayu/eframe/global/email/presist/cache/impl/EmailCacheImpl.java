@@ -1,10 +1,10 @@
-package com.huayu.eframe.server.common.email.cache.impl;
+package com.huayu.eframe.global.email.presist.cache.impl;
 
 import com.huayu.eframe.server.cache.frame.AbstractFrameCache;
 import com.huayu.eframe.server.cache.frame.Index;
-import com.huayu.eframe.server.common.email.atom.EmailAtom;
-import com.huayu.eframe.server.common.email.bo.EmailBO;
-import com.huayu.eframe.server.common.email.cache.EmailCache;
+import com.huayu.eframe.global.email.presist.atom.EmailAtom;
+import com.huayu.eframe.global.email.presist.bo.EmailBO;
+import com.huayu.eframe.global.email.presist.cache.EmailCache;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
