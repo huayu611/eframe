@@ -5,4 +5,12 @@
         <value code="POP3" name="POP3"/>
         <value code="IMAP" name="IMAP"/>
     </dict>
+    <dict code="global-marital">
+        <value code="1" lang="COMMON_MARITAL_STATUS_NO"/>
+        <value code="2" lang="COMMON_MARITAL_STATUS_YES"/>
+    </dict>
+    <dict code="global-gender">
+        <value code="1" lang="COMMON_GENDER_MALE"/>
+        <value code="0" lang="COMMON_GENDER_FEMALE"/>
+    </dict>
 </dicts>

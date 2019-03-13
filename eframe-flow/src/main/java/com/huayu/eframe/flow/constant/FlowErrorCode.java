@@ -19,4 +19,6 @@ public interface FlowErrorCode
     String SERVICE_NOT_EXIST = String.valueOf("11006");
 
     String MOBILE_NUMBER_FORMATTING_INCORRECT = String.valueOf("11007");
+
+    String REQUEST_VALUE_NOT_SUIT_REQUIRE = String.valueOf("11008");
 }

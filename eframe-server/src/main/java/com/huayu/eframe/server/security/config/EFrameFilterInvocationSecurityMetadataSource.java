@@ -63,9 +63,9 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         String tokenPackage = StringUtils.getString(authorization);
 
         // && !StringUtils.equalString("/manage/Login", filterInvocation.getRequestUrl())
-        if (!isWhite && StringUtils.isNotNullAndEmpty(tokenPackage)) {
+        if (StringUtils.isNotNullAndEmpty(tokenPackage)) {
 
-            Token token = getLoginName(tokenPackage, filterInvocation);
+            Token token = getLoginName(tokenPackage, filterInvocation,isWhite);
             debug.log(token);
             Collection<ConfigAttribute> attr = null;
             if (null != token) {
@@ -141,7 +141,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         return true;
     }
 
-    private Token getLoginName(String tokenPackage, FilterInvocation filterInvocation)
+    private Token getLoginName(String tokenPackage, FilterInvocation filterInvocation,boolean isWhite)
     {
         String[] com = tokenPackage.split(" ");
         if (com.length < 2) {
@@ -150,13 +150,26 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         String flag = com[0];
         String auth = com[1];
         if (StringUtils.equalStringNoCareUpperAndLower(flag, "Bearer")) {
-            Token tokenVale = TokenManager.getToken(auth);
+            Token tokenVale = null;
+            try
+            {
+                tokenVale = TokenManager.getToken(auth);
+            }
+            catch(Exception e)
+            {
+                if(!isWhite)
+                {
+                    throw e;
+                }
+                debug.log("Token error and return null");
+            }
             if(null != tokenVale)
             {
                 TokenManager.updateToken(tokenVale);
+                filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN, tokenVale);
+                return tokenVale;
             }
-            filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN, tokenVale);
-            return tokenVale;
+
         }
 //        else if (StringUtils.equalStringNoCareUpperAndLower(flag, "Basic")) {
 //            EasyParam easyParam = EasyParamCreation.createEasyParam(filterInvocation.getHttpRequest(), filterInvocation.getHttpResponse());

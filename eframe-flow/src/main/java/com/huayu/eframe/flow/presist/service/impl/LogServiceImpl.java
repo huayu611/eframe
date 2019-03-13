@@ -168,7 +168,7 @@ public class LogServiceImpl implements LogService
         logDetail.setRequestParameter(logEntity.getRequestParameter());
         if (null != logEntity.getOperObjType() && null != logEntity.getOperObjId())
         {
-            TokenInstance tokenInstance = TokenUtils.getTokenInstance();
+            TokenInstance tokenInstance = TokenUtils.getTokenInstanceByName(logEntity.getOperObjType());
             if (null != tokenInstance)
             {
                 String code = tokenInstance.getInstanceCodeById(logEntity.getOperObjId());
@@ -179,6 +179,8 @@ public class LogServiceImpl implements LogService
 
         return logDetail;
     }
+
+
 
 
     private LogEntity getLogEntityByCode(String code)

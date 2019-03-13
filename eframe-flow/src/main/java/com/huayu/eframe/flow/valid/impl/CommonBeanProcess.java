@@ -2,12 +2,14 @@ package com.huayu.eframe.flow.valid.impl;
 
 import com.huayu.eframe.flow.constant.FlowErrorCode;
 import com.huayu.eframe.flow.valid.ValidBeanDefined;
+import com.huayu.eframe.flow.valid.ValidBeanParamDefined;
 import com.huayu.eframe.server.common.LanguageCode;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
+import com.huayu.eframe.server.tool.basic.RandomUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -169,6 +171,55 @@ public class CommonBeanProcess
             }
 
             throw new IFPException(FlowErrorCode.MOBILE_NUMBER_FORMATTING_INCORRECT, "Mobile number formatting incorrect!", new String[]{field.getName()});
+
+        };
+        return v;
+    }
+
+    @Bean("_e_set_random_value")
+    public ValidBeanParamDefined generateRandomId()
+    {
+        ValidBeanParamDefined v = (field, value, request,prefix) ->
+        {
+            String valueString = StringUtils.getString(value);
+            if (StringUtils.isNullOrEmpty(valueString))
+            {
+                String nowStr = prefix+ RandomUtils.getRandomUUID();
+                try
+                {
+                    field.set(request, nowStr);
+                }
+                catch (IllegalAccessException e)
+                {
+                    debug.log("Set default generate code fault");
+                }
+            }
+        };
+        return v;
+    }
+
+    @Bean("_e_expressions")
+    public ValidBeanParamDefined validRegString()
+    {
+        ValidBeanParamDefined v = (field, value, request,pattern) ->
+        {
+
+            String valueString = StringUtils.getString(value);
+            if (StringUtils.isNullOrEmpty(valueString))
+            {
+                return;
+            }
+
+            if (value instanceof String)
+            {
+                boolean isMatch = Pattern.matches(pattern, valueString);
+                if (isMatch)
+                {
+                    return;
+                }
+            }
+
+            throw new IFPException(FlowErrorCode.REQUEST_VALUE_NOT_SUIT_REQUIRE, "Mobile number formatting incorrect!", new String[]{pattern});
 
         };
         return v;

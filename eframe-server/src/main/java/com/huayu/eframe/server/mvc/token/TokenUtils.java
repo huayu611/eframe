@@ -33,4 +33,11 @@ public class TokenUtils
         }
         return instance;
     }
+
+    public static  TokenInstance getTokenInstanceByName(String name)
+    {
+        TokenObjectMap tokenObjectMap = BeanPool.getServiceByClass(TokenObjectMap.class);
+        TokenInstance instance = tokenObjectMap.getTokenInstance(name);
+        return instance;
+    }
 }

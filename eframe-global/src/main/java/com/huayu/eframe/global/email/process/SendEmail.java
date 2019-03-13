@@ -4,6 +4,7 @@ package com.huayu.eframe.global.email.process;
 
 import com.huayu.eframe.global.email.presist.bo.EmailBO;
 import com.huayu.eframe.global.email.presist.cache.EmailCache;
+import com.huayu.eframe.global.email.presist.common.EmailUtils;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,8 @@ public class SendEmail
         sender.setHost(email.getHost());
         sender.setPort(email.getPort());
         sender.setUsername(email.getEmailUserName());
-        sender.setPassword(email.getEmailPassword());
+
+        sender.setPassword(EmailUtils.decodePassword(email.getEmailPassword()));
         sender.setDefaultEncoding("Utf-8");
         Properties p = new Properties();
         p.setProperty("mail.smtp.timeout", StringUtils.getString(email.getTimeOut()));
