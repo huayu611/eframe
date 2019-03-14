@@ -28,6 +28,10 @@ public class EmailDetail
 
     private String name;
 
+    private String subject;
+
+    private String personal;
+
     public String getEmailCode()
     {
         return emailCode;
@@ -126,5 +130,25 @@ public class EmailDetail
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getSubject()
+    {
+        return subject;
+    }
+
+    public void setSubject(String subject)
+    {
+        this.subject = subject;
+    }
+
+    public String getPersonal()
+    {
+        return personal;
+    }
+
+    public void setPersonal(String personal)
+    {
+        this.personal = personal;
     }
 }

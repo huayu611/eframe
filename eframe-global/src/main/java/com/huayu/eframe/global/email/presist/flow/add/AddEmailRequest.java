@@ -36,6 +36,12 @@ public class AddEmailRequest
     @EFrameRequest(required = true)
     private String sender;
 
+    @EFrameRequest(required = true)
+    private String personal;
+
+    @EFrameRequest(required = true)
+    private String subject;
+
     public String getEmailCode()
     {
         return emailCode;
@@ -134,5 +140,25 @@ public class AddEmailRequest
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getPersonal()
+    {
+        return personal;
+    }
+
+    public void setPersonal(String personal)
+    {
+        this.personal = personal;
+    }
+
+    public String getSubject()
+    {
+        return subject;
+    }
+
+    public void setSubject(String subject)
+    {
+        this.subject = subject;
     }
 }

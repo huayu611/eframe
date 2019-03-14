@@ -45,6 +45,12 @@ public class EmailBO
     @Column(name="EMAIL_SENDER", length=125)
     private String emailSender;
 
+    @Column(name="PERSONAL", length=255)
+    private String personal;
+
+    @Column(name="SUBJECT", length=255)
+    private String subject;
+
     @Column(name="LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
@@ -242,5 +248,25 @@ public class EmailBO
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public String getPersonal()
+    {
+        return personal;
+    }
+
+    public void setPersonal(String personal)
+    {
+        this.personal = personal;
+    }
+
+    public String getSubject()
+    {
+        return subject;
+    }
+
+    public void setSubject(String subject)
+    {
+        this.subject = subject;
     }
 }

@@ -59,6 +59,8 @@ public class AddEmailBusiness  extends AbstractExecuteBusiness
         emailDetail.setEmailUserName(addEmailRequest.getEmailUserName());
         emailDetail.setTimeOut(addEmailRequest.getTimeOut());
         emailDetail.setName(addEmailRequest.getName());
+        emailDetail.setPersonal(addEmailRequest.getPersonal());
+        emailDetail.setSubject(addEmailRequest.getSubject());
         return emailDetail;
     }
 }

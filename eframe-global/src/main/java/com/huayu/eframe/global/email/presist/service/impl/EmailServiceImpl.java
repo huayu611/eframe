@@ -192,6 +192,14 @@ public class EmailServiceImpl implements EmailService
         {
             emailBO.setName(emailDetail.getName());
         }
+        if(null != emailDetail.getSubject())
+        {
+            emailBO.setSubject(emailDetail.getSubject());
+        }
+        if(null != emailDetail.getPersonal())
+        {
+            emailBO.setPersonal(emailDetail.getPersonal());
+        }
         return emailBO;
     }
 
@@ -243,6 +251,8 @@ public class EmailServiceImpl implements EmailService
         emailDetail.setEmailUserName(emailBO.getEmailUserName());
         emailDetail.setTimeOut(emailBO.getTimeOut());
         emailDetail.setName(emailBO.getName());
+        emailDetail.setPersonal(emailBO.getPersonal());
+        emailDetail.setSubject(emailBO.getSubject());
         return emailDetail;
     }
 }

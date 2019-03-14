@@ -29,6 +29,10 @@ public class ModifyEmailRequest
 
     private String sender;
 
+    private String subject;
+
+    private String personal;
+
 
     public String getEmailCode()
     {
@@ -128,5 +132,25 @@ public class ModifyEmailRequest
     public void setSender(String sender)
     {
         this.sender = sender;
+    }
+
+    public String getSubject()
+    {
+        return subject;
+    }
+
+    public void setSubject(String subject)
+    {
+        this.subject = subject;
+    }
+
+    public String getPersonal()
+    {
+        return personal;
+    }
+
+    public void setPersonal(String personal)
+    {
+        this.personal = personal;
     }
 }

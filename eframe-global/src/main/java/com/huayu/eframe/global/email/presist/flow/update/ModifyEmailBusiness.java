@@ -48,6 +48,8 @@ public class ModifyEmailBusiness extends AbstractExecuteBusiness
         emailDetail.setTimeOut(modifyEmailRequest.getTimeOut());
         emailDetail.setProtocol(modifyEmailRequest.getProtocol());
         emailDetail.setName(modifyEmailRequest.getName());
+        emailDetail.setPersonal(modifyEmailRequest.getPersonal());
+        emailDetail.setSubject(modifyEmailRequest.getSubject());
         return emailDetail;
     }
 }

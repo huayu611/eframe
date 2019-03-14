@@ -1,6 +1,6 @@
 package com.huayu.eframe.global.multipart;
 
-import com.huayu.eframe.config.util.ParameterUtil;
+import com.huayu.eframe.config.parameter.util.ParameterUtil;
 
 /**
  * Created by Leo on 2019/3/5.
