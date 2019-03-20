@@ -210,4 +210,17 @@ public class StringUtils
         return value;
     }
 
+    public static String cutLengthString(String value,int pos)
+    {
+        if(isNullOrEmpty(value))
+        {
+            return value;
+        }
+        int length = getLength(value);
+        if(length <= pos)
+        {
+            return value;
+        }
+        return value.substring(0,pos);
+    }
 }

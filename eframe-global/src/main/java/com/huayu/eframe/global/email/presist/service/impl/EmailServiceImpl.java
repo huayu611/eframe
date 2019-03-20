@@ -69,7 +69,7 @@ public class EmailServiceImpl implements EmailService
         {
             throw new IFPException(GlobalErrorCode.EMAIL_DELETING_FAILED,"Delete Email failed!");
         }
-
+        LocalAttribute.addNeedRefreshCache(EmailCache.CACHE_NAME);
         return newEmailBo.getEmailCode();
     }
 
