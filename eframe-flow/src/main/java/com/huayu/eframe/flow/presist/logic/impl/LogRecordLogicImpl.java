@@ -114,7 +114,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             String requestJson = JSonUtils.coverToJson(requestBody);
             String json = StringUtils.getStringByLength(requestJson, MAXLENGTH);
             String lastJson = sensitive.filterJsonSensitive(json);
-            logDetail.setRequest(lastJson);
+            logDetail.setRequest(StringUtils.getStringByLength(lastJson,2047));
         }
         logDetail.setCode(generateLogCode());
         logDetail.setKey(logDetail.getCode());
@@ -143,7 +143,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             return "{}";
         }
         String parameterJson = JSonUtils.coverToJson(requestHeader);
-        return parameterJson;
+        return StringUtils.cutLengthString(parameterJson,2047);
     }
 
     private String generateLogCode()
