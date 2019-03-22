@@ -4,6 +4,7 @@ import com.huayu.eframe.server.tool.basic.Null;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -39,4 +40,19 @@ public class CollectionUtils
         return isEmpty(coll) ? 0 : coll.size();
     }
 
+    public static <Type> void iterator(Collection<Type> coll,CollectionIteratorProcess<Type> process)
+    {
+        if(isEmpty(coll))
+        {
+            return;
+        }
+        Iterator<Type> iterator = coll.iterator();
+        int i = 0;
+        while(iterator.hasNext())
+        {
+            Type currentValue = iterator.next();
+            process.process(coll,currentValue,i);
+            i++;
+        }
+    }
 }

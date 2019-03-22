@@ -2,8 +2,7 @@ package com.huayu.eframe.server.tool.util;
 
 import com.huayu.eframe.server.tool.basic.Null;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class MapUtils
@@ -42,4 +41,21 @@ public class MapUtils
 		return null;
 	}
 
+	public static <Key,Value>  void iterator(Map<Key,Value> map, MapIteratorProcess<Key,Value> process)
+	{
+		if(isEmpty(map))
+		{
+			return;
+		}
+		Set<Map.Entry<Key, Value>> entrySet = map.entrySet();
+		Iterator<Map.Entry<Key, Value>> setIterator = entrySet.iterator();
+		while(setIterator.hasNext())
+		{
+			Map.Entry<Key, Value> next = setIterator.next();
+			Key key = next.getKey();
+			Value value = next.getValue();
+			process.process(map,key,value);
+		}
+	}
 }
+
