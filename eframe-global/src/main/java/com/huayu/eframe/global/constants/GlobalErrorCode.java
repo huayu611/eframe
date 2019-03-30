@@ -16,4 +16,12 @@ public interface GlobalErrorCode
     String EMAIL_NOT_EXIST_WHEN_DELETING = "15005";
 
     String EMAIL_DELETING_FAILED = "15006";
+
+    String UPLOAD_TYPE_NOT_EXIST = "15007";
+
+    String UPLOAD_FILE_IS_EMPTY = "15008";
+
+    String UPLOAD_FILE_TOO_LARGE = "15009";
+
+    String UPLOAD_FILE_SUFFIX_ERROR = "15010";
 }
