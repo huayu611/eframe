@@ -44,8 +44,8 @@ public class MultipartRestServer
                                 @PathVariable("fileName") String fileName,
                                 EasyParam easyParam)
     {
-        String fileNameInSystem = type + "\\" + fileName;
-        File file = new File(MultipartUtil.getSystemPath() + "\\" + fileNameInSystem);
+        String fileNameInSystem = type + File.separator + fileName;
+        File file = new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
         debug.log(file.exists());
         debug.log(file.getAbsolutePath());
         if (file.exists())

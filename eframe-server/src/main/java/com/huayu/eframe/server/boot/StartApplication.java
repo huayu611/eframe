@@ -16,10 +16,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.io.*;
-import java.util.Map;
-import java.util.Properties;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by Administrator on 2018/6/24.
@@ -45,6 +42,7 @@ public class StartApplication
 
     public static void start(String[] args)
     {
+        debug.info("start..........");
         readSystemProperty();
         resolvePassword();
         SpringApplication.run(StartApplication.class, args);
@@ -55,10 +53,11 @@ public class StartApplication
 
     public static void readSystemProperty()
     {
-        String proFilePath = System.getProperty("user.dir") + "\\eframe_system.properties";
+        String proFilePath = System.getProperty("user.dir") + File.separator + "config" +  File.separator +"eframe_system.properties";
         InputStream in = null;
         try
         {
+
             in = new BufferedInputStream(new FileInputStream(proFilePath));
             System.getProperties().load(in);
         }
@@ -74,18 +73,20 @@ public class StartApplication
 
     public static void resolvePassword()
     {
-        String password = System.getProperty("mysql.password");
-        String value = password;
-        try
+        List<String> sensitiveString = getSensitiveList();
+        for(String sens : sensitiveString)
         {
-             value = AESEncrypt.aesEcbDecode(password, KEY);
+            String sensValue = System.getProperty(sens);
+            String value = AESEncrypt.aesEcbDecode(sensValue, KEY);
+            System.setProperty(sens,value);
         }
-        catch (Exception e)
-        {
-            return;
-        }
-        System.setProperty("mysql.password",value);
     }
 
+    private static List<String> getSensitiveList()
+    {
+        List<String> result = new ArrayList<>();
+        result.add("mysql.password");
+        return result;
+    }
 
 }

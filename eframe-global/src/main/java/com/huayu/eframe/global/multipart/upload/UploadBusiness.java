@@ -85,7 +85,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         String fileName = file.getOriginalFilename();
         String name = RandomUtils.getUUID() + fileName;
         debug.log(name);
-        String filePath = MultipartUtil.getSystemPath()+  "\\" + path ;
+        String filePath = MultipartUtil.getSystemPath()+  File.separator + path ;
 
         debug.log(filePath);
         File desFilePath = new File(filePath);
@@ -93,7 +93,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         {
             desFilePath.mkdirs();
         }
-        File desFile = new File(filePath + "\\" + name);
+        File desFile = new File(filePath + File.separator + name);
         try
         {
             file.transferTo(desFile);
