@@ -9,6 +9,8 @@ public class UploadResponse
 
     private String type;
 
+    private String fullPath;
+
     public String getName()
     {
         return name;
@@ -27,5 +29,15 @@ public class UploadResponse
     public void setType(String type)
     {
         this.type = type;
+    }
+
+    public String getFullPath()
+    {
+        return fullPath;
+    }
+
+    public void setFullPath(String fullPath)
+    {
+        this.fullPath = fullPath;
     }
 }

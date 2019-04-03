@@ -54,7 +54,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         {
             throw new IFPException(GlobalErrorCode.UPLOAD_FILE_TOO_LARGE,"file is too large");
         }
-
+        validFileSuffix(upload,file);
         param.addParameter(UPLOAD_RULER,upload);
     }
 
@@ -77,6 +77,10 @@ public class UploadBusiness extends AbstractExecuteBusiness
         String result = param.getParameter(RESULT);
         uploadResponse.setName(result);
         uploadResponse.setType(uploadRequest.getType());
+
+        UploadRuler upload = param.getParameter(UPLOAD_RULER);
+        String res = upload.downLoadPath()  + uploadRequest.getType() + "/" + result;
+        uploadResponse.setFullPath(res);
         return uploadResponse;
     }
 
