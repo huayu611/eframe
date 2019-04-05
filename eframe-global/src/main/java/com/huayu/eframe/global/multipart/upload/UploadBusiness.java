@@ -36,6 +36,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
     @Override
     public void before(BusinessParameter param)
     {
+        debug.log("before and valid");
         UploadRequest uploadRequest = param.getRequest();
         String type = uploadRequest.getType();
         UploadRuler upload = uploadRulerExecute.getUploadRuler(type);
@@ -56,6 +57,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         }
         validFileSuffix(upload,file);
         param.addParameter(UPLOAD_RULER,upload);
+        debug.log("finish valid");
     }
 
     @Override

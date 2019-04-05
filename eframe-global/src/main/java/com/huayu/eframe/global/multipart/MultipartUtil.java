@@ -9,7 +9,7 @@ import com.huayu.eframe.config.parameter.util.ParameterUtil;
 public class MultipartUtil
 {
     private final static String SYSTEM_FILE_UPLOAD_PATH_CODE = "FileSystemPath";
-    private final static String SYSTEM_FILE_UPLOAD_PATH_CODE_DEFAULT = "filesystem";
+    private final static String SYSTEM_FILE_UPLOAD_PATH_CODE_DEFAULT = "/filesystem";
 
     public static String getSystemPath()
     {
