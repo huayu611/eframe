@@ -24,4 +24,5 @@ public interface GlobalErrorCode
     String UPLOAD_FILE_TOO_LARGE = "15009";
 
     String UPLOAD_FILE_SUFFIX_ERROR = "15010";
+
 }

@@ -41,8 +41,7 @@ public class QueryStaffBusiness extends AbstractExecuteBusiness
         StaffDetail staffDetail = buildStaffDetail(request);
         PageObject pageObject = staffService.queryStaffListByPage(staffDetail,page);
 
-//        QueryStaffResponse response = new QueryStaffResponse();
-//        response.setStaffs((List<StaffDetail>)pageObject.getResponse());
+
         param.addParameter(RESULT, pageObject.getResponse());
         param.addParameter(PAGE_OBJECT,pageObject);
     }

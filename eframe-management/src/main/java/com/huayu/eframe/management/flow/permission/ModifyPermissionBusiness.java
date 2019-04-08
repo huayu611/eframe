@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by Leo on 2018/10/1.
  */
-@Service("ModifyPermissionBusiness")
+@Service("com.huayu.eframe.management.flow.permission.ModifyPermissionBusiness")
 public class ModifyPermissionBusiness extends AbstractExecuteBusiness
 {
     private static final String RESPONSE = "AddPermissionBusiness_Response";

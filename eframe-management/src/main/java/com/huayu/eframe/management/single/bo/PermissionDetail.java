@@ -25,10 +25,8 @@ public class PermissionDetail
 
     private String white;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date eff;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
     public String getUrl()

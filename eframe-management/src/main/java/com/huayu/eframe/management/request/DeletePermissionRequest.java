@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class DeletePermissionRequest
 {
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 512)
     private String code;
 
     public String getCode()

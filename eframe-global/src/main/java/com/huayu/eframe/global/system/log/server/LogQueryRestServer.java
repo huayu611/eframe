@@ -29,6 +29,7 @@ public class LogQueryRestServer
             @RequestParam(name="url",required = false) String url,
             @RequestParam(name="inTime",required = false) Date inTime,
             @RequestParam(name="outTime",required = false) Date outTime,
+            @RequestParam(name="method",required = false) String method,
             EasyParam easyParam)
     {
         QueryOperatorLogRequest queryOperatorLogRequest = new QueryOperatorLogRequest();
@@ -37,6 +38,7 @@ public class LogQueryRestServer
         queryOperatorLogRequest.setOperatorCode(operatorCode);
         queryOperatorLogRequest.setOperatorType(operatorType);
         queryOperatorLogRequest.setUrl(url);
+        queryOperatorLogRequest.setMethod(method);
 
         PagingRequest pagingRequest = new PagingRequest();
         pagingRequest.setSize(size);

@@ -1,8 +1,9 @@
 package com.huayu.eframe.management.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.huayu.eframe.management.constant.SecurityConstant;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
+import com.huayu.eframe.management.constant.SecurityConstant;
 
 import java.util.Date;
 
@@ -11,25 +12,30 @@ import java.util.Date;
  */
 public class ModifyRoleRequest
 {
+    @EFrameRequest(length = 64)
     private String name;
 
     @EFrameRequest(required = true)
     private String code;
 
+    @JsonIgnore
     private String parent;
 
-    @EFrameRequest(enumValue = {SecurityConstant.STATUS.NORMAL,SecurityConstant.STATUS.LOCKED})
+    @EFrameRequest(bean = "_dictionary(role_status)")
     private String status;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
+    @EFrameRequest(length = 2048)
     private String permissions;
 
+    @EFrameRequest(length = 2048)
     private String addPermissions;
 
+    @EFrameRequest(length = 2048)
     private String removePermissions;
 
+    @EFrameRequest(length = 512)
     private String remark;
 
     public String getName()

@@ -1,6 +1,7 @@
 package com.huayu.eframe.management.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
@@ -11,25 +12,28 @@ import java.util.Date;
  */
 public class ModifyPermissionRequest
 {
+    @EFrameRequest(length=128)
     private String url;
 
+    @EFrameRequest(length=64)
     private String name;
 
+    @JsonIgnore
     private String type;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 512)
     private String code;
 
+    @EFrameRequest(bean = "_dictionary(permission_method)")
     private String method;
 
-    @EFrameRequest(enumValue = {SecurityConstant.PERMISSION_WHITE.YES,SecurityConstant.PERMISSION_WHITE.NO})
+    @EFrameRequest(bean = "_dictionary(permission_white)")
     private String white;
 
-    @EFrameRequest(enumValue = {SecurityConstant.STATUS.NORMAL,SecurityConstant.STATUS.LOCKED})
+    @EFrameRequest(bean = "_dictionary(permission_status)")
     private String status;
 
     @EFrameRequest(bean = "_e_validExpireTime")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
     public String getUrl()

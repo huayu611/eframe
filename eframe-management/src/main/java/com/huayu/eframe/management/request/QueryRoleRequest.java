@@ -1,5 +1,7 @@
 package com.huayu.eframe.management.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
 /**
@@ -7,14 +9,19 @@ import com.huayu.eframe.server.common.restful.PagingRequest;
  */
 public class QueryRoleRequest
 {
+    @EFrameRequest(length = 512)
     private String code;
 
+    @EFrameRequest(length = 64)
     private String name;
 
+    @JsonIgnore
     private String parent;
 
+    @EFrameRequest(bean = "_dictionary(role_status)")
     private String status;
 
+    @EFrameRequest(baseMeta = true,required = true)
     private PagingRequest page;
 
     public String getCode()

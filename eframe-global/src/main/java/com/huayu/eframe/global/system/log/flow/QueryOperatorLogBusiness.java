@@ -7,6 +7,7 @@ import com.huayu.eframe.flow.presist.service.LogService;
 import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,11 @@ public class QueryOperatorLogBusiness extends AbstractExecuteBusiness
         logDetail.setOutTime(queryOperatorLogRequest.getOutTime());
         logDetail.setOperObjType(queryOperatorLogRequest.getOperatorType());
         logDetail.setOperObjCode(queryOperatorLogRequest.getOperatorCode());
+        if(!StringUtils.equalStringNoCareUpperAndLower("ALL",queryOperatorLogRequest.getMethod()))
+        {
+            logDetail.setMethod(queryOperatorLogRequest.getMethod());
+        }
+
         return logDetail;
     }
 

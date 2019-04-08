@@ -7,10 +7,12 @@ import com.huayu.eframe.global.dict.reader.DictionaryService;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.StringUtils;
+import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -33,11 +35,27 @@ public class DictionaryValidRequest implements ValidBeanParamDefined
             return;
         }
         List<DictDetail> result = dictionaryService.getDict(parameter);
-        if(!result.contains(valueString))
+        if(!contains(result,valueString))
         {
             debug.log(valueString);
             throw new IFPException(GlobalErrorCode.VALUE_IN_REQUEST_NOT_SUIT_DICT,"value not in dictionary",new String[]{field.getName()});
         }
+    }
 
+    private boolean contains(List<DictDetail> dictValue,String paramValue)
+    {
+
+       if(CollectionUtils.isEmpty(dictValue))
+       {
+           return false;
+       }
+       for(DictDetail dictDetail : dictValue)
+       {
+           if(StringUtils.equalString(dictDetail.getCode(),paramValue))
+           {
+               return true;
+           }
+       }
+       return false;
     }
 }

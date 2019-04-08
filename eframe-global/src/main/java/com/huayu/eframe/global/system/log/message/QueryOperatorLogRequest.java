@@ -1,5 +1,6 @@
 package com.huayu.eframe.global.system.log.message;
 
+import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
 import java.util.Date;
@@ -11,15 +12,21 @@ public class QueryOperatorLogRequest
 {
     private PagingRequest page;
 
+    @EFrameRequest(length=128)
     private String operatorCode;
 
+    @EFrameRequest(length=128)
     private String operatorType;
 
     private Date inTime;
 
     private Date outTime;
 
+    @EFrameRequest(length=128)
     private String url;
+
+    @EFrameRequest(bean = "_dictionary(permission_method)")
+    private String method;
 
     public PagingRequest getPage()
     {
@@ -79,5 +86,15 @@ public class QueryOperatorLogRequest
     public void setUrl(String url)
     {
         this.url = url;
+    }
+
+    public String getMethod()
+    {
+        return method;
+    }
+
+    public void setMethod(String method)
+    {
+        this.method = method;
     }
 }

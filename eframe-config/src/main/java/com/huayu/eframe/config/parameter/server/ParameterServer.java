@@ -3,6 +3,7 @@ package com.huayu.eframe.config.parameter.server;
 import com.huayu.eframe.config.parameter.flow.addparameter.AddParameterBusiness;
 import com.huayu.eframe.config.parameter.flow.addparameter.AddParameterRequest;
 import com.huayu.eframe.config.parameter.flow.delete.DeleteParameterBusiness;
+import com.huayu.eframe.config.parameter.flow.delete.DeleteParameterRequest;
 import com.huayu.eframe.config.parameter.flow.modify.ModifyParameterBusiness;
 import com.huayu.eframe.config.parameter.flow.modify.ModifyParameterRequest;
 import com.huayu.eframe.config.parameter.flow.query.QueryParameterBusiness;
@@ -45,7 +46,9 @@ public class ParameterServer
     @RequestMapping(value = "/parameter/{codes}", method = RequestMethod.DELETE, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object deleteParameter(@PathVariable String codes, EasyParam easyParam)
     {
-        Object obj = Flow.execute(DeleteParameterBusiness.class, codes, easyParam);
+        DeleteParameterRequest deleteParameterRequest = new DeleteParameterRequest();
+        deleteParameterRequest.setParameterCode(codes);
+        Object obj = Flow.execute(DeleteParameterBusiness.class, deleteParameterRequest, easyParam);
         return obj;
     }
 }

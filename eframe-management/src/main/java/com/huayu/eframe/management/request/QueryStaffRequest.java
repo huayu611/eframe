@@ -9,11 +9,13 @@ import com.huayu.eframe.server.common.restful.PagingRequest;
  */
 public class QueryStaffRequest
 {
+    @EFrameRequest(length = 64)
     private String login;
 
+    @EFrameRequest(length = 64)
     private String name;
 
-    @EFrameRequest(enumValue = {"0","1"})
+    @EFrameRequest(bean = "_dictionary(role_status)")
     private String status;
 
     private PagingRequest page;

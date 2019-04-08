@@ -97,8 +97,9 @@ public class PermissionAtomImpl implements PermissionAtom
                 }
                 if(null != condition.getPermissionName())
                 {
-                    debug.log(condition.getPermissionName());
-                    predicates.add(criteriaBuilder.like(root.get("permissionName").as(String.class), "%" + condition.getPermissionName() + "%"));
+                    String permissionName = condition.getPermissionName();
+                    permissionName = permissionName.replace(" ","%");
+                    predicates.add(criteriaBuilder.like(root.get("permissionName").as(String.class), "%" +permissionName + "%"));
                 }
                 if(null != condition.getPermissionCode())
                 {

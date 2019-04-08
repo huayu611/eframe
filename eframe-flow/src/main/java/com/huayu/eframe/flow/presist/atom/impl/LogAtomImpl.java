@@ -92,6 +92,14 @@ public class LogAtomImpl implements LogAtom
                 {
                     predicates.add(criteriaBuilder.equal(root.get("status").as(String.class),condition.getStatus()));
                 }
+                if(null != condition && null != condition.getOperObjType())
+                {
+                    predicates.add(criteriaBuilder.equal(root.get("operObjType").as(String.class),condition.getOperObjType()));
+                }
+                if(null != condition && null != condition.getOperObjId())
+                {
+                    predicates.add(criteriaBuilder.equal(root.get("operObjId").as(Long.class),condition.getOperObjId()));
+                }
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
             };
         };

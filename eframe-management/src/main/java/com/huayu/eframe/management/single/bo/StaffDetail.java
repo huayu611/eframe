@@ -18,10 +18,8 @@ public class StaffDetail
 
     private String status;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date eff;
 
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
     private String lang;

@@ -12,29 +12,32 @@ import java.util.Date;
  */
 public class ModifyStaffInformationRequest implements EffectiveExpireDateTime
 {
+    @EFrameRequest(length = 64)
     private String name;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String login;
 
     //0:正常用户，1：锁定用户，锁定用户不能登陆和使用系统
-    @EFrameRequest(enumValue = {SecurityConstant.STATUS.NORMAL,SecurityConstant.STATUS.LOCKED})
+    @EFrameRequest(bean = "_dictionary(staff_status)")
     private String status;
 
     @EFrameRequest(bean = "_e_validExpireTime")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
-    @EFrameRequest(bean = "_e_validLang")
+    @EFrameRequest(bean = "_e_validLang",length = 16)
     private String lang;
 
-    @EFrameRequest(bean = "_e_validEmail")
+    @EFrameRequest(bean = "_e_validEmail",length = 128)
     private String email;
 
+    @EFrameRequest(length = 16)
     private String tel;
 
+    @EFrameRequest(length = 512)
     private String remark;
 
+    @EFrameRequest(length = 1024)
     private String roles;
 
     public String getName()

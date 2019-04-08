@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class DeleteMenuRequest
 {
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 128)
     private String codes;
 
     public String getCodes()

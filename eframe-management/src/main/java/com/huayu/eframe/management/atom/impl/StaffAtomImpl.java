@@ -88,11 +88,15 @@ public class StaffAtomImpl implements StaffAtom
                 }
                 if (null != condition.getLoginName())
                 {
-                    predicates.add(criteriaBuilder.like(root.get("loginName").as(String.class), "%" + condition.getLoginName() + "%"));
+                    String loginName = condition.getLoginName();
+                    loginName = loginName.replace(" ","%");
+                    predicates.add(criteriaBuilder.like(root.get("loginName").as(String.class), "%" + loginName + "%"));
                 }
                 if (null != condition.getStaffname())
                 {
-                    predicates.add(criteriaBuilder.like(root.get("staffname").as(String.class), "%" + condition.getStaffname() + "%"));
+                    String staffName = condition.getStaffname();
+                    staffName = staffName.replace(" ","%");
+                    predicates.add(criteriaBuilder.like(root.get("staffname").as(String.class), "%" + staffName + "%"));
                 }
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));

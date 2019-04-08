@@ -27,6 +27,11 @@ public class TokenObjectMap
         }
     }
 
+    public Map<String,TokenInstance> getAllTokenList()
+    {
+        return storeInstanceList;
+    }
+
     public TokenInstance getTokenInstance(String type)
     {
         return storeInstanceList.get(type);

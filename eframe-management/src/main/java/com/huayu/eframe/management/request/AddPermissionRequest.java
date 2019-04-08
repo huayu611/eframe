@@ -1,6 +1,7 @@
 package com.huayu.eframe.management.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
@@ -12,33 +13,33 @@ import java.util.Date;
  */
 public class AddPermissionRequest implements EffectiveExpireDateTime
 {
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length=128)
     private String url;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length=64)
     private String name;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(defaultStrValue = "1")
+    @JsonIgnore
     private String type;
 
     @EFrameRequest(bean = "_e_eframe_permissioncode")
+    @JsonIgnore
     private String code;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(bean = "_dictionary(permission_method)")
     private String method;
 
-    @EFrameRequest(enumValue = {SecurityConstant.PERMISSION_WHITE.YES,SecurityConstant.PERMISSION_WHITE.NO},defaultStrValue = SecurityConstant.PERMISSION_WHITE.NO)
+    @EFrameRequest(bean = "_dictionary(permission_white)")
     private String white;
 
-    @EFrameRequest(enumValue = {SecurityConstant.STATUS.NORMAL,SecurityConstant.STATUS.LOCKED}, defaultStrValue = SecurityConstant.STATUS.NORMAL)
+    @EFrameRequest(bean = "_dictionary(permission_status)")
     private String status;
 
     @EFrameRequest(bean = "_e_defaultNow")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date eff;
 
     @EFrameRequest(bean="_e_defaultExpireTime")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
     public String getUrl()

@@ -12,6 +12,7 @@ import com.huayu.eframe.flow.presist.service.LogDetail;
 import com.huayu.eframe.flow.presist.service.LogService;
 import com.huayu.eframe.server.mvc.token.TokenUtils;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,7 @@ public class LogServiceImpl implements LogService
     public LogDetail addLog(LogDetail logDetail)
     {
         LogEntity logEntity = buildLogEntity(logDetail);
+        buildOperaIdAndType(logEntity,logDetail);
         fixCreateInfo(logEntity);
         LogEntity logEntityNew = logAtom.addLog(logEntity);
         debug.log(logEntityNew);
@@ -49,6 +51,7 @@ public class LogServiceImpl implements LogService
         LogEntity logEntity = getLogEntityByCode(logDetail.getCode());
         debug.log(logEntity);
         buildDetailEntity(logDetail, logEntity);
+        buildOperaIdAndType(logEntity,logDetail);
         LogEntity newLogEntity = logAtom.updateLog(logEntity);
         debug.log(newLogEntity);
         return buildLogDetail(newLogEntity);
@@ -71,6 +74,11 @@ public class LogServiceImpl implements LogService
             framePaging.setSize(pagingRequest.getSize());
         }
         LogEntity entity = buildLogEntity(logDetail);
+        LogEntity conditionEntity = buildQueryConditionToken(entity, logDetail);
+        if(null == conditionEntity)
+        {
+            return new PageObject();
+        }
         Page<LogEntity> logResult = logAtom.queryLog(framePaging, entity);
         PagingResponse pagingResponse = new PagingResponse();
         pagingResponse.setTotal(logResult.getTotalElements());
@@ -108,6 +116,32 @@ public class LogServiceImpl implements LogService
         }
         logEntity.setLogCode(logDetail.getCode());
         buildDetailEntity(logDetail, logEntity);
+
+        return logEntity;
+    }
+
+    private LogEntity buildQueryConditionToken(LogEntity logEntity,LogDetail logDetail)
+    {
+        if(StringUtils.isNotNullAndEmpty(logDetail.getOperObjType()))
+        {
+
+            TokenInstance tokenInstance = TokenUtils.getTokenInstanceByName(logDetail.getOperObjType());
+            if(null == tokenInstance)
+            {
+                return null;
+            }
+            logEntity.setOperObjType(logDetail.getOperObjType());
+            if(StringUtils.isNotNullAndEmpty(logDetail.getOperObjCode()))
+            {
+                Long instance = tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode());
+                if (null == instance)
+                {
+                    return null;
+                }
+                logEntity.setOperObjId(instance);
+            }
+
+        }
         return logEntity;
     }
 
@@ -132,6 +166,12 @@ public class LogServiceImpl implements LogService
         logEntity.setOutMillion(logDetail.getOutMillion());
         //operentity
 
+
+
+    }
+
+    private void buildOperaIdAndType(LogEntity logEntity,LogDetail logDetail)
+    {
         TokenInstance tokenInstance = TokenUtils.getTokenInstance();
 
 
@@ -140,7 +180,6 @@ public class LogServiceImpl implements LogService
             logEntity.setOperObjType(logDetail.getOperObjType());
             logEntity.setOperObjId(tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode()));
         }
-
     }
 
 

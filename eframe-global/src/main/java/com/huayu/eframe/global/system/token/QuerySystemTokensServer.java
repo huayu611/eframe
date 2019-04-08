@@ -1,7 +1,6 @@
-package com.huayu.eframe.global.system;
+package com.huayu.eframe.global.system.token;
 
 import com.huayu.eframe.flow.Flow;
-import com.huayu.eframe.global.system.currentlogin.QueryCurrentLoginBusiness;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -11,23 +10,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Leo on 2019/3/5.
+ * Created by Leo on 2019/4/8.
  */
-
 @Configuration
 @RestController
 @RequestMapping(value = "/eframe/system-information")
-public class SystemInfoQueryRestfulServer
+public class QuerySystemTokensServer
 {
-
     @ResponseBody
-    @RequestMapping(value = "/current/login",
+    @RequestMapping(value = "/system-tokens",
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
             consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object getCurrentLogin(EasyParam easyParam)
     {
-        Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
+        Object obj = Flow.execute(QuerySystemTokensBusiness.class, null, easyParam);
         return obj;
     }
 }

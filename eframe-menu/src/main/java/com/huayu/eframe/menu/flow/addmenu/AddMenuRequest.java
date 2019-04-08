@@ -1,5 +1,6 @@
 package com.huayu.eframe.menu.flow.addmenu;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 /**
@@ -8,22 +9,28 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 public class AddMenuRequest
 {
     @EFrameRequest(bean = "_e_eframe_menucode")
+    @JsonIgnore
     private String code;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String name;
-
+    @EFrameRequest(length = 128)
     private String path;
 
+    @EFrameRequest(length = 128)
     private String parentMenu;
 
     @EFrameRequest(defaultStrValue = "0")
+    @JsonIgnore
     private String status;
 
+    @EFrameRequest(length = 128)
     private String redirect;
 
+    @EFrameRequest(length = 64)
     private String icon;
 
+    @EFrameRequest(length = 128)
     private String component;
 
     public String getCode()

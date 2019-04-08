@@ -106,8 +106,9 @@ public class RoleAtomImpl implements RoleAtom
                 }
                 if(null != condition.getName())
                 {
-                    debug.log(condition.getName());
-                    predicates.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + condition.getName() + "%"));
+                    String name = condition.getName();
+                    name = name.replace(" ","%");
+                    predicates.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + name + "%"));
                 }
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));

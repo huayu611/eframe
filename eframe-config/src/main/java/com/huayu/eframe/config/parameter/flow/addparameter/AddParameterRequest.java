@@ -4,13 +4,13 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 public class AddParameterRequest
 {
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String parameterCode;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String parameterValue;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String parameterName;
 
     public String getParameterCode()

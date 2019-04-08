@@ -12,13 +12,13 @@ import java.util.Date;
  */
 public class AddStaffRequest implements EffectiveExpireDateTime
 {
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String name;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String password;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String login;
 
     @EFrameRequest(bean = "_e_validPhoneNumber")
@@ -29,11 +29,9 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     private String status;
 
     @EFrameRequest(bean = "_e_defaultNow")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date eff;
 
     @EFrameRequest(bean = "_e_defaultExpireTime")
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
     private Date exp;
 
     @EFrameRequest(defaultStrValue = "zh",bean = "_e_validLang" )
@@ -42,8 +40,10 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @EFrameRequest(bean = "_e_validEmail")
     private String email;
 
+    @EFrameRequest(length = 512)
     private String remark;
 
+    @EFrameRequest(length = 1024)
     private String roles;
 
     public String getName()

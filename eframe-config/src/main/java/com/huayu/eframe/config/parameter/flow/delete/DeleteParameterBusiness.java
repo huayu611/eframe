@@ -19,8 +19,8 @@ public class DeleteParameterBusiness extends AbstractExecuteBusiness
     @Override
     public void execute(BusinessParameter param)
     {
-        String codes = param.getRequest();
-        String result = deleteInBatch(code -> parameterService.deleteParameter(code), codes);
+        DeleteParameterRequest deleteParameterRequest = param.getRequest();
+        String result = deleteInBatch(code -> parameterService.deleteParameter(code), deleteParameterRequest.getParameterCode());
         param.addParameter(RESULT, result);
     }
 

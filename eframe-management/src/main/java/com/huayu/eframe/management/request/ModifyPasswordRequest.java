@@ -9,12 +9,13 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ModifyPasswordRequest
 {
+    @EFrameRequest(length = 64)
     private String oldPassword;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String newPassword;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String login;
 
 

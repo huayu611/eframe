@@ -1,5 +1,7 @@
 package com.huayu.eframe.management.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
 /**
@@ -7,18 +9,25 @@ import com.huayu.eframe.server.common.restful.PagingRequest;
  */
 public class QueryPermissionRequest
 {
+    @EFrameRequest(length = 512)
     private String code;
 
+    @EFrameRequest(length=64)
     private String name;
 
+    @JsonIgnore
     private String type;
 
+    @EFrameRequest(bean = "_dictionary(permission_method)")
     private String method;
 
+    @EFrameRequest(bean = "_dictionary(permission_white)")
     private String white;
 
+    @EFrameRequest(bean = "_dictionary(permission_white)")
     private String status;
 
+    @EFrameRequest(baseMeta = true,required = true)
     private PagingRequest page;
 
     public String getCode()
