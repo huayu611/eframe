@@ -19,7 +19,7 @@ public class LogUtils
         return debugTurn;
     }
 
-    private static void setDebugTurn(boolean flag)
+    public static void setDebugTurn(boolean flag)
     {
         lock.lock();
         debugTurn = flag;

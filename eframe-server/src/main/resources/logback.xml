@@ -27,12 +27,12 @@
         </triggeringPolicy>
     </appender>
     <!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
-    <logger name="com.huayu"  level="DEBUG" />
-    <logger name="org.springframework"  level="DEBUG" />
-    <logger name="org.hibernate"  level="DEBUG" />
+    <logger name="com.huayu"  level="ERROR" />
+    <logger name="org.springframework"  level="ERROR" />
+    <logger name="org.hibernate"  level="ERROR" />
 
     <!-- 日志输出级别 -->
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>

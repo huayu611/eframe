@@ -1,5 +1,6 @@
 package com.huayu.eframe.global.email.presist.flow.add;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 /**
@@ -8,21 +9,22 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 public class AddEmailRequest
 {
     @EFrameRequest(required = true)
+    @JsonIgnore
     private String emailCode;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String name;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String emailUserName;
 
-    @EFrameRequest(required = true,bean = "_e_email_password_encrypt")
+    @EFrameRequest(required = true,bean = "_e_email_password_encrypt",length = 128)
     private String emailPassword;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String protocol;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String host;
 
     @EFrameRequest(defaultIntegerValue = 25)
@@ -31,15 +33,16 @@ public class AddEmailRequest
     @EFrameRequest(defaultLongValue = 3000l)
     private Long timeOut;
 
+    @JsonIgnore
     private String auth;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 128)
     private String sender;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 64)
     private String personal;
 
-    @EFrameRequest(required = true)
+    @EFrameRequest(required = true,length = 128)
     private String subject;
 
     public String getEmailCode()

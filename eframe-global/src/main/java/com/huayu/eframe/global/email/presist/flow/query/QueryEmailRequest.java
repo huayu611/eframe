@@ -1,5 +1,6 @@
 package com.huayu.eframe.global.email.presist.flow.query;
 
+import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
 /**
@@ -9,8 +10,10 @@ public class QueryEmailRequest
 {
     private PagingRequest page;
 
+    @EFrameRequest(length = 64)
     private String name;
 
+    @EFrameRequest(length = 64)
     private String emailCode;
 
     public PagingRequest getPage()

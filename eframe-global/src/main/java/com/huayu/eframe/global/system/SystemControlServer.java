@@ -1,8 +1,12 @@
-package com.huayu.eframe.global.system.log.server;
+package com.huayu.eframe.global.system;
 
 import com.huayu.eframe.flow.Flow;
+import com.huayu.eframe.global.system.currentlogin.QueryCurrentLoginBusiness;
 import com.huayu.eframe.global.system.log.flow.QueryOperatorLogBusiness;
 import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
+import com.huayu.eframe.global.system.switchdebug.SwitchDebugBusiness;
+import com.huayu.eframe.global.system.switchdebug.SwitchDebugRequest;
+import com.huayu.eframe.global.system.token.QuerySystemTokensBusiness;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import org.springframework.context.annotation.Configuration;
@@ -12,13 +16,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 
 /**
- * Created by Leo on 2019/3/5.
+ * Created by Leo on 2019/4/9.
  */
 @Configuration
 @RestController
-@RequestMapping(value = "/eframe/manage")
-public class LogQueryRestServer
+@RequestMapping(value = "/eframe/system-information")
+public class SystemControlServer
 {
+    @ResponseBody
+    @RequestMapping(value = "/current/login",
+            method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object getCurrentLogin(EasyParam easyParam)
+    {
+        Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
+        return obj;
+    }
+
     @ResponseBody
     @RequestMapping(value = "/log", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryLog(
@@ -45,6 +60,29 @@ public class LogQueryRestServer
         pagingRequest.setPage(page);
         queryOperatorLogRequest.setPage(pagingRequest);
         Object obj = Flow.execute(QueryOperatorLogBusiness.class, queryOperatorLogRequest, easyParam);
+        return obj;
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/system-tokens",
+            method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object getCurrentTokens(EasyParam easyParam)
+    {
+        Object obj = Flow.execute(QuerySystemTokensBusiness.class, null, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/switch-log",
+            method = RequestMethod.POST,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object switchLog(@RequestBody SwitchDebugRequest switchDebugRequest, EasyParam easyParam)
+    {
+        Object obj = Flow.execute(SwitchDebugBusiness.class, switchDebugRequest, easyParam);
         return obj;
     }
 }

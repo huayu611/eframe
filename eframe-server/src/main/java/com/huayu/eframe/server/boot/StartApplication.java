@@ -1,9 +1,6 @@
 package com.huayu.eframe.server.boot;
 
-import com.huayu.eframe.server.common.sensitive.Sensitive;
 import com.huayu.eframe.server.log.Debug;
-import com.huayu.eframe.server.service.spring.BeanPool;
-import com.huayu.eframe.server.tool.basic.PropertiesUtils;
 import com.huayu.eframe.server.tool.encrypt.AESEncrypt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +13,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/6/24.

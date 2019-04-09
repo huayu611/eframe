@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class QueryMenuRequest
 {
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(length = 128)
     private String code;
 
     public String getCode()

@@ -59,7 +59,14 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
     private void doTrans(BusinessParameter param)
     {
-        transactionFlow.executeTransaction(this,param);
+        if(isNeedTransaction())
+        {
+            transactionFlow.executeTransaction(this, param);
+        }
+        else
+        {
+            this.execute(param);
+        }
     }
 
     @Override
@@ -247,5 +254,11 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         List<String> methods = ConfigurationUtils.getRecordLogMethod();
 
         return methods.contains(method);
+    }
+
+    //v1.0.1添加，为了一些不需要事务的操作。以免系统额外开支
+    protected boolean isNeedTransaction()
+    {
+        return true;
     }
 }
