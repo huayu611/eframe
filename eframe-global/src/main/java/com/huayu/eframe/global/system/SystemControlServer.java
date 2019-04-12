@@ -4,6 +4,8 @@ import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.global.system.currentlogin.QueryCurrentLoginBusiness;
 import com.huayu.eframe.global.system.log.flow.QueryOperatorLogBusiness;
 import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
+import com.huayu.eframe.global.system.refreshcache.RefreshCacheBusiness;
+import com.huayu.eframe.global.system.refreshcache.RefreshCacheRequest;
 import com.huayu.eframe.global.system.switchdebug.SwitchDebugBusiness;
 import com.huayu.eframe.global.system.switchdebug.SwitchDebugRequest;
 import com.huayu.eframe.global.system.token.QuerySystemTokensBusiness;
@@ -83,6 +85,17 @@ public class SystemControlServer
     public Object switchLog(@RequestBody SwitchDebugRequest switchDebugRequest, EasyParam easyParam)
     {
         Object obj = Flow.execute(SwitchDebugBusiness.class, switchDebugRequest, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/refresh-cache",
+            method = RequestMethod.POST,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object refreshCache(@RequestBody RefreshCacheRequest refreshCacheRequest, EasyParam easyParam)
+    {
+        Object obj = Flow.execute(RefreshCacheBusiness.class, refreshCacheRequest, easyParam);
         return obj;
     }
 }

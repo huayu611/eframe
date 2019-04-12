@@ -22,9 +22,7 @@ public class LogDebug
     public void beginLog(Object... objects)
     {
         try {
-            if (!LogUtils.isDebugOpen()) {
-                return;
-            }
+
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
             String methodName = element[2].getMethodName();
@@ -42,9 +40,7 @@ public class LogDebug
     public void endLog(Object... objects)
     {
         try {
-            if (!LogUtils.isDebugOpen()) {
-                return;
-            }
+
 
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
@@ -63,9 +59,7 @@ public class LogDebug
     public void log(Object... objects)
     {
         try {
-            if (!LogUtils.isDebugOpen()) {
-                return;
-            }
+
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
             String methodName = element[2].getMethodName();
@@ -85,9 +79,7 @@ public class LogDebug
     public void errorLog(Object... objects)
     {
         try {
-            if (!LogUtils.isDebugOpen()) {
-                return;
-            }
+
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
             String methodName = element[2].getMethodName();
@@ -109,9 +101,6 @@ public class LogDebug
     {
         if (null == e) {
             debug.info("No Err For Print");
-        }
-        if (!LogUtils.isDebugOpen()) {
-            return;
         }
         String trace = ObjectUtils.getTrace(e);
         debug.error(trace);

@@ -73,6 +73,10 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
             }
             if(null != attr)
             {
+                if(isWhite)
+                {
+                    attr.add(buildWhiteConfigAttribute(isWhite));
+                }
                 return attr;
             }
             if (!isWhite) {
@@ -83,12 +87,17 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         }
 
         List<ConfigAttribute> anoToken = new ArrayList<>();
-        EFrameConfigAttribute eFrameConfigAttribute = new EFrameConfigAttribute();
-        eFrameConfigAttribute.setWhite(isWhite);
-        anoToken.add(eFrameConfigAttribute);
+
+        anoToken.add(buildWhiteConfigAttribute(isWhite));
         return anoToken;
     }
 
+    private ConfigAttribute buildWhiteConfigAttribute(boolean isWhite)
+    {
+        EFrameConfigAttribute eFrameConfigAttribute = new EFrameConfigAttribute();
+        eFrameConfigAttribute.setWhite(isWhite);
+        return eFrameConfigAttribute;
+    }
 
     private void checkVersion(HttpServletRequest request)
     {
