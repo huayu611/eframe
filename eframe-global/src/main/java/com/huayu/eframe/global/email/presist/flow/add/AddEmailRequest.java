@@ -9,7 +9,6 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 public class AddEmailRequest
 {
     @EFrameRequest(required = true)
-    @JsonIgnore
     private String emailCode;
 
     @EFrameRequest(required = true,length = 64)

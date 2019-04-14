@@ -15,7 +15,6 @@
     <version>1.0.1-SNAPSHOT</version>
     <modules>
         <module>eframe-server</module>
-        <module>eframe-feedback</module>
         <module>eframe-copinfo</module>
         <module>eframe-management</module>
         <module>eframe-flow</module>

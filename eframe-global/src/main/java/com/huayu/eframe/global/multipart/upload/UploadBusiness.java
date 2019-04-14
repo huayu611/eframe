@@ -67,7 +67,7 @@ public class UploadBusiness extends AbstractExecuteBusiness
         MultipartFile file = uploadRequest.getMultipartFile();
 
         debug.log(uploadRequest);
-        String result= saveFile(uploadRequest.getType(),file);
+        String result= saveFile(uploadRequest.getType(),file,uploadRequest.getTemp());
         param.addParameter(RESULT,result);
     }
 
@@ -86,12 +86,22 @@ public class UploadBusiness extends AbstractExecuteBusiness
         return uploadResponse;
     }
 
-    private String saveFile(String path,MultipartFile file)
+    private String saveFile(String path,MultipartFile file,boolean temp)
     {
         String fileName = file.getOriginalFilename();
         String name = RandomUtils.getUUID() + fileName;
         debug.log(name);
-        String filePath = MultipartUtil.getSystemPath()+  File.separator + path ;
+        String filePath = "";
+        if(temp)
+        {
+            filePath = MultipartUtil.getSystemTempPath()+  File.separator + path ;
+
+        }
+        else
+        {
+            filePath = MultipartUtil.getSystemPath()+  File.separator + path ;
+        }
+
 
         debug.log(filePath);
         File desFilePath = new File(filePath);

@@ -13,12 +13,6 @@
     <dependencies>
         <dependency>
             <groupId>com.huayu.eframe</groupId>
-            <artifactId>eframe-feedback</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.huayu.eframe</groupId>
             <artifactId>eframe-copinfo</artifactId>
             <version>1.0.1-SNAPSHOT</version>
             <scope>compile</scope>

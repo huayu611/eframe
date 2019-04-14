@@ -216,11 +216,11 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         }
     }
 
-    private void recordLog(String flow)
+    protected void recordLog(String flow)
     {
         recordLog(flow,null);
     }
-    private void recordLog(String flow,Object obj)
+    protected void recordLog(String flow,Object obj)
     {
         if(!getLogFlag())
         {

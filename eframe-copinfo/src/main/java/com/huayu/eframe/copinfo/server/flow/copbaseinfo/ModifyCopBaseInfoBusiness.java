@@ -1,9 +1,11 @@
 package com.huayu.eframe.copinfo.server.flow.copbaseinfo;
 
+import com.huayu.eframe.copinfo.common.CopLogoRuler;
 import com.huayu.eframe.copinfo.server.serivce.CopBaseInfoService;
 import com.huayu.eframe.copinfo.server.serivce.bo.CopBaseInfoDetail;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.global.multipart.MultipartResolve;
 import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,11 @@ public class ModifyCopBaseInfoBusiness  extends AbstractExecuteBusiness
 
     @Autowired
     private CopBaseInfoService copBaseInfoService;
+
+    @Autowired
+    private CopLogoRuler copLogoRuler;
+
+
     @Override
     public void execute(BusinessParameter param)
     {
@@ -35,6 +42,7 @@ public class ModifyCopBaseInfoBusiness  extends AbstractExecuteBusiness
         else {
             result = copBaseInfoService.updateCopBaseInfoDetail(detail);
         }
+        MultipartResolve.use(message.getLogo(),copLogoRuler);
         param.addParameter(RESULT,result);
     }
     @Override

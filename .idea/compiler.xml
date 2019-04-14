@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eframe-config" />
         <module name="eframe-copinfo" />
-        <module name="eframe-feedback" />
         <module name="eframe-flow" />
         <module name="eframe-global" />
         <module name="eframe-integration" />
@@ -17,5 +16,8 @@
         <module name="eframe-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eframe-feedback" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

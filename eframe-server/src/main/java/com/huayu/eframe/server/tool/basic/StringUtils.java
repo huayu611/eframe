@@ -223,4 +223,21 @@ public class StringUtils
         }
         return value.substring(0,pos);
     }
+
+    public static String cutPrefix(String value,String prefix)
+    {
+        if(isNullOrEmpty(value) || isNullOrEmpty(prefix))
+        {
+            return value;
+        }
+        if(value.length()<prefix.length())
+        {
+            return value;
+        }
+        if(!value.startsWith(prefix))
+        {
+            return value;
+        }
+        return cutLengthString(value,prefix.length());
+    }
 }
