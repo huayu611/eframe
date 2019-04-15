@@ -48,6 +48,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.huayu.eframe</groupId>
+            <artifactId>eframe-timetask</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>

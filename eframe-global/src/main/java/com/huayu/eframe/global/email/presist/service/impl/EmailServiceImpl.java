@@ -100,15 +100,15 @@ public class EmailServiceImpl implements EmailService
             framePaging.setPage(pagingRequest.getPage());
             framePaging.setSize(pagingRequest.getSize());
         }
-        Page<EmailBO> subscriberPropertyDefinedPage =  emailAtom.queryEmailByPage(framePaging,emailBo);
+        Page<EmailBO> emailPaging =  emailAtom.queryEmailByPage(framePaging,emailBo);
 
         PagingResponse pagingResponse = new PagingResponse();
-        pagingResponse.setTotal(subscriberPropertyDefinedPage.getTotalElements());
-        pagingResponse.setCurrentPage(subscriberPropertyDefinedPage.getNumber());
-        pagingResponse.setTotalPage(subscriberPropertyDefinedPage.getTotalPages());
+        pagingResponse.setTotal(emailPaging.getTotalElements());
+        pagingResponse.setCurrentPage(emailPaging.getNumber());
+        pagingResponse.setTotalPage(emailPaging.getTotalPages());
         PageObject pageObject = new PageObject();
         pageObject.setPagingResponse(pagingResponse);
-        pageObject.setResponse(buildEmailDetailList(subscriberPropertyDefinedPage.getContent()));
+        pageObject.setResponse(buildEmailDetailList(emailPaging.getContent()));
         return pageObject;
     }
 

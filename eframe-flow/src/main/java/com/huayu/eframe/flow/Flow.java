@@ -74,13 +74,15 @@ public class Flow
 
         LocalAttribute.addValue(FlowConstant.EASY_SERVLET, easyParam);
 
-        Token token = (Token) easyParam.getRequest().getAttribute(Constant.HTTP_TOKEN);
+        //对于easy frame，要提防定制边对request进行定制。无法构造真实的easy param.
+        if(null != easyParam.getRequest())
+        {
+            Token token = (Token) easyParam.getRequest().getAttribute(Constant.HTTP_TOKEN);
 
-        LocalAttribute.addToken(token);
+            LocalAttribute.addToken(token);
 
-        debug.log(token);
-
-        debug.log(easyParam.getRequest().getRemoteAddr());
+            debug.log(token);
+        }
 
         Object result = executeService(serviceName, request);
 

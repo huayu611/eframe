@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dicts>
+    <dict code="time-task-status">
+        <value code="1" lang="TIME_TASK_STATUS_PENDING"/>
+        <value code="2" lang="TIME_TASK_STATUS_NORMAL"/>
+    </dict>
+    <dict code="time-task-unit">
+        <value code="second" lang="TIME_TASK_UNIT_SECOND"/>
+        <value code="minuter" lang="TIME_TASK_UNIT_MINUTER"/>
+        <value code="hour" lang="TIME_TASK_UNIT_HOUR"/>
+        <value code="day" lang="TIME_TASK_UNIT_DAY"/>
+        <value code="week" lang="TIME_TASK_UNIT_WEEK"/>
+        <value code="month" lang="TIME_TASK_UNIT_MONTH"/>
+        <value code="year" lang="TIME_TASK_UNIT_YEAR"/>
+    </dict>
+    <dict code="time-task-type">
+        <value code="once" lang="TIME_TASK_TYPE_ONCE"/>
+        <value code="cycle" lang="TIME_TASK_TYPE_CYCLE"/>
+    </dict>
+    <dict code="time-task-instance-status">
+        <value code="0" lang="TIME_TASK_INSTANCE_STAUS_INIT"/>
+        <value code="1" lang="TIME_TASK_INSTANCE_STAUS_PROCESS"/>
+        <value code="2" lang="TIME_TASK_INSTANCE_STAUS_FINSH"/>
+        <value code="3" lang="TIME_TASK_INSTANCE_STAUS_FAILED"/>
+    </dict>
+</dicts>

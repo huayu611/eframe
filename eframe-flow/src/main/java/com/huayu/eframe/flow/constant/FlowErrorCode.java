@@ -21,4 +21,6 @@ public interface FlowErrorCode
     String MOBILE_NUMBER_FORMATTING_INCORRECT = String.valueOf("11007");
 
     String REQUEST_VALUE_NOT_SUIT_REQUIRE = String.valueOf("11008");
+
+    String REQUEST_IS_NULL = String.valueOf("11009");
 }
