@@ -33,23 +33,6 @@ CREATE TABLE `sys_email`  (
 
 
 -- ----------------------------
--- Table structure for sys_feedback
--- ----------------------------
-DROP TABLE IF EXISTS `sys_feedback`;
-CREATE TABLE `sys_feedback`  (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `FD_IP` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `FD_PARENT_ID` bigint(20) NULL DEFAULT NULL,
-  `FD_USER_SEX` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `FD_USER_EMAIL` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `FD_USER_PHONENUMBER` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `FD_USER_CONTENT` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `FD_CREATE_TIME` datetime(0) NULL DEFAULT NULL,
-  `FD_NAME` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
 -- Table structure for sys_lang
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_lang`;
@@ -110,7 +93,7 @@ CREATE TABLE `sys_menu`  (
   `LAST_UPDATE_STAFF` bigint(20) NULL DEFAULT NULL,
   `EXT_INFO` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`MENU_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10000 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -135,6 +118,8 @@ INSERT INTO `sys_menu` VALUES (21, 'MENU_CODE_1550473105411qHDZY7', '日志查�
 INSERT INTO `sys_menu` VALUES (28, 'MENU_CODE_1551342774158QtJC64', '系统参数', '/manager/setting/SettingTableList', './manager/SystemConfiguration/setting/SettingTableList', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-02-28 08:32:54', '2098-12-31 16:00:00', '2019-02-28 08:32:54', '2019-03-10 09:20:39', NULL, NULL);
 INSERT INTO `sys_menu` VALUES (31, 'MENU_CODE_155220959704696gAz1', '系统设置', '/manager/setting', NULL, '/manager/setting/SettingTableList', NULL, 2, 12, NULL, NULL, '0', '2019-03-10 09:19:56', '2098-12-31 16:00:00', '2019-03-10 09:19:56', '2019-03-10 09:20:45', NULL, NULL);
 INSERT INTO `sys_menu` VALUES (32, 'MENU_CODE_1552209812142tV6oG5', '邮件管理', '/manager/setting/EmailSetting', './manager/SystemConfiguration/Email/EmailTableList', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-03-10 09:23:32', '2098-12-31 16:00:00', '2019-03-10 09:23:32', '2019-03-10 09:23:32', NULL, NULL);
+INSERT INTO `sys_menu` VALUES (44, 'MENU_CODE_15552973369890FQJ41', '定时任务', '/manager/setting/TimeTaskManager', './manager/SystemConfiguration/TimeTask/SystemTimeTask', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-04-15 03:02:16', '2098-12-31 16:00:00', '2019-04-15 03:02:16', '2019-04-15 03:05:20', NULL, NULL);
+
 -- ----------------------------
 -- Table structure for sys_parameter
 -- ----------------------------
@@ -289,4 +274,47 @@ CREATE TABLE `sys_staff`  (
 -- ----------------------------
 INSERT INTO `sys_staff` VALUES (1, 'admin', '超级管理员', 'huayu611@sina.com', '18652064082', 'zh', '1e2d332704495b11cc8fb4f342ad8f25', 'ugmtnZt1JXLVs1Kt', '2018-12-18 21:18:37', '0', '2019-04-09 01:55:48', '2018-06-27 22:57:29', '2020-12-31 22:57:53', '2019-04-08 05:48:35', '我是超级管理员。.');
 
+
+
+
+-- ----------------------------
+-- Table structure for sys_timetask
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_timetask`;
+CREATE TABLE `sys_timetask`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `service_bean` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `effective_time` datetime(0) NULL DEFAULT NULL,
+  `expire_time` datetime(0) NULL DEFAULT NULL,
+  `status` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `cycle` int(255) NULL DEFAULT NULL,
+  `unit` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `timetask_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `create_time` datetime(0) NULL DEFAULT NULL,
+  `create_obj_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `create_obj_id` bigint(20) NULL DEFAULT NULL,
+  `last_update_time` datetime(0) NULL DEFAULT NULL,
+  `last_update_obj_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `last_update_obj_id` bigint(20) NULL DEFAULT NULL,
+  `execute_count` int(10) NULL DEFAULT NULL,
+  `next_execute_time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for sys_timetask_instance
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_timetask_instance`;
+CREATE TABLE `sys_timetask_instance`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `time_task_id` bigint(20) NULL DEFAULT NULL,
+  `start_time` datetime(0) NULL DEFAULT NULL,
+  `end_time` datetime(0) NULL DEFAULT NULL,
+  `status` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `error_stack` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `retry_time` int(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 SET FOREIGN_KEY_CHECKS = 1;
