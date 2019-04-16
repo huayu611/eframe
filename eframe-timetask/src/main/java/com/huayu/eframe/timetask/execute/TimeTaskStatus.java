@@ -18,7 +18,8 @@ public enum TimeTaskStatus
         statusValue = value;
     }
 
-    public String getValue() {
+    public String getValue()
+    {
         return statusValue;
     }
 

@@ -9,11 +9,13 @@ import java.util.Set;
 
 /**
  * Created by Leo on 2019/4/15.
+ * 保存Task
  */
 @Service
 public class TaskMap
 {
     private Map<String,Task> storeTask = new HashMap<>();
+
     public TaskMap(Set<Task> tasks)
     {
         if(CollectionUtils.isNotEmpty(tasks))

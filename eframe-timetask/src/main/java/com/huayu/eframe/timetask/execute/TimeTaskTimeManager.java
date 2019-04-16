@@ -2,6 +2,7 @@ package com.huayu.eframe.timetask.execute;
 
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
+import com.huayu.eframe.timetask.common.Constants;
 import com.huayu.eframe.timetask.entity.bo.TimeTaskBO;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class TimeTaskTimeManager
 
     public Date nextTime(TimeTaskBO timeTaskBO)
     {
-        if (StringUtils.equalStringNoCareUpperAndLower("once", timeTaskBO.getTimeTaskType()))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.TimeTaskType.ONCE, timeTaskBO.getTimeTaskType()))
         {
             return null == timeTaskBO.getNextTime() ? timeTaskBO.getEffectiveTime() : DateUtils.getDefaultExpireDate();
         }
@@ -32,40 +33,35 @@ public class TimeTaskTimeManager
             return timeTaskBO.getEffectiveTime();
         }
 
-        //不用switch case,switch case是对大写写强匹配。这里不需要强匹配。并且当前只支持固定时间
-        if(StringUtils.equalStringNoCareUpperAndLower("year", unit))
+        //不用switch case,switch case是对大写写强匹配。这里不需要强匹配。
+        // 并且当前只支持固定时间,比如生效时间为12：00：00，每天执行一次，那么就是每天12：00：00执行。这里面的问题是，如果本次没有执行完，下一次已经启动。会延迟执行。
+        Date currentTime  =  timeTaskBO.getNextTime();
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.YEAR, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyYears(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("month", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MONTH, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyMonths(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("day", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.DAY, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyDays(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("week", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.WEEK, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyWeeks(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("hour", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.HOUR, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyHours(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("minute", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MINUTE, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifyMinutes(currentTime,timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower("second", unit))
+        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.SECOND, unit))
         {
-            Date currentTime  =  timeTaskBO.getNextTime();
             return DateUtils.modifySeconds(currentTime,timeTaskBO.getCycle());
         }
         //如果都没有匹配上，则直接2099年。不再执行。

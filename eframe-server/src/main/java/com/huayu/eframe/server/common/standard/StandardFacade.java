@@ -15,7 +15,7 @@ public class StandardFacade
 {
 
     private static final LogDebug debug = new LogDebug(StandardFacade.class);
-    @Deprecated
+
     public static <T extends ValidTime> List<T> getValidItem(List<T> item)
     {
 

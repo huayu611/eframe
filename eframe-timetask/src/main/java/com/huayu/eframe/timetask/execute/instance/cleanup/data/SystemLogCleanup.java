@@ -17,6 +17,12 @@ import org.springframework.stereotype.Service;
 public class SystemLogCleanup implements CleanData
 {
 
+    private final static Integer BATCH_PAGE = Integer.valueOf("20");
+
+    private final static Integer START_PAGE = Integer.valueOf("0");
+
+    private final static Integer DELETION_DURATION = Integer.valueOf("-60");
+
     @Autowired
     private LogAtom logAtom;
 
@@ -38,9 +44,9 @@ public class SystemLogCleanup implements CleanData
     public Page<LogEntity> queryLogByPage()
     {
         FramePaging framePaging = new FramePaging();
-        framePaging.setSize(20);
-        framePaging.setPage(0);
-        Page<LogEntity> result = logAtom.queryWillDeleteLog(framePaging, DateUtils.modifyDays(DateUtils.getCurrentDate(), -40));
+        framePaging.setSize(BATCH_PAGE.intValue());
+        framePaging.setPage(START_PAGE.intValue());
+        Page<LogEntity> result = logAtom.queryWillDeleteLog(framePaging, DateUtils.modifyDays(DateUtils.getCurrentDate(), DELETION_DURATION.intValue()));
         return result;
     }
 }

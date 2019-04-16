@@ -17,12 +17,16 @@ import java.util.Timer;
 @Component
 public class TimeTaskRunner
 {
+    //定时任务启动后一秒后执行
+    private final static Integer DURATION = Integer.valueOf("1000");
+
     @Autowired
     private TaskMap taskMap;
     
     @Autowired
     private TimeTaskCache timeTaskCache;
-    
+
+    //每分钟扫一次。
     @Scheduled(cron="0 */1 * * * ?")
     public void runner()
     {
@@ -49,8 +53,15 @@ public class TimeTaskRunner
             boolean locked = TimeTaskLock.putLock(timeTaskBO.getId());
             if(locked)
             {
-                Timer timer = new Timer();
-                timer.schedule(new ExecuteTimeTask(serviceInstance,timeTaskBO),1000);
+                try
+                {
+                    Timer timer = new Timer();
+                    timer.schedule(new ExecuteTimeTask(serviceInstance, timeTaskBO), DURATION);
+                }
+                finally
+                {
+                    TimeTaskLock.releaseTimeTask(timeTaskBO.getId());
+                }
             }
 
         }

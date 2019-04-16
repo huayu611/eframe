@@ -9,15 +9,16 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 /**
+ * 清理已经删除的数据接口。
  * Created by Leo on 2019/4/15.
  */
 @Service
-public class CleanDeletionDate extends TaskAdapter
+public class CleanDeletionData extends TaskAdapter
 {
+    private static final LogDebug debug = new LogDebug(CleanDeletionData.class);
+
     @Autowired
     private CleanDataAction cleanDataAction;
-
-    private static final LogDebug debug = new LogDebug(CleanDeletionDate.class);
 
     @Override
     public Integer execute()
@@ -39,8 +40,9 @@ public class CleanDeletionDate extends TaskAdapter
             }
             catch (Exception e)
             {
-                debug.errorLog(v.getClass().getName() + ": execute error ,please check and we do not stop.");
-                debug.errorLog(e);
+                String errorInfo = v.getClass().getName() + ": execute error ,please check and we do not stop.";
+                debug.errorLog(errorInfo,e);
+
             }
         });
     }
@@ -48,6 +50,6 @@ public class CleanDeletionDate extends TaskAdapter
     @Override
     public String getName()
     {
-        return "Clean up deletion data";
+        return "Clean Up Deletion Data";
     }
 }

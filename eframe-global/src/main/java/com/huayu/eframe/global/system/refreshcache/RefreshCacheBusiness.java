@@ -23,11 +23,11 @@ public class RefreshCacheBusiness extends AbstractExecuteBusiness
         String cacheName = refreshCacheRequest.getCacheName();
         if(StringUtils.isNullOrEmpty(cacheName))
         {
-            cacheObserver.refreshCache(cacheName);
+            cacheObserver.refreshAllCache();
         }
         else
         {
-            cacheObserver.refreshAllCache();
+            cacheObserver.refreshCache(cacheName);
         }
     }
 

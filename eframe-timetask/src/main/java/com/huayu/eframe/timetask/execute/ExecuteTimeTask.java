@@ -1,9 +1,9 @@
 package com.huayu.eframe.timetask.execute;
 
 import com.huayu.eframe.flow.Flow;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.timetask.common.TimeTaskEasyParam;
-import com.huayu.eframe.timetask.entity.atom.TimeTaskAtom;
 import com.huayu.eframe.timetask.entity.bo.TimeTaskBO;
 import com.huayu.eframe.timetask.entity.bo.TimeTaskInstance;
 import com.huayu.eframe.timetask.flow.ModifyTimeTaskExecuteCommandBusiness;
@@ -17,6 +17,9 @@ import java.util.TimerTask;
  */
 public class ExecuteTimeTask extends TimerTask
 {
+
+    private final static LogDebug DEBUG = new LogDebug(ExecuteTimeTask.class);
+
     private Task task;
 
     private TimeTaskBO timeTaskBO;
@@ -25,7 +28,7 @@ public class ExecuteTimeTask extends TimerTask
 
     private TimeTaskInstance timeTaskInstance;
 
-    ExecuteTimeTask(Task task,TimeTaskBO timeTaskBO)
+    ExecuteTimeTask(Task task, TimeTaskBO timeTaskBO)
     {
         this.task = task;
         this.timeTaskBO = timeTaskBO;
@@ -34,27 +37,31 @@ public class ExecuteTimeTask extends TimerTask
     @Override
     public void run()
     {
+        //对于init失败，则不记录任何状态，直接放锁，等重试
+
         init();
-        Date nextDate = getNextTime(timeTaskBO);
+
+
         try
         {
-            timeTaskInstance = timeTaskInstanceExecute.updateTimeTask(timeTaskInstance,TimeTaskStatus.PROCESS);
+            timeTaskInstance = timeTaskInstanceExecute.updateTimeTask(timeTaskInstance, TimeTaskStatus.PROCESS);
+            //返回 result。预留，后面扩展部分成功失败这样的类型
             Integer result = task.execute();
             timeTaskInstanceExecute.finishTimeTask(timeTaskInstance);
 
         }
-        catch(Exception e)
+        catch (Exception e)
         {
-            timeTaskInstanceExecute.errorTimeTask(timeTaskInstance,e);
+            timeTaskInstanceExecute.errorTimeTask(timeTaskInstance, e);
             return;
         }
         finally
         {
+            //不论成功失败都要发送消息修改状态。
             sendTimeTaskFlowEvent();
-            TimeTaskLock.releaseTimeTask(timeTaskBO.getId());
+
         }
     }
-
 
 
     private void init()
@@ -81,6 +88,11 @@ public class ExecuteTimeTask extends TimerTask
         ModifyTimeTaskExecuteCommandRequest modifyTimeTaskExecuteCommandRequest = new ModifyTimeTaskExecuteCommandRequest();
         modifyTimeTaskExecuteCommandRequest.setTimeTaskCode(timeTaskBO.getCode());
         modifyTimeTaskExecuteCommandRequest.setNextTime(getNextTime(timeTaskBO));
+
+        //这一步会修改定时 任务状态，所以放在锁内执行。以免串锁
         Object obj = Flow.execute(ModifyTimeTaskExecuteCommandBusiness.class, modifyTimeTaskExecuteCommandRequest, TimeTaskEasyParam.buildEasyParam());
+
+        //不论成功和失败都要放锁。
+        DEBUG.log(obj);
     }
 }
