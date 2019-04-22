@@ -158,6 +158,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         }
         String flag = com[0];
         String auth = com[1];
+        filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN_STRING, auth);
         if (StringUtils.equalStringNoCareUpperAndLower(flag, "Bearer")) {
             Token tokenVale = null;
             try

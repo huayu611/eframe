@@ -51,6 +51,7 @@ public class AddMenuBusiness extends AbstractExecuteBusiness
         menuDetail.setComponent(request.getComponent());
         menuDetail.setCode(request.getCode());
         menuDetail.setStatus(request.getStatus());
+        menuDetail.setRange(request.getRange());
         return menuDetail;
     }
 }

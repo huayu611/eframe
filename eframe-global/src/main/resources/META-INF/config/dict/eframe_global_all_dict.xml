@@ -13,6 +13,10 @@
         <value code="1" lang="COMMON_GENDER_MALE"/>
         <value code="0" lang="COMMON_GENDER_FEMALE"/>
     </dict>
+    <dict code="global-default-language">
+        <value code="zh" lang="COMMON_LANGUAGE_ZH"/>
+        <value code="en" lang="COMMON_LANGUAGE_EN"/>
+    </dict>
     <dict code="global-debug-log-level">
         <value code="2147483647" name="OFF"/>
         <value code="40000" name="ERROR"/>
@@ -22,4 +26,5 @@
         <value code="5000" name="TRACE"/>
         <value code="-2147483648" name="ALL"/>
     </dict>
+
 </dicts>

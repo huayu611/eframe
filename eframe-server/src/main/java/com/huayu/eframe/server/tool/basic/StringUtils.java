@@ -271,7 +271,7 @@ public class StringUtils
         {
             return value;
         }
-        if(value.length()<end)
+        if(value.length()<=end)
         {
             String hiddenChar = value.substring(start).replaceAll(".+?", "*");
             return cutLengthString(value,start) +hiddenChar;
@@ -279,7 +279,5 @@ public class StringUtils
         String hiddenChar = value.substring(start,end).replaceAll(".+?", "*");
         return cutLengthString(value,start) + hiddenChar + cutLastLengthString(value,end);
     }
-
-
 
 }

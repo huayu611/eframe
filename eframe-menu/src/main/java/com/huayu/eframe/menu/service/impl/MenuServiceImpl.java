@@ -112,6 +112,7 @@ public class MenuServiceImpl implements MenuService
         menuDetail.setRedirect(menu.getRedirect());
         menuDetail.setIcon(menu.getIcon());
         menuDetail.setKey(menu.getCode());
+        menuDetail.setRange(menu.getRange());
         Long parent = menu.getParentMenu();
         if (null != parent && !Long.valueOf(0).equals(parent))
         {
@@ -168,6 +169,10 @@ public class MenuServiceImpl implements MenuService
         else
         {
             menu.setMenuLevel(TOP_LEVEL);
+        }
+        if(null != menuDetail.getRange())
+        {
+            menu.setRange(menuDetail.getRange());
         }
     }
 

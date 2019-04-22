@@ -92,6 +92,7 @@ public class TokenConfig
         String result = builder.compact();
         token.setToken(result);
         token.setExpireTime(expireTime);
+        token.setDuration(Long.valueOf(duration));
         token.setPrimaryCode(primary);
         token.setPrimaryType(StringUtils.getString(map.get(AbstractTokenMirror.TOKEN_OWNER_TYPE)));
         String localObject = StringUtils.getString(map.get(AbstractTokenMirror.LOCALE));

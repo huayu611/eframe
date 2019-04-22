@@ -33,6 +33,9 @@ public class AddMenuRequest
     @EFrameRequest(length = 128)
     private String component;
 
+    @EFrameRequest(defaultIntegerValue = 16)
+    private Integer range;
+
     public String getCode()
     {
         return code;
@@ -111,5 +114,15 @@ public class AddMenuRequest
     public void setComponent(String component)
     {
         this.component = component;
+    }
+
+    public Integer getRange()
+    {
+        return range;
+    }
+
+    public void setRange(Integer range)
+    {
+        this.range = range;
     }
 }

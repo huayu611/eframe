@@ -13,6 +13,12 @@ public class LoginResponse
 
     private String expireTime;
 
+
+    //当且仅到固定返回 token周期时长时返回，
+    // 由于不能确切计算失效时间，所以不建议强验证该字段，
+    // 可以用expireTime来设置过期时间，与服务器保持一致
+    private Long duration;
+
     private StaffDetail staff;
 
     public String getToken()
@@ -43,5 +49,15 @@ public class LoginResponse
     public void setStaff(StaffDetail staff)
     {
         this.staff = staff;
+    }
+
+    public Long getDuration()
+    {
+        return duration;
+    }
+
+    public void setDuration(Long duration)
+    {
+        this.duration = duration;
     }
 }

@@ -40,8 +40,44 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @EFrameRequest(bean = "_e_validEmail")
     private String email;
 
+
     @EFrameRequest(length = 512)
     private String remark;
+
+    @EFrameRequest(length = 32)
+    private String realName;
+
+    @EFrameRequest(length = 64)
+    private String nickName;
+
+    @EFrameRequest(length = 28)
+    private String identityId;
+
+    @EFrameRequest(length = 15)
+    private String qq;
+
+    @EFrameRequest(length = 64)
+    private String wechat;
+
+    @EFrameRequest(length = 64)
+    private String weibo;
+
+    @EFrameRequest(length = 255)
+    private String avatar;
+
+    @EFrameRequest(length = 1024)
+    private String signature;
+
+    @EFrameRequest(bean = "_e_validPhoneNumber",length = 1024)
+    private String otherTelNumber;
+
+    @EFrameRequest(length = 64)
+    private String alipay;
+
+    private Date birthday;
+
+    @EFrameRequest(bean = "_dictionary(global-gender)")
+    private String gender;
 
     @EFrameRequest(length = 1024)
     private String roles;
@@ -94,6 +130,116 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public String getRealName()
+    {
+        return realName;
+    }
+
+    public void setRealName(String realName)
+    {
+        this.realName = realName;
+    }
+
+    public String getNickName()
+    {
+        return nickName;
+    }
+
+    public void setNickName(String nickName)
+    {
+        this.nickName = nickName;
+    }
+
+    public String getIdentityId()
+    {
+        return identityId;
+    }
+
+    public void setIdentityId(String identityId)
+    {
+        this.identityId = identityId;
+    }
+
+    public String getQq()
+    {
+        return qq;
+    }
+
+    public void setQq(String qq)
+    {
+        this.qq = qq;
+    }
+
+    public String getWechat()
+    {
+        return wechat;
+    }
+
+    public void setWechat(String wechat)
+    {
+        this.wechat = wechat;
+    }
+
+    public String getWeibo()
+    {
+        return weibo;
+    }
+
+    public void setWeibo(String weibo)
+    {
+        this.weibo = weibo;
+    }
+
+    public String getAvatar()
+    {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar)
+    {
+        this.avatar = avatar;
+    }
+
+    public String getSignature()
+    {
+        return signature;
+    }
+
+    public void setSignature(String signature)
+    {
+        this.signature = signature;
+    }
+
+    public String getOtherTelNumber()
+    {
+        return otherTelNumber;
+    }
+
+    public void setOtherTelNumber(String otherTelNumber)
+    {
+        this.otherTelNumber = otherTelNumber;
+    }
+
+    public String getAlipay()
+    {
+        return alipay;
+    }
+
+    public void setAlipay(String alipay)
+    {
+        this.alipay = alipay;
+    }
+
+    public Date getBirthday()
+    {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday)
+    {
+        this.birthday = birthday;
     }
 
     @Override
@@ -156,5 +302,15 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     public void setRoles(String roles)
     {
         this.roles = roles;
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
+    public void setGender(String gender)
+    {
+        this.gender = gender;
     }
 }

@@ -8,4 +8,6 @@ public interface Constant
     String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
 
     String HTTP_TOKEN = "_INNER_TOKEN";
+
+    String HTTP_TOKEN_STRING = "_INNER_TOKEN_STRING";
 }

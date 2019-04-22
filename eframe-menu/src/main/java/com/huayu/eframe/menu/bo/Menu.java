@@ -67,6 +67,9 @@ public class Menu
     @Column(name="STATUS", length=2)
     private String status;
 
+    @Column(name="MENU_RANGE")
+    private Integer range;
+
     public Long getMenuId()
     {
         return menuId;
@@ -245,5 +248,15 @@ public class Menu
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public Integer getRange()
+    {
+        return range;
+    }
+
+    public void setRange(Integer range)
+    {
+        this.range = range;
     }
 }

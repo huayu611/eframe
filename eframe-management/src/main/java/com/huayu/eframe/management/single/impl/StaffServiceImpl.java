@@ -3,9 +3,11 @@ package com.huayu.eframe.management.single.impl;
 import com.huayu.eframe.management.atom.RoleAtom;
 import com.huayu.eframe.management.atom.RoleStaffAtom;
 import com.huayu.eframe.management.atom.StaffAtom;
+import com.huayu.eframe.management.atom.StaffExtAtom;
 import com.huayu.eframe.management.bo.Role;
 import com.huayu.eframe.management.bo.RoleStaff;
 import com.huayu.eframe.management.bo.Staff;
+import com.huayu.eframe.management.bo.StaffExt;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
 import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
@@ -52,6 +54,9 @@ public class StaffServiceImpl implements StaffService
     private RoleStaffAtom roleStaffAtom;
 
     @Autowired
+    private StaffExtAtom staffExtAtom;
+
+    @Autowired
     private SecurityServiceImplUtil securityServiceImplUtil;
 
 
@@ -64,36 +69,37 @@ public class StaffServiceImpl implements StaffService
         loginStaffObject.setLoginName(loginName);
         List<Staff> staffList = staffAtom.queryStaff(loginStaffObject);
 
-        if(CollectionUtils.isEmpty(staffList))
+        if (CollectionUtils.isEmpty(staffList))
         {
             debug.log("Staffname or password wrong");
-            throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
+            throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
         }
         Staff staff = getCurrentValidStaff(staffList);
 
-        if(null == staff)
+        if (null == staff)
         {
             debug.log("Staffname or password wrong");
-            throw new IFPException(ManagementErrorCode.LOGIN_NAME_STATUS_ERROR,"Staff status incorrect");
+            throw new IFPException(ManagementErrorCode.LOGIN_NAME_STATUS_ERROR, "Staff status incorrect");
         }
 
-        String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt()+loginName);
+        String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt() + loginName);
 
-        if(StringUtils.equalString(staff.getPassword(),passwordEncry))
+        if (StringUtils.equalString(staff.getPassword(), passwordEncry))
         {
 
             updateStaffLastLoginTime(staff, LocalAttribute.getNow());
+            StaffExt staffExt = staffExtAtom.queryStaffExtByStaff(staff);
             debug.endLog();
-            return getStaffDetail(staff);
+            return getStaffDetail(staff,staffExt);
         }
         debug.log("Staffname or password wrong");
-        throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG,"Staffname or password wrong!");
+        throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
     }
 
     private Staff queryStaffByLoginName(String staffname)
     {
-        List<Staff> staffList = staffAtom.queryStaffByLogin(staffname,LocalAttribute.getNow());
-        if(CollectionUtils.isEmpty(staffList))
+        List<Staff> staffList = staffAtom.queryStaffByLogin(staffname, LocalAttribute.getNow());
+        if (CollectionUtils.isEmpty(staffList))
         {
             return null;
         }
@@ -112,13 +118,13 @@ public class StaffServiceImpl implements StaffService
     private Staff getCurrentValidStaff(List<Staff> staffList)
     {
         Staff result = null;
-        for(Staff staff : staffList)
+        for (Staff staff : staffList)
         {
-            if(!DateUtils.isBetweenDate(staff.getEffectiveTime(),LocalAttribute.getNow(), staff.getExpireTime()))
+            if (!DateUtils.isBetweenDate(staff.getEffectiveTime(), LocalAttribute.getNow(), staff.getExpireTime()))
             {
                 continue;
             }
-            if(!SecurityConstant.STATUS.NORMAL.equals(staff.getStatus()))
+            if (!SecurityConstant.STATUS.NORMAL.equals(staff.getStatus()))
             {
                 continue;
             }
@@ -148,12 +154,13 @@ public class StaffServiceImpl implements StaffService
         staff.setLastUpdateTime(now);
 
         Staff staffReturn = staffAtom.insert(staff);
+        StaffExt persistStaffExt = buildCreateStaffExt(staffDetail, staffReturn);
+        StaffExt staffExt = staffExtAtom.addStaffExt(persistStaffExt);
 
-
-        StaffDetail returnDetail = getStaffDetail(staffReturn);
+        StaffDetail returnDetail = getStaffDetail(staffReturn,staffExt);
 
         List<RoleDetail> roleDetails = addStaffRole(staffReturn, roles);
-        if(CollectionUtils.isNotEmpty(roleDetails))
+        if (CollectionUtils.isNotEmpty(roleDetails))
         {
             returnDetail.setRoles(roleDetails);
         }
@@ -163,12 +170,81 @@ public class StaffServiceImpl implements StaffService
 
     }
 
+    private StaffExt buildCreateStaffExt(StaffDetail staffDetail,Staff staff)
+    {
+        StaffExt staffExt = new StaffExt();
+        putStaffExtInformation(staffExt,staffDetail,staff);
+        return staffExt;
+    }
+
+
+    private void putStaffExtInformation(StaffExt staffExt,StaffDetail staffDetail,Staff staff)
+    {
+        if(null != staffExt && null != staff)
+        {
+            staffExt.setStaff(staff);
+        }
+        if(null != staffDetail.getAlipay())
+        {
+            staffExt.setAlipay(staffDetail.getAlipay());
+        }
+        if(null != staffDetail.getWechat())
+        {
+            staffExt.setWeChat(staffDetail.getWechat());
+        }
+        if(null != staffDetail.getWeibo())
+        {
+            staffExt.setWeiBo(staffDetail.getWeibo());
+        }
+        if(null != staffDetail.getQq())
+        {
+            staffExt.setQq(staffDetail.getQq());
+        }
+        if(null != staffDetail.getBirthday())
+        {
+            staffExt.setBirthday(staffDetail.getBirthday());
+        }
+        if(null != staffDetail.getRealName())
+        {
+            staffExt.setRealName(staffDetail.getRealName());
+        }
+        if(null != staffDetail.getNickName())
+        {
+            staffExt.setNickName(staffDetail.getNickName());
+        }
+        if(null != staffDetail.getIdentityId())
+        {
+            staffExt.setIdentityId(staffDetail.getIdentityId());
+        }
+        if(null != staffDetail.getAvatar())
+        {
+            staffExt.setAvatar(staffDetail.getAvatar());
+        }
+        if(null != staffDetail.getRemark())
+        {
+            staffExt.setRemark(staffDetail.getRemark());
+        }
+        if(null != staffDetail.getSignature())
+        {
+            staffExt.setSignature(staffDetail.getSignature());
+        }
+        if(null != staffDetail.getOtherTelNumber())
+        {
+            staffExt.setOtherTelNumber(staffDetail.getOtherTelNumber());
+        }
+        if(null != staffDetail.getGender())
+        {
+            staffExt.setGender(staffDetail.getGender());
+        }
+
+    }
+
 
     @Override
     public String deleteStaff(String loginName)
     {
         Staff staff = queryStaffByLoginName(loginName);
-        if(null == staff)
+        if (null == staff)
         {
             return "";
         }
@@ -194,36 +270,45 @@ public class StaffServiceImpl implements StaffService
     }
 
     @Override
-    public StaffDetail updateStaff(StaffDetail staffDetail,String roles)
+    public StaffDetail updateStaff(StaffDetail staffDetail, String roles)
     {
         debug.log(staffDetail);
         Staff existStaff = checkStaffExistOrNot(staffDetail.getLogin());
-        Staff staff = coverRequestToStaff(existStaff,staffDetail);
+        StaffExt existStaffExt = staffExtAtom.queryStaffExtByStaff(existStaff);
+        Staff staff = coverRequestToStaff(existStaff, staffDetail);
         staff.setId(existStaff.getId());
         staff.setLastUpdateTime(DateUtils.getCurrentDate());
         Staff resultStaff = staffAtom.update(staff);
-        StaffDetail resultDetail =  getStaffDetail(resultStaff);
+        if(null == existStaffExt)
+        {
+            existStaffExt = new StaffExt();
+        }
+        putStaffExtInformation(existStaffExt,staffDetail,resultStaff);
+
+        StaffExt resultStaffExt = staffExtAtom.updateStaffExt(existStaffExt);
+
+        StaffDetail resultDetail = getStaffDetail(resultStaff,resultStaffExt);
         SecurityCacheFacade.refreshByLocalFlow();
-        if(null == roles)
+        if (null == roles)
         {
             return resultDetail;
         }
-        List<RoleDetail> roleDetails = processModifyRoles(staff,roles);
+        List<RoleDetail> roleDetails = processModifyRoles(staff, roles);
         resultDetail.setRoles(roleDetails);
 
         return resultDetail;
     }
 
-    private List<RoleDetail> processModifyRoles(Staff staff,String roles)
+    private List<RoleDetail> processModifyRoles(Staff staff, String roles)
     {
-        saveRoleList(staff,roles);
+        saveRoleList(staff, roles);
         List<RoleDetail> roleDetails = new ArrayList<>();
         List<RoleStaff> roleStaffs = roleStaffAtom.queryRoleStaffByStaffId(staff.getId());
-        if(CollectionUtils.isEmpty(roleStaffs))
+        if (CollectionUtils.isEmpty(roleStaffs))
         {
             return null;
         }
-        for(RoleStaff rs : roleStaffs)
+        for (RoleStaff rs : roleStaffs)
         {
             Role role = roleAtom.queryRoleByID(rs.getRoleId());
             RoleDetail roleDetail = securityServiceImplUtil.getRoleDetail(role);
@@ -244,11 +329,11 @@ public class StaffServiceImpl implements StaffService
         debug.beginLog();
         Staff staff = new Staff();
         staff.setLoginName(staffDetail.getLogin());
-        if(null != staffDetail.getEff())
+        if (null != staffDetail.getEff())
         {
             staff.setEffectiveTime(staffDetail.getEff());
         }
-        if(null != staffDetail.getExp())
+        if (null != staffDetail.getExp())
         {
             staff.setExpireTime(staffDetail.getExp());
         }
@@ -263,38 +348,38 @@ public class StaffServiceImpl implements StaffService
         return staff;
     }
 
-    private Staff coverRequestToStaff(Staff staff,StaffDetail staffDetail)
+    private Staff coverRequestToStaff(Staff staff, StaffDetail staffDetail)
     {
         debug.beginLog();
-        if(null != staffDetail.getEff())
+        if (null != staffDetail.getEff())
         {
             staff.setEffectiveTime(staffDetail.getEff());
         }
-        if(null != staffDetail.getExp())
+        if (null != staffDetail.getExp())
         {
             staff.setExpireTime(staffDetail.getExp());
         }
-        if(null != staffDetail.getName())
+        if (null != staffDetail.getName())
         {
             staff.setStaffname(staffDetail.getName());
         }
-        if(null != staffDetail.getStatus())
+        if (null != staffDetail.getStatus())
         {
             staff.setStatus(staffDetail.getStatus());
         }
-        if(null != staffDetail.getLang())
+        if (null != staffDetail.getLang())
         {
             staff.setLang(staffDetail.getLang());
         }
-        if(null != staffDetail.getEmail())
+        if (null != staffDetail.getEmail())
         {
             staff.setEmail(staffDetail.getEmail());
         }
-        if(null != staffDetail.getTel())
+        if (null != staffDetail.getTel())
         {
             staff.setTelNumber(staffDetail.getTel());
         }
-        if(null != staffDetail.getRemark())
+        if (null != staffDetail.getRemark())
         {
             staff.setRemark(staffDetail.getRemark());
         }
@@ -303,19 +388,21 @@ public class StaffServiceImpl implements StaffService
         debug.endLog();
         return staff;
     }
+
     @Override
     public StaffDetail queryStaffDetail(String loginCode)
     {
-        Staff staff =  queryStaffByLoginName(loginCode);
-        if(null == staff)
+        Staff staff = queryStaffByLoginName(loginCode);
+        if (null == staff)
         {
             return null;
         }
-        StaffDetail detail = getStaffDetail(staff);
+        StaffExt staffExt = staffExtAtom.queryStaffExtByStaff(staff);
+        StaffDetail detail = getStaffDetail(staff,staffExt);
         return detail;
     }
 
-    private StaffDetail getStaffDetail(Staff staff)
+    private StaffDetail getStaffDetail(Staff staff,StaffExt staffExt)
     {
         StaffDetail detail = new StaffDetail();
         detail.setName(staff.getStaffname());
@@ -327,20 +414,37 @@ public class StaffServiceImpl implements StaffService
         detail.setEmail(staff.getEmail());
         detail.setRoles(buildRoleDetailList(staff.getId()));
         detail.setTel(staff.getTelNumber());
-        detail.setRemark(staff.getRemark());
+//        detail.setRemark(staff.getRemark());
+        if(null != staffExt)
+        {
+            detail.setSignature(staffExt.getSignature());
+            detail.setWeibo(staffExt.getWeiBo());
+            detail.setWechat(staffExt.getWeChat());
+            detail.setQq(staffExt.getQq());
+            detail.setAlipay(staffExt.getAlipay());
+            detail.setRemark(staffExt.getRemark());
+            detail.setRealName(staffExt.getRealName());
+            detail.setNickName(staffExt.getNickName());
+            detail.setIdentityId(staffExt.getIdentityId());
+            detail.setHiddenIdentity(StringUtils.hiddenPart(staffExt.getIdentityId(),4,17));
+            detail.setAvatar(staffExt.getAvatar());
+            detail.setOtherTelNumber(staffExt.getOtherTelNumber());
+            detail.setBirthday(staffExt.getBirthday());
+            detail.setGender(staffExt.getGender());
+        }
         return detail;
     }
 
     private List<StaffDetail> buildStaffDetail(List<Staff> staffList)
     {
         List<StaffDetail> resultStaffDetail = new ArrayList<>();
-        if(CollectionUtils.isEmpty(staffList))
+        if (CollectionUtils.isEmpty(staffList))
         {
             return resultStaffDetail;
         }
-        for(Staff staff : staffList)
+        for (Staff staff : staffList)
         {
-            if(null == staff)
+            if (null == staff)
             {
                 continue;
             }
@@ -365,13 +469,13 @@ public class StaffServiceImpl implements StaffService
         Date now = LocalAttribute.getNow();
         FramePaging framePaging = null;
         Staff staff = null;
-        if(null != pagingRequest)
+        if (null != pagingRequest)
         {
             framePaging = new FramePaging();
             framePaging.setSize(pagingRequest.getSize());
             framePaging.setPage(pagingRequest.getPage());
         }
-        if(null != queryStaffRequest)
+        if (null != queryStaffRequest)
         {
             staff = new Staff();
             staff.setLoginName(queryStaffRequest.getLogin());
@@ -393,29 +497,29 @@ public class StaffServiceImpl implements StaffService
     public void changePassword(String loginCode, String password)
     {
         Staff staff = queryStaffByLoginName(loginCode);
-        if(null == staff)
+        if (null == staff)
         {
             return;
         }
-        String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt()+ loginCode);
+        String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt() + loginCode);
         staff.setPassword(passwordEncry);
         staffAtom.update(staff);
 
     }
 
-    public List<RoleDetail> addStaffRole( Staff staff,String codes)
+    public List<RoleDetail> addStaffRole(Staff staff, String codes)
     {
-        if(StringUtils.isNullOrEmpty(codes))
+        if (StringUtils.isNullOrEmpty(codes))
         {
             return null;
         }
         String[] codeArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
         List<RoleDetail> roleDetails = new ArrayList<>();
-        for(String code : codeArr)
+        for (String code : codeArr)
         {
-            List<Role> roles = roleAtom.queryRolesByCode(code,LocalAttribute.getNow());
+            List<Role> roles = roleAtom.queryRolesByCode(code, LocalAttribute.getNow());
             Role role = CollectionUtils.getFirstElement(roles);
-            if(null == role)
+            if (null == role)
             {
                 continue;
             }
@@ -437,18 +541,18 @@ public class StaffServiceImpl implements StaffService
         return roleDetailList;
     }
 
-    private List<RoleDetail> buildRoleDetailList(List<RoleStaff> ruList )
+    private List<RoleDetail> buildRoleDetailList(List<RoleStaff> ruList)
     {
         List<RoleDetail> roleDetailList = new ArrayList<>();
-        if(CollectionUtils.isEmpty(ruList))
+        if (CollectionUtils.isEmpty(ruList))
         {
             return null;
         }
-        for(RoleStaff ru : ruList)
+        for (RoleStaff ru : ruList)
         {
             Role role = roleAtom.queryRoleByID(ru.getRoleId());
 
-            if(null == role)
+            if (null == role)
             {
                 continue;
             }
@@ -458,7 +562,7 @@ public class StaffServiceImpl implements StaffService
         return roleDetailList;
     }
 
-    private void saveRoleList(Staff staff,String roleString)
+    private void saveRoleList(Staff staff, String roleString)
     {
 
         String[] codeArr = org.springframework.util.StringUtils.tokenizeToStringArray(roleString, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
@@ -467,18 +571,18 @@ public class StaffServiceImpl implements StaffService
         List<RoleStaff> roleListExist = roleStaffAtom.queryRoleStaffByStaffId(staff.getId());
         List<Long> addRoleStaffRelationList = new ArrayList<>();
         List<RoleStaff> removeRoleStaffRelationList = new ArrayList<>();
-        List<Long> roleListExistRoleId  = new ArrayList<>();
-        if(CollectionUtils.isNotEmpty(roleListExist))
+        List<Long> roleListExistRoleId = new ArrayList<>();
+        if (CollectionUtils.isNotEmpty(roleListExist))
         {
-            for(RoleStaff roleStaff : roleListExist)
+            for (RoleStaff roleStaff : roleListExist)
             {
                 Role role = roleAtom.queryRoleByID(roleStaff.getRoleId());
-                if(null == role)
+                if (null == role)
                 {
                     continue;
                 }
                 roleListExistRoleId.add(role.getId());
-                if(isExistInList(roleIdListRequest,role.getId()))
+                if (isExistInList(roleIdListRequest, role.getId()))
                 {
                     continue;
                 }
@@ -488,11 +592,11 @@ public class StaffServiceImpl implements StaffService
                 }
             }
         }
-        if(CollectionUtils.isNotEmpty(roleIdListRequest))
+        if (CollectionUtils.isNotEmpty(roleIdListRequest))
         {
-            for(Role roleNeedAdd : roleIdListRequest)
+            for (Role roleNeedAdd : roleIdListRequest)
             {
-                if(!roleListExistRoleId.contains(roleNeedAdd.getId()))
+                if (!roleListExistRoleId.contains(roleNeedAdd.getId()))
                 {
                     addRoleStaffRelationList.add(roleNeedAdd.getId());
                 }
@@ -500,19 +604,19 @@ public class StaffServiceImpl implements StaffService
         }
         debug.log(addRoleStaffRelationList);
         debug.log(removeRoleStaffRelationList);
-        addStaffRoleRelation(staff,addRoleStaffRelationList);
-        removeRolePermissionRelation(staff,removeRoleStaffRelationList);
+        addStaffRoleRelation(staff, addRoleStaffRelationList);
+        removeRolePermissionRelation(staff, removeRoleStaffRelationList);
     }
 
-    private boolean isExistInList(List<Role> roleIdListRequest ,Long roleId)
+    private boolean isExistInList(List<Role> roleIdListRequest, Long roleId)
     {
-        if(CollectionUtils.isEmpty(roleIdListRequest))
+        if (CollectionUtils.isEmpty(roleIdListRequest))
         {
             return false;
         }
-        for(Role role : roleIdListRequest)
+        for (Role role : roleIdListRequest)
         {
-            if(role.getId().longValue() == roleId.longValue())
+            if (role.getId().longValue() == roleId.longValue())
             {
                 return true;
             }
@@ -520,19 +624,19 @@ public class StaffServiceImpl implements StaffService
         return false;
     }
 
-    private List<Role> getRoleIdList( String[] codeArr)
+    private List<Role> getRoleIdList(String[] codeArr)
     {
         List<Role> roleIdList = new ArrayList<>();
-        if(codeArr.length==0)
+        if (codeArr.length == 0)
         {
             return roleIdList;
         }
-        for(String code : codeArr)
+        for (String code : codeArr)
         {
 
             List<Role> roles = roleAtom.queryRolesByCode(code, LocalAttribute.getNow());
             Role role = CollectionUtils.getFirstElement(roles);
-            if(null == role)
+            if (null == role)
             {
                 continue;
             }
@@ -542,16 +646,15 @@ public class StaffServiceImpl implements StaffService
     }
 
 
-
     private void addStaffRoleRelation(Staff staff, List<Long> roleList)
     {
-        if(CollectionUtils.isEmpty(roleList))
+        if (CollectionUtils.isEmpty(roleList))
         {
             return;
         }
         else
         {
-            for(Long id : roleList)
+            for (Long id : roleList)
             {
                 RoleStaff roleStaff = new RoleStaff();
                 roleStaff.setStaffId(staff.getId());
@@ -564,16 +667,16 @@ public class StaffServiceImpl implements StaffService
 
     private void removeRolePermissionRelation(Staff staff, List<RoleStaff> roleList)
     {
-        if(CollectionUtils.isEmpty(roleList))
+        if (CollectionUtils.isEmpty(roleList))
         {
             return;
         }
         else
         {
-            for(RoleStaff ru : roleList)
+            for (RoleStaff ru : roleList)
             {
                 debug.log(ru);
-                if(null == ru)
+                if (null == ru)
                 {
                     continue;
                 }

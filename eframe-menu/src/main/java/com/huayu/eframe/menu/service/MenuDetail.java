@@ -30,6 +30,8 @@ public class MenuDetail
 
     private String status;
 
+    private Integer range;
+
     @JsonProperty(value = "children")
     private List<MenuDetail> routes;
 
@@ -131,5 +133,15 @@ public class MenuDetail
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public Integer getRange()
+    {
+        return range;
+    }
+
+    public void setRange(Integer range)
+    {
+        this.range = range;
     }
 }

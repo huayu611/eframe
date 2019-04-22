@@ -74,6 +74,18 @@ public class ModifyStaffBusiness extends AbstractExecuteBusiness
         staffDetail.setName(request.getName());
         staffDetail.setTel(request.getTel());
         staffDetail.setRemark(request.getRemark());
+        staffDetail.setWechat(request.getWechat());
+        staffDetail.setWeibo(request.getWeibo());
+        staffDetail.setQq(request.getQq());
+        staffDetail.setAlipay(request.getAlipay());
+        staffDetail.setAvatar(request.getAvatar());
+        staffDetail.setSignature(request.getSignature());
+        staffDetail.setIdentityId(request.getIdentityId());
+        staffDetail.setRealName(request.getRealName());
+        staffDetail.setNickName(request.getNickName());
+        staffDetail.setOtherTelNumber(request.getOtherTelNumber());
+        staffDetail.setBirthday(request.getBirthday());
+        staffDetail.setGender(request.getGender());
         return staffDetail;
     }
 

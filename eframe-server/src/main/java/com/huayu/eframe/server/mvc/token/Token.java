@@ -37,6 +37,8 @@ public class Token
 
     private Date expireTime;
 
+    private Long duration;
+
     private String token;
 
     private String type;
@@ -174,5 +176,15 @@ public class Token
     public void setTokenInstance(TokenInstance tokenInstance)
     {
         this.tokenInstance = tokenInstance;
+    }
+
+    public Long getDuration()
+    {
+        return duration;
+    }
+
+    public void setDuration(Long duration)
+    {
+        this.duration = duration;
     }
 }

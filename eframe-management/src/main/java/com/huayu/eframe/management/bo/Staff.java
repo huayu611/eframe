@@ -56,7 +56,11 @@ public class Staff implements ValidTime
     @Column(name="LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
-    @Column(name="REMARK")
+//    @Column(name="REMARK")
+    /**
+     * it's not use in v1.1 and the column will move to staffext bo
+     */
+    @Deprecated
     private String remark;
 
     public String getSalt()
@@ -199,11 +203,20 @@ public class Staff implements ValidTime
         this.telNumber = telNumber;
     }
 
+    /**
+     * it's not use in v1.1 and the column will move to staffext bo
+     */
+    @Deprecated
     public String getRemark()
     {
         return remark;
     }
 
+    /**
+     * it's not use in v1.1 and the column will move to staffext bo
+     * @param remark  not use in v1.1
+     */
+    @Deprecated
     public void setRemark(String remark)
     {
         this.remark = remark;

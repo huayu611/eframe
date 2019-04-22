@@ -32,6 +32,8 @@ public class ModifyMenuRequest
     @EFrameRequest(length = 128)
     private String component;
 
+    private Integer range;
+
     public String getCode()
     {
         return code;
@@ -110,5 +112,15 @@ public class ModifyMenuRequest
     public void setComponent(String component)
     {
         this.component = component;
+    }
+
+    public Integer getRange()
+    {
+        return range;
+    }
+
+    public void setRange(Integer range)
+    {
+        this.range = range;
     }
 }

@@ -5,6 +5,7 @@ import com.huayu.eframe.menu.bo.Menu;
 import com.huayu.eframe.menu.repository.MenuRepository;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -78,7 +79,7 @@ public class MenuAtomImpl implements MenuAtom
 
     private  List<Menu> queryValidPermissionByPage(Date now, Menu condition)
     {
-
+        Sort sort = new Sort(Sort.Direction.ASC,"range");
        Specification<Menu> querySpecific = new Specification<Menu>(){
 
             @Override
@@ -110,7 +111,7 @@ public class MenuAtomImpl implements MenuAtom
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
             };
         };
-        List<Menu> resultList = this.menuRepository.findAll(querySpecific);
+        List<Menu> resultList = this.menuRepository.findAll(querySpecific,sort);
         return resultList;
     }
 }
