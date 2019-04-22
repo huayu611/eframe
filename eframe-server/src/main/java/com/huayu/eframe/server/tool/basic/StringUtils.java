@@ -224,6 +224,21 @@ public class StringUtils
         return value.substring(0,pos);
     }
 
+    public static String cutLastLengthString(String value,int pos)
+    {
+        if(isNullOrEmpty(value))
+        {
+            return value;
+        }
+        int length = getLength(value);
+        if(length <= pos)
+        {
+            return value;
+        }
+
+        return value.substring(pos);
+    }
+
     public static String cutPrefix(String value,String prefix)
     {
         if(isNullOrEmpty(value) || isNullOrEmpty(prefix))
@@ -240,4 +255,31 @@ public class StringUtils
         }
         return cutLengthString(value,prefix.length());
     }
+
+
+    public static String hiddenPart(String value,int start,int end)
+    {
+        if(start>=end)
+        {
+            return value;
+        }
+        if(isNullOrEmpty(value))
+        {
+            return value;
+        }
+        if(value.length()< start)
+        {
+            return value;
+        }
+        if(value.length()<end)
+        {
+            String hiddenChar = value.substring(start).replaceAll(".+?", "*");
+            return cutLengthString(value,start) +hiddenChar;
+        }
+        String hiddenChar = value.substring(start,end).replaceAll(".+?", "*");
+        return cutLengthString(value,start) + hiddenChar + cutLastLengthString(value,end);
+    }
+
+
+
 }
