@@ -14,10 +14,8 @@
         <module name="eframe-management" />
         <module name="eframe-menu" />
         <module name="eframe-server" />
+        <module name="eframe-timetask" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="eframe-feedback" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

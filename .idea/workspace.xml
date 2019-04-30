@@ -1,433 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BeansEndpointTabSettings">
-    <option name="showLiveBeansGraph" value="false" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="562a283c-fdf9-48ea-8bc7-3aad7cb50e73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartResolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadRequest.java" afterDir="false" />
+    <list default="true" id="0d6c17ad-76bc-4307-9940-8cf50f56e928" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/execute/NextTimeCalculate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/eframe-feedback.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/FeedBackRestfulServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/atom/FeedBackAtom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/atom/impl/FeedBackAtomImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/bo/FeedBackBO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/flow/AddFeedBackBusiness.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/flow/DeleteFeedBackBusiness.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/flow/QueryFeedBackBusiness.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/repository/FeedBackRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/requset/DeleteFeedBackRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/requset/FeedBackRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/requset/QueryFeedBackRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/response/FeedBackDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/response/FeedBackResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/service/FeedBackService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-feedback/src/main/java/com/huayu/eframe/feedback/service/impl/FeedBackServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/AbstractExecuteBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/AbstractExecuteBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/add/AddEmailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/add/AddEmailRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartRestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartRestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-integration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_zh.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe_server.sql" beforeDir="false" afterPath="$PROJECT_DIR$/eframe_server.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-server/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-feedback/target/" />
-    <ignored path="$PROJECT_DIR$/eframe_mui/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-copinfo/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-management/target/" />
-    <ignored path="$PROJECT_DIR$/eframe_flow/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-server/eframe_config/target/" />
-    <ignored path="$PROJECT_DIR$/eframe_config/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-global/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-menu/target/" />
-    <ignored path="$PROJECT_DIR$/eframe_integration/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-config/target/" />
-    <ignored path="$PROJECT_DIR$/eframe-flow/target/" />
     <ignored path="$PROJECT_DIR$/eframe-integration/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-flow/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-copinfo/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-global/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-server/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-menu/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-management/target/" />
+    <ignored path="$PROJECT_DIR$/eframe-config/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/eframe$Start.ic" NAME="Start Coverage Results" MODIFIED="1554704387873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.huayu.eframe.integration.boot.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/eframe$Start__1_.ic" NAME="Start (1) Coverage Results" MODIFIED="1552525681626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.huayu.eframe.integration.boot.*</FILTER>
-    </SUITE>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-952359348">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="126" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="27" />
-          <entry key="project.open.time.10" value="12" />
-          <entry key="project.open.time.10640" value="1" />
-          <entry key="project.open.time.11" value="13" />
-          <entry key="project.open.time.12" value="12" />
-          <entry key="project.open.time.13" value="9" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.142" value="1" />
-          <entry key="project.open.time.15" value="6" />
-          <entry key="project.open.time.16" value="7" />
-          <entry key="project.open.time.17" value="5" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.184" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.194" value="1" />
-          <entry key="project.open.time.2" value="9" />
-          <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.3" value="4" />
-          <entry key="project.open.time.34" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="130" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Autowired" value="1" />
-          <entry key="Cache" value="1" />
-          <entry key="JavaScript-modules-diagram/D:/source/code/eframe/eframe_config;D:/source/code/eframe/eframe-copinfo;D:/source/code/eframe/eframe-feedback;D:/source/code/eframe/eframe_flow;D:/source/code/eframe/eframe-global;D:/source/code/eframe/eframe-management;D:/source/code/eframe/eframe-menu;D:/source/code/eframe/eframe-server;" value="1" />
-          <entry key="MODULES/mdl-eframe" value="2" />
-          <entry key="MODULES/mdl-eframe-integration" value="1" />
-          <entry key="MODULES/mdl-eframe-management" value="2" />
-          <entry key="MODULES/mdl-eframe_integration" value="1" />
-          <entry key="SpringLocalModels/module=eframe_config" value="1" />
-          <entry key="UploadBusiness" value="1" />
-          <entry key="class" value="309" />
-          <entry key="css" value="2" />
-          <entry key="ftl" value="2" />
-          <entry key="html" value="91" />
-          <entry key="iml" value="5" />
-          <entry key="java" value="3362" />
-          <entry key="js" value="33" />
-          <entry key="pom" value="11" />
-          <entry key="properties" value="200" />
-          <entry key="sql" value="6" />
-          <entry key="ts" value="1" />
-          <entry key="xml" value="182" />
+          <entry key="gradle" value="1" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="309" />
-          <entry key="CSS" value="2" />
-          <entry key="FTL" value="2" />
-          <entry key="HTML" value="91" />
-          <entry key="IDEA_MODULE" value="5" />
-          <entry key="JAVA" value="3362" />
-          <entry key="JavaScript" value="33" />
-          <entry key="Properties" value="200" />
-          <entry key="SQL" value="6" />
-          <entry key="TypeScript" value="1" />
-          <entry key="UML" value="11" />
-          <entry key="XML" value="193" />
+          <entry key="Groovy" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="class" value="2" />
-          <entry key="dummy" value="38" />
-          <entry key="ftl" value="16" />
-          <entry key="html" value="2699" />
-          <entry key="java" value="68591" />
-          <entry key="js" value="834" />
-          <entry key="properties" value="4345" />
-          <entry key="regexp" value="13" />
-          <entry key="sql" value="70" />
-          <entry key="txt" value="697" />
-          <entry key="xml" value="751" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="FTL" value="16" />
-          <entry key="HTML" value="2699" />
-          <entry key="JAVA" value="68591" />
-          <entry key="JavaScript" value="834" />
-          <entry key="PLAIN_TEXT" value="735" />
-          <entry key="Properties" value="4345" />
-          <entry key="RegExp" value="13" />
-          <entry key="SQL" value="70" />
-          <entry key="XML" value="751" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="eframe" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.java">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="28" selection-start-line="28" selection-end-line="29" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartRestServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="66" />
+            <state relative-caret-position="276">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadBusiness.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/common/CopLogoRuler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/serivce/CopBaseInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/serivce/impl/CopBaseInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartResolve.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="552">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>SpringBootStartBeanPool</find>
-      <find>getMessage</find>
-      <find>resolveCode</find>
-      <find>implement</find>
-      <find>LogUtils</find>
-      <find>level</find>
-      <find>debug</find>
-      <find>ACCEPT</find>
-      <find>ERROR</find>
-      <find>task</find>
-      <find>setLevel</find>
-      <find>ref</find>
-      <find>gender</find>
-      <find>_dic</find>
-      <find>ge</find>
-      <find>marital</find>
-      <find>switch-log</find>
-      <find>feedback</find>
-      <find>page</find>
-      <find>before(BusinessParameter</find>
-      <find>getIpFromEasyParam</find>
-      <find>deleteInBatch</find>
-      <find>PAGING_O</find>
-      <find>tidyPagingResponse</find>
-      <find>_eframe_ph</find>
-      <find>email</find>
-      <find>13008</find>
-      <find>phone</find>
-      <find>easyParam</find>
-      <find>downLoadPath</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>data.code</replace>
-      <replace>data.msg</replace>
-      <replace>！</replace>
-      <replace>STAFF</replace>
-      <replace>staff</replace>
-      <replace>Staff</replace>
-      <replace>/Staff/</replace>
-      <replace>staf</replace>
-      <replace>staffname</replace>
-      <replace>com.huayu.eframe.server.security.service.single.bo.PermissionDetail</replace>
-      <replace>com.huayu.eframe.server.security.service.single.bo.RoleDetail</replace>
-      <replace>com.huayu.eframe.server.security.service.single.bo.StaffDetail</replace>
-      <replace />
-      <replace>1000</replace>
-      <replace>.ERRORDESC</replace>
-      <replace>.SOLUTION</replace>
-      <replace>1.0.1-SNAPSHOT</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>D:\source\code\eframe\eframe-feedback\src\main\java</dir>
-      <dir>D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\security</dir>
-      <dir>D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\security\service\request</dir>
-      <dir>D:\source\code\eframe\eframe-copinfo</dir>
-      <dir>D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\security\service</dir>
-      <dir>D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\security\service\atom\impl</dir>
-      <dir>D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\tool\basic</dir>
-      <dir>D:\source\code\eframe\eframe-server</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
-      </GitPushTagMode>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../android/cloudyblog" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../eframe-product" value="PREVIEW" />
+        <entry key="E:/oscode/hibernate/hibernate-orm" value="PREVIEW" />
+        <entry key="E:/oscode/spring/springframework" value="PREVIEW" />
+      </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eframe-menu/src/main/java/com/huayu/eframe/menu/flow/delmenu/DeleteMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-menu/src/main/java/com/huayu/eframe/menu/flow/modmenu/ModifyMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/flow/addparameter/AddParameterRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/flow/modify/ModifyParameterRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/flow/delete/DeleteParameterRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/flow/delete/DeleteParameterBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/server/ParameterServer.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/query/QueryEmailRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/remove/RemoveEmailRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/update/ModifyEmailRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-menu/src/main/java/com/huayu/eframe/menu/flow/querymenu/QueryMenuRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/SitchDebugBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/SitchDebugBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/token/QuerySystemTokensServer.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/eframe_global_all_dict.xml" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/SwitchDebugRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/boot/StartApplication.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/log/Debug.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/LogCatalog.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/LogCatalogAdapt.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/LogLevelCustomization.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/log/LogUtils.java" />
-        <option value="$PROJECT_DIR$/eframe_server.sql" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/log/LogDebug.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/switchdebug/SwitchDebugBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/refreshcache/RefreshCacleBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/RefreshCacheRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/refreshcache/RefreshCacheRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/refreshcache/RefreshCacheBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/SystemControlServer.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception.properties" />
-        <option value="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_zh.properties" />
-        <option value="$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_en.properties" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/add/AddEmailRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadRequet.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/AbstractExecuteBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartUtil.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultiparResolve.java" />
-        <option value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadRequest.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartResolve.java" />
-        <option value="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartRestServer.java" />
-        <option value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadBusiness.java" />
       </list>
     </option>
   </component>
@@ -437,91 +108,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="userSettingsFile" value="D:\apache\maven\apache-maven-3.5.4\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="eframe-server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="eframe-server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="eframe-server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-          <item name="org.springframework.boot:spring-boot-starter-thymeleaf:2.0.3.RELEASE" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
+    <option name="x" value="375" />
+    <option name="width" value="1540" />
     <option name="height" value="1040" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
-            <id>IconsUsabilityLintAndroid</id>
-          </State>
-          <State>
-            <id>Internationalization</id>
-          </State>
-          <State>
-            <id>InternationalizationJava</id>
-          </State>
-          <State>
-            <id>InternationalizationLintAndroid</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>LintAndroid</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring BootSpring</id>
-          </State>
-          <State>
-            <id>UsabilityLintAndroid</id>
-          </State>
-          <State>
-            <id>WebSocket</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SpringBootApplicationSetup</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -529,64 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="flow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="1abcf292:AndroidViewProjectNode" />
-              <item name="eframe-server" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="flow" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -594,238 +126,26 @@
               <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
               <item name="eframe" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="copinfo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="copbaseinfo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="copinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="serivce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-              <item name="download" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="ruler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="eframe-global" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eframe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eframe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ChangesTree.GroupingKeys" value="module" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="eframe" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="DeletePer&#9;FILE&#9;file://D:/source/code/eframe/eframe-management/src/main/java/com/huayu/eframe/management/flow/permission/DeletePermissionBusiness.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="D:/android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555256183945" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last.edited.regexp" value="3213213213123123123.....{}dcsfd" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556614481073" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.huayu.eframe.config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\source\code\eframe\eframe-global\src\main\resources\META-INF\config\dict\lang" />
-      <recent name="D:\source\code\eframe\eframe-global\src\main\resources\META-INF\config\dict" />
-      <recent name="D:\source\code\eframe\eframe-global\src\main\resources\META-INF" />
-      <recent name="D:\source\code\eframe\eframe-global\src\main\resources\META-INF\exception" />
-      <recent name="D:\source\code\eframe\eframe-server\src\main\resources\META-INF\exception" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.huayu.eframe.flow.valid" />
-      <recent name="com.huayu.eframe.menu.server" />
-      <recent name="com.huayu.eframe.config.table.util" />
-      <recent name="com.huayu.eframe.management.common.white" />
-      <recent name="com.huayu.eframe.server.common.i18n.property" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\source\code\eframe\config" />
-      <recent name="D:\source\code\eframe\eframe-config\src\main\resources" />
-      <recent name="D:\source\code\eframe\eframe-management\src\main\resources\META-INF" />
-      <recent name="D:\source\code\eframe\eframe-management\src\main\resources\META-INF\config" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -839,574 +159,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Start">
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.integration.boot.Start" />
-      <module name="eframe-integration" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.huayu.eframe.integration.boot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="129.211.135.141" type="Remote" factoryName="Remote">
-      <module name="eframe-global" />
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" />
-      <option name="HOST" value="129.211.135.141" />
-      <option name="PORT" value="5005" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="5005" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="192.168.1.8" type="Remote" factoryName="Remote">
-      <module name="eframe-copinfo" />
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" />
-      <option name="HOST" value="192.168.1.8" />
-      <option name="PORT" value="5005" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="5005" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="StartApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eframe-copinfo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.huayu.eframe.copinfo.boot.StartApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Remote.129.211.135.141" />
-      <item itemvalue="Remote.192.168.1.8" />
-      <item itemvalue="Spring Boot.StartApplication (1)" />
-      <item itemvalue="Application.Start" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Start" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="562a283c-fdf9-48ea-8bc7-3aad7cb50e73" name="Default Changelist" comment="" />
-      <created>1543130486468</created>
+      <changelist id="0d6c17ad-76bc-4307-9940-8cf50f56e928" name="Default Changelist" comment="" />
+      <created>1556614366900</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1543130486468</updated>
-      <workItem from="1543130489689" duration="9642000" />
-      <workItem from="1543195787871" duration="1838000" />
-      <workItem from="1543217982793" duration="2737000" />
-      <workItem from="1543231790251" duration="8158000" />
-      <workItem from="1543406285055" duration="2251000" />
-      <workItem from="1543561324432" duration="8967000" />
-      <workItem from="1543656703039" duration="601000" />
-      <workItem from="1543683696279" duration="5512000" />
-      <workItem from="1543820723575" duration="3747000" />
-      <workItem from="1543909141064" duration="5540000" />
-      <workItem from="1543992395886" duration="7203000" />
-      <workItem from="1544085809338" duration="7031000" />
-      <workItem from="1544151220578" duration="744000" />
-      <workItem from="1544194412949" duration="6064000" />
-      <workItem from="1544250400236" duration="1197000" />
-      <workItem from="1544325433129" duration="12751000" />
-      <workItem from="1544855769988" duration="8578000" />
-      <workItem from="1544944691586" duration="1693000" />
-      <workItem from="1544959335007" duration="3459000" />
-      <workItem from="1545051308999" duration="2311000" />
-      <workItem from="1545136119582" duration="4865000" />
-      <workItem from="1545221124207" duration="7493000" />
-      <workItem from="1545308082402" duration="8218000" />
-      <workItem from="1545363306801" duration="340000" />
-      <workItem from="1545379554586" duration="3242000" />
-      <workItem from="1545491400662" duration="6918000" />
-      <workItem from="1546002766097" duration="9723000" />
-      <workItem from="1546093506523" duration="3240000" />
-      <workItem from="1546180792846" duration="6055000" />
-      <workItem from="1546240464656" duration="1822000" />
-      <workItem from="1546611809895" duration="2195000" />
-      <workItem from="1546662324265" duration="4931000" />
-      <workItem from="1546759792277" duration="2467000" />
-      <workItem from="1546831645403" duration="16167000" />
-      <workItem from="1546948853080" duration="11723000" />
-      <workItem from="1547013472069" duration="2031000" />
-      <workItem from="1547023910172" duration="3999000" />
-      <workItem from="1547395381121" duration="6896000" />
-      <workItem from="1547451533405" duration="12323000" />
-      <workItem from="1547529038093" duration="11818000" />
-      <workItem from="1547644576785" duration="10560000" />
-      <workItem from="1547691801442" duration="21133000" />
-      <workItem from="1547787829817" duration="17191000" />
-      <workItem from="1547885922368" duration="1675000" />
-      <workItem from="1548081956815" duration="10819000" />
-      <workItem from="1548136526127" duration="15129000" />
-      <workItem from="1548223779376" duration="9367000" />
-      <workItem from="1548243757121" duration="8712000" />
-      <workItem from="1548301863148" duration="8093000" />
-      <workItem from="1548316859000" duration="1826000" />
-      <workItem from="1548579507010" duration="2677000" />
-      <workItem from="1548749466470" duration="7248000" />
-      <workItem from="1548774755265" duration="3536000" />
-      <workItem from="1548926424779" duration="29000" />
-      <workItem from="1549180365326" duration="3918000" />
-      <workItem from="1549195540969" duration="3319000" />
-      <workItem from="1549795650943" duration="4284000" />
-      <workItem from="1549858171560" duration="17478000" />
-      <workItem from="1549945806371" duration="9608000" />
-      <workItem from="1550045233799" duration="5460000" />
-      <workItem from="1550132185831" duration="2999000" />
-      <workItem from="1550387766322" duration="7997000" />
-      <workItem from="1550449502398" duration="27952000" />
-      <workItem from="1550537348013" duration="11692000" />
-      <workItem from="1550552651324" duration="9392000" />
-      <workItem from="1550566839392" duration="1519000" />
-      <workItem from="1550622706859" duration="12176000" />
-      <workItem from="1550708861724" duration="10982000" />
-      <workItem from="1550741210039" duration="97000" />
-      <workItem from="1550796817949" duration="14107000" />
-      <workItem from="1550884554647" duration="13577000" />
-      <workItem from="1550973267601" duration="603000" />
-      <workItem from="1551001841124" duration="619000" />
-      <workItem from="1551054428396" duration="8663000" />
-      <workItem from="1551140453979" duration="4424000" />
-      <workItem from="1551227107275" duration="1936000" />
-      <workItem from="1551258021839" duration="116000" />
-      <workItem from="1551314697410" duration="11527000" />
-      <workItem from="1551341842628" duration="3843000" />
-      <workItem from="1551400468184" duration="13737000" />
-      <workItem from="1551428972081" duration="3763000" />
-      <workItem from="1551488885128" duration="4818000" />
-      <workItem from="1551493921183" duration="3718000" />
-      <workItem from="1551498128814" duration="5220000" />
-      <workItem from="1551504876283" duration="481000" />
-      <workItem from="1551505415588" duration="10028000" />
-      <workItem from="1551600753406" duration="2489000" />
-      <workItem from="1551619454798" duration="2829000" />
-      <workItem from="1551692171670" duration="2497000" />
-      <workItem from="1551746463946" duration="28054000" />
-      <workItem from="1551832255517" duration="5033000" />
-      <workItem from="1551837955291" duration="2907000" />
-      <workItem from="1552110138868" duration="6214000" />
-      <workItem from="1552185667779" duration="17363000" />
-      <workItem from="1552264345608" duration="9805000" />
-      <workItem from="1552282372610" duration="5081000" />
-      <workItem from="1552298836078" duration="631000" />
-      <workItem from="1552350778574" duration="199000" />
-      <workItem from="1552358437383" duration="957000" />
-      <workItem from="1552365257438" duration="5416000" />
-      <workItem from="1552454927916" duration="11761000" />
-      <workItem from="1552523861992" duration="14135000" />
-      <workItem from="1552609759345" duration="2112000" />
-      <workItem from="1552723252317" duration="3319000" />
-      <workItem from="1553080510417" duration="386000" />
-      <workItem from="1553170521777" duration="1392000" />
-      <workItem from="1553215328326" duration="5108000" />
-      <workItem from="1553221983024" duration="2979000" />
-      <workItem from="1553314755660" duration="3525000" />
-      <workItem from="1553392928887" duration="3912000" />
-      <workItem from="1553479831115" duration="1362000" />
-      <workItem from="1553482482947" duration="1041000" />
-      <workItem from="1553514474360" duration="983000" />
-      <workItem from="1553590089972" duration="486000" />
-      <workItem from="1553910171777" duration="11952000" />
-      <workItem from="1553936037626" duration="20000" />
-      <workItem from="1553995656303" duration="4795000" />
-      <workItem from="1554078859668" duration="9925000" />
-      <workItem from="1554191617111" duration="3557000" />
-      <workItem from="1554251578953" duration="2719000" />
-      <workItem from="1554338041645" duration="5872000" />
-      <workItem from="1554429512002" duration="6664000" />
-      <workItem from="1554683669911" duration="22685000" />
-      <workItem from="1554769546107" duration="10899000" />
-      <workItem from="1554871202082" duration="2230000" />
-      <workItem from="1554877793174" duration="5411000" />
-      <workItem from="1554961522349" duration="5041000" />
-      <workItem from="1555042407047" duration="4629000" />
-      <workItem from="1555115391263" duration="5988000" />
-      <workItem from="1555252939454" duration="3206000" />
+      <updated>1556614366900</updated>
+      <workItem from="1556614370234" duration="108000" />
     </task>
-    <task id="LOCAL-00001" summary="modify by lizhihua">
-      <created>1548778065715</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1548778065716</updated>
-    </task>
-    <task id="LOCAL-00002" summary="modify by lizhihua">
-      <created>1549181257410</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1549181257411</updated>
-    </task>
-    <task id="LOCAL-00003" summary="modify by lizhihua&#10;修改删除时返回code序列">
-      <created>1549868926155</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1549868926155</updated>
-    </task>
-    <task id="LOCAL-00004" summary="modify by lizhihua&#10;添加menu功能，完成phase1">
-      <created>1549895991561</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1549895991561</updated>
-    </task>
-    <task id="LOCAL-00005" summary="modify by lizhihua&#10;添加menu功能，完成phase2">
-      <created>1549981257585</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1549981257586</updated>
-    </task>
-    <task id="LOCAL-00006" summary="modify by lizhihua&#10;添加menu功能，完成phase2(修改BUG)">
-      <created>1549982712282</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1549982712282</updated>
-    </task>
-    <task id="LOCAL-00007" summary="modify by lizhihua&#10;添加menu功能，完成phase3(完成)">
-      <created>1550066438250</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1550066438250</updated>
-    </task>
-    <task id="LOCAL-00008" summary="modify by lizhihua&#10;添加记录操作日志功能">
-      <created>1550481839321</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1550481839321</updated>
-    </task>
-    <task id="LOCAL-00009" summary="modify by lizhihua&#10;添加敏感数据处理">
-      <created>1550561666357</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1550561666357</updated>
-    </task>
-    <task id="LOCAL-00010" summary="modify by lizhihua&#10;添加接口，查询自身登陆的信息;global级别">
-      <created>1550634228812</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1550634228812</updated>
-    </task>
-    <task id="LOCAL-00011" summary="modify by lizhihua 归档SQL文件。">
-      <created>1550654849478</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1550654849478</updated>
-    </task>
-    <task id="LOCAL-00012" summary="modify by lizhihua 修改空指针bug">
-      <created>1550655409802</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1550655409802</updated>
-    </task>
-    <task id="LOCAL-00013" summary="modify by lizhihua 添加token为敏感数字">
-      <created>1550813672127</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1550813672127</updated>
-    </task>
-    <task id="LOCAL-00014" summary="modify by lizhihua properties文件包外处理，">
-      <created>1550820644239</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1550820644239</updated>
-    </task>
-    <task id="LOCAL-00015" summary="modify by lizhihua 增加metadata处理">
-      <created>1550904235899</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1550904235899</updated>
-    </task>
-    <task id="LOCAL-00016" summary="modify by lizhihua 增加metadata处理">
-      <created>1551258053073</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1551258053073</updated>
-    </task>
-    <task id="LOCAL-00017" summary="modify by lizhihua 增加metadata处理">
-      <created>1551428999026</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1551428999026</updated>
-    </task>
-    <task id="LOCAL-00018" summary="modify by lizhihua 发布1.0.0版本">
-      <created>1551429383256</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1551429383256</updated>
-    </task>
-    <task id="LOCAL-00019" summary="modify by lizhihua 将管理功能从eframe-server抽取出来，单独作为服务处理。">
-      <created>1551490694584</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1551490694585</updated>
-    </task>
-    <task id="LOCAL-00020" summary="modify by lizhihua eframe大重构，结构化调整">
-      <created>1551516728785</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1551516728785</updated>
-    </task>
-    <task id="LOCAL-00021" summary="modify by lizhihua配置文件目录修改">
-      <created>1551621371698</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1551621371698</updated>
-    </task>
-    <task id="LOCAL-00022" summary="modify by lizhihua配置文件目录修改">
-      <created>1551693583282</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1551693583282</updated>
-    </task>
-    <task id="LOCAL-00023" summary="modify by lizhihua  接口规范修改！">
-      <created>1551778569420</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1551778569420</updated>
-    </task>
-    <task id="LOCAL-00024" summary="modify by lizhihua  规范化修改">
-      <created>1551836681109</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1551836681109</updated>
-    </task>
-    <task id="LOCAL-00025" summary="modify by lizhihua  规范化修改">
-      <created>1551838227663</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1551838227663</updated>
-    </task>
-    <task id="LOCAL-00026" summary="modify by lizhihua  &#10;1.0.1版本规划 ：&#10;添加电话验证功能&#10;添加数据字典验证功能&#10;添加邮箱管理&#10;添加邮件发送功能 。">
-      <created>1552273418860</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1552273418860</updated>
-    </task>
-    <task id="LOCAL-00027" summary="modify by lizhihua  &#10;修改权限白名单中的bug">
-      <created>1552479702676</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1552479702676</updated>
-    </task>
-    <task id="LOCAL-00028" summary="modify by lizhihua  &#10;添加freemarker功能，修改邮箱部分功能 ！">
-      <created>1552556302213</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1552556302213</updated>
-    </task>
-    <task id="LOCAL-00029" summary="modify by lizhihua  &#10;添加cutLengthString方法，&#10;添加邮件缓存刷新">
-      <created>1553080854701</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1553080854701</updated>
-    </task>
-    <task id="LOCAL-00030" summary="modify by lizhihua  &#10;添加cutLengthString方法，&#10;添加邮件缓存刷新">
-      <created>1553171876494</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1553171876494</updated>
-    </task>
-    <task id="LOCAL-00031" summary="modify by lizhihua  &#10;对于mapUtils和collectionUtils添加迭代器处理。可以在调用方使用lambda">
-      <created>1553226683054</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1553226683054</updated>
-    </task>
-    <task id="LOCAL-00032" summary="modify by lizhihua  add FoundEntity feature ,">
-      <created>1553514503684</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1553514503684</updated>
-    </task>
-    <task id="LOCAL-00033" summary="modify by lizhihua  add upload interface">
-      <created>1553913297372</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1553913297372</updated>
-    </task>
-    <task id="LOCAL-00034" summary="modify by lizhihua  add FoundEntity feature ,">
-      <created>1554005473341</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1554005473341</updated>
-    </task>
-    <task id="LOCAL-00035" summary="modify by lizhihua  对于实体操作一直很烦，添加一个对象，一键获取方式。">
-      <created>1554108528267</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1554108528267</updated>
-    </task>
-    <task id="LOCAL-00036" summary="modify by lizhihua  add FoundEntity feature ,">
-      <created>1554251675076</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1554251675076</updated>
-    </task>
-    <task id="LOCAL-00037" summary="modify by lizhihua  修改上传文件时，如果文件默认路径没有配置，则使用系统默认，修改默认unix路径">
-      <created>1554435896255</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1554435896255</updated>
-    </task>
-    <task id="LOCAL-00038" summary="modify by lizhihua  所有请求添加校验。修改过程中的一些bug。">
-      <created>1554716155954</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1554716155954</updated>
-    </task>
-    <task id="LOCAL-00039" summary="modify by lizhihua  整合">
-      <created>1554779311112</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1554779311112</updated>
-    </task>
-    <task id="LOCAL-00040" summary="modify by lizhihua  1) add fresh cache interface,2)switch debug interface,3) fix white permission bug">
-      <created>1555052176462</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1555052176462</updated>
-    </task>
-    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="823460000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2356688" visible="true" weight="0.31233245" />
-      <window_info id="Structure" order="1" sideWeight="0.7643312" side_tool="true" weight="0.308311" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6388102" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.44759208" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.57648724" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.3281471" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32152975" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.68130314" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49932975" weight="0.48300284" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.597185" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3297587" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2356688" visible="true" weight="0.31233245" />
-      <window_info id="Structure" order="1" sideWeight="0.7643312" side_tool="true" weight="0.308311" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.76379067" side_tool="true" weight="0.34450403" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6388102" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.44759208" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.57648724" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.3281471" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32152975" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.68130314" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49932975" weight="0.48300284" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3286119" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.597185" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3297587" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1414,545 +219,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="modify by lizhihua&#10;添加接口，查询自身登陆的信息;global级别" />
-    <MESSAGE value="modify by lizhihua 归档SQL文件。" />
-    <MESSAGE value="modify by lizhihua 修改空指针bug" />
-    <MESSAGE value="modify by lizhihua 添加token为敏感数字" />
-    <MESSAGE value="modify by lizhihua properties文件包外处理，" />
-    <MESSAGE value="modify by lizhihua 添加token处理能力" />
-    <MESSAGE value="modify by lizhihua 增加metadata处理" />
-    <MESSAGE value="modify by lizhihua 发布1.0.0版本" />
-    <MESSAGE value="modify by lizhihua 将管理功能从eframe-server抽取出来，单独作为服务处理。" />
-    <MESSAGE value="modify by lizhihua eframe大重构，结构化调整" />
-    <MESSAGE value="modify by lizhihua配置文件目录修改" />
-    <MESSAGE value="modify by lizhihua  接口规范修改！" />
-    <MESSAGE value="modify by lizhihua  规范化修改" />
-    <MESSAGE value="modify by lizhihua  &#10;1.0.1版本规划 ：&#10;添加电话验证功能&#10;添加数据字典验证功能&#10;添加邮箱管理&#10;添加邮件发送功能 。" />
-    <MESSAGE value="modify by lizhihua  &#10;修改权限白名单中的bug" />
-    <MESSAGE value="modify by lizhihua  &#10;添加freemarker功能，修改邮箱部分功能 ！" />
-    <MESSAGE value="modify by lizhihua  &#10;添加cutLengthString方法，&#10;添加邮件缓存刷新" />
-    <MESSAGE value="modify by lizhihua  &#10;对于mapUtils和collectionUtils添加迭代器处理。可以在调用方使用lambda" />
-    <MESSAGE value="modify by lizhihua  add upload interface" />
-    <MESSAGE value="modify by lizhihua  对于实体操作一直很烦，添加一个对象，一键获取方式。" />
-    <MESSAGE value="modify by lizhihua  add FoundEntity feature ," />
-    <MESSAGE value="modify by lizhihua  修改上传文件时，如果文件默认路径没有配置，则使用系统默认，修改默认unix路径" />
-    <MESSAGE value="modify by lizhihua  所有请求添加校验。修改过程中的一些bug。" />
-    <MESSAGE value="modify by lizhihua  整合" />
-    <MESSAGE value="modify by lizhihua  1) add fresh cache interface,2)switch debug interface,3) fix white permission bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify by lizhihua  1) add fresh cache interface,2)switch debug interface,3) fix white permission bug" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31-sources.jar!/org/apache/catalina/webresources/StandardRoot.java</url>
-          <line>369</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/StaffServiceImpl.java</url>
-          <line>463</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.7.RELEASE/spring-beans-5.0.7.RELEASE-sources.jar!/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.java</url>
-          <line>157</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/multipart/support/StandardMultipartHttpServletRequest.java</url>
-          <line>254</line>
-          <properties />
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/eframe-config/src/main/java/com/huayu/eframe/config/parameter/atom/impl/ParameterAtomImpl.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/flow/permission/QueryPermissionBusiness.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/ch/qos/logback/classic/Logger.class</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/ch/qos/logback/classic/Logger.class</url>
-          <line>241</line>
-          <properties />
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="javascript-exception">
-          <properties />
-        </breakpoint>
-      </default-breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="querySpecific" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
-            body = IOUtils.read(reader);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="breakpointLogExpression">
-      <expression>
-        <expression-string>@Override
-    public  Page&lt;Role&gt; queryRolesByPage(Role role, FramePaging framePaging)
-    {
-        PageRequest pageRequest = PageRequest.of(framePaging.getPage(),framePaging.getSize());
-        if(null == role)
-        {</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>logger.getClass()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>logger.getClass();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>logDetail.getOperObjCode()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>logDetail.getOperObjType()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>!result.contains(valueString)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>parameterAtom.getAll()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>cacheElement.getValue(t)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>file</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameAccessDecisionManager.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameConfigAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/WhiteRequestCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/refreshcache/RefreshCacheRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/mvc/token/AbstractTokenMirror.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3910">
-          <caret line="192" column="20" selection-start-line="192" selection-start-column="8" selection-end-line="192" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/ch/qos/logback/classic/Logger.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/Logger.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="103" column="42" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
-          <folding>
-            <element signature="e#5431#5432#0" expanded="true" />
-            <element signature="e#5458#5459#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="276">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/presist/logic/impl/LogRecordLogicImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="110" column="88" lean-forward="true" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/serivce/bo/CopBaseInfoDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/AuthenticationRestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/flow/staff/AddStaffBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/FrameCommonAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="72" column="34" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/flow/permission/DeletePermissionBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/flow/role/QueryRoleBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="60" column="22" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/common/FlowConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/dict/flow/Dict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/dict/common/DictionaryValidRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/eframe_global_all_dict.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/flow/role/ModifyRoleBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/RoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/single/impl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1817">
-          <caret line="107" column="65" selection-start-line="107" selection-start-column="65" selection-end-line="107" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/java/com/huayu/eframe/management/common/constants/ManagementErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="59" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_zh.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-management/src/main/resources/META-INF/exception/eframe_management_exception_en.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/valid/impl/CommonBeanProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4531">
-          <caret line="212" column="40" selection-start-line="212" selection-start-column="40" selection-end-line="212" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/add/AddEmailBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/email/presist/flow/add/AddEmailRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/common/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/AbstractExecuteBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="218" column="13" selection-start-line="218" selection-start-column="13" selection-end-line="218" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-integration/src/com/huayu/eframe/integration/boot/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/ruler/UploadRuler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="226" column="25" selection-start-line="226" selection-start-column="25" selection-end-line="226" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/util/FileCopyUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE-sources.jar!/org/springframework/util/FileCopyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/serivce/impl/CopBaseInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/serivce/CopBaseInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/common/CopLogoRuler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartResolve.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/CopBaseInfoMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/AddCopBaseInfoBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="28" selection-start-line="28" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-copinfo/src/main/java/com/huayu/eframe/copinfo/server/flow/copbaseinfo/ModifyCopBaseInfoBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/download/DownloadRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/MultipartRestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/multipart/upload/UploadBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+        <state relative-caret-position="552">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -2008,12 +286,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>eframe-server</last-edited>
+          <last-edited>eframe</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -2033,7 +310,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

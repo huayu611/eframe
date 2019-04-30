@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-copinfo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eframe-feedback" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-flow" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-global" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-integration" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-management" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-menu" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eframe-server" charset="UTF-8" />
-    <file url="PROJECT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eframe-timetask" charset="UTF-8" />
   </component>
 </project>
