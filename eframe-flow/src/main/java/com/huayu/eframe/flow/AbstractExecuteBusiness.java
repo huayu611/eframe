@@ -256,7 +256,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         return methods.contains(method);
     }
 
-    //v1.0.1添加，为了一些不需要事务的操作。以免系统额外开支
+    //v1.1.0添加，为了一些不需要事务的操作。以免系统额外开支
     protected boolean isNeedTransaction()
     {
         return true;

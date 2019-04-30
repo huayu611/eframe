@@ -1,0 +1,20 @@
+rootProject.name = 'eframe'
+include ':eframe-server'
+include ':eframe-copinfo'
+include ':eframe-management'
+include ':eframe-flow'
+include ':eframe-config'
+include ':eframe-global'
+include ':eframe-menu'
+include ':eframe-integration'
+include ':eframe-timetask'
+
+project(':eframe-server').projectDir = "$rootDir/eframe-server" as File
+project(':eframe-copinfo').projectDir = "$rootDir/eframe-copinfo" as File
+project(':eframe-management').projectDir = "$rootDir/eframe-management" as File
+project(':eframe-flow').projectDir = "$rootDir/eframe-flow" as File
+project(':eframe-config').projectDir = "$rootDir/eframe-config" as File
+project(':eframe-global').projectDir = "$rootDir/eframe-global" as File
+project(':eframe-menu').projectDir = "$rootDir/eframe-menu" as File
+project(':eframe-integration').projectDir = "$rootDir/eframe-integration" as File
+project(':eframe-timetask').projectDir = "$rootDir/eframe-timetask" as File

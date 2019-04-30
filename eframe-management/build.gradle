@@ -1,0 +1,7 @@
+
+description = ''
+dependencies {
+  compile project(':eframe-global')
+  compile project(':eframe-menu')
+    compile group: 'mysql', name: 'mysql-connector-java', version:'6.0.6'
+}

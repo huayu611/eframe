@@ -1,0 +1,12 @@
+
+description = ''
+dependencies {
+  compile project(':eframe-copinfo')
+  compile project(':eframe-server')
+  compile project(':eframe-management')
+  compile project(':eframe-menu')
+  compile project(':eframe-flow')
+  compile project(':eframe-global')
+  compile project(':eframe-timetask')
+  compile group: 'mysql', name: 'mysql-connector-java', version:'6.0.6'
+}
