@@ -46,7 +46,7 @@ public class Flow
                 Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
                 if(null == locale)
                 {
-                    locale = new Locale(HttpUtils.getBrowserLang());
+                    locale = ConfigurationUtils.getDefaultLocal();
                 }
                 debug.log(LocalAttribute.getToken());
                 error.setCode(((IFPException) e).getErrorCode());
