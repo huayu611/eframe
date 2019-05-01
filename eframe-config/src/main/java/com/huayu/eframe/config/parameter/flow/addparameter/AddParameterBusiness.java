@@ -33,7 +33,7 @@ public class AddParameterBusiness extends AbstractExecuteBusiness
         AddParameterRequest addParameterRequest = param.getRequest();
         ParameterDetail parameterDetail = buildParameterDetail(addParameterRequest);
         ParameterDetail addResultParameterDetail = parameterService.addParameter(parameterDetail);
-        param.addParameter(RESULT,addResultParameterDetail);
+        param.addParameter(RESULT, addResultParameterDetail);
 
     }
 
@@ -41,7 +41,7 @@ public class AddParameterBusiness extends AbstractExecuteBusiness
     protected Object tidyData(BusinessParameter param)
     {
 
-       return param.getParameter(RESULT);
+        return param.getParameter(RESULT);
 
     }
 

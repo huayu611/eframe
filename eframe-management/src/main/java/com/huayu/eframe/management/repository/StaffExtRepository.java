@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 /**
  * Created by Leo on 2019/4/22.
  */
-public interface StaffExtRepository  extends JpaRepository<StaffExt,Long>, JpaSpecificationExecutor<StaffExt>
+public interface StaffExtRepository extends JpaRepository<StaffExt, Long>, JpaSpecificationExecutor<StaffExt>
 {
 }

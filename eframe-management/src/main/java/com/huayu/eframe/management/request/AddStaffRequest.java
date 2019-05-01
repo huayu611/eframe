@@ -1,7 +1,5 @@
 package com.huayu.eframe.management.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
 
@@ -12,20 +10,20 @@ import java.util.Date;
  */
 public class AddStaffRequest implements EffectiveExpireDateTime
 {
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String name;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String password;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String login;
 
     @EFrameRequest(bean = "_e_validPhoneNumber")
     private String tel;
 
     //0:正常用户，1：锁定用户，锁定用户不能登陆和使用系统
-   @EFrameRequest(bean = "_dictionary(staff_status)")
+    @EFrameRequest(bean = "_dictionary(staff_status)")
     private String status;
 
     @EFrameRequest(bean = "_e_defaultNow")
@@ -34,7 +32,7 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @EFrameRequest(bean = "_e_defaultExpireTime")
     private Date exp;
 
-    @EFrameRequest(defaultStrValue = "zh",bean = "_e_validLang" )
+    @EFrameRequest(defaultStrValue = "zh", bean = "_e_validLang")
     private String lang;
 
     @EFrameRequest(bean = "_e_validEmail")
@@ -68,7 +66,7 @@ public class AddStaffRequest implements EffectiveExpireDateTime
     @EFrameRequest(length = 1024)
     private String signature;
 
-    @EFrameRequest(bean = "_e_validPhoneNumber",length = 1024)
+    @EFrameRequest(bean = "_e_validPhoneNumber", length = 1024)
     private String otherTelNumber;
 
     @EFrameRequest(length = 64)

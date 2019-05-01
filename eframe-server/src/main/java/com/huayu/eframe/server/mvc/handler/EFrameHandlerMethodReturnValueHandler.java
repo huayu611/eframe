@@ -66,17 +66,21 @@ public class EFrameHandlerMethodReturnValueHandler implements HandlerMethodArgum
         return easyParam;
     }
 
-    private String getRequestBody(NativeWebRequest webRequest){
+    private String getRequestBody(NativeWebRequest webRequest)
+    {
         HttpServletRequest servletRequest = webRequest.getNativeRequest(HttpServletRequest.class);
 
         String jsonBody = "";
-            try {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(servletRequest.getInputStream()));
-                jsonBody = IOUtils.read(bufferedReader);
-                webRequest.setAttribute(JSONBODYATTRIBUTE, jsonBody, NativeWebRequest.SCOPE_REQUEST);
-            } catch (IOException e) {
+        try
+        {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(servletRequest.getInputStream()));
+            jsonBody = IOUtils.read(bufferedReader);
+            webRequest.setAttribute(JSONBODYATTRIBUTE, jsonBody, NativeWebRequest.SCOPE_REQUEST);
+        }
+        catch (IOException e)
+        {
 //                throw new RuntimeException(e);
-            }
+        }
 
         return jsonBody;
     }

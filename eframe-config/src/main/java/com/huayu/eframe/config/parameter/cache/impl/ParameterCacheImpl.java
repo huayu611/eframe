@@ -1,11 +1,11 @@
 package com.huayu.eframe.config.parameter.cache.impl;
 
 import com.huayu.eframe.config.parameter.atom.ParameterAtom;
+import com.huayu.eframe.config.parameter.bo.Parameter;
+import com.huayu.eframe.config.parameter.cache.ParameterCache;
 import com.huayu.eframe.server.cache.frame.AbstractFrameCache;
 import com.huayu.eframe.server.cache.frame.DefaultIndex;
 import com.huayu.eframe.server.cache.frame.Index;
-import com.huayu.eframe.config.parameter.bo.Parameter;
-import com.huayu.eframe.config.parameter.cache.ParameterCache;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,7 +52,7 @@ public class ParameterCacheImpl extends AbstractFrameCache<Parameter> implements
     public String getParameterValue(String parameterCode)
     {
         Parameter parameter = getParameterByParameterCode(parameterCode);
-        return null == parameter? null:parameter.getValue();
+        return null == parameter ? null : parameter.getValue();
     }
 
     @Override

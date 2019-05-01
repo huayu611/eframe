@@ -9,20 +9,20 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SessionToken
 {
 
-    private Map<String,Object> sessionMap;
+    private Map<String, Object> sessionMap;
 
     public SessionToken()
     {
         sessionMap = new ConcurrentHashMap<>();
     }
 
-    public void addValue(String key,Object value)
+    public void addValue(String key, Object value)
     {
-        sessionMap.put(key,value);
+        sessionMap.put(key, value);
     }
 
-    public  <T> T getValue(String key)
+    public <T> T getValue(String key)
     {
-        return (T)sessionMap.get(key);
+        return (T) sessionMap.get(key);
     }
 }

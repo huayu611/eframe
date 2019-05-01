@@ -16,9 +16,9 @@ public class LangUtils
             return new HashMap<>();
         }
         Map<String, String> result = new HashMap<>();
-        for(LangValue langValue: langValueList )
+        for (LangValue langValue : langValueList)
         {
-            result.put(langValue.getLanguage(),langValue.getValue());
+            result.put(langValue.getLanguage(), langValue.getValue());
         }
 
         return result;
@@ -26,15 +26,15 @@ public class LangUtils
 
     public static List<LangValue> converToLangList(Map<String, String> map)
     {
-        if(MapUtils.isEmpty(map))
+        if (MapUtils.isEmpty(map))
         {
             return new ArrayList<>();
         }
 
-        List<LangValue> result =  new ArrayList<>();
+        List<LangValue> result = new ArrayList<>();
         Set<Map.Entry<String, String>> entrySet = map.entrySet();
         Iterator<Map.Entry<String, String>> iterator = entrySet.iterator();
-        while(iterator.hasNext())
+        while (iterator.hasNext())
         {
             Map.Entry<String, String> entry = iterator.next();
             String key = entry.getKey();
@@ -51,9 +51,8 @@ public class LangUtils
 
     public static String genI18nCode()
     {
-        return "IN_"+ RandomUtils.getRandomUUID();
+        return "IN_" + RandomUtils.getRandomUUID();
     }
-
 
 
 }

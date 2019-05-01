@@ -1,6 +1,5 @@
 package com.huayu.eframe.management.single.bo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Date;
@@ -10,7 +9,7 @@ import java.util.List;
  * Created by Administrator on 2018/8/6.
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class  RoleDetail
+public class RoleDetail
 {
 
     private List<PermissionDetail> permissions;

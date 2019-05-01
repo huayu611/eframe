@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/4/15.
  */
 @Service("com.huayu.eframe.timetask.flow.DeleteTimeTaskBusiness")
-public class DeleteTimeTaskBusiness  extends AbstractExecuteBusiness
+public class DeleteTimeTaskBusiness extends AbstractExecuteBusiness
 {
     private final static String RESULT = "DeleteTimeTaskBusiness_RESULT";
 

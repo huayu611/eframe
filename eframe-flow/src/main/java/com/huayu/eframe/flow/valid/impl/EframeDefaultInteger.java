@@ -25,18 +25,18 @@ public class EframeDefaultInteger extends AbstractExecuteEFrameRequest
         debug.log(value);
         if (null == value || "".equals(value.toString()))
         {
-            field.set(request,defaultIntegerValue);
+            field.set(request, defaultIntegerValue);
             debug.log(field.get(request));
         }
     }
 
 
-    public  boolean check(EFrameRequest efremeRequest,Field field,Object request)
+    public boolean check(EFrameRequest efremeRequest, Field field, Object request)
     {
         boolean minInteger = NumberUtils.isMinInteger(efremeRequest.defaultIntegerValue());
-        if(field.getType().isAssignableFrom(Integer.class) && !minInteger)
+        if (field.getType().isAssignableFrom(Integer.class) && !minInteger)
         {
-            Object value = getValueInField(field,request);
+            Object value = getValueInField(field, request);
             return null == value;
         }
         return false;

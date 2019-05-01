@@ -8,7 +8,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class ModifyMenuRequest
 {
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String code;
 
     @EFrameRequest(length = 128)

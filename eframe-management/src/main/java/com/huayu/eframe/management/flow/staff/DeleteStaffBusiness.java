@@ -34,7 +34,7 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
             return;
         }
         String result = deleteStaffInBatch(codeArr);
-        param.addParameter(RESULT,result);
+        param.addParameter(RESULT, result);
     }
 
     private String deleteStaffInBatch(String[] codeArr)
@@ -46,9 +46,9 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
             String login = staffService.deleteStaff(loginName);
             result = result + login + ",";
         }
-        if(result.endsWith(","))
+        if (result.endsWith(","))
         {
-            result = result.substring(0,result.length()-1);
+            result = result.substring(0, result.length() - 1);
         }
         return result;
     }
@@ -57,7 +57,7 @@ public class DeleteStaffBusiness extends AbstractExecuteBusiness
     protected Object tidyData(BusinessParameter param)
     {
 
-       return param.getParameter(RESULT);
+        return param.getParameter(RESULT);
 
     }
 }

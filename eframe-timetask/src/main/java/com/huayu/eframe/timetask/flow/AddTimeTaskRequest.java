@@ -15,7 +15,7 @@ public class AddTimeTaskRequest
     @JsonIgnore
     private String timeTaskCode;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String timeTaskName;
 
     @EFrameRequest(bean = "_e_defaultNow")
@@ -24,7 +24,7 @@ public class AddTimeTaskRequest
     @EFrameRequest(bean = "_e_defaultExpireTime")
     private Date expireTime;
 
-    @EFrameRequest(defaultStrValue = "1",bean = "_dictionary(time-task-status)")
+    @EFrameRequest(defaultStrValue = "1", bean = "_dictionary(time-task-status)")
     private String status;
 
     private Integer cycle;
@@ -32,10 +32,10 @@ public class AddTimeTaskRequest
     @EFrameRequest(bean = "_dictionary(time-task-unit)")
     private String unit;
 
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String service;
 
-    @EFrameRequest(required = true,bean = "_dictionary(time-task-type)")
+    @EFrameRequest(required = true, bean = "_dictionary(time-task-type)")
     private String timeTaskType;
 
     public String getTimeTaskCode()

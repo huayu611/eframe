@@ -2,7 +2,6 @@ package com.huayu.eframe.global.multipart;
 
 import com.huayu.eframe.global.multipart.upload.ruler.UploadRuler;
 import com.huayu.eframe.server.tool.basic.StringUtils;
-import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
@@ -18,10 +17,10 @@ public class MultipartResolve
     {
 
         String downLoadPath = uploadRuler.downLoadPath();
-        String fileName = StringUtils.cutPrefix(fullPath,downLoadPath);
-        if(StringUtils.isNullOrEmpty(fileName))
+        String fileName = StringUtils.cutPrefix(fullPath, downLoadPath);
+        if (StringUtils.isNullOrEmpty(fileName))
         {
-            return ;
+            return;
         }
 
         useByFileName(uploadRuler, fileName);
@@ -31,18 +30,18 @@ public class MultipartResolve
     {
         String fileNameInSystem = uploadRuler.getUploadType() + File.separator + fileName;
         File file = new File(MultipartUtil.getSystemTempPath() + File.separator + fileNameInSystem);
-        if(!file.exists())
+        if (!file.exists())
         {
             return;
         }
-        File newFile =  new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
+        File newFile = new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
         try
         {
-            FileCopyUtils.copy(file,newFile);
+            FileCopyUtils.copy(file, newFile);
         }
         catch (IOException e)
         {
-           ;
+            ;
         }
     }
 

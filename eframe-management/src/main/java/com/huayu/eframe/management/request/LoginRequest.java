@@ -2,7 +2,6 @@ package com.huayu.eframe.management.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 /**
@@ -11,10 +10,10 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class LoginRequest
 {
-    @EFrameRequest(required = true,length = 512)
+    @EFrameRequest(required = true, length = 512)
     private String login;
 
-    @EFrameRequest(required = true,length = 512)
+    @EFrameRequest(required = true, length = 512)
     private String password;
 
     @JsonIgnore
@@ -23,7 +22,7 @@ public class LoginRequest
     @JsonIgnore
     private String type;
 
-    @EFrameRequest(bean = "_e_validLang",length = 16)
+    @EFrameRequest(bean = "_e_validLang", length = 16)
     private String lang;
 
 

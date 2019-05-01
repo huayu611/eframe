@@ -10,9 +10,9 @@ public class EasyParam
 
     private HttpServletResponse response;
 
-    private Map<String,String> requestHeader;
+    private Map<String, String> requestHeader;
 
-    private Map<String,String[]> requestHeaders;
+    private Map<String, String[]> requestHeaders;
 
     public HttpServletRequest getRequest()
     {

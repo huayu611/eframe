@@ -14,13 +14,13 @@ public interface MenuAtom
 
     Menu updateMenu(Menu menu);
 
-    List<Menu> queryMenu(Date now,Integer level);
+    List<Menu> queryMenu(Date now, Integer level);
 
-    List<Menu> queryMenuByParent(Date now,Long parentMenu);
+    List<Menu> queryMenuByParent(Date now, Long parentMenu);
 
     Menu queryMenuById(Long id);
 
-    Menu queryMenuByCode(Date now,String code);
+    Menu queryMenuByCode(Date now, String code);
 
     void deleteMenu(Menu menu);
 }

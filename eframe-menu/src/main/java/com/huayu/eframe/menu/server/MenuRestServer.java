@@ -44,7 +44,7 @@ public class MenuRestServer
 
     @ResponseBody
     @RequestMapping(value = "/menu/{code}", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object queryMenuByCode(@PathVariable String code,EasyParam easyParam)
+    public Object queryMenuByCode(@PathVariable String code, EasyParam easyParam)
     {
         QueryMenuRequest request = new QueryMenuRequest();
         request.setCode(code);
@@ -69,4 +69,4 @@ public class MenuRestServer
         Object obj = Flow.execute(DeleteMenuBusiness.class, deleteMenuRequest, easyParam);
         return obj;
     }
-  }
+}

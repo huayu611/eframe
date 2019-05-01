@@ -21,9 +21,9 @@ public class TokenObserver implements InitializingBean
 
     private static final LogDebug debug = new LogDebug(TokenObserver.class);
 
-    private List<TokenMirror> allToken ;
+    private List<TokenMirror> allToken;
 
-    private Map<String,TokenMirror> tokenMirrorMap;
+    private Map<String, TokenMirror> tokenMirrorMap;
 
 
     public TokenObserver(@Nullable List<TokenMirror> allTokenMirror)
@@ -37,9 +37,9 @@ public class TokenObserver implements InitializingBean
     {
         tokenMirrorMap = new ConcurrentHashMap<>();
 
-        for(TokenMirror mirror : allToken)
+        for (TokenMirror mirror : allToken)
         {
-            tokenMirrorMap.put(mirror.getClass().getName(),mirror);
+            tokenMirrorMap.put(mirror.getClass().getName(), mirror);
         }
         debug.log(tokenMirrorMap);
     }
@@ -56,9 +56,9 @@ public class TokenObserver implements InitializingBean
 
     public TokenMirror getTokenMirrorByTokenId(String tokenId)
     {
-        for(TokenMirror mirror : allToken)
+        for (TokenMirror mirror : allToken)
         {
-            if(mirror.isOwnerToken(tokenId))
+            if (mirror.isOwnerToken(tokenId))
             {
                 return mirror;
             }
@@ -68,10 +68,10 @@ public class TokenObserver implements InitializingBean
 
     public Token getToken(String tokenId)
     {
-        if(TokenConfig.getTokeIdGenType().equals("R"))
+        if (TokenConfig.getTokeIdGenType().equals("R"))
         {
             TokenMirror tm = getTokenMirrorByTokenId(tokenId);
-            Assert.notNull(tm,"Token error ");
+            Assert.notNull(tm, "Token error ");
             return tm.getToken(tokenId);
 
         }
@@ -86,11 +86,11 @@ public class TokenObserver implements InitializingBean
     {
         Claims jwt = TokenConfig.parseJWT(tokenId);
         Object tokenType = jwt.get(AbstractTokenMirror.TOKEN_TYPE_KEY);
-        if(StringUtils.isString(tokenType))
+        if (StringUtils.isString(tokenType))
         {
             String tokenTypeString = StringUtils.getString(tokenType);
             TokenMirror tm = tokenMirrorMap.get(tokenTypeString);
-            Assert.notNull(tm,"Token error ");
+            Assert.notNull(tm, "Token error ");
             return tm.getToken(jwt);
         }
         return null;

@@ -23,7 +23,7 @@ public class ValidProcess
 
     public ValidProcess(List<AbstractExecuteEFrameRequest> requestValid)
     {
-        if(CollectionUtils.isNotEmpty(requestValid))
+        if (CollectionUtils.isNotEmpty(requestValid))
         {
             requestValidList = requestValid;
             requestValid.sort(Comparator.comparingInt(AbstractExecuteEFrameRequest::order));
@@ -34,19 +34,19 @@ public class ValidProcess
         }
     }
 
-    public void process(EFrameRequest ef, Field field,Object request)
+    public void process(EFrameRequest ef, Field field, Object request)
     {
-        if(CollectionUtils.isNotEmpty(requestValidList))
+        if (CollectionUtils.isNotEmpty(requestValidList))
         {
             Iterator<AbstractExecuteEFrameRequest> validIterator = requestValidList.iterator();
-            while(validIterator.hasNext())
+            while (validIterator.hasNext())
             {
 
                 AbstractExecuteEFrameRequest valid = validIterator.next();
-                if(valid.check(ef,field,request))
+                if (valid.check(ef, field, request))
                 {
-                    debug.log(valid.getClass(),field.getName());
-                    valid.execute(ef,request,field);
+                    debug.log(valid.getClass(), field.getName());
+                    valid.execute(ef, request, field);
                 }
             }
         }

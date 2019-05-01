@@ -12,7 +12,7 @@ public class QueryPermissionRequest
     @EFrameRequest(length = 512)
     private String code;
 
-    @EFrameRequest(length=64)
+    @EFrameRequest(length = 64)
     private String name;
 
     @JsonIgnore
@@ -27,7 +27,7 @@ public class QueryPermissionRequest
     @EFrameRequest(bean = "_dictionary(permission_white)")
     private String status;
 
-    @EFrameRequest(baseMeta = true,required = true)
+    @EFrameRequest(baseMeta = true, required = true)
     private PagingRequest page;
 
     public String getCode()

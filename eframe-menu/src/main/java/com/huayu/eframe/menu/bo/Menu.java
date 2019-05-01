@@ -8,66 +8,66 @@ import java.util.Date;
  * Created by Administrator on 2018/8/12.
  */
 @Entity
-@Table(name="SYS_MENU")
+@Table(name = "SYS_MENU")
 public class Menu
 {
     @Id
-    @Column(name="MENU_ID", length=20)
+    @Column(name = "MENU_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long menuId;
 
-    @Column(name="MENU_NAME", length=128)
+    @Column(name = "MENU_NAME", length = 128)
     private String menuName;
 
-    @Column(name="MENU_PATH", length=128)
+    @Column(name = "MENU_PATH", length = 128)
     private String menuPath;
 
-    @Column(name="COMPONENT", length=255)
+    @Column(name = "COMPONENT", length = 255)
     private String component;
 
-    @Column(name="REDIRECT", length=255)
+    @Column(name = "REDIRECT", length = 255)
     private String redirect;
 
-    @Column(name="ICON", length=255)
+    @Column(name = "ICON", length = 255)
     private String icon;
 
-    @Column(name="MENU_LEVEL", length=3)
+    @Column(name = "MENU_LEVEL", length = 3)
     private Integer menuLevel;
 
-    @Column(name="PARENT_MENU", length=20)
+    @Column(name = "PARENT_MENU", length = 20)
     private Long parentMenu;
 
-    @Column(name="TOP_MENU", length=20)
+    @Column(name = "TOP_MENU", length = 20)
     private Long topMenu;
 
-    @Column(name="MENU_DESCRIPTION", length=128)
+    @Column(name = "MENU_DESCRIPTION", length = 128)
     private String menuDescription;
 
-    @Column(name="CODE", length=32)
+    @Column(name = "CODE", length = 32)
     private String code;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
-    @Column(name="EXPIRE_TIME")
+    @Column(name = "EXPIRE_TIME")
     private Date expireTime;
 
-    @Column(name="EFFECTIVE_TIME")
+    @Column(name = "EFFECTIVE_TIME")
     private Date effectiveTime;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
-    @Column(name="LAST_UPDATE_STAFF")
+    @Column(name = "LAST_UPDATE_STAFF")
     private Long lastUpdateStaffId;
 
-    @Column(name="EXT_INFO", length=2048)
+    @Column(name = "EXT_INFO", length = 2048)
     private String extendsInfo;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="MENU_RANGE")
+    @Column(name = "MENU_RANGE")
     private Integer range;
 
     public Long getMenuId()

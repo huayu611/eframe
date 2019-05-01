@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class SwitchDebugRequest
 {
-    @EFrameRequest(required = true,bean = "_dictionary(global-debug-log-level)")
+    @EFrameRequest(required = true, bean = "_dictionary(global-debug-log-level)")
     private Integer level;
 
     public Integer getLevel()

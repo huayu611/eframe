@@ -14,20 +14,20 @@ import java.util.Map;
 @Service
 public class TokenObjectMap
 {
-    private Map<String,TokenInstance> storeInstanceList = new HashMap<>();
+    private Map<String, TokenInstance> storeInstanceList = new HashMap<>();
 
     public TokenObjectMap(@Nullable List<TokenInstance> tokenInstanceList)
     {
-        if(CollectionUtils.isNotEmpty(tokenInstanceList))
+        if (CollectionUtils.isNotEmpty(tokenInstanceList))
         {
-            for(TokenInstance tokenInstance:tokenInstanceList)
+            for (TokenInstance tokenInstance : tokenInstanceList)
             {
-                storeInstanceList.put(tokenInstance.getType(),tokenInstance);
+                storeInstanceList.put(tokenInstance.getType(), tokenInstance);
             }
         }
     }
 
-    public Map<String,TokenInstance> getAllTokenList()
+    public Map<String, TokenInstance> getAllTokenList()
     {
         return storeInstanceList;
     }

@@ -58,7 +58,7 @@ public class ModifyStaffBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-         return param.getParameter(STAFF_DETAIL_INFO);
+        return param.getParameter(STAFF_DETAIL_INFO);
     }
 
 

@@ -2,8 +2,6 @@ package com.huayu.eframe.copinfo.server.serivce.bo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.io.File;
-
 /**
  * Created by Leo on 2019/1/18.
  */

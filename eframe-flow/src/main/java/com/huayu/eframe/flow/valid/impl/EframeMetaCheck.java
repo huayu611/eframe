@@ -37,8 +37,8 @@ public class EframeMetaCheck extends AbstractExecuteEFrameRequest
     public boolean check(EFrameRequest ef, Field field, Object request)
     {
         boolean baseMeta = ef.baseMeta();
-        Object value = getValueInField(field,request);
-        if(null == value)
+        Object value = getValueInField(field, request);
+        if (null == value)
         {
             return false;
         }
@@ -52,13 +52,13 @@ public class EframeMetaCheck extends AbstractExecuteEFrameRequest
 
     private void doObject(Object obj)
     {
-        if(obj instanceof Collection )
+        if (obj instanceof Collection)
         {
-            checkListData((Collection)obj);
+            checkListData((Collection) obj);
         }
-        else if(obj instanceof Map )
+        else if (obj instanceof Map)
         {
-            checkMapData((Map)obj);
+            checkMapData((Map) obj);
         }
         else
         {
@@ -68,25 +68,25 @@ public class EframeMetaCheck extends AbstractExecuteEFrameRequest
 
     private void checkListData(Collection collection)
     {
-        if(CollectionUtils.isEmpty(collection))
+        if (CollectionUtils.isEmpty(collection))
         {
             return;
         }
-        for(Object obj :  collection)
+        for (Object obj : collection)
         {
             doObject(obj);
         }
     }
 
-    private void checkMapData(Map<Object,Object> map)
+    private void checkMapData(Map<Object, Object> map)
     {
-        if(MapUtils.isEmpty(map))
+        if (MapUtils.isEmpty(map))
         {
             return;
         }
         Set<Map.Entry<Object, Object>> entrySet = map.entrySet();
         Iterator<Map.Entry<Object, Object>> entrySetIterator = entrySet.iterator();
-        while(entrySetIterator.hasNext())
+        while (entrySetIterator.hasNext())
         {
             Map.Entry<Object, Object> obj = entrySetIterator.next();
             doObject(obj.getValue());

@@ -60,11 +60,11 @@ public class StaffAtomImpl implements StaffAtom
     }
 
     @Override
-    public List<Staff> queryStaffByLogin(String login,Date now)
+    public List<Staff> queryStaffByLogin(String login, Date now)
     {
         Staff condition = new Staff();
         condition.setLoginName(login);
-        return queryStaffByCondition(condition,now);
+        return queryStaffByCondition(condition, now);
     }
 
     @Override
@@ -89,13 +89,13 @@ public class StaffAtomImpl implements StaffAtom
                 if (null != condition.getLoginName())
                 {
                     String loginName = condition.getLoginName();
-                    loginName = loginName.replace(" ","%");
+                    loginName = loginName.replace(" ", "%");
                     predicates.add(criteriaBuilder.like(root.get("loginName").as(String.class), "%" + loginName + "%"));
                 }
                 if (null != condition.getStaffname())
                 {
                     String staffName = condition.getStaffname();
-                    staffName = staffName.replace(" ","%");
+                    staffName = staffName.replace(" ", "%");
                     predicates.add(criteriaBuilder.like(root.get("staffname").as(String.class), "%" + staffName + "%"));
                 }
                 debug.log(predicates.size());

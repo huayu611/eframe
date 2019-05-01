@@ -28,7 +28,7 @@ public class ManagementWhiteRequest implements WhiteRequest
     {
         List<Permission> permissions = permissionCache.getWhitePermission(httpServletRequest.getMethod());
         boolean flag = checkCurrentMethodPermission(httpServletRequest, permissions);
-        if(!flag)
+        if (!flag)
         {
             List<Permission> allPermissions = permissionCache.getWhitePermission("ALL");
             flag = checkCurrentMethodPermission(httpServletRequest, allPermissions);
@@ -36,7 +36,7 @@ public class ManagementWhiteRequest implements WhiteRequest
         return flag;
     }
 
-    private static boolean checkCurrentMethodPermission(HttpServletRequest request,  List<Permission> permissions)
+    private static boolean checkCurrentMethodPermission(HttpServletRequest request, List<Permission> permissions)
     {
         boolean result = false;
         debug.log(request.getMethod());

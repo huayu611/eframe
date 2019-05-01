@@ -30,14 +30,14 @@ public class ParameterAtomImpl implements ParameterAtom
     @Override
     public Parameter getByCode(String parameterCode)
     {
-        if(StringUtils.isNullOrEmpty(parameterCode))
+        if (StringUtils.isNullOrEmpty(parameterCode))
         {
             return null;
         }
         Parameter parameter = new Parameter();
         parameter.setParameterCode(parameterCode);
         ExampleMatcher matcher = ExampleMatcher.matching();
-        Example<Parameter> example = Example.of(parameter ,matcher);
+        Example<Parameter> example = Example.of(parameter, matcher);
 
         List<Parameter> parameters = parameterRepository.findAll(example);
         return CollectionUtils.getFirstElement(parameters);
@@ -52,11 +52,11 @@ public class ParameterAtomImpl implements ParameterAtom
     @Override
     public Parameter update(Parameter parameter)
     {
-        if(null == parameter )
+        if (null == parameter)
         {
             return null;
         }
-        if(null == parameter.getId())
+        if (null == parameter.getId())
         {
             return insert(parameter);
         }
@@ -66,10 +66,10 @@ public class ParameterAtomImpl implements ParameterAtom
     @Override
     public Parameter insert(Parameter parameter)
     {
-        if(null == parameter )
+        if (null == parameter)
         {
             return null;
         }
-        return  parameterRepository.save(parameter);
+        return parameterRepository.save(parameter);
     }
 }

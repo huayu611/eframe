@@ -19,37 +19,37 @@ public class StandardFacade
     public static <T extends ValidTime> List<T> getValidItem(List<T> item)
     {
 
-        if(CollectionUtils.isEmpty(item))
+        if (CollectionUtils.isEmpty(item))
         {
             return item;
         }
         Date now = LocalAttribute.getNow();
         List<T> newItemList = new ArrayList<>();
-        for(T t : item)
+        for (T t : item)
         {
-           if(t.getEffectiveTime() == null || t.getExpireTime() == null)
-           {
-               continue;
-           }
-           if(t.getExpireTime().after(now))
-           {
-               newItemList.add(t);
-           }
+            if (t.getEffectiveTime() == null || t.getExpireTime() == null)
+            {
+                continue;
+            }
+            if (t.getExpireTime().after(now))
+            {
+                newItemList.add(t);
+            }
         }
         return newItemList;
     }
 
-    public static <T> List<T>  getPagingList(List<T> item,int page,int size)
+    public static <T> List<T> getPagingList(List<T> item, int page, int size)
     {
-        if(CollectionUtils.isEmpty(item))
+        if (CollectionUtils.isEmpty(item))
         {
             return item;
         }
         int allCount = item.size();
         int allPage = allCount / size;
-        int startPage = page>allPage + 1 ? allPage + 1 : page;
-        int startNumber = (startPage-1) * size;
-        int endNumber = startNumber + size > allCount ?allCount :startNumber + size ;
+        int startPage = page > allPage + 1 ? allPage + 1 : page;
+        int startNumber = (startPage - 1) * size;
+        int endNumber = startNumber + size > allCount ? allCount : startNumber + size;
         List<T> result = item.subList(startNumber, endNumber);
         return result;
     }

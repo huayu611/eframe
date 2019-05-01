@@ -11,9 +11,9 @@ import java.util.Locale;
  */
 public class ExceptionCacheService
 {
-    public static String getErrorInfo(String errorCode,Object[] param,Locale locale)
+    public static String getErrorInfo(String errorCode, Object[] param, Locale locale)
     {
         MessageSource ms = BeanPool.getService("ExceptionMessageResource");
-        return ms.getMessage(errorCode,param,locale);
+        return ms.getMessage(errorCode, param, locale);
     }
 }

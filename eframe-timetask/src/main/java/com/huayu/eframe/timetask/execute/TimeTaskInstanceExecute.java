@@ -1,17 +1,13 @@
 package com.huayu.eframe.timetask.execute;
 
-import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.ObjectUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
-import com.huayu.eframe.timetask.entity.atom.TimeTaskAtom;
 import com.huayu.eframe.timetask.entity.atom.TimeTaskInstanceAtom;
 import com.huayu.eframe.timetask.entity.bo.TimeTaskBO;
 import com.huayu.eframe.timetask.entity.bo.TimeTaskInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * Created by Leo on 2019/4/15.
@@ -36,7 +32,7 @@ public class TimeTaskInstanceExecute
         return timeTaskInstanceAtom.addTimeTaskInstance(timeTaskInstance);
     }
 
-    public TimeTaskInstance updateTimeTask(TimeTaskInstance timeTaskInstance,TimeTaskStatus status)
+    public TimeTaskInstance updateTimeTask(TimeTaskInstance timeTaskInstance, TimeTaskStatus status)
     {
         timeTaskInstance.setStatus(status.getValue());
         return timeTaskInstanceAtom.updateTimeTaskInstance(timeTaskInstance);
@@ -49,7 +45,7 @@ public class TimeTaskInstanceExecute
         return timeTaskInstanceAtom.updateTimeTaskInstance(timeTaskInstance);
     }
 
-    public TimeTaskInstance errorTimeTask(TimeTaskInstance timeTaskInstance,Throwable exception)
+    public TimeTaskInstance errorTimeTask(TimeTaskInstance timeTaskInstance, Throwable exception)
     {
         String stackError = ObjectUtils.getTrace(exception);
         timeTaskInstance.setEndTime(DateUtils.getCurrentDate());

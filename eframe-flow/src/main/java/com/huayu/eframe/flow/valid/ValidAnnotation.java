@@ -63,7 +63,7 @@ public class ValidAnnotation
         Map<String, EFrameRequest> annoRequest = StaticCache.getAnnoRequest(request.getClass());
         if (null == annoRequest)
         {
-            StaticCache.putAnnoRequest(request.getClass(),null,null);
+            StaticCache.putAnnoRequest(request.getClass(), null, null);
             Field[] fields = request.getClass().getDeclaredFields();
             debug.log(fields);
             for (Field field : fields)
@@ -89,7 +89,7 @@ public class ValidAnnotation
 
     private void checkAnnoRequest(Object request, EFrameRequest efremeRequest, Field field)
     {
-        validProcess.process(efremeRequest,field,request);
+        validProcess.process(efremeRequest, field, request);
     }
 
 

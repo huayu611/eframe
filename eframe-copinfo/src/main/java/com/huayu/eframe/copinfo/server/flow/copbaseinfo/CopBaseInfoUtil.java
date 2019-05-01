@@ -1,7 +1,6 @@
 package com.huayu.eframe.copinfo.server.flow.copbaseinfo;
 
 import com.huayu.eframe.copinfo.server.serivce.bo.CopBaseInfoDetail;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by Leo on 2019/1/18.
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 public class CopBaseInfoUtil
 {
-    public static CopBaseInfoDetail buildCopBaseInfoDetail(CopBaseInfoMessage message )
+    public static CopBaseInfoDetail buildCopBaseInfoDetail(CopBaseInfoMessage message)
     {
         CopBaseInfoDetail copBaseInfoDetail = new CopBaseInfoDetail();
         copBaseInfoDetail.setName(message.getName());

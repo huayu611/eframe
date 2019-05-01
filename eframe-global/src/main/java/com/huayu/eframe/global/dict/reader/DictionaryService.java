@@ -18,10 +18,10 @@ import java.util.Map;
  * 数据字典采用XML和properties文件双重控制 ，XML配置数据字典，而properites配置字典描述
  * 可以通过_dict_ext.xml覆盖和*_dict.xml配置
  * <dicts>
- *     <dict code="DICTA">
- *         <value code="0" lang="DICT_VALUE1"></value>
- *         <value code="1" lang="DICT_VALUE1"></value>
- *     </dict>
+ * <dict code="DICTA">
+ * <value code="0" lang="DICT_VALUE1"></value>
+ * <value code="1" lang="DICT_VALUE1"></value>
+ * </dict>
  * </dicts>
  * 如果覆盖需要重写整个dict
  */
@@ -65,25 +65,25 @@ public class DictionaryService implements InitializingBean
                     putCache(result);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 System.out.print("System paramter load file and file name is " + res.getFilename());
             }
         }
     }
-    
+
     private void putCache(DictBO dictBO)
     {
         List<Dictionaries> result = dictBO.getDictionaries();
-        if(CollectionUtils.isEmpty(result))
+        if (CollectionUtils.isEmpty(result))
         {
-            return ;
+            return;
         }
-        for(Dictionaries d : result)
+        for (Dictionaries d : result)
         {
             String key = d.getCode();
             List<DictDetail> obj = d.getDictDetail();
-            dictMap.put(key,obj);
+            dictMap.put(key, obj);
         }
     }
 

@@ -37,10 +37,10 @@ public class QueryOperatorLogBusiness extends AbstractExecuteBusiness
     {
         QueryOperatorLogRequest request = param.getRequest();
         LogDetail logDetail = buildLogDetail(request);
-        PageObject pageObject = logService.queryLogByPage(logDetail,request.getPage());
+        PageObject pageObject = logService.queryLogByPage(logDetail, request.getPage());
 
         param.addParameter(RESULT, pageObject.getResponse());
-        param.addParameter(PAGE_OBJECT,pageObject);
+        param.addParameter(PAGE_OBJECT, pageObject);
     }
 
     private LogDetail buildLogDetail(QueryOperatorLogRequest queryOperatorLogRequest)
@@ -51,7 +51,7 @@ public class QueryOperatorLogBusiness extends AbstractExecuteBusiness
         logDetail.setOutTime(queryOperatorLogRequest.getOutTime());
         logDetail.setOperObjType(queryOperatorLogRequest.getOperatorType());
         logDetail.setOperObjCode(queryOperatorLogRequest.getOperatorCode());
-        if(!StringUtils.equalStringNoCareUpperAndLower("ALL",queryOperatorLogRequest.getMethod()))
+        if (!StringUtils.equalStringNoCareUpperAndLower("ALL", queryOperatorLogRequest.getMethod()))
         {
             logDetail.setMethod(queryOperatorLogRequest.getMethod());
         }
@@ -69,7 +69,7 @@ public class QueryOperatorLogBusiness extends AbstractExecuteBusiness
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
-        tidyPagingResponse(pageObject,response);
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
+        tidyPagingResponse(pageObject, response);
     }
 }

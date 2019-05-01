@@ -13,12 +13,11 @@ import java.util.*;
 public class EasyParamCreation
 {
     /**
-     *
      * @param request
      * @param response
      * @return
      */
-    public static EasyParam createEasyParam(HttpServletRequest request,HttpServletResponse response)
+    public static EasyParam createEasyParam(HttpServletRequest request, HttpServletResponse response)
     {
         EasyParam easyParam = new EasyParam();
         easyParam.setRequest(request);
@@ -40,11 +39,11 @@ public class EasyParamCreation
 
             Enumeration<String> valuesEnum = request.getHeaders(headerName);
             List<String> valueList = new ArrayList<>();
-            while(valuesEnum.hasMoreElements())
+            while (valuesEnum.hasMoreElements())
             {
                 valueList.add(valuesEnum.nextElement());
             }
-            if(CollectionUtils.isNotEmpty(valueList))
+            if (CollectionUtils.isNotEmpty(valueList))
             {
                 String[] strings = new String[valueList.size()];
                 valueList.toArray(strings);

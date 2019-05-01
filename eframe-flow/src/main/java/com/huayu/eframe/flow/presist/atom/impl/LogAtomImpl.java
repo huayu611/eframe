@@ -111,7 +111,6 @@ public class LogAtomImpl implements LogAtom
     }
 
 
-
     @Override
     public Page<LogEntity> queryWillDeleteLog(FramePaging fp, Date deletionTime)
     {

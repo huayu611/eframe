@@ -9,11 +9,22 @@ public interface UploadRuler
     String getUploadType();
 
 
-    default long getSize(){return 2*1024*1024;}
+    default long getSize()
+    {
+        return 2 * 1024 * 1024;
+    }
 
 
-    default String[] getFileType(){return new String[]{".+?"};}
+    default String[] getFileType()
+    {
+        return new String[]{".+?"};
+    }
 
 
-    default String downLoadPath(){return "/eframe/multipart-manager/download/";};
+    default String downLoadPath()
+    {
+        return "/eframe/multipart-manager/download/";
+    }
+
+    ;
 }

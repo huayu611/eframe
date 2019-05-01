@@ -3,8 +3,6 @@ package com.huayu.eframe.global.email.presist.service;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
-import java.util.List;
-
 /**
  * Created by Leo on 2018/9/28.
  */

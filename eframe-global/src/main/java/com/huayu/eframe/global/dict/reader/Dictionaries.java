@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Leo on 2019/1/7.
  */
-@XmlRootElement(name="dict")
+@XmlRootElement(name = "dict")
 public class Dictionaries
 {
 
@@ -16,7 +16,7 @@ public class Dictionaries
 
     private List<DictDetail> dictDetail;
 
-    @XmlAttribute(name="code")
+    @XmlAttribute(name = "code")
     public String getCode()
     {
         return code;
@@ -27,7 +27,7 @@ public class Dictionaries
         this.code = code;
     }
 
-    @XmlElement(name="value")
+    @XmlElement(name = "value")
     public List<DictDetail> getDictDetail()
     {
         return dictDetail;

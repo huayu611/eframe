@@ -29,7 +29,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
             response.setCharacterEncoding("utf-8");
             response.setContentType("text/javascript;charset=utf-8");
             debug.log(authException.getMessage());
-            String jsonResult = buildAuthenticationFailedDescrption(response,authException);
+            String jsonResult = buildAuthenticationFailedDescrption(response, authException);
             response.getWriter().print(jsonResult);
         }
         catch (Exception e)
@@ -43,7 +43,7 @@ public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntr
 
     }
 
-    private String buildAuthenticationFailedDescrption(HttpServletResponse response,AuthenticationException authException) throws IOException
+    private String buildAuthenticationFailedDescrption(HttpServletResponse response, AuthenticationException authException) throws IOException
     {
         RestfulResponse error = new RestfulResponse();
         String code = ErrorCode.UNKNOW_ERROR;

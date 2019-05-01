@@ -16,11 +16,11 @@ public class TransactionFlow
     private static final LogDebug debug = new LogDebug(TransactionFlow.class);
 
 
-    @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRES_NEW)
-    public void executeTransaction(ExecuteBusiness business,BusinessParameter param)
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
+    public void executeTransaction(ExecuteBusiness business, BusinessParameter param)
     {
         debug.log("Start transaction");
-        Assert.notNull(business,"Service can't be null");
+        Assert.notNull(business, "Service can't be null");
         business.execute(param);
         debug.log("End transaction");
     }

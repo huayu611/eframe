@@ -21,7 +21,7 @@ public class AddCopBaseInfoBusiness extends AbstractExecuteBusiness
     private static final LogDebug debug = new LogDebug(AddCopBaseInfoBusiness.class);
 
 
-    private final static String RESULT= "QueryCopBaseInfoBusiness_RESULT";
+    private final static String RESULT = "QueryCopBaseInfoBusiness_RESULT";
 
     @Autowired
     private CopBaseInfoService copBaseInfoService;
@@ -33,9 +33,9 @@ public class AddCopBaseInfoBusiness extends AbstractExecuteBusiness
     public void before(BusinessParameter param)
     {
         CopBaseInfoDetail result = copBaseInfoService.query();
-        if(null != result)
+        if (null != result)
         {
-            throw new IFPException(ErrorCode.COP_INFO_EXIST,"Enterprise info exist already");
+            throw new IFPException(ErrorCode.COP_INFO_EXIST, "Enterprise info exist already");
         }
     }
 
@@ -48,14 +48,14 @@ public class AddCopBaseInfoBusiness extends AbstractExecuteBusiness
         CopBaseInfoDetail detail = CopBaseInfoUtil.buildCopBaseInfoDetail(message);
         CopBaseInfoDetail addResult = copBaseInfoService.addCopBaseInfoDetail(detail);
         debug.log(addResult);
-        MultipartResolve.use(message.getLogo(),copLogoRuler);
-        param.addParameter(RESULT,addResult);
+        MultipartResolve.use(message.getLogo(), copLogoRuler);
+        param.addParameter(RESULT, addResult);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
 }

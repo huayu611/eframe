@@ -7,13 +7,13 @@ import java.util.List;
 /**
  * Created by Leo on 2019/1/7.
  */
-@XmlRootElement(name="dicts")
+@XmlRootElement(name = "dicts")
 public class DictBO
 {
 
     private List<Dictionaries> dictionaries;
 
-    @XmlElement(name="dict")
+    @XmlElement(name = "dict")
     public List<Dictionaries> getDictionaries()
     {
         return dictionaries;

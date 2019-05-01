@@ -11,8 +11,8 @@ import java.util.List;
 /**
  * Created by Administrator on 2018/7/14.
  */
-public interface StaffRepository extends JpaRepository<Staff,Long>, JpaSpecificationExecutor<Staff>
+public interface StaffRepository extends JpaRepository<Staff, Long>, JpaSpecificationExecutor<Staff>
 {
-    @Query(value = "select * from SYS_STAFF where LOGIN_NAME=:loginName",nativeQuery = true)
+    @Query(value = "select * from SYS_STAFF where LOGIN_NAME=:loginName", nativeQuery = true)
     public List<Staff> findStaffByLoginName(@Param("loginName") String staffname);
 }

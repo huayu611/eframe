@@ -19,24 +19,24 @@ public class HttpUtils
 
     public static String getBrowserLang()
     {
-        EasyParam easyParam =  LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
-        if(null == easyParam)
+        EasyParam easyParam = LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
+        if (null == easyParam)
         {
             return "";
         }
 
         Map<String, String> header = easyParam.getRequestHeader();
-        if(MapUtils.isEmpty(header))
+        if (MapUtils.isEmpty(header))
         {
             return "";
         }
         String acceptLanguage = header.get("accept-language");
-        if(StringUtils.isNullOrEmpty(acceptLanguage))
+        if (StringUtils.isNullOrEmpty(acceptLanguage))
         {
             return "";
         }
         String[] langs = org.springframework.util.StringUtils.tokenizeToStringArray(acceptLanguage, Constant.MULTI_VALUE_ATTRIBUTE_DELIMITERS);
-        if(langs.length > 0)
+        if (langs.length > 0)
         {
             return langs[0];
         }
@@ -44,20 +44,23 @@ public class HttpUtils
     }
 
 
-
     // 返回用IP地址
-    public  static String getIpAddr(HttpServletRequest request) {
+    public static String getIpAddr(HttpServletRequest request)
+    {
         String ip = request.getHeader("x-forwarded-for");
         debug.log(ip);
-        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip))
+        {
             ip = request.getHeader("Proxy-Client-IP");
             debug.log(ip);
         }
-        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip))
+        {
             ip = request.getHeader("WL-Proxy-Client-IP");
             debug.log(ip);
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip))
+        {
             ip = request.getRemoteAddr();
             debug.log(ip);
         }
@@ -65,25 +68,29 @@ public class HttpUtils
         return ip;
     }
 
-    public  static String getIpFromEasyParam(HttpServletRequest request) {
+    public static String getIpFromEasyParam(HttpServletRequest request)
+    {
 
         EasyParam easyParam = LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
-        if(null == easyParam)
+        if (null == easyParam)
         {
             return getIpAddr(request);
         }
         Map<String, String> header = easyParam.getRequestHeader();
         String ip = header.get("x-forwarded-for");
         debug.log(ip);
-        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip))
+        {
             ip = header.get("Proxy-Client-IP");
             debug.log(ip);
         }
-        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || " unknown ".equalsIgnoreCase(ip))
+        {
             ip = header.get("WL-Proxy-Client-IP");
             debug.log(ip);
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip))
+        {
             ip = request.getRemoteAddr();
             debug.log(ip);
         }

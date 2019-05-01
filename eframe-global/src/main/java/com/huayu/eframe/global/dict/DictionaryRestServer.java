@@ -1,7 +1,7 @@
 package com.huayu.eframe.global.dict;
 
-import com.huayu.eframe.global.dict.flow.QueryDictBusiness;
 import com.huayu.eframe.flow.Flow;
+import com.huayu.eframe.global.dict.flow.QueryDictBusiness;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

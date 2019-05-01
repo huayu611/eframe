@@ -26,7 +26,7 @@ import java.util.List;
 @ComponentScan(basePackages = {"com.huayu"})
 @EntityScan(basePackages = {"com.huayu"})
 @EnableConfigurationProperties
-@EnableAspectJAutoProxy(proxyTargetClass=true)
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @EnableScheduling
 @SpringBootApplication
 public class StartApplication
@@ -35,7 +35,8 @@ public class StartApplication
 
     private static final String KEY = "1234567890ZYXWVU";
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         start(args);
     }
@@ -50,10 +51,9 @@ public class StartApplication
     }
 
 
-
     public static void readSystemProperty()
     {
-        String proFilePath = System.getProperty("user.dir") + File.separator + "config" +  File.separator +"eframe_system.properties";
+        String proFilePath = System.getProperty("user.dir") + File.separator + "config" + File.separator + "eframe_system.properties";
         InputStream in = null;
         try
         {
@@ -74,11 +74,11 @@ public class StartApplication
     public static void resolvePassword()
     {
         List<String> sensitiveString = getSensitiveList();
-        for(String sens : sensitiveString)
+        for (String sens : sensitiveString)
         {
             String sensValue = System.getProperty(sens);
             String value = AESEncrypt.aesEcbDecode(sensValue, KEY);
-            System.setProperty(sens,value);
+            System.setProperty(sens, value);
         }
     }
 

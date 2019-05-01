@@ -52,7 +52,6 @@ public class RoleStaffCacheImpl extends AbstractFrameCache<RoleStaff> implements
     }
 
 
-
     public RoleStaffCacheImpl()
     {
         registerIndex(new RoleStaffRoleIdIndex());

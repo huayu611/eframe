@@ -52,7 +52,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
     public Token createToken(String primary, String type, Locale locale)
     {
         String value = TokenConfig.getTokeIdGenType();
-        if(null == locale)
+        if (null == locale)
         {
             locale = ConfigurationUtils.getDefaultLocal();
         }
@@ -68,7 +68,7 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
                 map.put(LOCALE, locale.getLanguage());
                 map.put(PRIMARY, primary);
                 map.put(TOKEN_TYPE_KEY, getTokenType());
-                map.put(TOKEN_OWNER_TYPE,getObjType());//
+                map.put(TOKEN_OWNER_TYPE, getObjType());//
                 extendMap(map);
                 return TokenConfig.generateJWTToken(primary, cycle(), map);
             }
@@ -220,9 +220,9 @@ public abstract class AbstractTokenMirror implements TokenMirror, InitializingBe
             debug.log(locale);
             token.setLocale(locale1);
         }
-        TokenInstance tokenInstance  = tokenObjectMap.getTokenInstance(StringUtils.getString(ownType));
+        TokenInstance tokenInstance = tokenObjectMap.getTokenInstance(StringUtils.getString(ownType));
 
-        if(null == tokenInstance)
+        if (null == tokenInstance)
         {
             tokenInstance = BeanPool.getService("StaffTokenInstance");
         }

@@ -46,8 +46,6 @@ public class ManagerToken extends AbstractTokenMirror
     private PermissionCache permissionCache;
 
 
-
-
     @Override
     public List<AuthView> loadAuthView(String loginName)
     {
@@ -59,16 +57,21 @@ public class ManagerToken extends AbstractTokenMirror
 
         List<RoleStaff> roleStaffList = roleStaffCache.getRoleStaffByStaffId(staff.getId());
 
-        if (CollectionUtils.isNotEmpty(roleStaffList)) {
-            for (RoleStaff roleStaff : roleStaffList) {
+        if (CollectionUtils.isNotEmpty(roleStaffList))
+        {
+            for (RoleStaff roleStaff : roleStaffList)
+            {
                 Role role = roleCache.getRoleById(roleStaff.getRoleId());
 
 
                 List<RolePermission> rolePermission = rolePermissionCache.getRolePermissionByRoleId(role.getId());
-                if (CollectionUtils.isNotEmpty(rolePermission)) {
-                    for (RolePermission rolePermissionTemp : rolePermission) {
+                if (CollectionUtils.isNotEmpty(rolePermission))
+                {
+                    for (RolePermission rolePermissionTemp : rolePermission)
+                    {
                         Permission permission = permissionCache.getPermissionById(rolePermissionTemp.getPermissionId());
-                        if(null != permission) {
+                        if (null != permission)
+                        {
                             AuthView authView = new AuthView();
                             authView.setMethod(permission.getMethod());
                             authView.setPermissionID(permission.getId());
@@ -92,7 +95,7 @@ public class ManagerToken extends AbstractTokenMirror
     @Override
     public int cycle()
     {
-        String timeoutStr = SystemConfig.getValueByService(MANAGER_SESSION_TIMEOUT, MANAGER_SESSION_TIMEOUT_DEFAULT_VALUE,propertiesLoadService);
+        String timeoutStr = SystemConfig.getValueByService(MANAGER_SESSION_TIMEOUT, MANAGER_SESSION_TIMEOUT_DEFAULT_VALUE, propertiesLoadService);
         int timeout = NumberUtils.getIntegerFromObject(timeoutStr);
         return timeout;
     }

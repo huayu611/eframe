@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class ModifyTimeTaskExecuteCommandRequest
 {
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String timeTaskCode;
 
     @EFrameRequest(required = true)

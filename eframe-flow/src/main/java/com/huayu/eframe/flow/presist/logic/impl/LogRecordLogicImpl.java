@@ -40,7 +40,6 @@ public class LogRecordLogicImpl implements LogRecordLogic
     private LogService logService;
 
 
-
     @Override
     public void initLog(Object request)
     {
@@ -90,6 +89,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             logDetail.setOperObjCode(token.getPrimaryCode());
         }
     }
+
     @Override
     public void errorLog(Throwable exception)
     {
@@ -114,7 +114,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             String requestJson = JSonUtils.coverToJson(requestBody);
             String json = StringUtils.getStringByLength(requestJson, MAXLENGTH);
             String lastJson = sensitive.filterJsonSensitive(json);
-            logDetail.setRequest(StringUtils.getStringByLength(lastJson,2047));
+            logDetail.setRequest(StringUtils.getStringByLength(lastJson, 2047));
         }
         logDetail.setCode(generateLogCode());
         logDetail.setKey(logDetail.getCode());
@@ -143,7 +143,7 @@ public class LogRecordLogicImpl implements LogRecordLogic
             return "{}";
         }
         String parameterJson = JSonUtils.coverToJson(requestHeader);
-        return StringUtils.cutLengthString(parameterJson,2047);
+        return StringUtils.cutLengthString(parameterJson, 2047);
     }
 
     private String generateLogCode()

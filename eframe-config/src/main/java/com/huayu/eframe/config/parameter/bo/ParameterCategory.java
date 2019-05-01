@@ -7,26 +7,26 @@ import javax.persistence.*;
 public class ParameterCategory
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="CATEGORY_CODE")
+    @Column(name = "CATEGORY_CODE")
     private String categoryCode;
 
-    @Column(name="LEVEL")
+    @Column(name = "LEVEL")
     private Integer level;
 
-    @Column(name="PARENT_CODE")
+    @Column(name = "PARENT_CODE")
     private String parentCode;
 
-    @Column(name="TOP_PARENT_CODE")
+    @Column(name = "TOP_PARENT_CODE")
     private String topParentCode;
 
-    @Column(name="CATEGORY_NAME", length=255)
+    @Column(name = "CATEGORY_NAME", length = 255)
     private String name;
 
-    @Column(name="CATEGORY_NAME_CODE", length=255)
+    @Column(name = "CATEGORY_NAME_CODE", length = 255)
     private String nameCode;
 
     public Long getId()

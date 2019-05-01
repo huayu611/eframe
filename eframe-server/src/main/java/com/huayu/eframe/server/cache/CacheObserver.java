@@ -22,11 +22,11 @@ public class CacheObserver
 
     private List<Cache> allCache;
 
-    private Map<String,Cache> allCacheMap;
+    private Map<String, Cache> allCacheMap;
 
     public CacheObserver(List<Cache> cacheList)
     {
-        if(CollectionUtils.isNotEmpty(cacheList))
+        if (CollectionUtils.isNotEmpty(cacheList))
         {
             allCache = cacheList;
         }
@@ -37,9 +37,9 @@ public class CacheObserver
         debug.log(allCache.size());
 
         allCacheMap = new ConcurrentHashMap<>();
-        for(Cache cache : cacheList)
+        for (Cache cache : cacheList)
         {
-            allCacheMap.put(cache.cacheName(),cache);
+            allCacheMap.put(cache.cacheName(), cache);
         }
     }
 
@@ -50,10 +50,10 @@ public class CacheObserver
 
     public void refreshAllCache()
     {
-        if(CollectionUtils.isNotEmpty(allCache))
+        if (CollectionUtils.isNotEmpty(allCache))
         {
             Iterator<Cache> iteratorCache = allCache.iterator();
-            while(iteratorCache.hasNext())
+            while (iteratorCache.hasNext())
             {
                 Cache cache = iteratorCache.next();
                 cache.refresh();
@@ -63,10 +63,10 @@ public class CacheObserver
 
     public void refreshCache(String cacheName)
     {
-        if(MapUtils.isNotEmpty(allCacheMap))
+        if (MapUtils.isNotEmpty(allCacheMap))
         {
             Cache cache = allCacheMap.get(cacheName);
-            if(null != cache)
+            if (null != cache)
             {
                 cache.refresh();
             }

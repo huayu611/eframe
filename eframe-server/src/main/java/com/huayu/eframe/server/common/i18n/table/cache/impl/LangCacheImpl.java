@@ -47,14 +47,14 @@ public class LangCacheImpl extends AbstractFrameCache<Lang> implements LangCache
     }
 
     @Override
-    public  List<LangValue> getLangByLangCode(String langCode)
+    public List<LangValue> getLangByLangCode(String langCode)
     {
         Lang lang = new Lang();
         lang.setLangCode(langCode);
         List<Lang> result = getResultByIndex(LangCodeIndex.class, lang);
 
         List<LangValue> listValue = new ArrayList<>();
-        for(Lang langEntity : result)
+        for (Lang langEntity : result)
         {
             LangValue langValue = new LangValue();
             langValue.setLanguage(langEntity.getLanguage());
@@ -67,20 +67,20 @@ public class LangCacheImpl extends AbstractFrameCache<Lang> implements LangCache
     @Override
     public LangValue getLangByLangCodeAndLanguage(String langCode, String language)
     {
-        if(StringUtils.isNullOrEmpty(langCode))
+        if (StringUtils.isNullOrEmpty(langCode))
         {
             return null;
         }
         List<LangValue> langValues = getLangByLangCode(langCode);
 
-        if(StringUtils.isNullOrEmpty(language))
+        if (StringUtils.isNullOrEmpty(language))
         {
             return CollectionUtils.getFirstElement(langValues);
         }
 
-        for(LangValue langValue : langValues)
+        for (LangValue langValue : langValues)
         {
-            if(StringUtils.equalString(langValue.getLanguage(),language))
+            if (StringUtils.equalString(langValue.getLanguage(), language))
             {
                 return langValue;
             }

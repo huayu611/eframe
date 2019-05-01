@@ -17,22 +17,23 @@ import java.lang.reflect.Field;
 public class EframeCheckLength extends AbstractExecuteEFrameRequest
 {
     private static final LogDebug debug = new LogDebug(EframeCheckLength.class);
+
     @Override
     public void doExtend(EFrameRequest ef, Field field, Object request) throws Exception
     {
         String value = StringUtils.getString(field.get(request));
         int fieldLength = StringUtils.getLength(value);
-        debug.log(value,ef.length());
-        if( ef.length() < fieldLength)
+        debug.log(value, ef.length());
+        if (ef.length() < fieldLength)
         {
-            String[] exceptionParam = new String[]{field.getName(),value,StringUtils.getString(fieldLength),StringUtils.getString(ef.length())};
-            throw new IFPException(FlowErrorCode.REQUEST_FIELD_LENGTH_REACH_MAX_LENGTH, "The field reach max length",exceptionParam);
+            String[] exceptionParam = new String[]{field.getName(), value, StringUtils.getString(fieldLength), StringUtils.getString(ef.length())};
+            throw new IFPException(FlowErrorCode.REQUEST_FIELD_LENGTH_REACH_MAX_LENGTH, "The field reach max length", exceptionParam);
         }
     }
 
-    public  boolean check(EFrameRequest eFrameRequest,Field field,Object request)
+    public boolean check(EFrameRequest eFrameRequest, Field field, Object request)
     {
-      return !(eFrameRequest.length() == -1);
+        return !(eFrameRequest.length() == -1);
 
     }
 }

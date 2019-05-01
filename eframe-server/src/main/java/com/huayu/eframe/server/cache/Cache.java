@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface Cache<T>
 {
-	List<T> load();
+    List<T> load();
 
-	void refresh();
+    void refresh();
 
-	String cacheName();
+    String cacheName();
 }

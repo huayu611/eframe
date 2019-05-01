@@ -101,7 +101,8 @@ public class DateUtils
         try
         {
             return formatDate.parse(sDate);
-        } catch (ParseException e)
+        }
+        catch (ParseException e)
         {
             return null;
         }
@@ -165,7 +166,7 @@ public class DateUtils
         {
             return false;
         }
-        return afterAndEqualsDate(now,before) && beforeAndEqualsDate(now, after);
+        return afterAndEqualsDate(now, before) && beforeAndEqualsDate(now, after);
     }
 
     public static boolean afterDate(Date nowDate, Date compareDate)
@@ -194,7 +195,8 @@ public class DateUtils
         }
         return nowDate.compareTo(compareDate) == 0;
     }
-        //nowdate>=compareDate返回true
+
+    //nowdate>=compareDate返回true
     public static boolean afterAndEqualsDate(Date nowDate, Date compareDate)
     {
         if (Null.isNull(nowDate) || Null.isNull(compareDate))
@@ -203,6 +205,7 @@ public class DateUtils
         }
         return nowDate.compareTo(compareDate) >= 0;
     }
+
     //nowdate<=compareDate返回true
     public static boolean beforeAndEqualsDate(Date nowDate, Date compareDate)
     {
@@ -238,7 +241,6 @@ public class DateUtils
     }
 
 
-
     public static boolean checkStringDate(String date)
     {
         if (StringUtils.isNullOrEmpty(date))
@@ -259,9 +261,10 @@ public class DateUtils
         String hour = date.substring(8, 10);
         String min = date.substring(10, 12);
         String sec = date.substring(12, 14);
-        return checkArrayDate(year,month,day,hour,min,sec);
+        return checkArrayDate(year, month, day, hour, min, sec);
     }
-    public static boolean checkArrayDate(String year,String month,String day,String hour,String min,String second)
+
+    public static boolean checkArrayDate(String year, String month, String day, String hour, String min, String second)
     {
 
         //判断年

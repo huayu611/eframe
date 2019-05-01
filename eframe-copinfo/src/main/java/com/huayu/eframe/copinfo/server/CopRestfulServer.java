@@ -21,9 +21,11 @@ public class CopRestfulServer
     @ResponseBody
     @RequestMapping(value = "/information",
             method = RequestMethod.POST,
-            consumes= {MediaType.APPLICATION_JSON_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {
+                    MediaType.APPLICATION_JSON_VALUE,
+                    MediaType.APPLICATION_XML_VALUE
+            })
 
     public Object addEnterprise(@RequestBody CopBaseInfoMessage modifyStaffInfomation,
                                 EasyParam easyParam)
@@ -35,9 +37,11 @@ public class CopRestfulServer
     @ResponseBody
     @RequestMapping(value = "/information",
             method = RequestMethod.GET,
-            consumes= {MediaType.APPLICATION_JSON_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {
+                    MediaType.APPLICATION_JSON_VALUE,
+                    MediaType.APPLICATION_XML_VALUE
+            })
 
     public Object queryEnterprise(EasyParam easyParam)
     {
@@ -48,10 +52,12 @@ public class CopRestfulServer
     @ResponseBody
     @RequestMapping(value = "/information",
             method = RequestMethod.PUT,
-            consumes= {MediaType.APPLICATION_JSON_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE})
-    public Object updateEnterprise(@RequestBody CopBaseInfoMessage message,EasyParam easyParam)
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {
+                    MediaType.APPLICATION_JSON_VALUE,
+                    MediaType.APPLICATION_XML_VALUE
+            })
+    public Object updateEnterprise(@RequestBody CopBaseInfoMessage message, EasyParam easyParam)
     {
         Object obj = Flow.execute(ModifyCopBaseInfoBusiness.class, message, easyParam);
         return obj;

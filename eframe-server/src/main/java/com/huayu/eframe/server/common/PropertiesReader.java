@@ -1,7 +1,6 @@
 package com.huayu.eframe.server.common;
 
 import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 
@@ -13,11 +12,11 @@ import java.util.Properties;
 /**
  * Created by Leo on 2019/1/7.
  */
-public abstract  class PropertiesReader implements InitializingBean
+public abstract class PropertiesReader implements InitializingBean
 {
     private static final LogDebug debug = new LogDebug(PropertiesReader.class);
 
-    private Map<Object,Object> systemMap;
+    private Map<Object, Object> systemMap;
 
     public PropertiesReader()
     {
@@ -50,7 +49,7 @@ public abstract  class PropertiesReader implements InitializingBean
                     systemMap.putAll(properties);
                 }
             }
-            catch(IOException e)
+            catch (IOException e)
             {
                 System.out.print("System parameter load file and file name is " + res.getFilename());
             }
@@ -58,15 +57,14 @@ public abstract  class PropertiesReader implements InitializingBean
     }
 
 
-
     public Object getValue(Object key)
     {
-        if(null == key)
+        if (null == key)
         {
             return null;
         }
         String keyString = key.toString();
-        if(systemMap.containsKey(keyString))
+        if (systemMap.containsKey(keyString))
         {
             return systemMap.get(keyString);
         }

@@ -1,9 +1,7 @@
 package com.huayu.eframe.management.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
-import com.huayu.eframe.management.constant.SecurityConstant;
 
 import java.util.Date;
 
@@ -77,7 +75,6 @@ public class ModifyRoleRequest
     {
         this.status = status;
     }
-
 
 
     public String getPermissions()

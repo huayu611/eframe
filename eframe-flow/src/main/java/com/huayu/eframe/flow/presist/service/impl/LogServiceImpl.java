@@ -1,15 +1,15 @@
 package com.huayu.eframe.flow.presist.service.impl;
 
-import com.huayu.eframe.server.common.FramePaging;
-import com.huayu.eframe.server.context.LocalAttribute;
-import com.huayu.eframe.server.common.restful.PageObject;
-import com.huayu.eframe.server.common.restful.PagingRequest;
-import com.huayu.eframe.server.common.restful.PagingResponse;
-import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.flow.presist.atom.LogAtom;
 import com.huayu.eframe.flow.presist.bo.LogEntity;
 import com.huayu.eframe.flow.presist.service.LogDetail;
 import com.huayu.eframe.flow.presist.service.LogService;
+import com.huayu.eframe.server.common.FramePaging;
+import com.huayu.eframe.server.common.restful.PageObject;
+import com.huayu.eframe.server.common.restful.PagingRequest;
+import com.huayu.eframe.server.common.restful.PagingResponse;
+import com.huayu.eframe.server.context.LocalAttribute;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.TokenUtils;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 import com.huayu.eframe.server.tool.basic.StringUtils;
@@ -37,7 +37,7 @@ public class LogServiceImpl implements LogService
     public LogDetail addLog(LogDetail logDetail)
     {
         LogEntity logEntity = buildLogEntity(logDetail);
-        buildOperaIdAndType(logEntity,logDetail);
+        buildOperaIdAndType(logEntity, logDetail);
         fixCreateInfo(logEntity);
         LogEntity logEntityNew = logAtom.addLog(logEntity);
         debug.log(logEntityNew);
@@ -51,7 +51,7 @@ public class LogServiceImpl implements LogService
         LogEntity logEntity = getLogEntityByCode(logDetail.getCode());
         debug.log(logEntity);
         buildDetailEntity(logDetail, logEntity);
-        buildOperaIdAndType(logEntity,logDetail);
+        buildOperaIdAndType(logEntity, logDetail);
         LogEntity newLogEntity = logAtom.updateLog(logEntity);
         debug.log(newLogEntity);
         return buildLogDetail(newLogEntity);
@@ -75,7 +75,7 @@ public class LogServiceImpl implements LogService
         }
         LogEntity entity = buildLogEntity(logDetail);
         LogEntity conditionEntity = buildQueryConditionToken(entity, logDetail);
-        if(null == conditionEntity)
+        if (null == conditionEntity)
         {
             return new PageObject();
         }
@@ -120,18 +120,18 @@ public class LogServiceImpl implements LogService
         return logEntity;
     }
 
-    private LogEntity buildQueryConditionToken(LogEntity logEntity,LogDetail logDetail)
+    private LogEntity buildQueryConditionToken(LogEntity logEntity, LogDetail logDetail)
     {
-        if(StringUtils.isNotNullAndEmpty(logDetail.getOperObjType()))
+        if (StringUtils.isNotNullAndEmpty(logDetail.getOperObjType()))
         {
 
             TokenInstance tokenInstance = TokenUtils.getTokenInstanceByName(logDetail.getOperObjType());
-            if(null == tokenInstance)
+            if (null == tokenInstance)
             {
                 return null;
             }
             logEntity.setOperObjType(logDetail.getOperObjType());
-            if(StringUtils.isNotNullAndEmpty(logDetail.getOperObjCode()))
+            if (StringUtils.isNotNullAndEmpty(logDetail.getOperObjCode()))
             {
                 Long instance = tokenInstance.getInstanceIdByCode(logDetail.getOperObjCode());
                 if (null == instance)
@@ -167,10 +167,9 @@ public class LogServiceImpl implements LogService
         //operentity
 
 
-
     }
 
-    private void buildOperaIdAndType(LogEntity logEntity,LogDetail logDetail)
+    private void buildOperaIdAndType(LogEntity logEntity, LogDetail logDetail)
     {
         TokenInstance tokenInstance = TokenUtils.getTokenInstance();
 
@@ -218,8 +217,6 @@ public class LogServiceImpl implements LogService
 
         return logDetail;
     }
-
-
 
 
     private LogEntity getLogEntityByCode(String code)

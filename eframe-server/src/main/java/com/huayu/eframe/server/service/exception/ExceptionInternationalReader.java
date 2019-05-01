@@ -13,6 +13,7 @@ public class ExceptionInternationalReader extends InternationalReader
 {
     @Value(value = "classpath*:/META-INF/exception/*_exception.properties")
     private Resource[] resource;
+
     @Override
     public void afterPropertiesSet() throws Exception
     {

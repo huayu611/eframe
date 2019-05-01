@@ -18,7 +18,7 @@ public class Sensitive implements InitializingBean
     private static final String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
 
     @Autowired
-   private ReadSensitiveData readSensitiveData;
+    private ReadSensitiveData readSensitiveData;
 
     private List<String> sensitiveDate = new ArrayList<>();
 
@@ -32,13 +32,13 @@ public class Sensitive implements InitializingBean
         String[] ignoreAttr = StringUtils.tokenizeToStringArray(ignoreData, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
 
 
-        if(sensAttr.length <= 0)
+        if (sensAttr.length <= 0)
         {
             return;
         }
 
         List<String> ignoreList = new ArrayList<>();
-        if(ignoreAttr.length >0)
+        if (ignoreAttr.length > 0)
         {
             for (String a : ignoreAttr)
             {
@@ -46,9 +46,9 @@ public class Sensitive implements InitializingBean
             }
         }
 
-        for(String s : sensAttr)
+        for (String s : sensAttr)
         {
-            if(!ignoreList.contains(s))
+            if (!ignoreList.contains(s))
             {
                 sensitiveDate.add(s);
             }
@@ -62,6 +62,6 @@ public class Sensitive implements InitializingBean
 
     public String filterJsonSensitive(String json)
     {
-        return JSonUtils.replaseSens(sensitiveDate,json);
+        return JSonUtils.replaseSens(sensitiveDate, json);
     }
 }

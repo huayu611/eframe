@@ -39,24 +39,24 @@ public class QueryStaffBusiness extends AbstractExecuteBusiness
         PagingRequest page = request.getPage();
 
         StaffDetail staffDetail = buildStaffDetail(request);
-        PageObject pageObject = staffService.queryStaffListByPage(staffDetail,page);
+        PageObject pageObject = staffService.queryStaffListByPage(staffDetail, page);
 
 
         param.addParameter(RESULT, pageObject.getResponse());
-        param.addParameter(PAGE_OBJECT,pageObject);
+        param.addParameter(PAGE_OBJECT, pageObject);
     }
 
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
         tidyPagingResponse(pageObject, response);
     }
 

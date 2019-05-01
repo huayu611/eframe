@@ -8,7 +8,7 @@ import com.huayu.eframe.server.common.restful.PagingRequest;
  */
 public class QueryTimeTaskInstanceRequest
 {
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String timeTaskCode;
 
     private PagingRequest page;

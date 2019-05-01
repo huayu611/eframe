@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Leo on 2019/4/15.
  */
 @Service
-public class TimeTaskCacheImpl extends AbstractFrameCache<TimeTaskBO>  implements TimeTaskCache
+public class TimeTaskCacheImpl extends AbstractFrameCache<TimeTaskBO> implements TimeTaskCache
 {
     @Autowired
     private TimeTaskAtom timeTaskAtom;

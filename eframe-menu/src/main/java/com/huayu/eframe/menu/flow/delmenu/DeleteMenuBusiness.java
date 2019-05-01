@@ -29,8 +29,8 @@ public class DeleteMenuBusiness extends AbstractExecuteBusiness
     {
         DeleteMenuRequest request = param.getRequest();
         String codes = request.getCodes();
-        String result = deleteInBatch(code -> menuService.deleteMenu(code),codes);
-        param.addParameter(RESULT,result);
+        String result = deleteInBatch(code -> menuService.deleteMenu(code), codes);
+        param.addParameter(RESULT, result);
     }
 
     @Override

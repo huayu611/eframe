@@ -22,12 +22,13 @@ import java.util.regex.Pattern;
 public class EframeBeanProcess extends AbstractExecuteEFrameRequest
 {
     private static final LogDebug debug = new LogDebug(EframeBeanProcess.class);
+
     @Override
     public void doExtend(EFrameRequest efremeRequest, Field field, Object request) throws Exception
     {
         String beanName = efremeRequest.bean();
         String[] beanNameWithParameter = parseBeanWith(beanName);
-        if(StringUtils.isNullOrEmpty(beanNameWithParameter[1]))
+        if (StringUtils.isNullOrEmpty(beanNameWithParameter[1]))
         {
             processNoParameterBean(field, request, beanNameWithParameter);
         }
@@ -41,25 +42,25 @@ public class EframeBeanProcess extends AbstractExecuteEFrameRequest
     {
         ValidBeanDefined valid = BeanPool.getService(StringUtils.getTrimString(beanName[0]));
 
-        if(null == valid)
+        if (null == valid)
         {
-            throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST,"ServiceBeanNotExist");
+            throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST, "ServiceBeanNotExist");
         }
-        valid.process(field,field.get(request),request);
+        valid.process(field, field.get(request), request);
     }
 
     private void processWithParameterBean(Field field, Object request, String[] beanName) throws IllegalAccessException
     {
         ValidBeanParamDefined valid = BeanPool.getService(StringUtils.getTrimString(beanName[0]));
 
-        if(null == valid)
+        if (null == valid)
         {
-            throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST,"ServiceBeanNotExist");
+            throw new IFPException(FlowErrorCode.SERVICE_NOT_EXIST, "ServiceBeanNotExist");
         }
-        valid.process(field,field.get(request),request,beanName[1]);
+        valid.process(field, field.get(request), request, beanName[1]);
     }
 
-    public  boolean check(EFrameRequest efremeRequest,Field field,Object request)
+    public boolean check(EFrameRequest efremeRequest, Field field, Object request)
     {
         String beanName = efremeRequest.bean();
         return !StringUtils.isNullOrEmpty(beanName);
@@ -68,9 +69,9 @@ public class EframeBeanProcess extends AbstractExecuteEFrameRequest
     private String[] parseBeanWith(String bean)
     {
         String[] beanParse = new String[2];
-        if(bean.contains("(")&&bean.contains(")"))
+        if (bean.contains("(") && bean.contains(")"))
         {
-            Pattern t=Pattern.compile("(.*?)\\((.*?)\\)");
+            Pattern t = Pattern.compile("(.*?)\\((.*?)\\)");
             Matcher m = t.matcher(bean);
             while (m.find())
             {
@@ -80,7 +81,7 @@ public class EframeBeanProcess extends AbstractExecuteEFrameRequest
                 beanParse[1] = paramName;
                 break;
             }
-            if(StringUtils.isNullOrEmpty(beanParse[0]))
+            if (StringUtils.isNullOrEmpty(beanParse[0]))
             {
                 beanParse[0] = bean;
                 beanParse[1] = "";

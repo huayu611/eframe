@@ -13,6 +13,6 @@ public class DictLangService
     public static String getDictName(String code, Object[] param, Locale locale)
     {
         MessageSource ms = BeanPool.getService("DictConfigurature");
-        return ms.getMessage(code,param,locale);
+        return ms.getMessage(code, param, locale);
     }
 }

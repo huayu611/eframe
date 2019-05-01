@@ -12,7 +12,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 public class TimeTaskScheduler
 {
     @Bean
-    public TaskScheduler scheduledExecutorService() {
+    public TaskScheduler scheduledExecutorService()
+    {
         ThreadPoolTaskScheduler scheduler = new ThreadPoolTaskScheduler();
         scheduler.setPoolSize(8);
         scheduler.setThreadNamePrefix("scheduled-thread-");

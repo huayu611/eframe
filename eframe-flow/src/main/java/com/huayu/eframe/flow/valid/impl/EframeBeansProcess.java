@@ -20,7 +20,7 @@ public class EframeBeansProcess extends AbstractExecuteEFrameRequest
     public void doExtend(EFrameRequest efremeRequest, Field field, Object request) throws Exception
     {
         String[] beanNames = efremeRequest.beans();
-        for(String bean : beanNames)
+        for (String bean : beanNames)
         {
             ValidBeanDefined valid = BeanPool.getService(bean);
             if (null == valid)
@@ -31,7 +31,7 @@ public class EframeBeansProcess extends AbstractExecuteEFrameRequest
         }
     }
 
-    public  boolean check(EFrameRequest efremeRequest,Field field,Object request)
+    public boolean check(EFrameRequest efremeRequest, Field field, Object request)
     {
         String[] beanName = efremeRequest.beans();
         return beanName.length > 0;

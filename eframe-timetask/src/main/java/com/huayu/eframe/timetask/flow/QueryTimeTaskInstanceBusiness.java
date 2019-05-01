@@ -38,27 +38,27 @@ public class QueryTimeTaskInstanceBusiness
     {
         QueryTimeTaskInstanceRequest request = param.getRequest();
         TimeTaskInstanceDetail timeTaskDetail = buildTimeTaskInstanceDetail(request);
-        PageObject pageResult = timeTaskService.queryTimeTaskInstanceByPage(timeTaskDetail,request.getPage());
-        param.addParameter(RESULT, null != pageResult?pageResult.getResponse():null);
-        param.addParameter(PAGE_OBJECT,pageResult);
+        PageObject pageResult = timeTaskService.queryTimeTaskInstanceByPage(timeTaskDetail, request.getPage());
+        param.addParameter(RESULT, null != pageResult ? pageResult.getResponse() : null);
+        param.addParameter(PAGE_OBJECT, pageResult);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return   param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
 
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
-        if(null == pageObject)
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
+        if (null == pageObject)
         {
-            return ;
+            return;
         }
-        tidyPagingResponse(pageObject,response);
+        tidyPagingResponse(pageObject, response);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class QueryTimeTaskInstanceBusiness
 
     private TimeTaskInstanceDetail buildTimeTaskInstanceDetail(QueryTimeTaskInstanceRequest queryTimeTaskRequest)
     {
-         TimeTaskInstanceDetail timeTaskInstanceDetail = new TimeTaskInstanceDetail();
+        TimeTaskInstanceDetail timeTaskInstanceDetail = new TimeTaskInstanceDetail();
         timeTaskInstanceDetail.setTimeTaskCode(queryTimeTaskRequest.getTimeTaskCode());
         return timeTaskInstanceDetail;
     }

@@ -1,8 +1,6 @@
 package com.huayu.eframe.management.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 import java.util.Date;
@@ -13,7 +11,7 @@ import java.util.Date;
 public class AddRoleRequest
 //        implements EffectiveExpireDateTime
 {
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String name;
 
     @EFrameRequest(bean = "_e_eframe_rolecode")

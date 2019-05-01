@@ -32,7 +32,8 @@ public class AESEncrypt
             cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] encode = cipher.doFinal(value.getBytes());
             result = Base64.getEncoder().encodeToString(encode);
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e)
+        }
+        catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -49,7 +50,8 @@ public class AESEncrypt
             Cipher cipher = Cipher.getInstance(ECB_CIPHER_ALGORITHM);
             cipher.init(Cipher.DECRYPT_MODE, key);
             return new String(cipher.doFinal(decodedTextByte));
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e)
+        }
+        catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -74,7 +76,8 @@ public class AESEncrypt
             cipher.init(Cipher.ENCRYPT_MODE, key, ivParameterSpec);
             return cipher.doFinal(plainText);
 
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e)
+        }
+        catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -2,14 +2,12 @@ package com.huayu.eframe.server.config.properties;
 
 import com.huayu.eframe.server.service.spring.BeanPool;
 import com.huayu.eframe.server.tool.basic.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Administrator on 2017/8/20.
  */
 public class SystemConfig
 {
-
 
 
     public static String getValue(String key)
@@ -19,25 +17,25 @@ public class SystemConfig
         return StringUtils.getString(obj);
     }
 
-    public static String getValue(String key,String defaultValue)
+    public static String getValue(String key, String defaultValue)
     {
         PropertiesLoadService propertiesLoadService = BeanPool.getServiceByClass(PropertiesLoadService.class);
         Object obj = propertiesLoadService.getValue(key);
-        if(null == obj)
+        if (null == obj)
         {
             return defaultValue;
         }
         return StringUtils.getString(obj);
     }
 
-    public static String getValueByService(String key,String defaultValue,PropertiesLoadService propertiesLoadService)
+    public static String getValueByService(String key, String defaultValue, PropertiesLoadService propertiesLoadService)
     {
-        if(null == propertiesLoadService)
+        if (null == propertiesLoadService)
         {
             return defaultValue;
         }
         Object obj = propertiesLoadService.getValue(key);
-        if(null == obj)
+        if (null == obj)
         {
             return defaultValue;
         }

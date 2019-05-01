@@ -14,19 +14,20 @@ import java.util.Set;
 @Service
 public class TaskMap
 {
-    private Map<String,Task> storeTask = new HashMap<>();
+    private Map<String, Task> storeTask = new HashMap<>();
 
     public TaskMap(Set<Task> tasks)
     {
-        if(CollectionUtils.isNotEmpty(tasks))
+        if (CollectionUtils.isNotEmpty(tasks))
         {
-            CollectionUtils.iterator(tasks,(c,v,i)->{
-                storeTask.put(v.getName(),v);
+            CollectionUtils.iterator(tasks, (c, v, i) ->
+            {
+                storeTask.put(v.getName(), v);
             });
         }
     }
 
-    public Map<String,Task> getTimeTaskService()
+    public Map<String, Task> getTimeTaskService()
     {
         return storeTask;
     }

@@ -36,7 +36,8 @@ public class QuerySystemTokensBusiness extends AbstractExecuteBusiness
     {
         List<Tokens> keys = new ArrayList<>();
         Map<String, TokenInstance> allToken = tokenObjectMap.getAllTokenList();
-        MapUtils.iterator(allToken,(m,k,v)->{
+        MapUtils.iterator(allToken, (m, k, v) ->
+        {
             Tokens tokens = new Tokens();
             tokens.setKey(k);
             tokens.setName(k);

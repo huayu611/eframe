@@ -20,7 +20,7 @@ public class JSonUtils
         {
             jsonList = mapper.writeValueAsString(obj);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             return "{}";
         }
@@ -29,19 +29,19 @@ public class JSonUtils
 
     public static String replaseSens(List<String> sens, String json)
     {
-        if(CollectionUtils.isEmpty(sens))
+        if (CollectionUtils.isEmpty(sens))
         {
             return json;
         }
         String newJson = json;
-        Pattern p=Pattern.compile("\"(.*?)\":\"(.*?)\"");
+        Pattern p = Pattern.compile("\"(.*?)\":\"(.*?)\"");
         Matcher m = p.matcher(newJson);
-        int i=0;
+        int i = 0;
         while (m.find())
         {
             String target = m.group(1);
             String target2 = m.group(2);
-            for(String str : sens)
+            for (String str : sens)
             {
                 if (target.contains(str))
                 {

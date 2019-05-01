@@ -36,29 +36,28 @@ public class QueryRoleBusiness extends AbstractExecuteBusiness
     {
         QueryRoleRequest request = param.getRequest();
         RoleDetail roleDetail = buildRoleDetail(request);
-        PageObject pageObject = roleService.queryRoleByCondition(roleDetail,request.getPage());
-
+        PageObject pageObject = roleService.queryRoleByCondition(roleDetail, request.getPage());
 
 
         param.addParameter(RESULT, pageObject.getResponse());
-        param.addParameter(PAGE_OBJECT,pageObject);
+        param.addParameter(PAGE_OBJECT, pageObject);
     }
 
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return   param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
-        tidyPagingResponse(pageObject,response);
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
+        tidyPagingResponse(pageObject, response);
     }
 
-    private RoleDetail buildRoleDetail( QueryRoleRequest request)
+    private RoleDetail buildRoleDetail(QueryRoleRequest request)
     {
         RoleDetail roleDetail = new RoleDetail();
         roleDetail.setCode(request.getCode());

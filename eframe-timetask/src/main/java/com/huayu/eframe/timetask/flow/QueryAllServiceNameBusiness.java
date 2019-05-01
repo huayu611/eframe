@@ -32,7 +32,8 @@ public class QueryAllServiceNameBusiness extends AbstractExecuteBusiness
     {
         Map<String, Task> serviceMap = taskMap.getTimeTaskService();
         List<QueryAllServiceNameResponse> responseList = new ArrayList<>();
-        MapUtils.iterator(serviceMap,(m,k,v) ->{
+        MapUtils.iterator(serviceMap, (m, k, v) ->
+        {
             QueryAllServiceNameResponse queryAllServiceNameResponse = new QueryAllServiceNameResponse();
             queryAllServiceNameResponse.setKey(k);
             queryAllServiceNameResponse.setName(k);

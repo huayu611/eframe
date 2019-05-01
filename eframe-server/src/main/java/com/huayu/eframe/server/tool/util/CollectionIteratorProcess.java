@@ -5,5 +5,5 @@ import java.util.Collection;
 @FunctionalInterface
 public interface CollectionIteratorProcess<Type>
 {
-  void process(Collection coll, Type value, int index);
+    void process(Collection coll, Type value, int index);
 }

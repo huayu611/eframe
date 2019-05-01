@@ -50,7 +50,7 @@ public class EmailAtomImpl implements EmailAtom
     @Override
     public Page<EmailBO> queryEmailByPage(FramePaging fp, EmailBO email)
     {
-        return queryByPageCondition(fp,email);
+        return queryByPageCondition(fp, email);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class EmailAtomImpl implements EmailAtom
     @Override
     public void delete(EmailBO emailBO)
     {
-         emailRepository.delete(emailBO);
+        emailRepository.delete(emailBO);
     }
 
     private Specification<EmailBO> buildSpecification(EmailBO condition)
@@ -81,19 +81,20 @@ public class EmailAtomImpl implements EmailAtom
         {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(null != condition.getName())
+            if (null != condition.getName())
             {
                 predicates.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + condition.getName() + "%"));
             }
-            if(null != condition.getEmailCode())
+            if (null != condition.getEmailCode())
             {
-                predicates.add(criteriaBuilder.equal(root.get("emailCode").as(String.class),  condition.getEmailCode()));
+                predicates.add(criteriaBuilder.equal(root.get("emailCode").as(String.class), condition.getEmailCode()));
             }
-            if(null != condition.getStatus())
+            if (null != condition.getStatus())
             {
-                predicates.add(criteriaBuilder.equal(root.get("status").as(String.class),  condition.getStatus()));
+                predicates.add(criteriaBuilder.equal(root.get("status").as(String.class), condition.getStatus()));
             }
-            predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class),"D"));;
+            predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
+            ;
             return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
         };
     }
@@ -101,8 +102,8 @@ public class EmailAtomImpl implements EmailAtom
     private Page<EmailBO> queryByPageCondition(FramePaging fp, EmailBO condition)
     {
 
-        Sort sort = new Sort(Sort.Direction.ASC,"createTime");
-        PageRequest pageRequest = PageRequest.of(fp.getPage(),fp.getSize(),sort);
+        Sort sort = new Sort(Sort.Direction.ASC, "createTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
 
         Specification<EmailBO> querySpecific = buildSpecification(condition);
         Page<EmailBO> resultList = this.emailRepository.findAll(querySpecific, pageRequest);

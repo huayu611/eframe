@@ -6,7 +6,6 @@ import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.timetask.flow.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Leo on 2019/4/15.

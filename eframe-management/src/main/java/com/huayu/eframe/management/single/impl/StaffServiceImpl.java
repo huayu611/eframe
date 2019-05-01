@@ -90,7 +90,7 @@ public class StaffServiceImpl implements StaffService
             updateStaffLastLoginTime(staff, LocalAttribute.getNow());
             StaffExt staffExt = staffExtAtom.queryStaffExtByStaff(staff);
             debug.endLog();
-            return getStaffDetail(staff,staffExt);
+            return getStaffDetail(staff, staffExt);
         }
         debug.log("Staffname or password wrong");
         throw new IFPException(ManagementErrorCode.STAFFNAME_OR_PASSWORD_WRONG, "Staffname or password wrong!");
@@ -157,7 +157,7 @@ public class StaffServiceImpl implements StaffService
         StaffExt persistStaffExt = buildCreateStaffExt(staffDetail, staffReturn);
         StaffExt staffExt = staffExtAtom.addStaffExt(persistStaffExt);
 
-        StaffDetail returnDetail = getStaffDetail(staffReturn,staffExt);
+        StaffDetail returnDetail = getStaffDetail(staffReturn, staffExt);
 
         List<RoleDetail> roleDetails = addStaffRole(staffReturn, roles);
         if (CollectionUtils.isNotEmpty(roleDetails))
@@ -170,69 +170,69 @@ public class StaffServiceImpl implements StaffService
 
     }
 
-    private StaffExt buildCreateStaffExt(StaffDetail staffDetail,Staff staff)
+    private StaffExt buildCreateStaffExt(StaffDetail staffDetail, Staff staff)
     {
         StaffExt staffExt = new StaffExt();
-        putStaffExtInformation(staffExt,staffDetail,staff);
+        putStaffExtInformation(staffExt, staffDetail, staff);
         return staffExt;
     }
 
 
-    private void putStaffExtInformation(StaffExt staffExt,StaffDetail staffDetail,Staff staff)
+    private void putStaffExtInformation(StaffExt staffExt, StaffDetail staffDetail, Staff staff)
     {
-        if(null != staffExt && null != staff)
+        if (null != staffExt && null != staff)
         {
             staffExt.setStaff(staff);
         }
-        if(null != staffDetail.getAlipay())
+        if (null != staffDetail.getAlipay())
         {
             staffExt.setAlipay(staffDetail.getAlipay());
         }
-        if(null != staffDetail.getWechat())
+        if (null != staffDetail.getWechat())
         {
             staffExt.setWeChat(staffDetail.getWechat());
         }
-        if(null != staffDetail.getWeibo())
+        if (null != staffDetail.getWeibo())
         {
             staffExt.setWeiBo(staffDetail.getWeibo());
         }
-        if(null != staffDetail.getQq())
+        if (null != staffDetail.getQq())
         {
             staffExt.setQq(staffDetail.getQq());
         }
-        if(null != staffDetail.getBirthday())
+        if (null != staffDetail.getBirthday())
         {
             staffExt.setBirthday(staffDetail.getBirthday());
         }
-        if(null != staffDetail.getRealName())
+        if (null != staffDetail.getRealName())
         {
             staffExt.setRealName(staffDetail.getRealName());
         }
-        if(null != staffDetail.getNickName())
+        if (null != staffDetail.getNickName())
         {
             staffExt.setNickName(staffDetail.getNickName());
         }
-        if(null != staffDetail.getIdentityId())
+        if (null != staffDetail.getIdentityId())
         {
             staffExt.setIdentityId(staffDetail.getIdentityId());
         }
-        if(null != staffDetail.getAvatar())
+        if (null != staffDetail.getAvatar())
         {
             staffExt.setAvatar(staffDetail.getAvatar());
         }
-        if(null != staffDetail.getRemark())
+        if (null != staffDetail.getRemark())
         {
             staffExt.setRemark(staffDetail.getRemark());
         }
-        if(null != staffDetail.getSignature())
+        if (null != staffDetail.getSignature())
         {
             staffExt.setSignature(staffDetail.getSignature());
         }
-        if(null != staffDetail.getOtherTelNumber())
+        if (null != staffDetail.getOtherTelNumber())
         {
             staffExt.setOtherTelNumber(staffDetail.getOtherTelNumber());
         }
-        if(null != staffDetail.getGender())
+        if (null != staffDetail.getGender())
         {
             staffExt.setGender(staffDetail.getGender());
         }
@@ -279,15 +279,15 @@ public class StaffServiceImpl implements StaffService
         staff.setId(existStaff.getId());
         staff.setLastUpdateTime(DateUtils.getCurrentDate());
         Staff resultStaff = staffAtom.update(staff);
-        if(null == existStaffExt)
+        if (null == existStaffExt)
         {
             existStaffExt = new StaffExt();
         }
-        putStaffExtInformation(existStaffExt,staffDetail,resultStaff);
+        putStaffExtInformation(existStaffExt, staffDetail, resultStaff);
 
         StaffExt resultStaffExt = staffExtAtom.updateStaffExt(existStaffExt);
 
-        StaffDetail resultDetail = getStaffDetail(resultStaff,resultStaffExt);
+        StaffDetail resultDetail = getStaffDetail(resultStaff, resultStaffExt);
         SecurityCacheFacade.refreshByLocalFlow();
         if (null == roles)
         {
@@ -398,11 +398,11 @@ public class StaffServiceImpl implements StaffService
             return null;
         }
         StaffExt staffExt = staffExtAtom.queryStaffExtByStaff(staff);
-        StaffDetail detail = getStaffDetail(staff,staffExt);
+        StaffDetail detail = getStaffDetail(staff, staffExt);
         return detail;
     }
 
-    private StaffDetail getStaffDetail(Staff staff,StaffExt staffExt)
+    private StaffDetail getStaffDetail(Staff staff, StaffExt staffExt)
     {
         StaffDetail detail = new StaffDetail();
         detail.setName(staff.getStaffname());
@@ -415,7 +415,7 @@ public class StaffServiceImpl implements StaffService
         detail.setRoles(buildRoleDetailList(staff.getId()));
         detail.setTel(staff.getTelNumber());
 //        detail.setRemark(staff.getRemark());
-        if(null != staffExt)
+        if (null != staffExt)
         {
             detail.setSignature(staffExt.getSignature());
             detail.setWeibo(staffExt.getWeiBo());
@@ -426,7 +426,7 @@ public class StaffServiceImpl implements StaffService
             detail.setRealName(staffExt.getRealName());
             detail.setNickName(staffExt.getNickName());
             detail.setIdentityId(staffExt.getIdentityId());
-            detail.setHiddenIdentity(StringUtils.hiddenPart(staffExt.getIdentityId(),4,17));
+            detail.setHiddenIdentity(StringUtils.hiddenPart(staffExt.getIdentityId(), 4, 17));
             detail.setAvatar(staffExt.getAvatar());
             detail.setOtherTelNumber(staffExt.getOtherTelNumber());
             detail.setBirthday(staffExt.getBirthday());

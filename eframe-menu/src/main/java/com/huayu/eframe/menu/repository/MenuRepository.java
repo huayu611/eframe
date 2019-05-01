@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 /**
  * Created by Administrator on 2018/8/12.
  */
-public interface MenuRepository extends JpaRepository<Menu,Long>, JpaSpecificationExecutor<Menu>
+public interface MenuRepository extends JpaRepository<Menu, Long>, JpaSpecificationExecutor<Menu>
 {
 }

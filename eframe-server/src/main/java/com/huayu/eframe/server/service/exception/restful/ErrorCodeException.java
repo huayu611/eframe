@@ -7,7 +7,17 @@ public interface ErrorCodeException
 {
     String getErrorCode();
 
-    default int getHttpCode(){return 400;};
+    default int getHttpCode()
+    {
+        return 400;
+    }
 
-    default String getHttpDesc(){return "Bad Request";};
+    ;
+
+    default String getHttpDesc()
+    {
+        return "Bad Request";
+    }
+
+    ;
 }

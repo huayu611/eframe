@@ -1,12 +1,11 @@
 package com.huayu.eframe.global.multipart.upload;
 
+import com.huayu.eframe.flow.AbstractExecuteBusiness;
+import com.huayu.eframe.flow.BusinessParameter;
 import com.huayu.eframe.global.constants.GlobalErrorCode;
 import com.huayu.eframe.global.multipart.MultipartUtil;
 import com.huayu.eframe.global.multipart.upload.ruler.UploadRuler;
 import com.huayu.eframe.global.multipart.upload.ruler.UploadRulerExecute;
-import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.flow.AbstractExecuteBusiness;
-import com.huayu.eframe.flow.BusinessParameter;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
@@ -14,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,23 +40,23 @@ public class UploadBusiness extends AbstractExecuteBusiness
         UploadRequest uploadRequest = param.getRequest();
         String type = uploadRequest.getType();
         UploadRuler upload = uploadRulerExecute.getUploadRuler(type);
-        if(null == upload)
+        if (null == upload)
         {
-            throw new IFPException(GlobalErrorCode.UPLOAD_TYPE_NOT_EXIST,"Upload type not exist");
+            throw new IFPException(GlobalErrorCode.UPLOAD_TYPE_NOT_EXIST, "Upload type not exist");
         }
 
         MultipartFile file = uploadRequest.getMultipartFile();
-        if(file.getSize() <=0)
+        if (file.getSize() <= 0)
         {
-            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_IS_EMPTY,"file is empty");
+            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_IS_EMPTY, "file is empty");
         }
 
-        if(file.getSize() > upload.getSize())
+        if (file.getSize() > upload.getSize())
         {
-            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_TOO_LARGE,"file is too large");
+            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_TOO_LARGE, "file is too large");
         }
-        validFileSuffix(upload,file);
-        param.addParameter(UPLOAD_RULER,upload);
+        validFileSuffix(upload, file);
+        param.addParameter(UPLOAD_RULER, upload);
         debug.log("finish valid");
     }
 
@@ -67,8 +67,8 @@ public class UploadBusiness extends AbstractExecuteBusiness
         MultipartFile file = uploadRequest.getMultipartFile();
 
         debug.log(uploadRequest);
-        String result= saveFile(uploadRequest.getType(),file,uploadRequest.getTemp());
-        param.addParameter(RESULT,result);
+        String result = saveFile(uploadRequest.getType(), file, uploadRequest.getTemp());
+        param.addParameter(RESULT, result);
     }
 
     @Override
@@ -81,31 +81,31 @@ public class UploadBusiness extends AbstractExecuteBusiness
         uploadResponse.setType(uploadRequest.getType());
 
         UploadRuler upload = param.getParameter(UPLOAD_RULER);
-        String res = upload.downLoadPath()  + uploadRequest.getType() + "/" + result;
+        String res = upload.downLoadPath() + uploadRequest.getType() + "/" + result;
         uploadResponse.setFullPath(res);
         return uploadResponse;
     }
 
-    private String saveFile(String path,MultipartFile file,boolean temp)
+    private String saveFile(String path, MultipartFile file, boolean temp)
     {
         String fileName = file.getOriginalFilename();
         String name = RandomUtils.getUUID() + fileName;
         debug.log(name);
         String filePath = "";
-        if(temp)
+        if (temp)
         {
-            filePath = MultipartUtil.getSystemTempPath()+  File.separator + path ;
+            filePath = MultipartUtil.getSystemTempPath() + File.separator + path;
 
         }
         else
         {
-            filePath = MultipartUtil.getSystemPath()+  File.separator + path ;
+            filePath = MultipartUtil.getSystemPath() + File.separator + path;
         }
 
 
         debug.log(filePath);
         File desFilePath = new File(filePath);
-        if(!desFilePath.exists())
+        if (!desFilePath.exists())
         {
             desFilePath.mkdirs();
         }
@@ -122,28 +122,27 @@ public class UploadBusiness extends AbstractExecuteBusiness
         return name;
     }
 
-    private void validFileSuffix(UploadRuler upload,MultipartFile file)
+    private void validFileSuffix(UploadRuler upload, MultipartFile file)
     {
         String fileName = file.getOriginalFilename();
 
         String[] fileTypes = upload.getFileType();
         boolean checkResult = false;
-        for(String s : fileTypes)
+        for (String s : fileTypes)
         {
-            Pattern p=Pattern.compile(s);
+            Pattern p = Pattern.compile(s);
             Matcher m = p.matcher(fileName);
 
             checkResult = m.matches();
-            if(checkResult)
+            if (checkResult)
             {
-               break;
+                break;
             }
         }
-        if(!checkResult)
+        if (!checkResult)
         {
-            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_SUFFIX_ERROR,"file type incorrect");
+            throw new IFPException(GlobalErrorCode.UPLOAD_FILE_SUFFIX_ERROR, "file type incorrect");
         }
-
 
 
     }

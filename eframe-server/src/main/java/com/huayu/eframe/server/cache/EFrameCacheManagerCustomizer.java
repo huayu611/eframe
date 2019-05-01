@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class EFrameCacheManagerCustomizer implements CacheManagerCustomizer
 {
 
-     private static final LogDebug debug = new LogDebug(EFrameCacheManagerCustomizer.class);
+    private static final LogDebug debug = new LogDebug(EFrameCacheManagerCustomizer.class);
 
     private CacheManager cacheManager;
 

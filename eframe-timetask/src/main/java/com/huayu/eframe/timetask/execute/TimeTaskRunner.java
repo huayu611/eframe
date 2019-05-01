@@ -22,20 +22,21 @@ public class TimeTaskRunner
 
     @Autowired
     private TaskMap taskMap;
-    
+
     @Autowired
     private TimeTaskCache timeTaskCache;
 
     //每分钟扫一次。
-    @Scheduled(cron="0 */1 * * * ?")
+    @Scheduled(cron = "0 */1 * * * ?")
     public void runner()
     {
         List<TimeTaskBO> allTimeTask = timeTaskCache.getAllTimeTask();
-        if(null == allTimeTask)
+        if (null == allTimeTask)
         {
             return;
         }
-        CollectionUtils.iterator(allTimeTask,(c,v,i)->{
+        CollectionUtils.iterator(allTimeTask, (c, v, i) ->
+        {
             call(v);
         });
     }
@@ -44,14 +45,14 @@ public class TimeTaskRunner
     {
         String serviceBeanName = timeTaskBO.getServiceBean();
         Task serviceInstance = taskMap.getTimeTaskServiceByName(serviceBeanName);
-        if(null == serviceInstance)
+        if (null == serviceInstance)
         {
             return;
         }
-        if(DateUtils.afterAndEqualsDate(DateUtils.getCurrentDate(),timeTaskBO.getNextTime()))
+        if (DateUtils.afterAndEqualsDate(DateUtils.getCurrentDate(), timeTaskBO.getNextTime()))
         {
             boolean locked = TimeTaskLock.putLock(timeTaskBO.getId());
-            if(locked)
+            if (locked)
             {
                 try
                 {

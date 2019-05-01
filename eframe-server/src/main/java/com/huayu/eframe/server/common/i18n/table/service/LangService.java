@@ -7,9 +7,9 @@ import java.util.List;
 public interface LangService
 {
 
-    List<LangValue>  save(String langCode,List<LangValue> values);
+    List<LangValue> save(String langCode, List<LangValue> values);
 
-    List<LangValue> update(String langCode,List<LangValue> values);
+    List<LangValue> update(String langCode, List<LangValue> values);
 
     void delete(String langCode);
 

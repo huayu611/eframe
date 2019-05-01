@@ -27,7 +27,7 @@ public class CopBaseInfoAtomImpl implements CopBaseInfoAtom
     @Override
     public CopBaseInfo update(CopBaseInfo copBaseInfo)
     {
-        if(null == copBaseInfo.getId())
+        if (null == copBaseInfo.getId())
         {
             return null;
         }

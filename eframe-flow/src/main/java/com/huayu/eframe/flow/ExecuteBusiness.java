@@ -1,8 +1,5 @@
 package com.huayu.eframe.flow;
 
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 /**
  * Created by Administrator on 2018/7/7.
  */
@@ -18,7 +15,11 @@ public interface ExecuteBusiness
 
     void process(BusinessParameter param);
 
-    default void  exception(BusinessParameter param,Exception e){};
+    default void exception(BusinessParameter param, Exception e)
+    {
+    }
+
+    ;
 
     Object getResult(BusinessParameter param);
 }

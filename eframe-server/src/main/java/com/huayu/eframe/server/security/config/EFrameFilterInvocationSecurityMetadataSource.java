@@ -55,7 +55,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
 
         boolean isWhite = checkWhiteListUrl(filterInvocation.getRequest());
         debug.log(isWhite);
-        if(!isWhite)
+        if (!isWhite)
         {
             checkVersion(request);
         }
@@ -63,23 +63,26 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         String tokenPackage = StringUtils.getString(authorization);
 
         // && !StringUtils.equalString("/manage/Login", filterInvocation.getRequestUrl())
-        if (StringUtils.isNotNullAndEmpty(tokenPackage)) {
+        if (StringUtils.isNotNullAndEmpty(tokenPackage))
+        {
 
-            Token token = getLoginName(tokenPackage, filterInvocation,isWhite);
+            Token token = getLoginName(tokenPackage, filterInvocation, isWhite);
             debug.log(token);
             Collection<ConfigAttribute> attr = null;
-            if (null != token) {
+            if (null != token)
+            {
                 attr = getListByLoginName(token);
             }
-            if(null != attr)
+            if (null != attr)
             {
-                if(isWhite)
+                if (isWhite)
                 {
                     attr.add(buildWhiteConfigAttribute(isWhite));
                 }
                 return attr;
             }
-            if (!isWhite) {
+            if (!isWhite)
+            {
                 throw new NoRightAuthenticationException("No right");
             }
 
@@ -103,14 +106,14 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
     {
         String versionHeaderName = SystemConfig.getValue(DEFAULT_VERSION_HEADER_PARAME, DEFAULT_VERSION_HEADER_PARAME_DEFAULT);
         String versionConfig = SystemConfig.getValue(DEFAULT_VERSION_CONFIG, DEFAULT_VERSION_CONFIG_VALUE);
-        String isValid = SystemConfig.getValue(NEED_VALID_VERSION_HEADER,DO_NOT_NEED_VALID_VERSION_HEADER);
-        debug.log(versionHeaderName,versionConfig,isValid);
-        if(StringUtils.equalStringNoCareUpperAndLower(isValid,DO_NOT_NEED_VALID_VERSION_HEADER))
+        String isValid = SystemConfig.getValue(NEED_VALID_VERSION_HEADER, DO_NOT_NEED_VALID_VERSION_HEADER);
+        debug.log(versionHeaderName, versionConfig, isValid);
+        if (StringUtils.equalStringNoCareUpperAndLower(isValid, DO_NOT_NEED_VALID_VERSION_HEADER))
         {
             return;
         }
         String version = request.getHeader(versionHeaderName);
-        if(StringUtils.isNotNullAndEmpty(version) && StringUtils.equalStringNoCareUpperAndLower(versionConfig,version))
+        if (StringUtils.isNotNullAndEmpty(version) && StringUtils.equalStringNoCareUpperAndLower(versionConfig, version))
         {
             return;
         }
@@ -124,14 +127,17 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         debug.log(token);
         List<AuthView> authList = token.getAllAuthView();
         debug.log(authList);
-        if (CollectionUtils.isEmpty(authList)) {
+        if (CollectionUtils.isEmpty(authList))
+        {
             return null;
         }
-        for (AuthView auth : authList) {
+        for (AuthView auth : authList)
+        {
             allAttribute.add(new EFrameConfigAttribute(auth));
         }
 
-        if (CollectionUtils.isEmpty(allAttribute)) {
+        if (CollectionUtils.isEmpty(allAttribute))
+        {
             return null;
         }
         return allAttribute;
@@ -150,30 +156,32 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
         return true;
     }
 
-    private Token getLoginName(String tokenPackage, FilterInvocation filterInvocation,boolean isWhite)
+    private Token getLoginName(String tokenPackage, FilterInvocation filterInvocation, boolean isWhite)
     {
         String[] com = tokenPackage.split(" ");
-        if (com.length < 2) {
+        if (com.length < 2)
+        {
             return null;
         }
         String flag = com[0];
         String auth = com[1];
         filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN_STRING, auth);
-        if (StringUtils.equalStringNoCareUpperAndLower(flag, "Bearer")) {
+        if (StringUtils.equalStringNoCareUpperAndLower(flag, "Bearer"))
+        {
             Token tokenVale = null;
             try
             {
                 tokenVale = TokenManager.getToken(auth);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                if(!isWhite)
+                if (!isWhite)
                 {
                     throw e;
                 }
                 debug.log("Token error and return null");
             }
-            if(null != tokenVale)
+            if (null != tokenVale)
             {
                 TokenManager.updateToken(tokenVale);
                 filterInvocation.getHttpRequest().setAttribute(Constant.HTTP_TOKEN, tokenVale);

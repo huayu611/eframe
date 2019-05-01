@@ -1,8 +1,7 @@
 package com.huayu.eframe.flow;
 
-import com.huayu.eframe.flow.common.HttpUtils;
-import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.flow.common.FlowConstant;
+import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.config.rest.RestErrorCodeMappingFacade;
@@ -44,7 +43,7 @@ public class Flow
             if (e instanceof IFPException)
             {
                 Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
-                if(null == locale)
+                if (null == locale)
                 {
                     locale = ConfigurationUtils.getDefaultLocal();
                 }
@@ -75,7 +74,7 @@ public class Flow
         LocalAttribute.addValue(FlowConstant.EASY_SERVLET, easyParam);
 
         //对于easy frame，要提防定制边对request进行定制。无法构造真实的easy param.
-        if(null != easyParam.getRequest())
+        if (null != easyParam.getRequest())
         {
             Token token = (Token) easyParam.getRequest().getAttribute(Constant.HTTP_TOKEN);
 

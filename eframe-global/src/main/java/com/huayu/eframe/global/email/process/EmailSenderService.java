@@ -32,24 +32,23 @@ public class EmailSenderService
     private FreeMarkerService freeMarkerService;
 
 
-    public boolean sendEmailByTemplate(String code,String dest,String ftl,Object model)
+    public boolean sendEmailByTemplate(String code, String dest, String ftl, Object model)
     {
         String text = freeMarkerService.getFreeMarkerText(ftl, model);
-        if(null == text)
+        if (null == text)
         {
             debug.log("Get freemarker failed,please check env");
             return false;
         }
 
-        return sendEmail(code,dest,text);
+        return sendEmail(code, dest, text);
     }
 
 
-
-    public boolean sendEmail(String code,String dest,String text)
+    public boolean sendEmail(String code, String dest, String text)
     {
         EmailBO email = emailCache.getEmailByCode(code);
-        JavaMailSenderImpl mailSender =  createMailSender(email);
+        JavaMailSenderImpl mailSender = createMailSender(email);
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         try
         {
@@ -60,7 +59,8 @@ public class EmailSenderService
             messageHelper.setText(text, true);
             mailSender.send(mimeMessage);
             return true;
-        }catch(Exception e)
+        }
+        catch (Exception e)
         {
             debug.errorLog("Send Email Failed");
             return false;
@@ -68,7 +68,8 @@ public class EmailSenderService
     }
 
 
-    private JavaMailSenderImpl createMailSender( EmailBO email) {
+    private JavaMailSenderImpl createMailSender(EmailBO email)
+    {
         JavaMailSenderImpl sender = new JavaMailSenderImpl();
         sender.setHost(email.getHost());
         sender.setPort(email.getPort());
@@ -78,7 +79,7 @@ public class EmailSenderService
         sender.setDefaultEncoding("Utf-8");
         Properties p = new Properties();
         p.setProperty("mail.smtp.timeout", StringUtils.getString(email.getTimeOut()));
-        if(StringUtils.isNotNullAndEmpty(email.getAuth()))
+        if (StringUtils.isNotNullAndEmpty(email.getAuth()))
         {
             p.setProperty("mail.smtp.auth", "true");
         }

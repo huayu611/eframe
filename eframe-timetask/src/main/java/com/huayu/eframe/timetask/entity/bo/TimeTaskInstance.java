@@ -1,36 +1,35 @@
 package com.huayu.eframe.timetask.entity.bo;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Leo on 2019/4/15.
  */
 @Entity
-@Table(name="sys_timetask_instance")
+@Table(name = "sys_timetask_instance")
 public class TimeTaskInstance
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="time_task_id", length=20)
+    @Column(name = "time_task_id", length = 20)
     private Long timeTaskId;
 
-    @Column(name="start_time")
+    @Column(name = "start_time")
     private Date startTime;
 
-    @Column(name="end_time")
+    @Column(name = "end_time")
     private Date endTime;
 
-    @Column(name="status")
+    @Column(name = "status")
     private String status;
 
-    @Column(name="error_stack")
+    @Column(name = "error_stack")
     private String errorStack;
 
-    @Column(name="retry_time")
+    @Column(name = "retry_time")
     private Integer retryTime;
 
     public Long getId()

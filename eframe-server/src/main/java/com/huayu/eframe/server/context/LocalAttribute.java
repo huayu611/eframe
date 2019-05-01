@@ -1,7 +1,6 @@
 package com.huayu.eframe.server.context;
 
 
-import com.huayu.eframe.server.cache.Cache;
 import com.huayu.eframe.server.mvc.token.SessionToken;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.tool.basic.DateUtils;
@@ -52,7 +51,8 @@ public class LocalAttribute
     {
         LocalContext localContext = getLocalAttribute();
         Token token = localContext.getValue(TOKEN_FLAG);
-        if (null != token) {
+        if (null != token)
+        {
             return token.getSession();
         }
         return null;
@@ -67,7 +67,8 @@ public class LocalAttribute
     public static LocalContext getLocalAttribute()
     {
         LocalContext localContext = local.get();
-        if (null == localContext) {
+        if (null == localContext)
+        {
             localContext = new LocalContext();
             local.set(localContext);
         }
@@ -77,7 +78,8 @@ public class LocalAttribute
     public static Date getNow()
     {
         Date now = getLocalAttribute().getNowDate();
-        if (null == now) {
+        if (null == now)
+        {
             return DateUtils.getCurrentDate();
         }
         return now;
@@ -92,7 +94,8 @@ public class LocalAttribute
     public static void destroy()
     {
         LocalContext localVar = local.get();
-        if (null != localVar) {
+        if (null != localVar)
+        {
             local.remove();
         }
     }
@@ -100,12 +103,14 @@ public class LocalAttribute
 
     public static void addNeedRefreshCache(String cacheName)
     {
-        if (StringUtils.isNullOrEmpty(cacheName)) {
+        if (StringUtils.isNullOrEmpty(cacheName))
+        {
             return;
         }
         LocalContext localContext = getLocalAttribute();
         List<String> cacheList = localContext.getValue(LOCAL_CACHE_NEED_REFRESH);
-        if (null == cacheList) {
+        if (null == cacheList)
+        {
             cacheList = new ArrayList<>();
             localContext.addValue(LOCAL_CACHE_NEED_REFRESH, cacheList);
         }

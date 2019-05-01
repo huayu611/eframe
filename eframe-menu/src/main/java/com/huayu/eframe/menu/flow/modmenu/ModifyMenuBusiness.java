@@ -23,7 +23,7 @@ public class ModifyMenuBusiness extends AbstractExecuteBusiness
         ModifyMenuRequest modifyMenuRequest = param.getRequest();
         MenuDetail menuDetail = buildMenuDetail(modifyMenuRequest);
         MenuDetail updateResult = menuService.modifyMenu(menuDetail);
-        param.addParameter(RESULT,updateResult);
+        param.addParameter(RESULT, updateResult);
 
     }
 

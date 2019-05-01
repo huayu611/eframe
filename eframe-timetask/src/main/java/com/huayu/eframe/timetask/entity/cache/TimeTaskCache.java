@@ -1,7 +1,6 @@
 package com.huayu.eframe.timetask.entity.cache;
 
 import com.huayu.eframe.timetask.entity.bo.TimeTaskBO;
-import com.huayu.eframe.timetask.entity.service.TimeTaskDetail;
 
 import java.util.List;
 

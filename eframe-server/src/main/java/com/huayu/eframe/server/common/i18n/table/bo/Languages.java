@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Languages
 {
-    private Map<String,String> values;
+    private Map<String, String> values;
 
     public Map<String, String> getValues()
     {

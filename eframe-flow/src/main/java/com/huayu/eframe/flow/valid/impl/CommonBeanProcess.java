@@ -179,12 +179,12 @@ public class CommonBeanProcess
     @Bean("_e_set_random_value")
     public ValidBeanParamDefined generateRandomId()
     {
-        ValidBeanParamDefined v = (field, value, request,prefix) ->
+        ValidBeanParamDefined v = (field, value, request, prefix) ->
         {
             String valueString = StringUtils.getString(value);
             if (StringUtils.isNullOrEmpty(valueString))
             {
-                String nowStr = prefix+ RandomUtils.getRandomUUID();
+                String nowStr = prefix + RandomUtils.getRandomUUID();
                 try
                 {
                     field.set(request, nowStr);
@@ -201,7 +201,7 @@ public class CommonBeanProcess
     @Bean("_e_expressions")
     public ValidBeanParamDefined validRegString()
     {
-        ValidBeanParamDefined v = (field, value, request,pattern) ->
+        ValidBeanParamDefined v = (field, value, request, pattern) ->
         {
 
             String valueString = StringUtils.getString(value);

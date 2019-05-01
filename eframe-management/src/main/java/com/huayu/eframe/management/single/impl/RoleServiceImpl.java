@@ -72,7 +72,7 @@ public class RoleServiceImpl implements RoleService
         }
         SecurityCacheFacade.refreshByLocalFlow();
         RoleDetail roleDetailReturn = getRoleDetail(roleTemp);
-        roleDetailReturn.setPermissions(processPermission(role,permissionCodes));
+        roleDetailReturn.setPermissions(processPermission(role, permissionCodes));
         return roleDetailReturn;
     }
 
@@ -94,13 +94,13 @@ public class RoleServiceImpl implements RoleService
         deleteRolePermissionByRoleId(role.getId());
         deleteStaffRoleByRoleId(role.getId());
         SecurityCacheFacade.refreshByLocalFlow();
-        return null == roleDeleteOri?"":roleDeleteOri.getRoleCode();
+        return null == roleDeleteOri ? "" : roleDeleteOri.getRoleCode();
     }
 
     @Override
-    public RoleDetail modifyRole(RoleDetail modifyRole,String permissions)
+    public RoleDetail modifyRole(RoleDetail modifyRole, String permissions)
     {
-        debug.log(modifyRole,permissions);
+        debug.log(modifyRole, permissions);
         Role role = getRoleByRoleCode(modifyRole.getCode());
         if (null == role)
         {
@@ -128,7 +128,7 @@ public class RoleServiceImpl implements RoleService
         SecurityCacheFacade.refreshByLocalFlow();
         RoleDetail roleDetailReturn = getRoleDetail(roleReturn);
         debug.log(permissions);
-        if(null == permissions)
+        if (null == permissions)
         {
             return roleDetailReturn;
         }
@@ -169,7 +169,7 @@ public class RoleServiceImpl implements RoleService
         {
             condition.setStatus(request.getStatus());
         }
-        if(null != pagingRequest)
+        if (null != pagingRequest)
         {
             fp = new FramePaging();
             fp.setPage(pagingRequest.getPage());
@@ -177,9 +177,9 @@ public class RoleServiceImpl implements RoleService
         }
         debug.log(fp);
         Date now = LocalAttribute.getNow();
-        if(null != fp)
+        if (null != fp)
         {
-            Page<Role> result = roleAtom.queryValidRoleByPage(fp,now,condition);
+            Page<Role> result = roleAtom.queryValidRoleByPage(fp, now, condition);
             PagingResponse pagingResponse = new PagingResponse();
             pagingResponse.setTotal(result.getTotalElements());
             pagingResponse.setCurrentPage(result.getNumber());
@@ -189,7 +189,7 @@ public class RoleServiceImpl implements RoleService
         }
         else
         {
-            List<Role> roleList = roleAtom.queryRoles(condition,LocalAttribute.getNow());
+            List<Role> roleList = roleAtom.queryRoles(condition, LocalAttribute.getNow());
             pageObject.setResponse(getRoleDetailList(roleList));
         }
 
@@ -203,7 +203,7 @@ public class RoleServiceImpl implements RoleService
         rolePermission.setRoleId(roleId);
         rolePermission.setPermissionId(permissionId);
         List<RolePermission> temp = rolePermissionAtom.queryRolePermission(rolePermission);
-        if(CollectionUtils.isNotEmpty(temp))
+        if (CollectionUtils.isNotEmpty(temp))
         {
             return CollectionUtils.getFirstElement(temp);
         }
@@ -223,11 +223,11 @@ public class RoleServiceImpl implements RoleService
         Role role = new Role();
         role.setRoleCode(roleDetail.getCode());
         role.setName(roleDetail.getName());
-        role.setExpireTime(null == roleDetail.getExp()? DateUtils.getDefaultExpireDate() : roleDetail.getExp());
+        role.setExpireTime(null == roleDetail.getExp() ? DateUtils.getDefaultExpireDate() : roleDetail.getExp());
         role.setEffectiveTime(null == roleDetail.getEff() ? LocalAttribute.getNow() : roleDetail.getEff());
         role.setStatus(StringUtils.isNullOrEmpty(roleDetail.getStatus()) ? SecurityConstant.STATUS.NORMAL : roleDetail.getStatus());
         Role parentRole = null;
-        if(StringUtils.isNotNullAndEmpty(roleDetail.getParent()))
+        if (StringUtils.isNotNullAndEmpty(roleDetail.getParent()))
         {
             parentRole = getRoleByRoleCode(roleDetail.getParent());
             if (null == parentRole)
@@ -269,11 +269,11 @@ public class RoleServiceImpl implements RoleService
         roleDetail.setStatus(role.getStatus());
         Role parentRole = getRleByRoleID(role.getParentRoleId());
         Role topRole = getRleByRoleID(role.getTopRoleId());
-        if(null != parentRole)
+        if (null != parentRole)
         {
             roleDetail.setParent(parentRole.getRoleCode());
         }
-        if(null != topRole)
+        if (null != topRole)
         {
             roleDetail.setTop(topRole.getRoleCode());
         }
@@ -296,7 +296,7 @@ public class RoleServiceImpl implements RoleService
         for (RolePermission rolePermission : rolePermissionList)
         {
 
-            Permission permission= permissionAtom.getPermissionByID(rolePermission.getPermissionId());
+            Permission permission = permissionAtom.getPermissionByID(rolePermission.getPermissionId());
             if (null == permission)
             {
                 continue;
@@ -312,12 +312,12 @@ public class RoleServiceImpl implements RoleService
     private List<RoleDetail> getRoleDetailList(List<Role> roleInfoList)
     {
         debug.log(roleInfoList);
-        if(CollectionUtils.isEmpty(roleInfoList))
+        if (CollectionUtils.isEmpty(roleInfoList))
         {
             return new ArrayList<>();
         }
         List<RoleDetail> details = new ArrayList<>();
-        for(Role backBo: roleInfoList)
+        for (Role backBo : roleInfoList)
         {
             RoleDetail detail = getRoleDetail(backBo);
             details.add(detail);
@@ -325,7 +325,6 @@ public class RoleServiceImpl implements RoleService
 
         return details;
     }
-
 
 
     public List<PermissionDetail> processPermissionCodes(Role role, String codes)
@@ -337,45 +336,45 @@ public class RoleServiceImpl implements RoleService
         List<Long> addList = new ArrayList<>();
 
         List<Long> updatePermission = new ArrayList<>();
-        if(StringUtils.isNotNullAndEmpty(codes))
+        if (StringUtils.isNotNullAndEmpty(codes))
         {
             String[] codeArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
-            for(String permissionCode : codeArr)
+            for (String permissionCode : codeArr)
             {
                 debug.log(permissionCode);
                 List<Permission> permissions = permissionAtom.getPermissionByCode(permissionCode, LocalAttribute.getNow());
                 Permission permission = CollectionUtils.getFirstElement(permissions);
-                if(null == permission)
+                if (null == permission)
                 {
                     continue;
                 }
                 RolePermission rolePermission = permissionMap.get(permission.getId());
-                if(null ==rolePermission )
+                if (null == rolePermission)
                 {
                     addList.add(permission.getId());
                 }
                 updatePermission.add(permission.getId());
             }
         }
-        if(CollectionUtils.isNotEmpty(rolePermissionList))
+        if (CollectionUtils.isNotEmpty(rolePermissionList))
         {
-            for(RolePermission rolePermission : rolePermissionList)
+            for (RolePermission rolePermission : rolePermissionList)
             {
-                if(!updatePermission.contains(rolePermission.getPermissionId()))
+                if (!updatePermission.contains(rolePermission.getPermissionId()))
                 {
                     removeList.add(rolePermission);
                 }
             }
         }
-        addRolePermissionRelation(role,addList);
+        addRolePermissionRelation(role, addList);
         removeRolePermissionRelation(removeList);
 
         RolePermission rpCondition = new RolePermission();
         rpCondition.setRoleId(role.getId());
 
-        List<RolePermission> rolePermissions =  rolePermissionAtom.queryRolePermission(rpCondition);
+        List<RolePermission> rolePermissions = rolePermissionAtom.queryRolePermission(rpCondition);
 
-        if(CollectionUtils.isEmpty(rolePermissions))
+        if (CollectionUtils.isEmpty(rolePermissions))
         {
             return null;
         }
@@ -386,12 +385,12 @@ public class RoleServiceImpl implements RoleService
 
     private List<PermissionDetail> buildPermissionDetails(List<RolePermission> rolePermissions)
     {
-        if(CollectionUtils.isEmpty(rolePermissions))
+        if (CollectionUtils.isEmpty(rolePermissions))
         {
             return null;
         }
         List<PermissionDetail> result = new ArrayList<>();
-        for(RolePermission rp :rolePermissions)
+        for (RolePermission rp : rolePermissions)
         {
             Permission permission = permissionAtom.getPermissionByID(rp.getPermissionId());
             PermissionDetail permissionDetail = securityServiceImplUtil.getPermissionDetail(permission);
@@ -410,34 +409,33 @@ public class RoleServiceImpl implements RoleService
         return rolePermissionList;
     }
 
-    private Map<Long,RolePermission> mappingRolePermission(List<RolePermission> allRolePermissions)
+    private Map<Long, RolePermission> mappingRolePermission(List<RolePermission> allRolePermissions)
     {
-        Map<Long,RolePermission> result = new HashMap<>();
-        if(CollectionUtils.isNotEmpty(allRolePermissions))
+        Map<Long, RolePermission> result = new HashMap<>();
+        if (CollectionUtils.isNotEmpty(allRolePermissions))
         {
-            for(RolePermission rp : allRolePermissions)
+            for (RolePermission rp : allRolePermissions)
             {
-                result.put(rp.getId(),rp);
+                result.put(rp.getId(), rp);
             }
         }
         return result;
     }
 
 
-
     private void addRolePermissionRelation(Role role, List<Long> permisionList)
     {
         debug.log(permisionList);
-        if(CollectionUtils.isEmpty(permisionList))
+        if (CollectionUtils.isEmpty(permisionList))
         {
             return;
         }
         else
         {
-            for(Long id : permisionList)
+            for (Long id : permisionList)
             {
                 debug.log(id);
-                addRolePermisionById(role.getId(),id);
+                addRolePermisionById(role.getId(), id);
             }
         }
     }
@@ -445,13 +443,13 @@ public class RoleServiceImpl implements RoleService
     private void removeRolePermissionRelation(List<RolePermission> permisionList)
     {
         debug.log(permisionList);
-        if(CollectionUtils.isEmpty(permisionList))
+        if (CollectionUtils.isEmpty(permisionList))
         {
             return;
         }
         else
         {
-            for(RolePermission id : permisionList)
+            for (RolePermission id : permisionList)
             {
                 debug.log(id);
                 deleteRolePermissionByEntity(id);
@@ -462,15 +460,15 @@ public class RoleServiceImpl implements RoleService
     private List<PermissionDetail> processPermission(Role role, String codes)
     {
 
-        if(StringUtils.isNotNullAndEmpty(codes))
+        if (StringUtils.isNotNullAndEmpty(codes))
         {
             String[] codeArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
             List<PermissionDetail> permissionDetails = new ArrayList<>();
-            for(String code : codeArr)
+            for (String code : codeArr)
             {
                 List<Permission> permissions = permissionAtom.getPermissionByCode(code, LocalAttribute.getNow());
                 Permission permission = CollectionUtils.getFirstElement(permissions);
-                if(null != permission)
+                if (null != permission)
                 {
                     RolePermission rolePermission = new RolePermission();
                     rolePermission.setRoleId(role.getId());
@@ -486,7 +484,6 @@ public class RoleServiceImpl implements RoleService
     }
 
 
-
     private Role getRleByRoleID(Long roleID)
     {
         return roleAtom.queryRoleByID(roleID);
@@ -498,7 +495,7 @@ public class RoleServiceImpl implements RoleService
         Role role = new Role();
         role.setRoleCode(roleCode);
 
-        List<Role> roles = roleAtom.queryRoles(role,LocalAttribute.getNow());
+        List<Role> roles = roleAtom.queryRoles(role, LocalAttribute.getNow());
         return CollectionUtils.getFirstElement(roles);
     }
 

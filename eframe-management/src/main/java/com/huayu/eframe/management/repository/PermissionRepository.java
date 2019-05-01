@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2018/7/14.
  */
-public interface PermissionRepository extends JpaRepository<Permission,Long>, JpaSpecificationExecutor<Permission>
+public interface PermissionRepository extends JpaRepository<Permission, Long>, JpaSpecificationExecutor<Permission>
 {
     List<Permission> findByPermissionCodeLike(String name);
 

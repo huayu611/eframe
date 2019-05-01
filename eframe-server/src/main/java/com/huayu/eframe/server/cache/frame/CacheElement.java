@@ -12,7 +12,7 @@ public class CacheElement<T>
 {
     private Index<T> index;
 
-    private Map<String, List<T>>  value;
+    private Map<String, List<T>> value;
 
     private ReentrantLock lock = new ReentrantLock();
 
@@ -28,10 +28,10 @@ public class CacheElement<T>
         String key = index.getIndex(t);
 
         List indexValue = value.get(key);
-        if(null == indexValue)
+        if (null == indexValue)
         {
             indexValue = new ArrayList();
-            value.put(key,indexValue);
+            value.put(key, indexValue);
         }
         indexValue.add(t);
         lock.unlock();
@@ -45,7 +45,7 @@ public class CacheElement<T>
 
     public void cleanCache()
     {
-        if(MapUtils.isNotEmpty(value))
+        if (MapUtils.isNotEmpty(value))
         {
             value.clear();
         }

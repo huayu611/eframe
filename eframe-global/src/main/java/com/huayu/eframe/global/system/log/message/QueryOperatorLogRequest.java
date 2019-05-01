@@ -12,17 +12,17 @@ public class QueryOperatorLogRequest
 {
     private PagingRequest page;
 
-    @EFrameRequest(length=128)
+    @EFrameRequest(length = 128)
     private String operatorCode;
 
-    @EFrameRequest(length=128)
+    @EFrameRequest(length = 128)
     private String operatorType;
 
     private Date inTime;
 
     private Date outTime;
 
-    @EFrameRequest(length=128)
+    @EFrameRequest(length = 128)
     private String url;
 
     @EFrameRequest(bean = "_dictionary(permission_method)")

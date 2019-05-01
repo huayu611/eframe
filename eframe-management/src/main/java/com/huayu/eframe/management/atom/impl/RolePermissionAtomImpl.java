@@ -44,7 +44,7 @@ public class RolePermissionAtomImpl implements RolePermissionAtom
     {
 
         ExampleMatcher em = ExampleMatcher.matching();
-        Example<RolePermission> example = Example.of(rolePermission,em);
+        Example<RolePermission> example = Example.of(rolePermission, em);
 
         List<RolePermission> rolePermissions = rolePermissionRepository.findAll(example);
         return rolePermissions;
@@ -53,11 +53,11 @@ public class RolePermissionAtomImpl implements RolePermissionAtom
     @Override
     public void delete(List<RolePermission> rolePermissions)
     {
-        if(CollectionUtils.isEmpty(rolePermissions))
+        if (CollectionUtils.isEmpty(rolePermissions))
         {
             return;
         }
-        for(RolePermission rp :rolePermissions )
+        for (RolePermission rp : rolePermissions)
         {
             rolePermissionRepository.delete(rp);
         }

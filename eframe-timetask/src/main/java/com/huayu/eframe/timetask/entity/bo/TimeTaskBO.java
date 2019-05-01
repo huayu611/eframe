@@ -2,70 +2,69 @@ package com.huayu.eframe.timetask.entity.bo;
 
 import com.huayu.eframe.server.common.standard.ValidTime;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Leo on 2019/4/15.
  */
 @Entity
-@Table(name="SYS_TIMETASK")
+@Table(name = "SYS_TIMETASK")
 public class TimeTaskBO implements ValidTime
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="code")
+    @Column(name = "code")
     private String code;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="service_bean")
+    @Column(name = "service_bean")
     private String serviceBean;
 
-    @Column(name="effective_time")
+    @Column(name = "effective_time")
     private Date effectiveTime;
 
-    @Column(name="expire_time")
+    @Column(name = "expire_time")
     private Date expireTime;
 
-    @Column(name="status")
+    @Column(name = "status")
     private String status;
 
-    @Column(name="cycle")
+    @Column(name = "cycle")
     private Integer cycle;
 
-    @Column(name="unit")
+    @Column(name = "unit")
     private String unit;
 
-    @Column(name="execute_count")
+    @Column(name = "execute_count")
     private Integer count;
 
-    @Column(name="next_execute_time")
+    @Column(name = "next_execute_time")
     private Date nextTime;
 
-    @Column(name="timetask_type")
+    @Column(name = "timetask_type")
     private String timeTaskType;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
-    @Column(name="CREATE_OBJ_ID", length=20)
+    @Column(name = "CREATE_OBJ_ID", length = 20)
     private Long createObjId;
 
-    @Column(name="CREATE_OBJ_TYPE", length=128)
+    @Column(name = "CREATE_OBJ_TYPE", length = 128)
     private String createObjType;
 
-    @Column(name="LAST_UPDATE_OBJ_ID", length=20)
+    @Column(name = "LAST_UPDATE_OBJ_ID", length = 20)
     private Long lastUpdateObjId;
 
-    @Column(name="LAST_UPDATE_OBJ_TYPE", length=128)
+    @Column(name = "LAST_UPDATE_OBJ_TYPE", length = 128)
     private String lastUpdateObjType;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
     public Long getId()

@@ -23,17 +23,16 @@ public class UpdateTimeTaskBusiness extends AbstractExecuteBusiness
     private TimeTaskService timeTaskService;
 
 
-
     @Override
     public void before(BusinessParameter param)
     {
         UpdateTimeTaskRequest updateTimeTaskRequest = param.getRequest();
-        if(null == updateTimeTaskRequest)
+        if (null == updateTimeTaskRequest)
         {
             throw new IFPException(FlowErrorCode.REQUEST_IS_NULL, "Request is null");
         }
         TimeTaskDetail detail = buildTimeTaskDetail(updateTimeTaskRequest);
-        param.addParameter(DETAIL,detail);
+        param.addParameter(DETAIL, detail);
         TimeTaskRequestValid.checkTimeTaskCycleData(detail);
     }
 
@@ -43,7 +42,7 @@ public class UpdateTimeTaskBusiness extends AbstractExecuteBusiness
         UpdateTimeTaskRequest updateTimeTaskRequest = param.getRequest();
         TimeTaskDetail detail = buildTimeTaskDetail(updateTimeTaskRequest);
         TimeTaskDetail result = timeTaskService.updateTimeTask(detail);
-        param.addParameter(RESULT,result);
+        param.addParameter(RESULT, result);
 
     }
 

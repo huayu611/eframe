@@ -32,7 +32,8 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
 
     protected void registerIndex(Index index)
     {
-        try {
+        try
+        {
             lock.lock();
 
             indexList.add(index);
@@ -41,7 +42,9 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
             createMap();
 
             memberRecord.put(index, new CacheElement(index));
-        } finally {
+        }
+        finally
+        {
             lock.unlock();
         }
 
@@ -50,51 +53,62 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
 
     private void read()
     {
-        try {
+        try
+        {
             lock.lock();
 
             List<T> allRecord = load();
-            if (CollectionUtils.isEmpty(indexList)) {
+            if (CollectionUtils.isEmpty(indexList))
+            {
                 return;
             }
-            for (Index index : indexList) {
+            for (Index index : indexList)
+            {
 
-                if (CollectionUtils.isEmpty(allRecord)) {
+                if (CollectionUtils.isEmpty(allRecord))
+                {
                     continue;
                 }
 
                 CacheElement cacheElement = memberRecord.get(index);
-                for (T t : allRecord) {
+                for (T t : allRecord)
+                {
                     cacheElement.putValue(t);
                 }
             }
             loaded = true;
-        } finally {
+        }
+        finally
+        {
             lock.unlock();
         }
     }
 
     private void createMap()
     {
-        if (null == memberRecord) {
+        if (null == memberRecord)
+        {
             memberRecord = new HashMap<>();
         }
     }
 
     protected List<T> getResultByIndex(Class indexClass, T t)
     {
-        if (!loaded) {
+        if (!loaded)
+        {
             read();
         }
 
         Index index = innerListMapping.get(indexClass.getName());
 
-        if (null == index) {
+        if (null == index)
+        {
             return null;
         }
 
         CacheElement cacheElement = memberRecord.get(index);
-        if (null == cacheElement) {
+        if (null == cacheElement)
+        {
             return null;
         }
 
@@ -104,18 +118,21 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
     @Override
     public void refresh()
     {
-        try {
+        try
+        {
             lock.lock();
             loaded = false;
             Set<Map.Entry<Index, CacheElement>> entrySet = memberRecord.entrySet();
             Iterator<Map.Entry<Index, CacheElement>> iteratorMap = entrySet.iterator();
-            while(iteratorMap.hasNext())
+            while (iteratorMap.hasNext())
             {
                 Map.Entry<Index, CacheElement> elements = iteratorMap.next();
                 CacheElement element = elements.getValue();
                 element.cleanCache();
             }
-        } finally {
+        }
+        finally
+        {
             lock.unlock();
         }
     }

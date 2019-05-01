@@ -26,7 +26,7 @@ public class ModifyEmailBusiness extends AbstractExecuteBusiness
         ModifyEmailRequest modifyEmailRequest = param.getRequest();
         EmailDetail emailDetail = buildEmailDetail(modifyEmailRequest);
         EmailDetail updateEmailDetail = emailService.updateEmail(emailDetail);
-        param.addParameter(RESULT,updateEmailDetail);
+        param.addParameter(RESULT, updateEmailDetail);
     }
 
     @Override

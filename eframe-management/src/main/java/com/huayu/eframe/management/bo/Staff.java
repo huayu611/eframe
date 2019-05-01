@@ -9,51 +9,51 @@ import java.util.Date;
  * Created by Administrator on 2018/7/14.
  */
 @Entity
-@Table(name="SYS_STAFF")
+@Table(name = "SYS_STAFF")
 public class Staff implements ValidTime
 {
     @Id
-    @Column(name="STAFF_ID", length=20)
+    @Column(name = "STAFF_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="LOGIN_NAME", length=32)
+    @Column(name = "LOGIN_NAME", length = 32)
     private String loginName;
 
-    @Column(name="STAFF_NAME", length=64)
+    @Column(name = "STAFF_NAME", length = 64)
     private String staffname;
 
-    @Column(name="LANG", length=8)
+    @Column(name = "LANG", length = 8)
     private String lang;
 
-    @Column(name="EMAIL")
+    @Column(name = "EMAIL")
     private String email;
 
-    @Column(name="TEL_NUM")
+    @Column(name = "TEL_NUM")
     private String telNumber;
 
-    @Column(name="STAFF_PASSWORD", length=100)
+    @Column(name = "STAFF_PASSWORD", length = 100)
     private String password;
 
-    @Column(name="SALT", length=16)
+    @Column(name = "SALT", length = 16)
     private String salt;
 
-    @Column(name="LAST_LOGIN_TIME")
+    @Column(name = "LAST_LOGIN_TIME")
     private Date lastLoginTime;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
-    @Column(name="EFFECTIVE_TIME")
+    @Column(name = "EFFECTIVE_TIME")
     private Date effectiveTime;
 
-    @Column(name="EXPIRE_TIME")
+    @Column(name = "EXPIRE_TIME")
     private Date expireTime;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
 //    @Column(name="REMARK")
@@ -214,7 +214,8 @@ public class Staff implements ValidTime
 
     /**
      * it's not use in v1.1 and the column will move to staffext bo
-     * @param remark  not use in v1.1
+     *
+     * @param remark not use in v1.1
      */
     @Deprecated
     public void setRemark(String remark)

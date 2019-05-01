@@ -15,13 +15,14 @@ import java.util.Map;
 @Service
 public class FoundEntity
 {
-    private Map<String,ObjectEntity> objectEntityByClass;
+    private Map<String, ObjectEntity> objectEntityByClass;
 
     public FoundEntity(@Nullable List<ObjectEntity> objectEntityList)
     {
         objectEntityByClass = new HashMap<>();
-        CollectionUtils.iterator(objectEntityList,(c,v,i)->{
-            objectEntityByClass.put(v.getName(),v);
+        CollectionUtils.iterator(objectEntityList, (c, v, i) ->
+        {
+            objectEntityByClass.put(v.getName(), v);
         });
     }
 

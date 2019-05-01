@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class StandardLang
 {
-    private Map<String,String> langMap;
+    private Map<String, String> langMap;
 
     public Map<String, String> getLangMap()
     {

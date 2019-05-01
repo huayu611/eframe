@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class DeleteStaffRequest
 {
-    @EFrameRequest(required=true,length = 512)
+    @EFrameRequest(required = true, length = 512)
     private String login;
 
     public String getLogin()

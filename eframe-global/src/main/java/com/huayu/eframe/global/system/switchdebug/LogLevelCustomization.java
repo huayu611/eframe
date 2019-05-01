@@ -13,11 +13,13 @@ import java.util.Set;
 public class LogLevelCustomization
 {
     private Set<String> loggerSet = new HashSet<>();
+
     public LogLevelCustomization(Set<LogCatalog> loggers)
     {
-        if(CollectionUtils.isNotEmpty(loggers))
+        if (CollectionUtils.isNotEmpty(loggers))
         {
-            CollectionUtils.iterator(loggers,(c,v,i)->{
+            CollectionUtils.iterator(loggers, (c, v, i) ->
+            {
                 loggerSet.addAll(v.getLoggers());
             });
         }

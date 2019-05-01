@@ -19,24 +19,25 @@ public class QueryCurrentLoginBusiness extends AbstractExecuteBusiness
     private final static String RESULT = "QueryCurrentLoginBusiness_RESULT";
     @Autowired
     private TokenObjectMap tokenObjectMap;
+
     @Override
     public void execute(BusinessParameter param)
     {
         Token token = LocalAttribute.getToken();
-        if(null == token)
+        if (null == token)
         {
-            return ;
+            return;
         }
         String loginCode = token.getPrimaryCode();
         TokenInstance instance = tokenObjectMap.getTokenInstance(token.getPrimaryType());
-        Object obj =  instance.getObject(loginCode);
-        param.addParameter(RESULT,obj);
+        Object obj = instance.getObject(loginCode);
+        param.addParameter(RESULT, obj);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-       Object obj =  param.getParameter(RESULT);
-       return obj;
+        Object obj = param.getParameter(RESULT);
+        return obj;
     }
 }

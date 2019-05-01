@@ -7,7 +7,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class RemoveEmailRequest
 {
-    @EFrameRequest(length = 64,required = true)
+    @EFrameRequest(length = 64, required = true)
     private String emailCode;
 
     public String getEmailCode()

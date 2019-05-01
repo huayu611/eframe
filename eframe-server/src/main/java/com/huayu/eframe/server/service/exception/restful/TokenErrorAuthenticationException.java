@@ -23,7 +23,7 @@ public class TokenErrorAuthenticationException extends AuthenticationException i
     @Override
     public String getErrorCode()
     {
-          return ErrorCode.TOKEN_COVERT_ERROR;
+        return ErrorCode.TOKEN_COVERT_ERROR;
     }
 
     @Override

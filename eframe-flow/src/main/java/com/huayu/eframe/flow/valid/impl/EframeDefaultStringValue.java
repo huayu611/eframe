@@ -31,9 +31,9 @@ public class EframeDefaultStringValue extends AbstractExecuteEFrameRequest
 
     public boolean check(EFrameRequest efremeRequest, Field field, Object request)
     {
-        if(field.getType().isAssignableFrom(String.class) && StringUtils.isNotNullAndEmpty(efremeRequest.defaultStrValue()))
+        if (field.getType().isAssignableFrom(String.class) && StringUtils.isNotNullAndEmpty(efremeRequest.defaultStrValue()))
         {
-            Object value = getValueInField(field,request);
+            Object value = getValueInField(field, request);
             String valueString = StringUtils.getString(value);
             return StringUtils.isNullOrEmpty(valueString);
         }

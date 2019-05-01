@@ -6,7 +6,7 @@ package com.huayu.eframe.server.cache.frame;
 public class DefaultIndex implements Index<Object>
 {
     @Override
-    public String getIndex(Object  obj)
+    public String getIndex(Object obj)
     {
         return "ALL";
     }

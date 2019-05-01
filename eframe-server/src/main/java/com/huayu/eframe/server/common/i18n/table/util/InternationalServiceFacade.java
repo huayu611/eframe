@@ -18,14 +18,14 @@ public class InternationalServiceFacade
 
     public String add(Languages languages)
     {
-        if(null == languages || MapUtils.isEmpty(languages.getValues()))
+        if (null == languages || MapUtils.isEmpty(languages.getValues()))
         {
             return null;
         }
         String languageCode = LangUtils.genI18nCode();
 
         List<LangValue> list = LangUtils.converToLangList(languages.getValues());
-        langService.save(languageCode,list);
+        langService.save(languageCode, list);
 
         return languageCode;
     }

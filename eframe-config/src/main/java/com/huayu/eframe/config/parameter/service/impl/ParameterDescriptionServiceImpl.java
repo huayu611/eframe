@@ -25,7 +25,7 @@ public class ParameterDescriptionServiceImpl implements ParameterDescriptionServ
         parameterDescription.setParameterCode(parameterCode);
 
         ExampleMatcher em = ExampleMatcher.matching();
-        Example<ParameterDescription> example = Example.of(parameterDescription,em);
+        Example<ParameterDescription> example = Example.of(parameterDescription, em);
         List<ParameterDescription> parameterList = parameterDescriptionRepository.findAll(example);
         return CollectionUtils.getFirstElement(parameterList);
     }

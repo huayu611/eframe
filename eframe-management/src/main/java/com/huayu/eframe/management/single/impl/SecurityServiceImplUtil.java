@@ -19,7 +19,7 @@ public class SecurityServiceImplUtil
 
     public PermissionDetail getPermissionDetail(Permission permission)
     {
-        if(null == permission)
+        if (null == permission)
         {
             return null;
         }

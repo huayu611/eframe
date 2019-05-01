@@ -24,8 +24,8 @@ public class DeletePermissionBusiness extends AbstractExecuteBusiness
     {
         DeletePermissionRequest request = param.getRequest();
         String codes = request.getCode();
-        String result = deleteInBatch(code -> permissionService.deletePermissionByCode(code),codes);
-        param.addParameter(RESULT,result);
+        String result = deleteInBatch(code -> permissionService.deletePermissionByCode(code), codes);
+        param.addParameter(RESULT, result);
     }
 
     @Override

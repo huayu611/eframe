@@ -22,6 +22,6 @@ public interface TimeTaskAtom
 
     List<TimeTaskBO> queryAllTimeTask();
 
-    void updateTimeTaskAddExecuteTime(Long id,Date nextDate);
+    void updateTimeTaskAddExecuteTime(Long id, Date nextDate);
 
 }

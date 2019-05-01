@@ -37,11 +37,11 @@ public class ConfigurationUtils
         List<String> result = new ArrayList<>();
         String defaultValue = SystemConfig.getValue(RECORD_OPERATOR_LOG_PARAMETER, DEFAULT_OPERATOR_LOG_METHOD);
         String[] nameArr = StringUtils.tokenizeToStringArray(defaultValue, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
-        if(nameArr.length<=0)
+        if (nameArr.length <= 0)
         {
             return new ArrayList<>();
         }
-        for(String value : nameArr)
+        for (String value : nameArr)
         {
             result.add(value);
         }
@@ -51,7 +51,7 @@ public class ConfigurationUtils
     public static Locale getDefaultLocal()
     {
         String langConfig = SystemConfig.getValue(SYSTEM_ENV_LANGUAGE, DEFAULT_SYSTEM_ENV_LANGUAGE);
-        if(LanguageCode.existLanguageCode(langConfig))
+        if (LanguageCode.existLanguageCode(langConfig))
         {
             return new Locale(langConfig);
         }

@@ -4,7 +4,6 @@ import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,7 +16,7 @@ public class CleanDataAction
 
     public CleanDataAction(Set<CleanData> cleanDataList)
     {
-        if(CollectionUtils.isNotEmpty(cleanDataList))
+        if (CollectionUtils.isNotEmpty(cleanDataList))
         {
             cleanDataAction.addAll(cleanDataList);
         }

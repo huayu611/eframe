@@ -9,9 +9,19 @@ public interface ObjectEntity<T>
 {
     String getName();
 
-    default T getEntity(String code){return null;};
+    default T getEntity(String code)
+    {
+        return null;
+    }
 
-    default T getEntity(Long id){return null;};
+    ;
+
+    default T getEntity(Long id)
+    {
+        return null;
+    }
+
+    ;
 
     String getCode(Long id);
 

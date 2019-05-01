@@ -11,57 +11,57 @@ import java.util.Date;
 public class LogEntity
 {
     @Id
-    @Column(name="LOG_ID", length=20)
+    @Column(name = "LOG_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long logId;
 
-    @Column(name="LOG_CODE", length=255)
+    @Column(name = "LOG_CODE", length = 255)
     private String logCode;
 
-    @Column(name="URL", length=255)
+    @Column(name = "URL", length = 255)
     private String url;
 
-    @Column(name="METHOD", length=10)
+    @Column(name = "METHOD", length = 10)
     private String method;
 
-    @Column(name="REQUEST", length=2048)
+    @Column(name = "REQUEST", length = 2048)
     private String request;
 
-    @Column(name="REQUEST_PARAMETER", length=2048)
+    @Column(name = "REQUEST_PARAMETER", length = 2048)
     private String requestParameter;
 
-    @Column(name="REQUEST_IP", length=64)
+    @Column(name = "REQUEST_IP", length = 64)
     private String requestIp;
 
-    @Column(name="RESPONSE", length=2048)
+    @Column(name = "RESPONSE", length = 2048)
     private String response;
 
-    @Column(name="IN_TIME")
+    @Column(name = "IN_TIME")
     private Date inTime;
 
-    @Column(name="IN_MILLIONSECOND")
+    @Column(name = "IN_MILLIONSECOND")
     private Long inMillion;
 
-    @Column(name="OUT_MILLIONSECOND")
+    @Column(name = "OUT_MILLIONSECOND")
     private Long outMillion;
 
-    @Column(name="OUT_TIME")
+    @Column(name = "OUT_TIME")
     private Date outTime;
 
-    @Column(name="OPER_OBJ_TYPE", length=2)
+    @Column(name = "OPER_OBJ_TYPE", length = 2)
     private String operObjType;
 
-    @Column(name="OPER_OBJ_ID", length=20)
+    @Column(name = "OPER_OBJ_ID", length = 20)
     private Long operObjId;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="ERRORSTACK", length=2048)
-    private  String errorStack;
+    @Column(name = "ERRORSTACK", length = 2048)
+    private String errorStack;
 
     public Long getLogId()
     {

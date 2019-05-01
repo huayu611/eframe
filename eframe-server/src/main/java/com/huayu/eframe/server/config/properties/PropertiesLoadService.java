@@ -1,15 +1,9 @@
 package com.huayu.eframe.server.config.properties;
 
 import com.huayu.eframe.server.common.PropertiesReader;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
 
 /**
  * Created by Administrator on 2017/8/20.

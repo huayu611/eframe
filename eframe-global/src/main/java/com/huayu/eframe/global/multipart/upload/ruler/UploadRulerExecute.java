@@ -13,14 +13,14 @@ import java.util.Map;
 @Service
 public class UploadRulerExecute
 {
-    private Map<String,UploadRuler> rulerCache;
+    private Map<String, UploadRuler> rulerCache;
 
     public UploadRulerExecute(List<UploadRuler> uploadRulerList)
     {
         rulerCache = new HashMap<>();
-        CollectionUtils.iterator(uploadRulerList,(c,v,i) ->
+        CollectionUtils.iterator(uploadRulerList, (c, v, i) ->
         {
-            rulerCache.put(v.getUploadType(),v);
+            rulerCache.put(v.getUploadType(), v);
         });
     }
 

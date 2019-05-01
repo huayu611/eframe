@@ -11,19 +11,19 @@ public class AddEmailRequest
     @EFrameRequest(required = true)
     private String emailCode;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String name;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String emailUserName;
 
-    @EFrameRequest(required = true,bean = "_e_email_password_encrypt",length = 128)
+    @EFrameRequest(required = true, bean = "_e_email_password_encrypt", length = 128)
     private String emailPassword;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String protocol;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String host;
 
     @EFrameRequest(defaultIntegerValue = 25)
@@ -35,13 +35,13 @@ public class AddEmailRequest
     @JsonIgnore
     private String auth;
 
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String sender;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String personal;
 
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String subject;
 
     public String getEmailCode()

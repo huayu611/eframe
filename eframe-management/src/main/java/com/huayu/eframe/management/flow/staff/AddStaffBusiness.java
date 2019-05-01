@@ -52,10 +52,10 @@ public class AddStaffBusiness extends AbstractExecuteBusiness
         AddStaffRequest addStaff = param.getRequest();
         StaffDetail staffDetail = buildStaffDetail(addStaff);
         String roleString = addStaff.getRoles();
-        StaffDetail staffReturn = staffService.addStaff(staffDetail,addStaff.getPassword(),roleString);
-        if(StringUtils.isNotNullAndEmpty(addStaff.getAvatar()))
+        StaffDetail staffReturn = staffService.addStaff(staffDetail, addStaff.getPassword(), roleString);
+        if (StringUtils.isNotNullAndEmpty(addStaff.getAvatar()))
         {
-            MultipartResolve.use(addStaff.getAvatar(),staffAvatar);
+            MultipartResolve.use(addStaff.getAvatar(), staffAvatar);
         }
         param.addParameter(STAFF_DETAIL_INFO_LOGIN, staffReturn);
     }
@@ -63,7 +63,7 @@ public class AddStaffBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(STAFF_DETAIL_INFO_LOGIN);
+        return param.getParameter(STAFF_DETAIL_INFO_LOGIN);
 
     }
 

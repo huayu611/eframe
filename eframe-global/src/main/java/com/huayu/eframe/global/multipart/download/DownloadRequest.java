@@ -7,10 +7,10 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class DownloadRequest
 {
-    @EFrameRequest(required = true,length = 32)
+    @EFrameRequest(required = true, length = 32)
     private String type;
 
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String fileName;
 
     public String getType()

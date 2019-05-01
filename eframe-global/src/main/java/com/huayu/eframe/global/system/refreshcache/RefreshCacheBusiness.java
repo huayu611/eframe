@@ -21,7 +21,7 @@ public class RefreshCacheBusiness extends AbstractExecuteBusiness
     {
         RefreshCacheRequest refreshCacheRequest = param.getRequest();
         String cacheName = refreshCacheRequest.getCacheName();
-        if(StringUtils.isNullOrEmpty(cacheName))
+        if (StringUtils.isNullOrEmpty(cacheName))
         {
             cacheObserver.refreshAllCache();
         }

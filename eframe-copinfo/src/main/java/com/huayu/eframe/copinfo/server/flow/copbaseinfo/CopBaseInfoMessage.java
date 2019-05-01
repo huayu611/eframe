@@ -1,7 +1,5 @@
 package com.huayu.eframe.copinfo.server.flow.copbaseinfo;
 
-import java.io.File;
-
 /**
  * Created by Leo on 2019/1/18.
  */

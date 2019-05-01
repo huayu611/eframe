@@ -11,7 +11,7 @@ public class UploadRequest
     @EFrameRequest(required = true)
     private MultipartFile multipartFile;
 
-    @EFrameRequest(required = true,length = 32)
+    @EFrameRequest(required = true, length = 32)
     private String type;
 
     //如果使用临时目录，上传之后需要调用MultipartResolve.use 或MultipartResolve.useByFileName

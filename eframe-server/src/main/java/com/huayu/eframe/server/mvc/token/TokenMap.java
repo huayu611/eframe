@@ -2,10 +2,7 @@ package com.huayu.eframe.server.mvc.token;
 
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.util.MapUtils;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -19,7 +16,7 @@ public class TokenMap
 {
 
 
-    private Map<String,Token> tokenMap;
+    private Map<String, Token> tokenMap;
 
     public TokenMap()
     {
@@ -29,17 +26,17 @@ public class TokenMap
 
     public void put(Token token)
     {
-        tokenMap.put(token.getToken(),token);
+        tokenMap.put(token.getToken(), token);
     }
 
     public Token get(String tokenKey)
     {
         Token token = tokenMap.get(tokenKey);
-        if(null == token)
+        if (null == token)
         {
             return null;
         }
-        if(DateUtils.isExpired(token.getExpireTime()))
+        if (DateUtils.isExpired(token.getExpireTime()))
         {
             tokenMap.remove(tokenKey);
             return null;
@@ -55,20 +52,20 @@ public class TokenMap
     public int cleanExpiredSession()
     {
         int count = 0;
-        if(MapUtils.isEmpty(tokenMap))
+        if (MapUtils.isEmpty(tokenMap))
         {
             return count;
         }
         Set<Map.Entry<String, Token>> tokenMapEntrySet = tokenMap.entrySet();
         Iterator<Map.Entry<String, Token>> tokenMapIterator = tokenMapEntrySet.iterator();
-        while(tokenMapIterator.hasNext())
+        while (tokenMapIterator.hasNext())
         {
             Map.Entry<String, Token> tokenElement = tokenMapIterator.next();
             Token token = tokenElement.getValue();
-            if(DateUtils.isExpired(token.getExpireTime()))
+            if (DateUtils.isExpired(token.getExpireTime()))
             {
                 tokenMap.remove(tokenElement.getKey());
-                count ++;
+                count++;
             }
         }
         return count;

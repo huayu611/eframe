@@ -29,6 +29,7 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
 
     @Autowired
     private DictionaryService dictionaryService;
+
     @Override
     public void execute(BusinessParameter param)
     {
@@ -36,7 +37,7 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
         List<DictDetail> result = dictionaryService.getDict(code);
 
         List<Dict> dicts = new ArrayList<>();
-        if(CollectionUtils.isNotEmpty(result))
+        if (CollectionUtils.isNotEmpty(result))
         {
             for (DictDetail dictDetail : result)
             {
@@ -49,19 +50,19 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
             }
         }
 
-        param.addParameter(RESULT,dicts);
+        param.addParameter(RESULT, dicts);
     }
 
     private String buildDictName(DictDetail dic)
     {
         String lang = dic.getLangCode();
         String name = dic.getName();
-        if(StringUtils.isNotNullAndEmpty(name))
+        if (StringUtils.isNotNullAndEmpty(name))
         {
             return name;
         }
         Locale l = null;
-        if(null == LocalAttribute.getToken() || null == LocalAttribute.getToken().getLocale())
+        if (null == LocalAttribute.getToken() || null == LocalAttribute.getToken().getLocale())
         {
             l = CommonHelper.getDefaultLocal();
         }
@@ -74,7 +75,7 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
         {
             inName = DictLangService.getDictName(lang, null, l);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             debug.log(e);
         }

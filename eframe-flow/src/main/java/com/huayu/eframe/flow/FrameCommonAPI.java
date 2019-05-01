@@ -52,10 +52,10 @@ public class FrameCommonAPI
             {
                 page.setPage(page.getPage() - 1);
             }
-            if(null == page.getSize() || 0 == page.getSize().intValue())
+            if (null == page.getSize() || 0 == page.getSize().intValue())
             {
                 String max = SystemConfig.getValue(MAX_RETURN_COUNT_PARAM, MAX_RETURN_DEFAULT_COUNT);
-                if(StringUtils.equalString(MAX_RETURN_DEFAULT_COUNT,max))
+                if (StringUtils.equalString(MAX_RETURN_DEFAULT_COUNT, max))
                 {
                     page.setSize(Integer.MAX_VALUE);
                 }
@@ -70,27 +70,27 @@ public class FrameCommonAPI
     }
 
 
-    protected String deleteInBatch(DeleteInItem deleteInItem,String codes)
+    protected String deleteInBatch(DeleteInItem deleteInItem, String codes)
     {
         String[] nameArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
-        if(nameArr.length==0)
+        if (nameArr.length == 0)
         {
             return "";
         }
         String result = "";
-        for(String code : nameArr)
+        for (String code : nameArr)
         {
             String resultCode = deleteInItem.deleteByItem(code);
             result = result + resultCode + ",";
         }
-        if(result.endsWith(","))
+        if (result.endsWith(","))
         {
-            result = result.substring(0,result.length()-1);
+            result = result.substring(0, result.length() - 1);
         }
         return result;
     }
 
-    public  interface DeleteInItem
+    public interface DeleteInItem
     {
         String deleteByItem(String code);
     }

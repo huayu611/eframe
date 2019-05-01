@@ -15,6 +15,7 @@ public class LanguageCode
     {
         return list.contains(language);
     }
+
     static
     {
         list.add("af");

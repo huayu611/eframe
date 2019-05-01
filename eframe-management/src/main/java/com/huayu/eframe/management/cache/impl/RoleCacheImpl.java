@@ -26,7 +26,7 @@ public class RoleCacheImpl extends AbstractFrameCache<Role> implements RoleCache
     @Override
     public List<Role> load()
     {
-        return  roleAtom.getAllRoles();
+        return roleAtom.getAllRoles();
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RoleCacheImpl extends AbstractFrameCache<Role> implements RoleCache
     {
         Role role = new Role();
         role.setRoleCode(roleCode);
-        List<Role> roles = getResultByIndex(RoleCodeIndex.class,role);
+        List<Role> roles = getResultByIndex(RoleCodeIndex.class, role);
         List<Role> resultValid = StandardFacade.getValidItem(roles);
         return CollectionUtils.getFirstElement(resultValid);
     }
@@ -76,7 +76,7 @@ public class RoleCacheImpl extends AbstractFrameCache<Role> implements RoleCache
     {
         Role role = new Role();
         role.setId(roleID);
-        List<Role> roles = getResultByIndex(RoleIdIndex.class,role);
+        List<Role> roles = getResultByIndex(RoleIdIndex.class, role);
         return CollectionUtils.getFirstElement(roles);
     }
 
@@ -84,7 +84,7 @@ public class RoleCacheImpl extends AbstractFrameCache<Role> implements RoleCache
     public List<Role> getAllRole()
     {
         Role role = new Role();
-        List<Role> roles = getResultByIndex(DefaultIndex.class,role);
+        List<Role> roles = getResultByIndex(DefaultIndex.class, role);
         return roles;
     }
 }

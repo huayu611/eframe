@@ -15,7 +15,7 @@ public interface ParameterAtom
 
     void delete(Parameter parameter);
 
-    Parameter update(Parameter parameter) ;
+    Parameter update(Parameter parameter);
 
-    Parameter insert(Parameter parameter) ;
+    Parameter insert(Parameter parameter);
 }

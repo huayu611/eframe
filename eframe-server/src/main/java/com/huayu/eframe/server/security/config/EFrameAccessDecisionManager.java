@@ -50,7 +50,7 @@ public class EFrameAccessDecisionManager implements AccessDecisionManager
             if (attr instanceof EFrameConfigAttribute)
             {
                 EFrameConfigAttribute eframeAttr = (EFrameConfigAttribute) attr;
-                if(eframeAttr.isWhite())
+                if (eframeAttr.isWhite())
                 {
                     return;
                 }

@@ -10,7 +10,7 @@ public class BusinessParameter
 {
     private Object request;
 
-    private Map<String ,Object> param;
+    private Map<String, Object> param;
 
     public Map<String, Object> getParam()
     {
@@ -24,7 +24,7 @@ public class BusinessParameter
 
     public <T> T getRequest()
     {
-        return (T)request;
+        return (T) request;
     }
 
     public void setRequest(Object request)
@@ -32,26 +32,27 @@ public class BusinessParameter
         this.request = request;
     }
 
-    public  void addParameter(String key,Object value)
+    public void addParameter(String key, Object value)
     {
         createMap();
-        param.put(key,value);
+        param.put(key, value);
     }
-    public  <T> T getParameter(String key)
+
+    public <T> T getParameter(String key)
     {
-       if(null != param)
-       {
-           return (T)param.get(key);
-       }
-       return null;
+        if (null != param)
+        {
+            return (T) param.get(key);
+        }
+        return null;
     }
 
 
     private void createMap()
     {
-        if(null == param)
+        if (null == param)
         {
-            param = new HashMap<String ,Object>();
+            param = new HashMap<String, Object>();
         }
     }
 }

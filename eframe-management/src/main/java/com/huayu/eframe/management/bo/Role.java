@@ -10,42 +10,42 @@ import java.util.Date;
  * Created by Administrator on 2018/7/14.
  */
 @Entity
-@Table(name="SYS_ROLE")
+@Table(name = "SYS_ROLE")
 public class Role implements ValidTime
 {
     @Id
-    @Column(name="ROLE_ID", length=20)
+    @Column(name = "ROLE_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="ROLE_NAME", length=30)
+    @Column(name = "ROLE_NAME", length = 30)
     private String name;
 
-    @Column(name="ROLE_CODE", length=30)
+    @Column(name = "ROLE_CODE", length = 30)
     private String roleCode;
 
-    @Column(name="PARENT_ROLE_ID", length=20)
+    @Column(name = "PARENT_ROLE_ID", length = 20)
     private Long parentRoleId;
 
-    @Column(name="TOP_ROLE_ID")
+    @Column(name = "TOP_ROLE_ID")
     private Long topRoleId;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
-    @Column(name="EFFECTIVE_TIME")
+    @Column(name = "EFFECTIVE_TIME")
     private Date effectiveTime;
 
-    @Column(name="EXPIRE_TIME")
+    @Column(name = "EXPIRE_TIME")
     private Date expireTime;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
-    @Column(name="REMARK",length = 2048)
+    @Column(name = "REMARK", length = 2048)
     private String remark;
 
 

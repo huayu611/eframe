@@ -4,9 +4,6 @@ package com.huayu.eframe.server.log;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huayu.eframe.server.tool.basic.ObjectUtils;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 public class LogDebug
 {
     private Debug debug;
@@ -21,7 +18,8 @@ public class LogDebug
 
     public void beginLog(Object... objects)
     {
-        try {
+        try
+        {
 
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
@@ -29,17 +27,21 @@ public class LogDebug
             int lineNumber = element[2].getLineNumber();
             logBuild.append("[BEGIN]");
             logBuild.append(clazz.getName()).append(".").append(methodName).append(":").append(lineNumber);
-            if (objects.length > 0) {
+            if (objects.length > 0)
+            {
                 logBuild.append(":{").append(formatStrings(objects)).append("}");
             }
             debug.debug(logBuild.toString());
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
         }
     }
 
     public void endLog(Object... objects)
     {
-        try {
+        try
+        {
 
 
             StringBuilder logBuild = new StringBuilder();
@@ -48,17 +50,21 @@ public class LogDebug
             int lineNumber = element[2].getLineNumber();
             logBuild.append("[END]");
             logBuild.append(clazz.getName()).append(".").append(methodName).append(":").append(lineNumber);
-            if (objects.length > 0) {
+            if (objects.length > 0)
+            {
                 logBuild.append(":{").append(formatStrings(objects)).append("}");
             }
             debug.debug(logBuild.toString());
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
         }
     }
 
     public void log(Object... objects)
     {
-        try {
+        try
+        {
 
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
@@ -68,17 +74,21 @@ public class LogDebug
             logBuild.append("[IN]");
             logBuild.append(clazz.getName()).append(".").append(methodName).append(":").append(lineNumber);
 
-            if (objects.length > 0) {
+            if (objects.length > 0)
+            {
                 logBuild.append(":{").append(formatStrings(objects)).append("}");
             }
             debug.debug(logBuild.toString());
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
         }
     }
 
     public void errorLog(Object... objects)
     {
-        try {
+        try
+        {
 
             StringBuilder logBuild = new StringBuilder();
             StackTraceElement[] element = Thread.currentThread().getStackTrace();
@@ -89,17 +99,21 @@ public class LogDebug
             logBuild.append("[ERROR]");
             logBuild.append(clazz.getName()).append(".").append(methodName).append(":").append(lineNumber);
 
-            if (objects.length > 0) {
+            if (objects.length > 0)
+            {
                 logBuild.append(":{").append(formatStrings(objects)).append("}");
             }
             debug.error(logBuild.toString());
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
         }
     }
 
     public void printErr(Throwable e)
     {
-        if (null == e) {
+        if (null == e)
+        {
             debug.info("No Err For Print");
         }
         String trace = ObjectUtils.getTrace(e);
@@ -110,9 +124,11 @@ public class LogDebug
     private String formatStrings(Object... obj)
     {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < obj.length; i++) {
+        for (int i = 0; i < obj.length; i++)
+        {
             sb.append("(").append(formatString(obj[i])).append(")");
-            if (i + 1 != obj.length) {
+            if (i + 1 != obj.length)
+            {
                 sb.append("\n");
             }
         }
@@ -121,15 +137,19 @@ public class LogDebug
 
     private String formatString(Object obj)
     {
-        if (null == obj) {
+        if (null == obj)
+        {
             return "null";
         }
 
         ObjectMapper mapper = new ObjectMapper();
         String jsonlist = "";
-        try {
+        try
+        {
             jsonlist = mapper.writeValueAsString(obj);
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             return obj.toString();
         }
         return jsonlist;

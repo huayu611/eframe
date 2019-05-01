@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/3/10.
  */
 @Service
-public class AddEmailBusiness  extends AbstractExecuteBusiness
+public class AddEmailBusiness extends AbstractExecuteBusiness
 {
     private final static String RESULT = "AddEmailBusiness_RESULT";
 
@@ -25,9 +25,9 @@ public class AddEmailBusiness  extends AbstractExecuteBusiness
     {
         AddEmailRequest addEmailRequest = param.getRequest();
         EmailDetail emailDetail = emailService.queryEmailByCode(addEmailRequest.getEmailCode());
-        if(null != emailDetail)
+        if (null != emailDetail)
         {
-            throw new IFPException(GlobalErrorCode.EMAIL_CODE_EXIST_ALREADY,"Email exist already",new String[]{addEmailRequest.getEmailCode()});
+            throw new IFPException(GlobalErrorCode.EMAIL_CODE_EXIST_ALREADY, "Email exist already", new String[]{addEmailRequest.getEmailCode()});
         }
     }
 
@@ -37,13 +37,13 @@ public class AddEmailBusiness  extends AbstractExecuteBusiness
         AddEmailRequest addEmailRequest = param.getRequest();
         EmailDetail emailDetail = buildEmailDetail(addEmailRequest);
         EmailDetail emailDetailResult = emailService.addEmail(emailDetail);
-        param.addParameter(RESULT,emailDetailResult);
+        param.addParameter(RESULT, emailDetailResult);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     private EmailDetail buildEmailDetail(AddEmailRequest addEmailRequest)

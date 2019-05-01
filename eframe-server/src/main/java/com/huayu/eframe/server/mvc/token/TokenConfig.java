@@ -31,8 +31,7 @@ public class TokenConfig
     private final static String base64Secret = "MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=";
 
 
-
-    public static Claims parseJWT(String jsonWebToken )
+    public static Claims parseJWT(String jsonWebToken)
     {
         try
         {
@@ -41,11 +40,12 @@ public class TokenConfig
                     .setSigningKey(DatatypeConverter.parseBase64Binary(base64Secret))
                     .parseClaimsJws(jsonWebToken).getBody();
             return claims;
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             debug.log("parser JWT error");
             debug.log(ex);
-            if(ex instanceof ExpiredJwtException)
+            if (ex instanceof ExpiredJwtException)
             {
                 throw new TokenExpireAuthenticationException("Token Expired");
             }
@@ -84,8 +84,8 @@ public class TokenConfig
         if (duration >= 0)
         {
 
-            Date nowTime  = DateUtils.getCurrentDate();
-            expireTime = DateUtils.modifySeconds(nowTime,duration);
+            Date nowTime = DateUtils.getCurrentDate();
+            expireTime = DateUtils.modifySeconds(nowTime, duration);
             builder.setExpiration(expireTime).setNotBefore(nowTime);
         }
         Token token = new Token();
@@ -96,7 +96,7 @@ public class TokenConfig
         token.setPrimaryCode(primary);
         token.setPrimaryType(StringUtils.getString(map.get(AbstractTokenMirror.TOKEN_OWNER_TYPE)));
         String localObject = StringUtils.getString(map.get(AbstractTokenMirror.LOCALE));
-        if(StringUtils.isNotNullAndEmpty(localObject))
+        if (StringUtils.isNotNullAndEmpty(localObject))
         {
             Locale local = new Locale(localObject);
             token.setLocale(local);

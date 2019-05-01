@@ -21,14 +21,14 @@ public class WhiteRequestCheck
 
     public boolean checkRequest(HttpServletRequest httpServletRequest)
     {
-        if(CollectionUtils.isEmpty(whiteRequestList))
+        if (CollectionUtils.isEmpty(whiteRequestList))
         {
             return false;
         }
-        for(WhiteRequest whiteRequest : whiteRequestList)
+        for (WhiteRequest whiteRequest : whiteRequestList)
         {
             boolean result = whiteRequest.checkWhite(httpServletRequest);
-            if(result)
+            if (result)
             {
                 return result;
             }

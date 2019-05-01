@@ -26,8 +26,8 @@ public class ModifyRoleBusiness extends AbstractExecuteBusiness
     public void execute(BusinessParameter param)
     {
         ModifyRoleRequest roleRequest = param.getRequest();
-        RoleDetail roleDetail = roleService.modifyRole(buildRoleDetail(roleRequest),roleRequest.getPermissions());
-        param.addParameter(RESULT,roleDetail);
+        RoleDetail roleDetail = roleService.modifyRole(buildRoleDetail(roleRequest), roleRequest.getPermissions());
+        param.addParameter(RESULT, roleDetail);
     }
 
     @Override

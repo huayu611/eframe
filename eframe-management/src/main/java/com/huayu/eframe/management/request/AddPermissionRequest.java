@@ -1,8 +1,6 @@
 package com.huayu.eframe.management.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
 
@@ -13,10 +11,10 @@ import java.util.Date;
  */
 public class AddPermissionRequest implements EffectiveExpireDateTime
 {
-    @EFrameRequest(required = true,length=128)
+    @EFrameRequest(required = true, length = 128)
     private String url;
 
-    @EFrameRequest(required = true,length=64)
+    @EFrameRequest(required = true, length = 64)
     private String name;
 
     @EFrameRequest(defaultStrValue = "1")
@@ -39,7 +37,7 @@ public class AddPermissionRequest implements EffectiveExpireDateTime
     @EFrameRequest(bean = "_e_defaultNow")
     private Date eff;
 
-    @EFrameRequest(bean="_e_defaultExpireTime")
+    @EFrameRequest(bean = "_e_defaultExpireTime")
     private Date exp;
 
     public String getUrl()

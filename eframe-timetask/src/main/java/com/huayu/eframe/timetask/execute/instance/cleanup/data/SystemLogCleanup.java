@@ -30,11 +30,11 @@ public class SystemLogCleanup implements CleanData
     public void remove()
     {
 
-        while(true)
+        while (true)
         {
             Page<LogEntity> logEntitiesPage = queryLogByPage();
             logAtom.remove(logEntitiesPage.getContent());
-            if(logEntitiesPage.getTotalPages() <= 1)
+            if (logEntitiesPage.getTotalPages() <= 1)
             {
                 break;
             }

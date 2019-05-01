@@ -1,6 +1,5 @@
 package com.huayu.eframe.timetask.flow;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 import java.util.Date;
@@ -10,7 +9,7 @@ import java.util.Date;
  */
 public class UpdateTimeTaskRequest
 {
-    @EFrameRequest(required = true,length = 128)
+    @EFrameRequest(required = true, length = 128)
     private String timeTaskCode;
 
     @EFrameRequest(length = 64)

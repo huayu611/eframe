@@ -21,7 +21,6 @@ public class AddTimeTaskBusiness extends AbstractExecuteBusiness
     private final static String DETAIL = "AddTimeTaskBusiness_RESULT";
 
 
-
     @Autowired
     private TimeTaskService timeTaskService;
 
@@ -30,12 +29,12 @@ public class AddTimeTaskBusiness extends AbstractExecuteBusiness
     public void before(BusinessParameter param)
     {
         AddTimeTaskRequest addTimeTaskRequest = param.getRequest();
-        if(null == addTimeTaskRequest)
+        if (null == addTimeTaskRequest)
         {
             throw new IFPException(FlowErrorCode.REQUEST_IS_NULL, "Request is null");
         }
         TimeTaskDetail detail = buildTimeTaskDetail(addTimeTaskRequest);
-        param.addParameter(DETAIL,detail);
+        param.addParameter(DETAIL, detail);
         TimeTaskRequestValid.checkTimeTaskCycleData(detail);
     }
 
@@ -45,7 +44,7 @@ public class AddTimeTaskBusiness extends AbstractExecuteBusiness
 
         TimeTaskDetail detail = param.getParameter(DETAIL);
         TimeTaskDetail result = timeTaskService.addTimeTask(detail);
-        param.addParameter(RESULT,result);
+        param.addParameter(RESULT, result);
 
     }
 

@@ -34,40 +34,41 @@ public class EmailServiceImpl implements EmailService
     private static final LogDebug debug = new LogDebug(EmailServiceImpl.class);
     @Autowired
     private EmailAtom emailAtom;
+
     @Override
     public EmailDetail addEmail(EmailDetail emailDetail)
     {
         EmailBO emailBO = buildCreateEmailBo(emailDetail);
-        EmailBO newEmailBo =  emailAtom.insert(emailBO);
+        EmailBO newEmailBo = emailAtom.insert(emailBO);
         return buildEmailDetail(newEmailBo);
     }
 
     @Override
     public EmailDetail queryEmailByCode(String emailCode)
     {
-        if(StringUtils.isNullOrEmpty(emailCode))
+        if (StringUtils.isNullOrEmpty(emailCode))
         {
             return null;
         }
         EmailBO emailBO = emailAtom.queryEmailByCode(emailCode);
         debug.log(emailBO);
-        return  buildEmailDetail(emailBO);
+        return buildEmailDetail(emailBO);
     }
 
     @Override
     public String deleteEmail(String emailCode)
     {
         EmailBO emailBO = emailAtom.queryEmailByCode(emailCode);
-        if(null == emailBO)
+        if (null == emailBO)
         {
-            throw new IFPException(GlobalErrorCode.EMAIL_NOT_EXIST_WHEN_DELETING,"The email not exist!");
+            throw new IFPException(GlobalErrorCode.EMAIL_NOT_EXIST_WHEN_DELETING, "The email not exist!");
         }
         emailBO.setStatus(DELETE_STATUS);
         fixUpdateInfo(emailBO);
         EmailBO newEmailBo = emailAtom.update(emailBO);
-        if(null == newEmailBo)
+        if (null == newEmailBo)
         {
-            throw new IFPException(GlobalErrorCode.EMAIL_DELETING_FAILED,"Delete Email failed!");
+            throw new IFPException(GlobalErrorCode.EMAIL_DELETING_FAILED, "Delete Email failed!");
         }
         LocalAttribute.addNeedRefreshCache(EmailCache.CACHE_NAME);
         return newEmailBo.getEmailCode();
@@ -77,14 +78,14 @@ public class EmailServiceImpl implements EmailService
     public EmailDetail updateEmail(EmailDetail emailDetail)
     {
         EmailBO emailBo = buildUpdateEmailBo(emailDetail);
-        if(null == emailBo)
+        if (null == emailBo)
         {
-            throw new IFPException(GlobalErrorCode.EMAIL_NOT_EXIST_WHEN_UPDATE,"The email not exist!");
+            throw new IFPException(GlobalErrorCode.EMAIL_NOT_EXIST_WHEN_UPDATE, "The email not exist!");
         }
         EmailBO newEmailBO = emailAtom.update(emailBo);
-        if(null == newEmailBO)
+        if (null == newEmailBO)
         {
-            throw new IFPException(GlobalErrorCode.EMAIL_UPDATING_FAILED,"Update Email failed!");
+            throw new IFPException(GlobalErrorCode.EMAIL_UPDATING_FAILED, "Update Email failed!");
         }
         return buildEmailDetail(newEmailBO);
     }
@@ -93,14 +94,14 @@ public class EmailServiceImpl implements EmailService
     public PageObject queryEmailByPage(PagingRequest pagingRequest, EmailDetail emailDetail)
     {
         EmailBO emailBo = new EmailBO();
-        buildEmailBO(emailDetail,emailBo);
+        buildEmailBO(emailDetail, emailBo);
         FramePaging framePaging = new FramePaging();
         if (null != pagingRequest)
         {
             framePaging.setPage(pagingRequest.getPage());
             framePaging.setSize(pagingRequest.getSize());
         }
-        Page<EmailBO> emailPaging =  emailAtom.queryEmailByPage(framePaging,emailBo);
+        Page<EmailBO> emailPaging = emailAtom.queryEmailByPage(framePaging, emailBo);
 
         PagingResponse pagingResponse = new PagingResponse();
         pagingResponse.setTotal(emailPaging.getTotalElements());
@@ -114,15 +115,15 @@ public class EmailServiceImpl implements EmailService
 
     private List<EmailDetail> buildEmailDetailList(List<EmailBO> emailBOList)
     {
-        if(CollectionUtils.isEmpty(emailBOList))
+        if (CollectionUtils.isEmpty(emailBOList))
         {
             return null;
         }
         List<EmailDetail> emailDetails = new ArrayList<>();
-        for(EmailBO emailItem : emailBOList)
+        for (EmailBO emailItem : emailBOList)
         {
             EmailDetail emailDetail = buildEmailDetail(emailItem);
-            if(null != emailDetail)
+            if (null != emailDetail)
             {
                 emailDetails.add(emailDetail);
             }
@@ -135,7 +136,7 @@ public class EmailServiceImpl implements EmailService
         EmailBO emailBo = new EmailBO();
         emailBo.setEmailCode(emailDetail.getEmailCode());
         emailBo.setStatus(NORMAL_STATUS);
-        buildEmailBO(emailDetail,emailBo);
+        buildEmailBO(emailDetail, emailBo);
         fixCreateInfo(emailBo);
         fixUpdateInfo(emailBo);
         return emailBo;
@@ -144,59 +145,59 @@ public class EmailServiceImpl implements EmailService
     private EmailBO buildUpdateEmailBo(EmailDetail emailDetail)
     {
         EmailBO emailBO = emailAtom.queryEmailByCode(emailDetail.getEmailCode());
-        if(null == emailBO)
+        if (null == emailBO)
         {
             return null;
         }
-        buildEmailBO(emailDetail,emailBO);
+        buildEmailBO(emailDetail, emailBO);
         fixUpdateInfo(emailBO);
         return emailBO;
     }
 
-    private EmailBO buildEmailBO(EmailDetail emailDetail,EmailBO emailBO)
+    private EmailBO buildEmailBO(EmailDetail emailDetail, EmailBO emailBO)
     {
 
-        if(null != emailDetail.getEmailPassword())
+        if (null != emailDetail.getEmailPassword())
         {
             emailBO.setEmailPassword(emailDetail.getEmailPassword());
         }
-        if(null != emailDetail.getHost())
+        if (null != emailDetail.getHost())
         {
             emailBO.setHost(emailDetail.getHost());
         }
-        if(null != emailDetail.getPort())
+        if (null != emailDetail.getPort())
         {
             emailBO.setPort(emailDetail.getPort());
         }
-        if(null != emailDetail.getEmailUserName())
+        if (null != emailDetail.getEmailUserName())
         {
             emailBO.setEmailUserName(emailDetail.getEmailUserName());
         }
-        if(null != emailDetail.getAuth())
+        if (null != emailDetail.getAuth())
         {
             emailBO.setAuth(emailDetail.getAuth());
         }
-        if(null != emailDetail.getSender())
+        if (null != emailDetail.getSender())
         {
             emailBO.setEmailSender(emailDetail.getSender());
         }
-        if(null != emailDetail.getProtocol())
+        if (null != emailDetail.getProtocol())
         {
             emailBO.setProtocol(emailDetail.getProtocol());
         }
-        if(null != emailDetail.getTimeOut())
+        if (null != emailDetail.getTimeOut())
         {
             emailBO.setTimeOut(emailDetail.getTimeOut());
         }
-        if(null != emailDetail.getName())
+        if (null != emailDetail.getName())
         {
             emailBO.setName(emailDetail.getName());
         }
-        if(null != emailDetail.getSubject())
+        if (null != emailDetail.getSubject())
         {
             emailBO.setSubject(emailDetail.getSubject());
         }
-        if(null != emailDetail.getPersonal())
+        if (null != emailDetail.getPersonal())
         {
             emailBO.setPersonal(emailDetail.getPersonal());
         }
@@ -225,9 +226,9 @@ public class EmailServiceImpl implements EmailService
     {
         //staff
         TokenInstance instance = TokenUtils.getTokenInstance();
-        Token token  = LocalAttribute.getToken();
+        Token token = LocalAttribute.getToken();
         emailBO.setLastUpdateTime(LocalAttribute.getNow());
-        if(null != instance && null != token)
+        if (null != instance && null != token)
         {
             String primaryCode = token.getPrimaryCode();
             emailBO.setLastUpdateObjId(instance.getInstanceIdByCode(primaryCode));
@@ -237,7 +238,7 @@ public class EmailServiceImpl implements EmailService
 
     private EmailDetail buildEmailDetail(EmailBO emailBO)
     {
-        if(null == emailBO)
+        if (null == emailBO)
         {
             return null;
         }

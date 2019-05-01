@@ -28,24 +28,24 @@ public class AddRoleBusiness extends AbstractExecuteBusiness
     public void before(BusinessParameter param)
     {
         debug.log("AddRoleBusiness:before");
-        AddRoleRequest request =  param.getRequest();
+        AddRoleRequest request = param.getRequest();
 
         RoleDetail roleDetail = roleService.queryRoleByCode(request.getCode());
-        if(null != roleDetail)
+        if (null != roleDetail)
         {
             String[] exceptionParam = {request.getCode()};
-            throw new IFPException(ManagementErrorCode.ADD_ROLE_ROLE_CODE_EXIST,"Role exists already!",exceptionParam);
+            throw new IFPException(ManagementErrorCode.ADD_ROLE_ROLE_CODE_EXIST, "Role exists already!", exceptionParam);
         }
     }
 
     @Override
     public void execute(BusinessParameter param)
     {
-        AddRoleRequest request =  param.getRequest();
+        AddRoleRequest request = param.getRequest();
         RoleDetail roleDetail = buildRoleDetail(request);
         String permissionCodes = request.getPermissions();
-        RoleDetail roleDetailReturn = roleService.addRole(roleDetail,permissionCodes);
-        param.addParameter(RESULT,roleDetailReturn);
+        RoleDetail roleDetailReturn = roleService.addRole(roleDetail, permissionCodes);
+        param.addParameter(RESULT, roleDetailReturn);
 
     }
 

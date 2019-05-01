@@ -1,8 +1,6 @@
 package com.huayu.eframe.management.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 import java.util.Date;
@@ -12,16 +10,16 @@ import java.util.Date;
  */
 public class ModifyPermissionRequest
 {
-    @EFrameRequest(length=128)
+    @EFrameRequest(length = 128)
     private String url;
 
-    @EFrameRequest(length=64)
+    @EFrameRequest(length = 64)
     private String name;
 
     @JsonIgnore
     private String type;
 
-    @EFrameRequest(required = true,length = 512)
+    @EFrameRequest(required = true, length = 512)
     private String code;
 
     @EFrameRequest(bean = "_dictionary(permission_method)")

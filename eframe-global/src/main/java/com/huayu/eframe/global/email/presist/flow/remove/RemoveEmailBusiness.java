@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/3/11.
  */
 @Service
-public class RemoveEmailBusiness  extends AbstractExecuteBusiness
+public class RemoveEmailBusiness extends AbstractExecuteBusiness
 {
     private final static String RESULT = "RemoveEmailBusiness_RESULT";
 

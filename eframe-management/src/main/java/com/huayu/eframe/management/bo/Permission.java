@@ -9,51 +9,52 @@ import java.util.Date;
  * Created by Administrator on 2018/7/14.
  */
 @Entity
-@Table(name="SYS_PERMISSION")
+@Table(name = "SYS_PERMISSION")
 public class Permission implements ValidTime
 {
     @Id
-    @Column(name="PERMISSION_ID", length=20)
+    @Column(name = "PERMISSION_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="PERMISSION_URL", length=128)
+    @Column(name = "PERMISSION_URL", length = 128)
     private String url;
 
-    @Column(name="PERMISSION_NAME", length=32)
+    @Column(name = "PERMISSION_NAME", length = 32)
     private String permissionName;
 
-    @Column(name="PERMISSION_TYPE", length=1)
+    @Column(name = "PERMISSION_TYPE", length = 1)
     private String permissionType;
 
-    @Column(name="PERMISSION_CODE", length=32)
+    @Column(name = "PERMISSION_CODE", length = 32)
     private String permissionCode;
 
-    @Column(name="PERMISSION_METHOD", length=16)
+    @Column(name = "PERMISSION_METHOD", length = 16)
     private String method;
 
-    @Column(name="WHITE", length=1)
+    @Column(name = "WHITE", length = 1)
     private String white;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
-    @Column(name="EFFECTIVE_TIME")
+    @Column(name = "EFFECTIVE_TIME")
     private Date effectiveTime;
 
-    @Column(name="EXPIRE_TIME")
+    @Column(name = "EXPIRE_TIME")
     private Date expireTime;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
     public String getWhite()
     {
         return white;
     }
+
     public void setWhite(String white)
     {
         this.white = white;

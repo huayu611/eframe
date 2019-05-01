@@ -13,7 +13,7 @@ import java.util.List;
 public interface PermissionService
 {
     @Deprecated
-    //重构中需要删除，service层不需要返回原子对象
+        //重构中需要删除，service层不需要返回原子对象
     Permission getPermissionByCode(String code);
 
     PermissionDetail addPermission(PermissionDetail addPermissionRequest);

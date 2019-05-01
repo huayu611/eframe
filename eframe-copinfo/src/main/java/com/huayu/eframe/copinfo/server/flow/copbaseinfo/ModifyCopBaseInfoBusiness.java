@@ -14,11 +14,11 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/1/18.
  */
 @Service
-public class ModifyCopBaseInfoBusiness  extends AbstractExecuteBusiness
+public class ModifyCopBaseInfoBusiness extends AbstractExecuteBusiness
 {
     private static final LogDebug debug = new LogDebug(ModifyCopBaseInfoBusiness.class);
 
-    private final static String RESULT= "ModifyCopBaseInfoBusiness_RESULT";
+    private final static String RESULT = "ModifyCopBaseInfoBusiness_RESULT";
 
     @Autowired
     private CopBaseInfoService copBaseInfoService;
@@ -35,16 +35,18 @@ public class ModifyCopBaseInfoBusiness  extends AbstractExecuteBusiness
         CopBaseInfoDetail detail = CopBaseInfoUtil.buildCopBaseInfoDetail(message);
         CopBaseInfoDetail existItem = copBaseInfoService.query();
         CopBaseInfoDetail result;
-        if(null == existItem)
+        if (null == existItem)
         {
             result = copBaseInfoService.addCopBaseInfoDetail(detail);
         }
-        else {
+        else
+        {
             result = copBaseInfoService.updateCopBaseInfoDetail(detail);
         }
-        MultipartResolve.use(message.getLogo(),copLogoRuler);
-        param.addParameter(RESULT,result);
+        MultipartResolve.use(message.getLogo(), copLogoRuler);
+        param.addParameter(RESULT, result);
     }
+
     @Override
     protected Object tidyData(BusinessParameter param)
     {

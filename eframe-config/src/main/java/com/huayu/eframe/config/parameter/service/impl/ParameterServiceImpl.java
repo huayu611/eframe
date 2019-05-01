@@ -38,12 +38,12 @@ public class ParameterServiceImpl implements ParameterService
     @Override
     public ParameterDetail updateParameter(ParameterDetail parameterDetail)
     {
-       Parameter parameter = parameterAtom.getByCode(parameterDetail.getParameterCode());
-       if(null != parameterDetail.getParameterValue())
-       {
-           parameter.setValue(parameterDetail.getParameterValue());
-       }
-        if(null != parameterDetail.getParameterName())
+        Parameter parameter = parameterAtom.getByCode(parameterDetail.getParameterCode());
+        if (null != parameterDetail.getParameterValue())
+        {
+            parameter.setValue(parameterDetail.getParameterValue());
+        }
+        if (null != parameterDetail.getParameterName())
         {
             parameter.setParameterName(parameterDetail.getParameterName());
         }
@@ -56,7 +56,7 @@ public class ParameterServiceImpl implements ParameterService
     public ParameterDetail addParameter(ParameterDetail parameterDetail)
     {
         Parameter parameter = buildParameter(parameterDetail);
-        if(null != parameter)
+        if (null != parameter)
         {
             Parameter newParameter = parameterAtom.insert(parameter);
             LocalAttribute.addNeedRefreshCache(ParameterCache.CACHE);
@@ -69,7 +69,7 @@ public class ParameterServiceImpl implements ParameterService
     public String deleteParameter(String parameterCode)
     {
         Parameter parameter = parameterAtom.getByCode(parameterCode);
-        if(null != parameter)
+        if (null != parameter)
         {
             parameterAtom.delete(parameter);
             LocalAttribute.addNeedRefreshCache(ParameterCache.CACHE);
@@ -81,13 +81,13 @@ public class ParameterServiceImpl implements ParameterService
     private List<ParameterDetail> buildParameterDetails(List<Parameter> parameters)
     {
         List<ParameterDetail> resultParameterDetailList = new ArrayList<>();
-        if(CollectionUtils.isEmpty(parameters))
+        if (CollectionUtils.isEmpty(parameters))
         {
             return resultParameterDetailList;
         }
-        for(Parameter parameter : parameters)
+        for (Parameter parameter : parameters)
         {
-            ParameterDetail parameterDetail  = buildParameterDetail(parameter);
+            ParameterDetail parameterDetail = buildParameterDetail(parameter);
             resultParameterDetailList.add(parameterDetail);
         }
         return resultParameterDetailList;

@@ -7,6 +7,6 @@ import java.lang.reflect.Field;
  */
 public interface ValidBeanDefined
 {
-    void process(Field field,Object filedObject, Object request);
+    void process(Field field, Object filedObject, Object request);
 
 }

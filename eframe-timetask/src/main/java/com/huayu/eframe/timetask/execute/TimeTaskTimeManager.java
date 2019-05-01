@@ -22,47 +22,47 @@ public class TimeTaskTimeManager
             return null == timeTaskBO.getNextTime() ? timeTaskBO.getEffectiveTime() : DateUtils.getDefaultExpireDate();
         }
         String unit = timeTaskBO.getUnit();
-        if(StringUtils.isNullOrEmpty(unit))
+        if (StringUtils.isNullOrEmpty(unit))
         {
             //对于数据错误的，直接为2099年。数据修复后，由管理员修改数据。
-            return  DateUtils.getDefaultExpireDate();
+            return DateUtils.getDefaultExpireDate();
         }
         //如果第一次执行。执行时间就为生效时间。
-        if(null == timeTaskBO.getNextTime())
+        if (null == timeTaskBO.getNextTime())
         {
             return timeTaskBO.getEffectiveTime();
         }
 
         //不用switch case,switch case是对大写写强匹配。这里不需要强匹配。
         // 并且当前只支持固定时间,比如生效时间为12：00：00，每天执行一次，那么就是每天12：00：00执行。这里面的问题是，如果本次没有执行完，下一次已经启动。会延迟执行。
-        Date currentTime  =  timeTaskBO.getNextTime();
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.YEAR, unit))
+        Date currentTime = timeTaskBO.getNextTime();
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.YEAR, unit))
         {
-            return DateUtils.modifyYears(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyYears(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MONTH, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MONTH, unit))
         {
-            return DateUtils.modifyMonths(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyMonths(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.DAY, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.DAY, unit))
         {
-            return DateUtils.modifyDays(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyDays(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.WEEK, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.WEEK, unit))
         {
-            return DateUtils.modifyWeeks(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyWeeks(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.HOUR, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.HOUR, unit))
         {
-            return DateUtils.modifyHours(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyHours(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MINUTE, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.MINUTE, unit))
         {
-            return DateUtils.modifyMinutes(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifyMinutes(currentTime, timeTaskBO.getCycle());
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.SECOND, unit))
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.SECOND, unit))
         {
-            return DateUtils.modifySeconds(currentTime,timeTaskBO.getCycle());
+            return DateUtils.modifySeconds(currentTime, timeTaskBO.getCycle());
         }
         //如果都没有匹配上，则直接2099年。不再执行。
         return DateUtils.getDefaultExpireDate();

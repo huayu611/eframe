@@ -30,18 +30,20 @@ public class CleanDeletionData extends TaskAdapter
     private void executeAllCleanAction()
     {
         Set<CleanData> allAction = cleanDataAction.getCleanDataAction();
-        if(CollectionUtils.isEmpty(allAction))
+        if (CollectionUtils.isEmpty(allAction))
         {
             return;
         }
-        CollectionUtils.iterator(allAction,(c,v,i)->{
-            try{
+        CollectionUtils.iterator(allAction, (c, v, i) ->
+        {
+            try
+            {
                 v.remove();
             }
             catch (Exception e)
             {
                 String errorInfo = v.getClass().getName() + ": execute error ,please check and we do not stop.";
-                debug.errorLog(errorInfo,e);
+                debug.errorLog(errorInfo, e);
 
             }
         });

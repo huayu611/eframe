@@ -18,13 +18,13 @@ public class BeanPool
 
     public static <T> T getService(Class clazz)
     {
-        return (T)BeanInpouring.getApplicationContext().getBean(clazz);
+        return (T) BeanInpouring.getApplicationContext().getBean(clazz);
     }
 
 
     public static <T> T getServiceByClass(Class<T> clazz)
     {
-        if(null == BeanInpouring.getApplicationContext())
+        if (null == BeanInpouring.getApplicationContext())
         {
             return null;
         }

@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface RoleStaffCache
 {
-String CACHE_NAME = "SYS_ROLE_STAFF";
+    String CACHE_NAME = "SYS_ROLE_STAFF";
 
     List<RoleStaff> getAllRoleStaff();
 

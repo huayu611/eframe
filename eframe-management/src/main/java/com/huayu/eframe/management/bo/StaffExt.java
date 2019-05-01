@@ -7,11 +7,11 @@ import java.util.Date;
  * Created by Leo on 2019/4/22.
  */
 @Entity
-@Table(name="sys_staff_ext")
+@Table(name = "sys_staff_ext")
 public class StaffExt
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -19,43 +19,43 @@ public class StaffExt
     @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
     private Staff staff;
 
-    @Column(name="real_name")
+    @Column(name = "real_name")
     private String realName;
 
-    @Column(name="identity_id")
+    @Column(name = "identity_id")
     private String identityId;
 
-    @Column(name="nick_name")
+    @Column(name = "nick_name")
     private String nickName;
 
-    @Column(name="qq")
+    @Column(name = "qq")
     private String qq;
 
-    @Column(name="wechat")
+    @Column(name = "wechat")
     private String weChat;
 
-    @Column(name="weibo")
+    @Column(name = "weibo")
     private String weiBo;
 
-    @Column(name="avatar")
+    @Column(name = "avatar")
     private String avatar;
 
-    @Column(name="remark")
+    @Column(name = "remark")
     private String remark;
 
-    @Column(name="signature")
+    @Column(name = "signature")
     private String signature;
 
-    @Column(name="alipay")
+    @Column(name = "alipay")
     private String alipay;
 
-    @Column(name="other_tel_number")
+    @Column(name = "other_tel_number")
     private String otherTelNumber;
 
-    @Column(name="birthday")
+    @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name="gender")
+    @Column(name = "gender")
     private String gender;
 
     public Long getId()

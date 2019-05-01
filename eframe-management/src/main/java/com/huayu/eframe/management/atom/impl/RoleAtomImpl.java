@@ -66,9 +66,9 @@ public class RoleAtomImpl implements RoleAtom
     }
 
     @Override
-    public List<Role> queryRoles(Role role,Date now)
+    public List<Role> queryRoles(Role role, Date now)
     {
-        List<Role> roleList = queryRoleByCondition(role,now);
+        List<Role> roleList = queryRoleByCondition(role, now);
         return roleList;
     }
 
@@ -77,7 +77,7 @@ public class RoleAtomImpl implements RoleAtom
     {
         Role role = new Role();
         role.setRoleCode(roleCode);
-        List<Role> roleList = queryRoleByCondition(role,now);
+        List<Role> roleList = queryRoleByCondition(role, now);
         return roleList;
     }
 
@@ -86,33 +86,36 @@ public class RoleAtomImpl implements RoleAtom
     public Page<Role> queryValidRoleByPage(FramePaging fp, Date now, Role condition)
     {
         debug.log(DateUtils.dateToString(now));
-        Sort sort = new Sort(Sort.Direction.DESC,"createTime");
-        PageRequest pageRequest = PageRequest.of(fp.getPage(),fp.getSize(),sort);
+        Sort sort = new Sort(Sort.Direction.DESC, "createTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
 
-        Specification<Role> querySpecific = new Specification<Role>(){
+        Specification<Role> querySpecific = new Specification<Role>()
+        {
 
             @Override
             public Predicate toPredicate(Root<Role> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
             {
                 List<Predicate> predicates = new ArrayList<>();
-                if(null != now)
+                if (null != now)
                 {
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class),now));
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class),now));
+                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class), now));
+                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class), now));
                 }
-                if(null != condition.getRoleCode())
+                if (null != condition.getRoleCode())
                 {
                     predicates.add(criteriaBuilder.like(root.get("roleCode").as(String.class), "%" + condition.getRoleCode() + "%"));
                 }
-                if(null != condition.getName())
+                if (null != condition.getName())
                 {
                     String name = condition.getName();
-                    name = name.replace(" ","%");
+                    name = name.replace(" ", "%");
                     predicates.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + name + "%"));
                 }
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            };
+            }
+
+            ;
         };
         Page<Role> resultList = this.roleRepository.findAll(querySpecific, pageRequest);
         debug.log(resultList.getContent().size());
@@ -120,24 +123,25 @@ public class RoleAtomImpl implements RoleAtom
     }
 
 
-    private List<Role> queryRoleByCondition(Role condition,Date now)
+    private List<Role> queryRoleByCondition(Role condition, Date now)
     {
-        Specification<Role> querySpecific = new Specification<Role>(){
+        Specification<Role> querySpecific = new Specification<Role>()
+        {
 
             @Override
             public Predicate toPredicate(Root<Role> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
             {
                 List<Predicate> predicates = new ArrayList<>();
-                if(null != now)
+                if (null != now)
                 {
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class),now));
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class),now));
+                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class), now));
+                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class), now));
                 }
-                if(null != condition.getRoleCode())
+                if (null != condition.getRoleCode())
                 {
                     predicates.add(criteriaBuilder.equal(root.get("roleCode").as(String.class), condition.getRoleCode()));
                 }
-                if(null != condition.getName())
+                if (null != condition.getName())
                 {
                     debug.log(condition.getName());
                     predicates.add(criteriaBuilder.equal(root.get("name").as(String.class), condition.getName()));
@@ -145,7 +149,9 @@ public class RoleAtomImpl implements RoleAtom
                 predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            };
+            }
+
+            ;
         };
         List<Role> resultList = this.roleRepository.findAll(querySpecific);
         debug.log(resultList.size());

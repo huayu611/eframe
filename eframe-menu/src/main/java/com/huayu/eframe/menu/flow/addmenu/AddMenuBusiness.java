@@ -2,10 +2,9 @@ package com.huayu.eframe.menu.flow.addmenu;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.log.LogDebug;
-import com.huayu.eframe.menu.flow.common.MenuResponse;
 import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.menu.service.MenuService;
+import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +29,13 @@ public class AddMenuBusiness extends AbstractExecuteBusiness
         AddMenuRequest addMenuRequest = param.getRequest();
         MenuDetail menuDetail = buildMenuDetail(addMenuRequest);
         MenuDetail menuResult = menuService.addMenu(menuDetail);
-        param.addParameter(RESULT,menuResult);
+        param.addParameter(RESULT, menuResult);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(RESULT);
+        return param.getParameter(RESULT);
 
     }
 

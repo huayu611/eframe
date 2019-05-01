@@ -47,7 +47,7 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
         @Override
         public String getIndex(RolePermission rolePermission)
         {
-            return StringUtils.getString(rolePermission.getRoleId()) + "_"+StringUtils.getString(rolePermission.getPermissionId());
+            return StringUtils.getString(rolePermission.getRoleId()) + "_" + StringUtils.getString(rolePermission.getPermissionId());
         }
     }
 
@@ -59,6 +59,7 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
             return StringUtils.getString(rolePermission.getId());
         }
     }
+
     public RolePermissionCacheImpl()
     {
         registerIndex(new RolePermissionRoleIdIndex());
@@ -72,7 +73,7 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
     {
         RolePermission rolePermission = new RolePermission();
 
-        List<RolePermission> rolePermissions = getResultByIndex(DefaultIndex.class,rolePermission);
+        List<RolePermission> rolePermissions = getResultByIndex(DefaultIndex.class, rolePermission);
         return rolePermissions;
     }
 
@@ -81,7 +82,7 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
     {
         RolePermission rolePermission = new RolePermission();
         rolePermission.setRoleId(roleId);
-        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionRoleIdIndex.class,rolePermission);
+        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionRoleIdIndex.class, rolePermission);
         return rolePermissions;
     }
 
@@ -90,18 +91,18 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
     {
         RolePermission rolePermission = new RolePermission();
         rolePermission.setPermissionId(permissionId);
-        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionPermissionIdIndex.class,rolePermission);
+        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionPermissionIdIndex.class, rolePermission);
         return rolePermissions;
     }
 
 
     @Override
-    public RolePermission getRolePermissionByRoleAndPermission(Long permissionID,Long roleId)
+    public RolePermission getRolePermissionByRoleAndPermission(Long permissionID, Long roleId)
     {
         RolePermission rolePermission = new RolePermission();
         rolePermission.setRoleId(roleId);
         rolePermission.setPermissionId(permissionID);
-        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionPermissionAndRoleIdIndex.class,rolePermission);
+        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionPermissionAndRoleIdIndex.class, rolePermission);
         return CollectionUtils.getFirstElement(rolePermissions);
     }
 
@@ -110,7 +111,7 @@ public class RolePermissionCacheImpl extends AbstractFrameCache<RolePermission> 
     {
         RolePermission rolePermission = new RolePermission();
         rolePermission.setId(id);
-        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionIdIndex.class,rolePermission);
+        List<RolePermission> rolePermissions = getResultByIndex(RolePermissionIdIndex.class, rolePermission);
         return CollectionUtils.getFirstElement(rolePermissions);
     }
 

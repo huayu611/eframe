@@ -21,7 +21,7 @@ public class QueryRoleRequest
     @EFrameRequest(bean = "_dictionary(role_status)")
     private String status;
 
-    @EFrameRequest(baseMeta = true,required = true)
+    @EFrameRequest(baseMeta = true, required = true)
     private PagingRequest page;
 
     public String getCode()

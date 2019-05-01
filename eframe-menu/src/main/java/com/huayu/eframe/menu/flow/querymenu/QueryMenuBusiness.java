@@ -2,9 +2,9 @@ package com.huayu.eframe.menu.flow.querymenu;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.menu.service.MenuService;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,15 +31,15 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     public void execute(BusinessParameter param)
     {
         QueryMenuRequest queryMenuRequest = param.getRequest();
-        if(StringUtils.isNullOrEmpty(queryMenuRequest.getCode()))
+        if (StringUtils.isNullOrEmpty(queryMenuRequest.getCode()))
         {
             List<MenuDetail> menuResult = menuService.queryAllMenu();
-            param.addParameter(RESULT_LIST,menuResult);
+            param.addParameter(RESULT_LIST, menuResult);
         }
         else
         {
             MenuDetail menuQuery = menuService.queryMenuByCode(queryMenuRequest.getCode());
-            param.addParameter(RESULT_SINGLE,menuQuery);
+            param.addParameter(RESULT_SINGLE, menuQuery);
         }
 
 
@@ -50,7 +50,7 @@ public class QueryMenuBusiness extends AbstractExecuteBusiness
     {
         List<MenuDetail> menuResult = param.getParameter(RESULT_LIST);
         MenuDetail menuDetail = param.getParameter(RESULT_SINGLE);
-        return null == menuResult?  menuDetail : menuResult;
+        return null == menuResult ? menuDetail : menuResult;
     }
 
 

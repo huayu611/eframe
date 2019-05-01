@@ -25,7 +25,7 @@ public class ModifyPermissionBusiness extends AbstractExecuteBusiness
         ModifyPermissionRequest request = param.getRequest();
         PermissionDetail detail = buildPermissionDetail(request);
         PermissionDetail permissionDetail = permissionService.updatePermission(detail);
-        param.addParameter(RESPONSE,permissionDetail);
+        param.addParameter(RESPONSE, permissionDetail);
     }
 
     @Override

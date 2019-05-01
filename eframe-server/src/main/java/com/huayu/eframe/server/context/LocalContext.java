@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class LocalContext
 {
-    private Map<String,Object> map;
+    private Map<String, Object> map;
 
     private Date nowDate;
 
@@ -37,18 +37,18 @@ public class LocalContext
 
     public void addValue(String key, Object obj)
     {
-        if(null == map)
+        if (null == map)
         {
-            map = new HashMap<String ,Object>();
+            map = new HashMap<String, Object>();
         }
-        map.put(key,obj);
+        map.put(key, obj);
     }
 
     public <T> T getValue(String key)
     {
-        if(null != map && StringUtils.isNotNullAndEmpty(key))
+        if (null != map && StringUtils.isNotNullAndEmpty(key))
         {
-            return (T)map.get(key);
+            return (T) map.get(key);
         }
         return null;
     }

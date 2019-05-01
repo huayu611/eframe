@@ -7,21 +7,21 @@ import java.io.InputStream;
 
 public class StreamUtils
 {
-	public static InputStream coverFileToStream(File file)
-	{
-		try
-		{
-			return new FileInputStream(file);
-		}
-		catch (FileNotFoundException e)
-		{
-			return null;
-		}
-	}
-	
-	public static String object2Byte(Object obj)
-	{
-		return null;
-	}
+    public static InputStream coverFileToStream(File file)
+    {
+        try
+        {
+            return new FileInputStream(file);
+        }
+        catch (FileNotFoundException e)
+        {
+            return null;
+        }
+    }
+
+    public static String object2Byte(Object obj)
+    {
+        return null;
+    }
 
 }

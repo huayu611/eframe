@@ -6,18 +6,18 @@ import javax.persistence.*;
  * Created by Administrator on 2018/7/14.
  */
 @Entity
-@Table(name="SYS_ROLE_STAFF")
+@Table(name = "SYS_ROLE_STAFF")
 public class RoleStaff
 {
     @Id
-    @Column(name="ROLE_STAFF_ID", length=20)
+    @Column(name = "ROLE_STAFF_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="ROLE_ID", length=20)
+    @Column(name = "ROLE_ID", length = 20)
     private Long roleId;
 
-    @Column(name="STAFF_ID", length=20)
+    @Column(name = "STAFF_ID", length = 20)
     private Long staffId;
 
 

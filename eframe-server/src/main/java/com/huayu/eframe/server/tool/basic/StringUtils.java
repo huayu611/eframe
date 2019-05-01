@@ -187,51 +187,51 @@ public class StringUtils
         return null == obj ? false : obj.getClass().isAssignableFrom(String.class);
     }
 
-    public static String getStringByLength(String value,int length)
+    public static String getStringByLength(String value, int length)
     {
-        if(null == value)
+        if (null == value)
         {
             return null;
         }
-        if(value.length()<=length)
+        if (value.length() <= length)
         {
             return value;
         }
-        return value.substring(0,length);
+        return value.substring(0, length);
     }
 
-    public static String removeLastString(String value,String remove)
+    public static String removeLastString(String value, String remove)
     {
-        if(isNotNullAndEmpty(value) && value.endsWith(remove))
+        if (isNotNullAndEmpty(value) && value.endsWith(remove))
         {
-           int pos = value.lastIndexOf(remove);
-           return value.substring(0,pos);
+            int pos = value.lastIndexOf(remove);
+            return value.substring(0, pos);
         }
         return value;
     }
 
-    public static String cutLengthString(String value,int pos)
+    public static String cutLengthString(String value, int pos)
     {
-        if(isNullOrEmpty(value))
+        if (isNullOrEmpty(value))
         {
             return value;
         }
         int length = getLength(value);
-        if(length <= pos)
+        if (length <= pos)
         {
             return value;
         }
-        return value.substring(0,pos);
+        return value.substring(0, pos);
     }
 
-    public static String cutLastLengthString(String value,int pos)
+    public static String cutLastLengthString(String value, int pos)
     {
-        if(isNullOrEmpty(value))
+        if (isNullOrEmpty(value))
         {
             return value;
         }
         int length = getLength(value);
-        if(length <= pos)
+        if (length <= pos)
         {
             return value;
         }
@@ -239,45 +239,53 @@ public class StringUtils
         return value.substring(pos);
     }
 
-    public static String cutPrefix(String value,String prefix)
+    public static String cutPrefix(String value, String prefix)
     {
-        if(isNullOrEmpty(value) || isNullOrEmpty(prefix))
+        if (isNullOrEmpty(value) || isNullOrEmpty(prefix))
         {
             return value;
         }
-        if(value.length()<prefix.length())
+        if (value.length() < prefix.length())
         {
             return value;
         }
-        if(!value.startsWith(prefix))
+        if (!value.startsWith(prefix))
         {
             return value;
         }
-        return cutLengthString(value,prefix.length());
+        return cutLengthString(value, prefix.length());
     }
 
 
-    public static String hiddenPart(String value,int start,int end)
+    public static String hiddenPart(String value, int start, int end)
     {
-        if(start>=end)
+        if (start >= end)
         {
             return value;
         }
-        if(isNullOrEmpty(value))
+        if (isNullOrEmpty(value))
         {
             return value;
         }
-        if(value.length()< start)
+        if (value.length() < start)
         {
             return value;
         }
-        if(value.length()<=end)
+        if (value.length() <= end)
         {
             String hiddenChar = value.substring(start).replaceAll(".+?", "*");
-            return cutLengthString(value,start) +hiddenChar;
+            return cutLengthString(value, start) + hiddenChar;
         }
-        String hiddenChar = value.substring(start,end).replaceAll(".+?", "*");
-        return cutLengthString(value,start) + hiddenChar + cutLastLengthString(value,end);
+        String hiddenChar = value.substring(start, end).replaceAll(".+?", "*");
+        return cutLengthString(value, start) + hiddenChar + cutLastLengthString(value, end);
     }
 
+    public static String getLikeString(String content)
+    {
+        if (null != content)
+        {
+            return "%" + content + "%";
+        }
+        return null;
+    }
 }

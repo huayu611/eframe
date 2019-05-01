@@ -8,7 +8,6 @@ import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -35,8 +34,8 @@ public class CopBaseInfoServiceImpl implements CopBaseInfoService
     @Override
     public CopBaseInfoDetail updateCopBaseInfoDetail(CopBaseInfoDetail detail)
     {
-        CopBaseInfo copDetail =  queryOne();
-        if(null == copDetail)
+        CopBaseInfo copDetail = queryOne();
+        if (null == copDetail)
         {
             return null;
         }
@@ -53,7 +52,7 @@ public class CopBaseInfoServiceImpl implements CopBaseInfoService
         copDetail.setAddress(detail.getAddress());
 
         CopBaseInfo updateResult = copBaseInfoAtom.update(copDetail);
-        if(null != updateResult)
+        if (null != updateResult)
         {
             return buildCopBaseInfoDetail(updateResult);
         }

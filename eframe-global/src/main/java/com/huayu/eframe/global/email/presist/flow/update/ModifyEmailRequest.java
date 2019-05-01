@@ -8,7 +8,7 @@ import com.huayu.eframe.flow.annotation.EFrameRequest;
  */
 public class ModifyEmailRequest
 {
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String emailCode;
 
     @EFrameRequest(length = 64)
@@ -17,7 +17,7 @@ public class ModifyEmailRequest
     @EFrameRequest(length = 64)
     private String emailUserName;
 
-    @EFrameRequest(bean = "_e_email_password_encrypt",length = 128)
+    @EFrameRequest(bean = "_e_email_password_encrypt", length = 128)
     private String emailPassword;
 
     @EFrameRequest(length = 64)

@@ -50,7 +50,7 @@ public class StaffExtAtomImpl implements StaffExtAtom
     public StaffExt queryStaffExtById(Long id)
     {
         Optional<StaffExt> option = staffExtRepository.findById(id);
-        return option.isPresent()?option.get():null;
+        return option.isPresent() ? option.get() : null;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class StaffExtAtomImpl implements StaffExtAtom
         {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(null != condition.getStaff())
+            if (null != condition.getStaff())
             {
                 predicates.add(criteriaBuilder.equal(root.get("staff").as(Staff.class), condition.getStaff()));
             }

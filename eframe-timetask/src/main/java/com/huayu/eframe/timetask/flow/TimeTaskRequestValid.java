@@ -13,15 +13,15 @@ public class TimeTaskRequestValid
 
     public static void checkTimeTaskCycleData(TimeTaskDetail timeTaskBO)
     {
-        if(null == timeTaskBO)
+        if (null == timeTaskBO)
         {
-            return ;
+            return;
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(timeTaskBO.getTimeTaskType(),"cycle"))
+        if (StringUtils.equalStringNoCareUpperAndLower(timeTaskBO.getTimeTaskType(), "cycle"))
         {
-            if(StringUtils.isNullOrEmpty(timeTaskBO.getUnit())|| null == timeTaskBO.getCycle() || timeTaskBO.getCycle().intValue()<1)
+            if (StringUtils.isNullOrEmpty(timeTaskBO.getUnit()) || null == timeTaskBO.getCycle() || timeTaskBO.getCycle().intValue() < 1)
             {
-                throw new IFPException(TimeTaskErrorCode.TIME_TASK_TYPE_NEED_CYLE_UNIT,"time task is cycle and need cycle and unit");
+                throw new IFPException(TimeTaskErrorCode.TIME_TASK_TYPE_NEED_CYLE_UNIT, "time task is cycle and need cycle and unit");
             }
         }
     }

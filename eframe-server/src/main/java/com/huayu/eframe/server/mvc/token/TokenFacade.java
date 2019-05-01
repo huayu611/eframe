@@ -19,22 +19,22 @@ public class TokenFacade
     @Autowired
     private TokenObserver tokenObserver;
 
-    public Token createToken(Class tokenClass,String loginName,String type)
+    public Token createToken(Class tokenClass, String loginName, String type)
     {
-        return createToken(tokenClass,loginName,type,null);
+        return createToken(tokenClass, loginName, type, null);
     }
 
     public Token createToken(Class tokenClass, String loginName, String type, Locale locale)
     {
-        return getTokenMirror(tokenClass).createToken(loginName,type,locale);
+        return getTokenMirror(tokenClass).createToken(loginName, type, locale);
     }
 
     private TokenMirror getTokenMirror(Class tokenClass)
     {
         TokenMirror mirror = tokenObserver.getTokenMirror(tokenClass);
-        if(null == mirror)
+        if (null == mirror)
         {
-            throw new IFPException(ErrorCode.T0KEN_SESSION_INVALID,"Token Error , please contract administrators ");
+            throw new IFPException(ErrorCode.T0KEN_SESSION_INVALID, "Token Error , please contract administrators ");
         }
         return mirror;
     }
@@ -42,10 +42,11 @@ public class TokenFacade
     public Token getMirrorByToken(String tokenId)
     {
         Token token = null;
-        try {
+        try
+        {
             token = tokenObserver.getToken(tokenId);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             debug.errorLog("check token error");
             throw e;

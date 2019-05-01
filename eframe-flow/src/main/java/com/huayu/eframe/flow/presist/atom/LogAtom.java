@@ -1,7 +1,7 @@
 package com.huayu.eframe.flow.presist.atom;
 
-import com.huayu.eframe.server.common.FramePaging;
 import com.huayu.eframe.flow.presist.bo.LogEntity;
+import com.huayu.eframe.server.common.FramePaging;
 import org.springframework.data.domain.Page;
 
 import java.util.Date;
@@ -18,7 +18,7 @@ public interface LogAtom
 
     LogEntity getLogByCode(String logCode);
 
-    LogEntity getLogById(Long  id);
+    LogEntity getLogById(Long id);
 
     Page<LogEntity> queryLog(FramePaging fp, LogEntity condition);
 

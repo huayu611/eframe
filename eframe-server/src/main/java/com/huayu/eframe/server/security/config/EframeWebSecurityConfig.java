@@ -4,7 +4,6 @@ import com.huayu.eframe.server.log.LogDebug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
@@ -23,11 +22,12 @@ public class EframeWebSecurityConfig
     private EFrameFilterSecurityInterceptor eFrameFilterSecurityInterceptor;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception
+    {
 
         debug.log("EframeWebSecurityConfig start");
 
-        http.authorizeRequests().antMatchers("/manage/Login","/static/**","/main/**").permitAll()
+        http.authorizeRequests().antMatchers("/manage/Login", "/static/**", "/main/**").permitAll()
                 .anyRequest().authenticated();
         http.exceptionHandling().authenticationEntryPoint(new EFrameRestfulAuthenticationEntryPoint());
         http.headers().frameOptions().disable();

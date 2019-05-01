@@ -1,9 +1,9 @@
 package com.huayu.eframe.management.flow.staff;
 
-import com.huayu.eframe.management.request.ModifyPasswordRequest;
-import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.management.request.ModifyPasswordRequest;
+import com.huayu.eframe.management.single.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,13 +20,13 @@ public class ChangePasswordBusiness extends AbstractExecuteBusiness
     public void before(BusinessParameter param)
     {
         ModifyPasswordRequest modifyPasswordRequest = param.getRequest();
-        staffService.checkLogin(modifyPasswordRequest.getLogin(),modifyPasswordRequest.getOldPassword());
+        staffService.checkLogin(modifyPasswordRequest.getLogin(), modifyPasswordRequest.getOldPassword());
     }
 
     @Override
     public void execute(BusinessParameter param)
     {
         ModifyPasswordRequest modifyPasswordRequest = param.getRequest();
-        staffService.changePassword(modifyPasswordRequest.getLogin(),modifyPasswordRequest.getNewPassword());
+        staffService.changePassword(modifyPasswordRequest.getLogin(), modifyPasswordRequest.getNewPassword());
     }
 }

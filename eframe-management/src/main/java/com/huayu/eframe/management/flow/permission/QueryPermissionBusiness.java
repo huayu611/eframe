@@ -41,9 +41,9 @@ public class QueryPermissionBusiness extends AbstractExecuteBusiness
         debug.log("begin");
         QueryPermissionRequest request = param.getRequest();
         PermissionDetail queryPermissionDetail = buildPermissionDetail(request);
-        PageObject pageObject = permissionService.queryPermissionByPage(queryPermissionDetail,request.getPage());
+        PageObject pageObject = permissionService.queryPermissionByPage(queryPermissionDetail, request.getPage());
         param.addParameter(RESULT, pageObject.getResponse());
-        param.addParameter(PAGE_OBJECT,pageObject);
+        param.addParameter(PAGE_OBJECT, pageObject);
         debug.log("end");
     }
 
@@ -62,13 +62,13 @@ public class QueryPermissionBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return   param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
         tidyPagingResponse(pageObject, response);
     }
 }

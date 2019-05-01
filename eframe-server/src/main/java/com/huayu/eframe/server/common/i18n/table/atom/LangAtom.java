@@ -11,11 +11,11 @@ public interface LangAtom
 {
     List<Lang> getAll();
 
-    List<Lang>  save(String langCode,List<Lang> values);
+    List<Lang> save(String langCode, List<Lang> values);
 
-    Lang  save(Lang lang);
+    Lang save(Lang lang);
 
-    List<Lang> update(String langCode,List<Lang> values);
+    List<Lang> update(String langCode, List<Lang> values);
 
     void delete(Lang lang);
 

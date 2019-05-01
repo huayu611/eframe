@@ -25,18 +25,25 @@ public abstract class AbstractExecuteEFrameRequest
 
 
         boolean accessible = field.isAccessible();
-        if (!accessible) {
+        if (!accessible)
+        {
             field.setAccessible(true);
         }
-        try {
+        try
+        {
             doExtend(ef, field, request);
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             debug.log(e);
-            if (e instanceof IFPException) {
+            if (e instanceof IFPException)
+            {
                 throw (IFPException) e;
             }
 
-        } finally {
+        }
+        finally
+        {
             field.setAccessible(accessible);
         }
 
@@ -57,17 +64,24 @@ public abstract class AbstractExecuteEFrameRequest
     protected Object getValueInField(Field field, Object request)
     {
 
-        if (null != field && null != request) {
+        if (null != field && null != request)
+        {
             boolean accessible = field.isAccessible();
-            if (!accessible) {
+            if (!accessible)
+            {
                 field.setAccessible(true);
             }
             Object value = null;
-            try {
+            try
+            {
                 value = field.get(request);
-            } catch (Exception e) {
-                debug.log("Get Value failed ,"+ field.getName());
-            } finally {
+            }
+            catch (Exception e)
+            {
+                debug.log("Get Value failed ," + field.getName());
+            }
+            finally
+            {
                 field.setAccessible(accessible);
             }
             return value;

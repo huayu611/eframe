@@ -1,5 +1,4 @@
-
 description = ''
 dependencies {
-  compile project(':eframe-server')
+    compile project(':eframe-server')
 }

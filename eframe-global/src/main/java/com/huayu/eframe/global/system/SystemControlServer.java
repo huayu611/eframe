@@ -29,7 +29,7 @@ public class SystemControlServer
     @RequestMapping(value = "/current/login",
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object getCurrentLogin(EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
@@ -39,14 +39,14 @@ public class SystemControlServer
     @ResponseBody
     @RequestMapping(value = "/log", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryLog(
-            @RequestParam(name="size",required = false) Integer size,
-            @RequestParam(name="page",required = false) Integer page,
-            @RequestParam(name="operatorCode",required = false) String operatorCode,
-            @RequestParam(name="operatorType",required = false) String operatorType,
-            @RequestParam(name="url",required = false) String url,
-            @RequestParam(name="inTime",required = false) Date inTime,
-            @RequestParam(name="outTime",required = false) Date outTime,
-            @RequestParam(name="method",required = false) String method,
+            @RequestParam(name = "size", required = false) Integer size,
+            @RequestParam(name = "page", required = false) Integer page,
+            @RequestParam(name = "operatorCode", required = false) String operatorCode,
+            @RequestParam(name = "operatorType", required = false) String operatorType,
+            @RequestParam(name = "url", required = false) String url,
+            @RequestParam(name = "inTime", required = false) Date inTime,
+            @RequestParam(name = "outTime", required = false) Date outTime,
+            @RequestParam(name = "method", required = false) String method,
             EasyParam easyParam)
     {
         QueryOperatorLogRequest queryOperatorLogRequest = new QueryOperatorLogRequest();
@@ -70,7 +70,7 @@ public class SystemControlServer
     @RequestMapping(value = "/system-tokens",
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object getCurrentTokens(EasyParam easyParam)
     {
         Object obj = Flow.execute(QuerySystemTokensBusiness.class, null, easyParam);
@@ -81,7 +81,7 @@ public class SystemControlServer
     @RequestMapping(value = "/switch-log",
             method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object switchLog(@RequestBody SwitchDebugRequest switchDebugRequest, EasyParam easyParam)
     {
         Object obj = Flow.execute(SwitchDebugBusiness.class, switchDebugRequest, easyParam);
@@ -92,7 +92,7 @@ public class SystemControlServer
     @RequestMapping(value = "/refresh-cache",
             method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object refreshCache(@RequestBody RefreshCacheRequest refreshCacheRequest, EasyParam easyParam)
     {
         Object obj = Flow.execute(RefreshCacheBusiness.class, refreshCacheRequest, easyParam);

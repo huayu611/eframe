@@ -1,10 +1,10 @@
 package com.huayu.eframe.menu.service.impl;
 
-import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.menu.atom.MenuAtom;
 import com.huayu.eframe.menu.bo.Menu;
 import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.menu.service.MenuService;
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
@@ -46,7 +46,7 @@ public class MenuServiceImpl implements MenuService
     public MenuDetail queryMenuByCode(String code)
     {
         Menu menu = getMenuByCode(code);
-        if(null == menu)
+        if (null == menu)
         {
             return null;
         }
@@ -58,7 +58,7 @@ public class MenuServiceImpl implements MenuService
     public MenuDetail addMenu(MenuDetail menuDetail)
     {
         Menu menu = buildMenu(menuDetail);
-        if(null == menu)
+        if (null == menu)
         {
             return null;
         }
@@ -71,7 +71,7 @@ public class MenuServiceImpl implements MenuService
     public MenuDetail modifyMenu(MenuDetail menuDetail)
     {
         Menu menu = getMenuByCode(menuDetail.getCode());
-        buildModifyMenu(menu,menuDetail);
+        buildModifyMenu(menu, menuDetail);
         Menu newMenu = menuAtom.updateMenu(menu);
         MenuDetail newMenuDetail = buildMenuDetail(newMenu);
         return newMenuDetail;
@@ -80,12 +80,12 @@ public class MenuServiceImpl implements MenuService
     @Override
     public String deleteMenu(String menuCode)
     {
-        if(StringUtils.isNullOrEmpty(menuCode))
+        if (StringUtils.isNullOrEmpty(menuCode))
         {
             return "";
         }
         Menu menu = getMenuByCode(menuCode);
-        if(null != menu)
+        if (null != menu)
         {
             Menu expireMenu = expireMenu(menu);
             return expireMenu.getCode();
@@ -116,7 +116,7 @@ public class MenuServiceImpl implements MenuService
         Long parent = menu.getParentMenu();
         if (null != parent && !Long.valueOf(0).equals(parent))
         {
-            Menu parentMenu = menuAtom.queryMenuById( parent);
+            Menu parentMenu = menuAtom.queryMenuById(parent);
             menuDetail.setParentMenu(null != parentMenu ? parentMenu.getCode() : null);
         }
 
@@ -138,7 +138,7 @@ public class MenuServiceImpl implements MenuService
 
     private Menu buildMenu(MenuDetail menuDetail)
     {
-        if(null == menuDetail)
+        if (null == menuDetail)
         {
             return null;
         }
@@ -161,7 +161,7 @@ public class MenuServiceImpl implements MenuService
         menu.setRedirect(menuDetail.getRedirect());
         //parent menu
         Menu parentMenu = getMenuByCode(menuDetail.getParentMenu());
-        if(null != parentMenu)
+        if (null != parentMenu)
         {
             menu.setParentMenu(parentMenu.getMenuId());
             menu.setMenuLevel(parentMenu.getMenuLevel() + 1);
@@ -170,15 +170,15 @@ public class MenuServiceImpl implements MenuService
         {
             menu.setMenuLevel(TOP_LEVEL);
         }
-        if(null != menuDetail.getRange())
+        if (null != menuDetail.getRange())
         {
             menu.setRange(menuDetail.getRange());
         }
     }
 
-    private void buildModifyMenu(Menu menu,MenuDetail menuDetail)
+    private void buildModifyMenu(Menu menu, MenuDetail menuDetail)
     {
-        buildBaseInfo(menuDetail,menu);
+        buildBaseInfo(menuDetail, menu);
         fixUpdateItem(menu);
 
         //parentMenu
@@ -198,7 +198,7 @@ public class MenuServiceImpl implements MenuService
 
     private Menu getMenuByCode(String code)
     {
-        if(StringUtils.isNullOrEmpty(code))
+        if (StringUtils.isNullOrEmpty(code))
         {
             return null;
         }

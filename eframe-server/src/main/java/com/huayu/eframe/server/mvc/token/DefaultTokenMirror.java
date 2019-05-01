@@ -1,6 +1,5 @@
 package com.huayu.eframe.server.mvc.token;
 
-import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

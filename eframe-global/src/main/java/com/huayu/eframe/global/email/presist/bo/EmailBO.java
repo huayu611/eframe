@@ -7,66 +7,66 @@ import java.util.Date;
  * Created by Leo on 2018/9/28.
  */
 @Entity
-@Table(name="SYS_EMAIL")
+@Table(name = "SYS_EMAIL")
 public class EmailBO
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="EMAIL_CODE", length=125)
+    @Column(name = "EMAIL_CODE", length = 125)
     private String emailCode;
 
-    @Column(name="NAME", length=225)
+    @Column(name = "NAME", length = 225)
     private String name;
 
-    @Column(name="STATUS", length=2)
+    @Column(name = "STATUS", length = 2)
     private String status;
 
-    @Column(name="EMAIL_USERNAME", length=64)
+    @Column(name = "EMAIL_USERNAME", length = 64)
     private String emailUserName;
 
-    @Column(name="EMAIL_PASSWORD", length=255)
+    @Column(name = "EMAIL_PASSWORD", length = 255)
     private String emailPassword;
 
-    @Column(name="EMAIL_PROTOCOL", length=16)
+    @Column(name = "EMAIL_PROTOCOL", length = 16)
     private String protocol;
-    @Column(name="EMAIL_HOST", length=64)
+    @Column(name = "EMAIL_HOST", length = 64)
     private String host;
-    @Column(name="EMAIL_PORT", length=8)
+    @Column(name = "EMAIL_PORT", length = 8)
     private int port;
-    @Column(name="AUTH", length=8)
+    @Column(name = "AUTH", length = 8)
     private String auth;
 
-    @Column(name="EMAIL_TIMEOUT", length=20)
+    @Column(name = "EMAIL_TIMEOUT", length = 20)
     private Long timeOut;
 
-    @Column(name="EMAIL_SENDER", length=125)
+    @Column(name = "EMAIL_SENDER", length = 125)
     private String emailSender;
 
-    @Column(name="PERSONAL", length=255)
+    @Column(name = "PERSONAL", length = 255)
     private String personal;
 
-    @Column(name="SUBJECT", length=255)
+    @Column(name = "SUBJECT", length = 255)
     private String subject;
 
-    @Column(name="LAST_UPDATE_TIME")
+    @Column(name = "LAST_UPDATE_TIME")
     private Date lastUpdateTime;
 
-    @Column(name="CREATE_OBJ_ID", length=20)
+    @Column(name = "CREATE_OBJ_ID", length = 20)
     private Long createObjId;
 
-    @Column(name="CREATE_OBJ_TYPE", length=128)
+    @Column(name = "CREATE_OBJ_TYPE", length = 128)
     private String createObjType;
 
-    @Column(name="LAST_UPDATE_OBJ_ID", length=20)
+    @Column(name = "LAST_UPDATE_OBJ_ID", length = 20)
     private Long lastUpdateObjId;
 
-    @Column(name="LAST_UPDATE_OBJ_TYPE", length=128)
+    @Column(name = "LAST_UPDATE_OBJ_TYPE", length = 128)
     private String lastUpdateObjType;
 
-    @Column(name="CREATE_TIME")
+    @Column(name = "CREATE_TIME")
     private Date createTime;
 
 

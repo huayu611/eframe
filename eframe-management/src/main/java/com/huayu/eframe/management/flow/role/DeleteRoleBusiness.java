@@ -32,21 +32,21 @@ public class DeleteRoleBusiness extends AbstractExecuteBusiness
         String codes = request.getCodes();
         debug.log(codes);
         String[] nameArr = StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
-        if(nameArr.length==0)
+        if (nameArr.length == 0)
         {
             return;
         }
         String result = "";
-        for(String code : nameArr)
+        for (String code : nameArr)
         {
             String roleCode = roleService.deleteRole(code);
             result = result + roleCode + ",";
         }
-        if(result.endsWith(","))
+        if (result.endsWith(","))
         {
-            result = result.substring(0,result.length()-1);
+            result = result.substring(0, result.length() - 1);
         }
-        param.addParameter(RESULT,result);
+        param.addParameter(RESULT, result);
     }
 
     @Override

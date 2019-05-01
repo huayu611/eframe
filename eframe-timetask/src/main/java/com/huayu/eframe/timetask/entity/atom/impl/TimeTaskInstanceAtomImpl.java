@@ -42,9 +42,9 @@ public class TimeTaskInstanceAtomImpl implements TimeTaskInstanceAtom
     {
 
         Specification<TimeTaskInstance> special = buildSpecification(timeTaskInstance);
-        Sort sort = new Sort(Sort.Direction.DESC,"startTime");
-        PageRequest pageRequest = PageRequest.of(fp.getPage(),fp.getSize(),sort);
-        return timeTaskInstanceRepository.findAll(special,pageRequest);
+        Sort sort = new Sort(Sort.Direction.DESC, "startTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
+        return timeTaskInstanceRepository.findAll(special, pageRequest);
     }
 
     private Specification<TimeTaskInstance> buildSpecification(TimeTaskInstance condition)
@@ -52,7 +52,7 @@ public class TimeTaskInstanceAtomImpl implements TimeTaskInstanceAtom
         return (Specification<TimeTaskInstance>) (root, criteriaQuery, criteriaBuilder) ->
         {
             List<Predicate> predicates = new ArrayList<>();
-            if(null != condition.getTimeTaskId())
+            if (null != condition.getTimeTaskId())
             {
                 predicates.add(criteriaBuilder.equal(root.get("timeTaskId").as(Long.class), condition.getTimeTaskId()));
             }

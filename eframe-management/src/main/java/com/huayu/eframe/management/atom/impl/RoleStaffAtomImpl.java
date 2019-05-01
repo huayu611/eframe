@@ -42,11 +42,11 @@ public class RoleStaffAtomImpl implements RoleStaffAtom
     @Override
     public void delete(List<RoleStaff> roleStaff)
     {
-        if(CollectionUtils.isEmpty(roleStaff))
+        if (CollectionUtils.isEmpty(roleStaff))
         {
             return;
         }
-        for(RoleStaff rs : roleStaff)
+        for (RoleStaff rs : roleStaff)
         {
             roleStaffRepository.delete(rs);
         }
@@ -56,14 +56,14 @@ public class RoleStaffAtomImpl implements RoleStaffAtom
     public List<RoleStaff> queryRoleStaff(RoleStaff roleStaff)
     {
         ExampleMatcher em = ExampleMatcher.matching();
-        Example<RoleStaff> example = Example.of(roleStaff,em);
+        Example<RoleStaff> example = Example.of(roleStaff, em);
 
         List<RoleStaff> roleStaffsList = roleStaffRepository.findAll(example);
         return roleStaffsList;
     }
 
     @Override
-    public List<RoleStaff> queryRoleStaffByBothId(Long staffId,Long roleId)
+    public List<RoleStaff> queryRoleStaffByBothId(Long staffId, Long roleId)
     {
         RoleStaff rs = new RoleStaff();
         rs.setStaffId(staffId);

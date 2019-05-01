@@ -56,7 +56,7 @@ public class PermissionCacheImpl extends AbstractFrameCache<Permission> implemen
         @Override
         public String getIndex(Permission permission)
         {
-            return  permission.getWhite()+"&"+permission.getMethod();
+            return permission.getWhite() + "&" + permission.getMethod();
         }
     }
 

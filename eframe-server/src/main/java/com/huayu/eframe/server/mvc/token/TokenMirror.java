@@ -14,11 +14,17 @@ public interface TokenMirror
 
     /**
      * 获取token使用
+     *
      * @param primary, Token中唯一标识
-     * @param type 标记token类型，可以定制传递
+     * @param type     标记token类型，可以定制传递
      * @return
      */
-    default Token createToken(String primary,String type){return createToken(primary,type,null);};
+    default Token createToken(String primary, String type)
+    {
+        return createToken(primary, type, null);
+    }
+
+    ;
 
     /**
      * @param primary
@@ -37,10 +43,16 @@ public interface TokenMirror
 
     /**
      * JWT专用
+     *
      * @param clm
      * @return
      */
-    default Token getToken(Claims clm){return null;};
+    default Token getToken(Claims clm)
+    {
+        return null;
+    }
+
+    ;
 
 
     /**
@@ -51,12 +63,19 @@ public interface TokenMirror
 
     /**
      * token 生命周期时长， 单位位秒
+     *
      * @return
      */
-    default int cycle(){return 3600;};
+    default int cycle()
+    {
+        return 3600;
+    }
+
+    ;
 
     /**
      * 读取权限
+     *
      * @param primary
      * @return
      */
@@ -64,9 +83,14 @@ public interface TokenMirror
 
     /**
      * 刷新token的有效期
+     *
      * @param token
      */
-    default void updateTokenExpireTime(Token token){};
+    default void updateTokenExpireTime(Token token)
+    {
+    }
+
+    ;
 
     //Token操作员类型
     String getObjType();

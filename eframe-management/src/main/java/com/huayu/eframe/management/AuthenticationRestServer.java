@@ -5,7 +5,10 @@ import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.flow.login.LoginBusiness;
 import com.huayu.eframe.management.flow.permission.*;
-import com.huayu.eframe.management.flow.role.*;
+import com.huayu.eframe.management.flow.role.AddRoleBusiness;
+import com.huayu.eframe.management.flow.role.DeleteRoleBusiness;
+import com.huayu.eframe.management.flow.role.ModifyRoleBusiness;
+import com.huayu.eframe.management.flow.role.QueryRoleBusiness;
 import com.huayu.eframe.management.flow.staff.*;
 import com.huayu.eframe.management.request.*;
 import com.huayu.eframe.server.common.restful.PagingRequest;
@@ -51,10 +54,10 @@ public class AuthenticationRestServer
     @ResponseBody
     @RequestMapping(value = "/staff", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryStaff(
-            @RequestParam(name="size",required = false) Integer size,
-            @RequestParam(name="page",required = false) Integer page,
-            @RequestParam(name="name",required = false) String name,
-            @RequestParam(name="login",required = false) String loginName,
+            @RequestParam(name = "size", required = false) Integer size,
+            @RequestParam(name = "page", required = false) Integer page,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "login", required = false) String loginName,
             EasyParam easyParam)
     {
         QueryStaffRequest queryStaffRequest = new QueryStaffRequest();
@@ -138,10 +141,10 @@ public class AuthenticationRestServer
     @ResponseBody
     @RequestMapping(value = "/permission", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryPermission(
-            @RequestParam(name="size",required=false) Integer size,
-            @RequestParam(name="page",required=false) Integer page,
-            @RequestParam(name="code",required=false) String code,
-            @RequestParam(name="name",required=false) String name,
+            @RequestParam(name = "size", required = false) Integer size,
+            @RequestParam(name = "page", required = false) Integer page,
+            @RequestParam(name = "code", required = false) String code,
+            @RequestParam(name = "name", required = false) String name,
             EasyParam easyParam)
     {
         QueryPermissionRequest request = new QueryPermissionRequest();
@@ -159,10 +162,10 @@ public class AuthenticationRestServer
     @ResponseBody
     @RequestMapping(value = "/role", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryRoleLike(
-            @RequestParam(name="size",required = false) Integer size,
-            @RequestParam(name="page",required = false) Integer page,
-            @RequestParam(name="name",required = false) String name,
-            @RequestParam(name="code",required = false) String code,
+            @RequestParam(name = "size", required = false) Integer size,
+            @RequestParam(name = "page", required = false) Integer page,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "code", required = false) String code,
             EasyParam easyParam)
     {
         QueryRoleRequest queryRoleRequest = new QueryRoleRequest();
@@ -207,17 +210,17 @@ public class AuthenticationRestServer
 
     @ResponseBody
     @RequestMapping(value = "/staff/password/{changeType}", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object changeLoginPassword(@RequestBody ModifyPasswordRequest request,@PathVariable String changeType, EasyParam easyParam)
+    public Object changeLoginPassword(@RequestBody ModifyPasswordRequest request, @PathVariable String changeType, EasyParam easyParam)
     {
-        if(StringUtils.equalString("reset",changeType))
+        if (StringUtils.equalString("reset", changeType))
         {
             return Flow.execute(RestPasswordBusiness.class, request, easyParam);
         }
-        else{
+        else
+        {
             return Flow.execute(ChangePasswordBusiness.class, request, easyParam);
         }
     }
-
 
 
     private RestfulResponse buildError(String code, String desc)

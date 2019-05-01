@@ -13,6 +13,7 @@ public class DictInternationalReader extends InternationalReader
 {
     @Value(value = "classpath*:/META-INF/config/dict/lang/*_dict.properties")
     private Resource[] resource;
+
     @Override
     public void afterPropertiesSet() throws Exception
     {

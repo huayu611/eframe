@@ -1,12 +1,12 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.flow.presist.constant.LogConstants;
 import com.huayu.eframe.flow.presist.logic.LogRecordLogic;
 import com.huayu.eframe.flow.valid.EffExpValid;
 import com.huayu.eframe.flow.valid.ValidAnnotation;
 import com.huayu.eframe.server.cache.CacheObserver;
 import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.server.common.restful.EffectiveExpireDateTime;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.context.LocalAttribute;
@@ -45,7 +45,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     public void process(BusinessParameter param)
     {
 
-        recordLog(LogConstants.LOG_INIT_STATUS,param.getRequest());
+        recordLog(LogConstants.LOG_INIT_STATUS, param.getRequest());
         this.init(param);
 
         recordLog(LogConstants.LOG_RUNNING_STATUS);
@@ -59,7 +59,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
     private void doTrans(BusinessParameter param)
     {
-        if(isNeedTransaction())
+        if (isNeedTransaction())
         {
             transactionFlow.executeTransaction(this, param);
         }
@@ -102,13 +102,13 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     }
 
     @Deprecated
-    protected  RestfulResponse buildSuccessRestfulResponse(Object result,List list)
+    protected RestfulResponse buildSuccessRestfulResponse(Object result, List list)
     {
         RestfulResponse response = new RestfulResponse();
         response.setCode("0");
         response.setMsg(getSuccessResultDescrption());
         response.setData(result);
-        if(CollectionUtils.isNotEmpty(list))
+        if (CollectionUtils.isNotEmpty(list))
         {
             response.setTotal(NumberUtils.getLongFromObject(list.size()));
         }
@@ -118,9 +118,9 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     }
 
     @Deprecated
-    protected  RestfulResponse buildSuccessRestfulResponse(Object result)
+    protected RestfulResponse buildSuccessRestfulResponse(Object result)
     {
-        return buildSuccessRestfulResponse(result,null);
+        return buildSuccessRestfulResponse(result, null);
     }
 
 
@@ -131,16 +131,16 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         response.setCode("0");
         response.setMsg(getSuccessResultDescrption());
         response.setData(tidyData(param));
-        tidyResponse(response,param);
-        recordLog(LogConstants.LOG_FINISH_STATUS,response);
+        tidyResponse(response, param);
+        recordLog(LogConstants.LOG_FINISH_STATUS, response);
         return response;
     }
 
     @Override
     public void exception(BusinessParameter param, Exception e)
     {
-        doException(param,e);
-        recordLog(LogConstants.LOG_ERROR_STATUS,e);
+        doException(param, e);
+        recordLog(LogConstants.LOG_ERROR_STATUS, e);
     }
 
     protected void doException(BusinessParameter param, Exception e)
@@ -153,9 +153,9 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         return null;
     }
 
-    protected void tidyResponse(RestfulResponse response,BusinessParameter param)
+    protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        return ;
+        return;
     }
 
     protected String getSuccessResultDescrption()
@@ -164,10 +164,13 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         String result = "Success!";
         Locale locale = null == LocalAttribute.getToken() ? null : LocalAttribute.getToken().getLocale();
         debug.log(locale);
-        try {
+        try
+        {
             resultCode = resultCode + ".ERRORDESC";
             result = ExceptionCacheService.getErrorInfo(resultCode, null, locale);
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             result = "Success!";
         }
         return result;
@@ -183,7 +186,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
     private void checkRequestField(Object request)
     {
-        if(null == request)
+        if (null == request)
         {
             return;
         }
@@ -197,7 +200,8 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
     private void checkExpEffDate(Object request)
     {
-        if (request instanceof EffectiveExpireDateTime) {
+        if (request instanceof EffectiveExpireDateTime)
+        {
             new EffExpValid(((EffectiveExpireDateTime) request).getEff(), ((EffectiveExpireDateTime) request).getExp()).validExpireDate().validExpireAndEffective();
         }
     }
@@ -205,12 +209,14 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     private void refreshCache()
     {
         List<String> cacheList = LocalAttribute.getNeedRefreshCache();
-        if (CollectionUtils.isEmpty(cacheList)) {
+        if (CollectionUtils.isEmpty(cacheList))
+        {
             return;
         }
         CacheObserver cacheObserevr = BeanPool.getServiceByClass(CacheObserver.class);
         Iterator<String> iteratorCache = cacheList.iterator();
-        while (iteratorCache.hasNext()) {
+        while (iteratorCache.hasNext())
+        {
             String cacheName = iteratorCache.next();
             cacheObserevr.refreshCache(cacheName);
         }
@@ -218,29 +224,30 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
     protected void recordLog(String flow)
     {
-        recordLog(flow,null);
+        recordLog(flow, null);
     }
-    protected void recordLog(String flow,Object obj)
+
+    protected void recordLog(String flow, Object obj)
     {
-        if(!getLogFlag())
+        if (!getLogFlag())
         {
-            return ;
+            return;
         }
-        if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_INIT_STATUS,flow))
+        if (StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_INIT_STATUS, flow))
         {
             logRecordLogic.initLog(obj);
         }
-        else if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_RUNNING_STATUS,flow))
+        else if (StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_RUNNING_STATUS, flow))
         {
             logRecordLogic.startLog();
         }
-        else  if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_FINISH_STATUS,flow))
+        else if (StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_FINISH_STATUS, flow))
         {
             logRecordLogic.finishLog(obj);
         }
-        else  if(StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_ERROR_STATUS,flow))
+        else if (StringUtils.equalStringNoCareUpperAndLower(LogConstants.LOG_ERROR_STATUS, flow))
         {
-            Throwable t = (Throwable)obj;
+            Throwable t = (Throwable) obj;
             logRecordLogic.errorLog(t);
         }
 

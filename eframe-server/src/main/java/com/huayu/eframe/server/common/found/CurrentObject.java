@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 获取当前操作实体,返回currentEntity,
+ *
  * @See CurrentEntity
  * Created by Leo on 2019/4/1.
  */
@@ -18,10 +19,10 @@ public class CurrentObject
     public CurrentEntity getCurrentEntity()
     {
         CurrentEntity result = LocalAttribute.getValue(KEY);
-        if(null == result)
+        if (null == result)
         {
             CurrentEntity ce = getCurrentEntityByAtom();
-            LocalAttribute.addValue(KEY,ce);
+            LocalAttribute.addValue(KEY, ce);
             return ce;
         }
         return result;
@@ -31,12 +32,12 @@ public class CurrentObject
     private CurrentEntity getCurrentEntityByAtom()
     {
         Token token = LocalAttribute.getToken();
-        if(null == token)
+        if (null == token)
         {
             return new CurrentEntity();
         }
         TokenInstance tokenInstance = token.getTokenInstance();
-        if(null == tokenInstance)
+        if (null == tokenInstance)
         {
             return new CurrentEntity();
         }

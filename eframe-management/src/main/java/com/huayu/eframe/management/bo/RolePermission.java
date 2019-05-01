@@ -6,18 +6,18 @@ import javax.persistence.*;
  * Created by Administrator on 2018/7/14.
  */
 @Entity
-@Table(name="SYS_ROLE_PERMISSION")
+@Table(name = "SYS_ROLE_PERMISSION")
 public class RolePermission
 {
     @Id
-    @Column(name="ROLE_PERMISSION_ID", length=20)
+    @Column(name = "ROLE_PERMISSION_ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="ROLE_ID", length=20)
+    @Column(name = "ROLE_ID", length = 20)
     private Long roleId;
 
-    @Column(name="PERMISSION_ID", length=20)
+    @Column(name = "PERMISSION_ID", length = 20)
     private Long permissionId;
 
     public Long getId()

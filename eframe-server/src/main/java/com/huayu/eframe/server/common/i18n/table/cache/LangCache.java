@@ -1,6 +1,5 @@
 package com.huayu.eframe.server.common.i18n.table.cache;
 
-import com.huayu.eframe.server.common.i18n.table.bo.Lang;
 import com.huayu.eframe.server.common.i18n.table.bo.LangValue;
 
 import java.util.List;
@@ -12,5 +11,5 @@ public interface LangCache
 {
     List<LangValue> getLangByLangCode(String langCode);
 
-    LangValue getLangByLangCodeAndLanguage(String langCode,String language);
+    LangValue getLangByLangCodeAndLanguage(String langCode, String language);
 }

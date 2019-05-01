@@ -1,5 +1,8 @@
 package com.huayu.eframe.management.flow.login;
 
+import com.huayu.eframe.flow.AbstractExecuteBusiness;
+import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.management.common.token.ManagerToken;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.request.LoginRequest;
@@ -8,9 +11,6 @@ import com.huayu.eframe.management.single.bo.StaffDetail;
 import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.common.Constant;
 import com.huayu.eframe.server.context.LocalAttribute;
-import com.huayu.eframe.flow.AbstractExecuteBusiness;
-import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.mvc.token.TokenManager;
@@ -44,12 +44,11 @@ public class LoginBusiness extends AbstractExecuteBusiness
         String password = request.getPassword();
         StaffDetail staffDetail = staffService.checkLogin(loginName, password);
         LoginResponse response = getLoginResponse(request, staffDetail);
-        param.addParameter(LOGIN_RESULT,response);
+        param.addParameter(LOGIN_RESULT, response);
 
 
         debug.endLog();
     }
-
 
 
     @Override
@@ -61,13 +60,13 @@ public class LoginBusiness extends AbstractExecuteBusiness
     }
 
 
-    public LoginResponse getLoginResponse( LoginRequest request, StaffDetail staff )
+    public LoginResponse getLoginResponse(LoginRequest request, StaffDetail staff)
     {
         LoginResponse response = new LoginResponse();
 
         String loginType = StringUtils.isNullOrEmpty(request.getType()) ? SecurityConstant.LOGIN_TYPE.LOGIN_REFRESH_EXPIRE_TIME : request.getType();
 
-        Token etk = TokenManager.createToken(ManagerToken.class, staff.getLogin(), loginType,getLocale(request, staff));
+        Token etk = TokenManager.createToken(ManagerToken.class, staff.getLogin(), loginType, getLocale(request, staff));
 
         LocalAttribute.addToken(etk);
 
@@ -81,14 +80,14 @@ public class LoginBusiness extends AbstractExecuteBusiness
 
     private Locale getLocale(LoginRequest request, StaffDetail staff)
     {
-        if(StringUtils.isNotNullAndEmpty(request.getLang()))
+        if (StringUtils.isNotNullAndEmpty(request.getLang()))
         {
             return new Locale(request.getLang());
         }
         String lang = staff.getLang();
-        if(StringUtils.isNotNullAndEmpty(lang))
+        if (StringUtils.isNotNullAndEmpty(lang))
         {
-             return new Locale(lang);
+            return new Locale(lang);
         }
         return ConfigurationUtils.getDefaultLocal();
     }
@@ -96,7 +95,8 @@ public class LoginBusiness extends AbstractExecuteBusiness
     private void httpRequestConver(Token etk)
     {
         HttpServletRequest httpRequest = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
-        if (null != httpRequest) {
+        if (null != httpRequest)
+        {
             debug.log("Success set http token in servlet");
             httpRequest.setAttribute(Constant.HTTP_TOKEN, etk);
         }

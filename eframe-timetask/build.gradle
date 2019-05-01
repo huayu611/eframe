@@ -1,5 +1,4 @@
-
 description = ''
 dependencies {
-  compile project(':eframe-global')
+    compile project(':eframe-global')
 }

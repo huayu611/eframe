@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2018/10/2.
  */
 @Service
-public class QueryPermissionByCodeBusiness  extends AbstractExecuteBusiness
+public class QueryPermissionByCodeBusiness extends AbstractExecuteBusiness
 {
     private final static String RESULT = "QueryPermissionComplextBusiness_RESULT";
 
@@ -27,11 +27,12 @@ public class QueryPermissionByCodeBusiness  extends AbstractExecuteBusiness
     public void before(BusinessParameter param)
     {
         QueryPermissionRequest request = param.getRequest();
-        if(StringUtils.isNullOrEmpty(request.getCode()))
+        if (StringUtils.isNullOrEmpty(request.getCode()))
         {
-            throw new IFPException(ManagementErrorCode.PERMISSION_CODE_CANNOT_NULL,"Role code can not be null or empty!");
+            throw new IFPException(ManagementErrorCode.PERMISSION_CODE_CANNOT_NULL, "Role code can not be null or empty!");
         }
     }
+
     @Override
     public void execute(BusinessParameter param)
     {

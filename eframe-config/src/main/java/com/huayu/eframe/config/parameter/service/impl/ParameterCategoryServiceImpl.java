@@ -24,7 +24,7 @@ public class ParameterCategoryServiceImpl implements ParameterCategoryService
         parameterCategory.setCategoryCode(categoryCode);
 
         ExampleMatcher em = ExampleMatcher.matching();
-        Example<ParameterCategory> example = Example.of(parameterCategory,em);
+        Example<ParameterCategory> example = Example.of(parameterCategory, em);
         List<ParameterCategory> categoryList = parameterCategoryRepository.findAll(example);
         return CollectionUtils.getFirstElement(categoryList);
     }

@@ -27,14 +27,14 @@ public class AddPermissionBusiness extends AbstractExecuteBusiness
         AddPermissionRequest request = param.getRequest();
         PermissionDetail detail = buildPermissionDetail(request);
         PermissionDetail responseDetail = permissionService.addPermission(detail);
-        param.addParameter(RESPONSE,responseDetail);
+        param.addParameter(RESPONSE, responseDetail);
         debug.log("AddPermissionBusiness finish");
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return  param.getParameter(RESPONSE);
+        return param.getParameter(RESPONSE);
 
     }
 

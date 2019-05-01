@@ -1,13 +1,11 @@
 package com.huayu.eframe.server.mvc.token;
 
 import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.mvc.token.instance.TokenInstance;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2018/7/21.
@@ -27,6 +25,7 @@ public class Token
     {
         session = new SessionToken();
     }
+
     private String primaryCode;
 
     private String primaryType;
@@ -146,7 +145,7 @@ public class Token
 
     public Locale getLocale()
     {
-        if(null == locale)
+        if (null == locale)
         {
             return ConfigurationUtils.getDefaultLocal();
         }

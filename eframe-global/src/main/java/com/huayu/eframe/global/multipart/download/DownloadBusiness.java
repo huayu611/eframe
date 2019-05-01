@@ -17,7 +17,7 @@ import java.io.*;
  * Created by Leo on 2019/4/14.
  */
 @Service("com.huayu.eframe.global.multipart.download.DownloadBusiness")
-public class DownloadBusiness  extends AbstractExecuteBusiness
+public class DownloadBusiness extends AbstractExecuteBusiness
 {
 
     private static final LogDebug debug = new LogDebug(DownloadBusiness.class);
@@ -28,18 +28,18 @@ public class DownloadBusiness  extends AbstractExecuteBusiness
         DownloadRequest downloadRequest = param.getRequest();
         String fileNameInSystem = downloadRequest.getType() + File.separator + downloadRequest.getFileName();
         File file = new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
-        if(!file.exists())
+        if (!file.exists())
         {
             file = new File(MultipartUtil.getSystemTempPath() + File.separator + fileNameInSystem);
         }
         debug.log(file.exists());
         debug.log(file.getAbsolutePath());
 
-        EasyParam easyParam =  LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
+        EasyParam easyParam = LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
         if (file.exists())
         {
             easyParam.getResponse().addHeader("Content-Disposition",
-                    "attachment;fileName="+downloadRequest.getFileName());// 设置文件名
+                    "attachment;fileName=" + downloadRequest.getFileName());// 设置文件名
             byte[] buffer = new byte[1024];
             FileInputStream fis = null;
             BufferedInputStream bis = null;
@@ -95,8 +95,8 @@ public class DownloadBusiness  extends AbstractExecuteBusiness
         response.setCode("0");
         response.setMsg(getSuccessResultDescrption());
         response.setData(tidyData(param));
-        tidyResponse(response,param);
-        recordLog(LogConstants.LOG_FINISH_STATUS,response);
+        tidyResponse(response, param);
+        recordLog(LogConstants.LOG_FINISH_STATUS, response);
         return null;
     }
 }

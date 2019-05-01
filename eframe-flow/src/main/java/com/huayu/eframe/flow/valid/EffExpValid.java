@@ -20,23 +20,23 @@ public class EffExpValid
 
     private Date expDate;
 
-    public EffExpValid(Date effective,Date expireDate)
+    public EffExpValid(Date effective, Date expireDate)
     {
         this.effDate = effective;
 
         this.expDate = expireDate;
     }
 
-    public EffExpValid(String effective,String expireDate)
+    public EffExpValid(String effective, String expireDate)
     {
-        if(StringUtils.isNotNullAndEmpty(effective))
+        if (StringUtils.isNotNullAndEmpty(effective))
         {
             if (!DateUtils.checkStringDate(effective))
             {
                 throw new IFPException(ErrorCode.REQUEST_EFFECITVE_INVALID, "Effective time invalid");
             }
         }
-        if(StringUtils.isNotNullAndEmpty(expireDate))
+        if (StringUtils.isNotNullAndEmpty(expireDate))
         {
             if (!DateUtils.checkStringDate(expireDate))
             {
@@ -50,27 +50,27 @@ public class EffExpValid
 
     public EffExpValid validExpireDate()
     {
-        if(null == expDate)
+        if (null == expDate)
         {
             return this;
         }
 
-        if(DateUtils.beforeDate(expDate, LocalAttribute.getNow()))
+        if (DateUtils.beforeDate(expDate, LocalAttribute.getNow()))
         {
-            throw new IFPException(ErrorCode.REQUEST_EXPIRETIME_BEFORE_CURRET_TIME,"Expire time can not before current time");
+            throw new IFPException(ErrorCode.REQUEST_EXPIRETIME_BEFORE_CURRET_TIME, "Expire time can not before current time");
         }
         return this;
     }
 
     public EffExpValid validExpireAndEffective()
     {
-        if(expDate == null || effDate == null)
+        if (expDate == null || effDate == null)
         {
             return this;
         }
-        if(DateUtils.beforeDate(expDate, effDate))
+        if (DateUtils.beforeDate(expDate, effDate))
         {
-            throw new IFPException(ErrorCode.REQUEST_EXPIRETIME_BEFORE_CURRET_TIME,"Expire time can not before current time");
+            throw new IFPException(ErrorCode.REQUEST_EXPIRETIME_BEFORE_CURRET_TIME, "Expire time can not before current time");
         }
         return this;
     }

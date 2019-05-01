@@ -12,10 +12,10 @@ public class ModifyPasswordRequest
     @EFrameRequest(length = 64)
     private String oldPassword;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String newPassword;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String login;
 
 

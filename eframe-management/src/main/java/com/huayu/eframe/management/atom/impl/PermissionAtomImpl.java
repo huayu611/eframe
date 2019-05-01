@@ -30,6 +30,7 @@ public class PermissionAtomImpl implements PermissionAtom
     private static final LogDebug debug = new LogDebug(PermissionAtomImpl.class);
     @Autowired
     private PermissionRepository permissionRepository;
+
     @Override
     public Permission insert(Permission permission)
     {
@@ -62,18 +63,18 @@ public class PermissionAtomImpl implements PermissionAtom
     }
 
     @Override
-    public List<Permission> getPermissionByCode(String code,Date now)
+    public List<Permission> getPermissionByCode(String code, Date now)
     {
         Permission condition = new Permission();
         condition.setPermissionCode(code);
-        return queryValidPermissionByCondition(condition,now);
+        return queryValidPermissionByCondition(condition, now);
     }
 
     @Override
-    public List<Permission> queryPermission(Permission permission,Date now)
+    public List<Permission> queryPermission(Permission permission, Date now)
     {
 
-        List<Permission> permissionList = queryValidPermissionByCondition(permission,now);
+        List<Permission> permissionList = queryValidPermissionByCondition(permission, now);
         return permissionList;
     }
 
@@ -81,34 +82,37 @@ public class PermissionAtomImpl implements PermissionAtom
     public Page<Permission> queryValidPermissionByPage(FramePaging fp, Date now, Permission condition)
     {
 
-        Sort sort = new Sort(Sort.Direction.DESC,"createTime");
-        PageRequest pageRequest = PageRequest.of(fp.getPage(),fp.getSize(),sort);
+        Sort sort = new Sort(Sort.Direction.DESC, "createTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
 
-        Specification<Permission> querySpecific = new Specification<Permission>(){
+        Specification<Permission> querySpecific = new Specification<Permission>()
+        {
 
             @Override
             public Predicate toPredicate(Root<Permission> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
             {
                 List<Predicate> predicates = new ArrayList<>();
-                if(null != now)
+                if (null != now)
                 {
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class),now));
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class),now));
+                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class), now));
+                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class), now));
                 }
-                if(null != condition.getPermissionName())
+                if (null != condition.getPermissionName())
                 {
                     String permissionName = condition.getPermissionName();
-                    permissionName = permissionName.replace(" ","%");
-                    predicates.add(criteriaBuilder.like(root.get("permissionName").as(String.class), "%" +permissionName + "%"));
+                    permissionName = permissionName.replace(" ", "%");
+                    predicates.add(criteriaBuilder.like(root.get("permissionName").as(String.class), "%" + permissionName + "%"));
                 }
-                if(null != condition.getPermissionCode())
+                if (null != condition.getPermissionCode())
                 {
                     predicates.add(criteriaBuilder.like(root.get("permissionCode").as(String.class), "%" + condition.getPermissionCode() + "%"));
                 }
-                predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class),"D"));
+                predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            };
+            }
+
+            ;
         };
         Page<Permission> resultList = this.permissionRepository.findAll(querySpecific, pageRequest);
         debug.log(resultList.getContent().size());
@@ -116,27 +120,30 @@ public class PermissionAtomImpl implements PermissionAtom
     }
 
 
-    private List<Permission> queryValidPermissionByCondition(Permission condition,Date now)
+    private List<Permission> queryValidPermissionByCondition(Permission condition, Date now)
     {
-        Specification<Permission> querySpecific = new Specification<Permission>(){
+        Specification<Permission> querySpecific = new Specification<Permission>()
+        {
 
             @Override
             public Predicate toPredicate(Root<Permission> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
             {
                 List<Predicate> predicates = new ArrayList<>();
-                if(null != now)
+                if (null != now)
                 {
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class),now));
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class),now));
+                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class), now));
+                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class), now));
                 }
-                if(null != condition.getPermissionCode())
+                if (null != condition.getPermissionCode())
                 {
                     predicates.add(criteriaBuilder.equal(root.get("permissionCode").as(String.class), condition.getPermissionCode()));
                 }
-                predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class),"D"));
+                predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
                 debug.log(predicates.size());
                 return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            };
+            }
+
+            ;
         };
         List<Permission> resultList = this.permissionRepository.findAll(querySpecific);
         debug.log(resultList.size());

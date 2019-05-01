@@ -17,7 +17,7 @@ public class QueryCopBaseInfoBusiness extends AbstractExecuteBusiness
 
     private static final LogDebug debug = new LogDebug(QueryCopBaseInfoBusiness.class);
 
-    private final static String RESULT= "QueryCopBaseInfoBusiness_RESULT";
+    private final static String RESULT = "QueryCopBaseInfoBusiness_RESULT";
     @Autowired
     private CopBaseInfoService copBaseInfoService;
 
@@ -26,7 +26,7 @@ public class QueryCopBaseInfoBusiness extends AbstractExecuteBusiness
     {
         debug.log("Begin Query Cop Info");
         CopBaseInfoDetail result = copBaseInfoService.query();
-        param.addParameter(RESULT,result);
+        param.addParameter(RESULT, result);
     }
 
     @Override

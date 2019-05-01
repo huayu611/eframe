@@ -17,7 +17,6 @@ import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by Leo on 2019/4/15.
@@ -43,7 +42,7 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
     @Override
     public TimeTaskBO queryTimeTaskByCode(String code)
     {
-        if(StringUtils.isNullOrEmpty(code))
+        if (StringUtils.isNullOrEmpty(code))
         {
             return null;
         }
@@ -56,10 +55,10 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
     }
 
     @Override
-    public  Page<TimeTaskBO> queryTimeTaskByPage(TimeTaskBO timeTaskBO, FramePaging fp)
+    public Page<TimeTaskBO> queryTimeTaskByPage(TimeTaskBO timeTaskBO, FramePaging fp)
     {
-        Sort sort = new Sort(Sort.Direction.DESC,"createTime");
-        PageRequest pageRequest = PageRequest.of(fp.getPage(),fp.getSize(),sort);
+        Sort sort = new Sort(Sort.Direction.DESC, "createTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
 
         Specification<TimeTaskBO> querySpecific = buildSpecification(timeTaskBO);
         Page<TimeTaskBO> resultList = this.timeTaskRepository.findAll(querySpecific, pageRequest);
@@ -76,11 +75,10 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
     }
 
     @Override
-    public void updateTimeTaskAddExecuteTime(Long id,Date date)
+    public void updateTimeTaskAddExecuteTime(Long id, Date date)
     {
-        timeTaskRepository.updateTimeTaskAddExecuteCount(id,date);
+        timeTaskRepository.updateTimeTaskAddExecuteCount(id, date);
     }
-
 
 
     private Specification<TimeTaskBO> buildSpecification(TimeTaskBO condition)
@@ -89,19 +87,19 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
         {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(null != condition.getName())
+            if (null != condition.getName())
             {
                 predicates.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + condition.getName() + "%"));
             }
-            if(null != condition.getCode())
+            if (null != condition.getCode())
             {
-                predicates.add(criteriaBuilder.equal(root.get("code").as(String.class),  condition.getCode()));
+                predicates.add(criteriaBuilder.equal(root.get("code").as(String.class), condition.getCode()));
             }
-            if(null != condition.getStatus())
+            if (null != condition.getStatus())
             {
-                predicates.add(criteriaBuilder.equal(root.get("status").as(String.class),  condition.getStatus()));
+                predicates.add(criteriaBuilder.equal(root.get("status").as(String.class), condition.getStatus()));
             }
-            predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class),"D"));
+            predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
             return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
         };
     }

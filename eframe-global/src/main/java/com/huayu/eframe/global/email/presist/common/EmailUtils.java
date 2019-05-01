@@ -11,7 +11,7 @@ public class EmailUtils
 
     public static String encryptPassword(String password)
     {
-       return AESEncrypt.aesEcbEncode(password, KEY);
+        return AESEncrypt.aesEcbEncode(password, KEY);
     }
 
     public static String decodePassword(String password)

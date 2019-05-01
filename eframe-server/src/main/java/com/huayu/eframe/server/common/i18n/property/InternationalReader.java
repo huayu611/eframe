@@ -29,19 +29,19 @@ public abstract class InternationalReader implements InitializingBean
                 if (null != res)
                 {
 
-                   String filename = res.getFilename();
-                   String fileNameWithoutSuffix = StringUtils.removeLastString(filename,".properties");
+                    String filename = res.getFilename();
+                    String fileNameWithoutSuffix = StringUtils.removeLastString(filename, ".properties");
                     fileNameList.add(getPath() + fileNameWithoutSuffix);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 System.out.print("System parameter load file and file name is " + res.getFilename());
             }
         }
         allProperties = new String[fileNameList.size()];
 
-        for(int i =0;i< fileNameList.size();i++)
+        for (int i = 0; i < fileNameList.size(); i++)
         {
             allProperties[i] = fileNameList.get(i);
         }
@@ -49,7 +49,7 @@ public abstract class InternationalReader implements InitializingBean
 
     public String[] getAllResource()
     {
-            return allProperties;
+        return allProperties;
     }
 
     protected abstract String getPath();

@@ -12,7 +12,7 @@ public class AddMenuRequest
     @JsonIgnore
     private String code;
 
-    @EFrameRequest(required = true,length = 64)
+    @EFrameRequest(required = true, length = 64)
     private String name;
     @EFrameRequest(length = 128)
     private String path;

@@ -11,25 +11,26 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/3/1.
  */
 @Service
-public class ModifyParameterBusiness  extends AbstractExecuteBusiness
+public class ModifyParameterBusiness extends AbstractExecuteBusiness
 {
     private final static String RESULT = "ModifyParameterBusiness_RESULT";
 
     @Autowired
     private ParameterService parameterService;
+
     @Override
     public void execute(BusinessParameter param)
     {
         ModifyParameterRequest modifyParameterRequest = param.getRequest();
         ParameterDetail parameterDetail = buildParameterDetail(modifyParameterRequest);
         ParameterDetail newParameterDetail = parameterService.updateParameter(parameterDetail);
-        param.addParameter(RESULT,newParameterDetail);
+        param.addParameter(RESULT, newParameterDetail);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-       return param.getParameter(RESULT);
+        return param.getParameter(RESULT);
 
     }
 

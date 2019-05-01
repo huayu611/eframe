@@ -7,7 +7,6 @@ public interface ConfigErrorCode
 {
 
 
-
     //添加控参
     String ADD_PARAMETER_PARAMETER_EXIST = String.valueOf("1100");
 

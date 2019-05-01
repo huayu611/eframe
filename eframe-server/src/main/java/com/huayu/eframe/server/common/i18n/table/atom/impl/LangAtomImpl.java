@@ -32,9 +32,9 @@ public class LangAtomImpl implements LangAtom
     public List<Lang> save(String langCode, List<Lang> values)
     {
         List<Lang> result = new ArrayList<>();
-        if(CollectionUtils.isNotEmpty(values))
+        if (CollectionUtils.isNotEmpty(values))
         {
-            for(Lang lang : values)
+            for (Lang lang : values)
             {
                 result.add(save(lang));
             }
@@ -45,7 +45,7 @@ public class LangAtomImpl implements LangAtom
     @Override
     public Lang save(Lang lang)
     {
-        if(null != lang)
+        if (null != lang)
         {
             return langRepository.save(lang);
         }
@@ -56,11 +56,11 @@ public class LangAtomImpl implements LangAtom
     public List<Lang> update(String langCode, List<Lang> values)
     {
         List<Lang> result = new ArrayList<>();
-        if(CollectionUtils.isNotEmpty(values))
+        if (CollectionUtils.isNotEmpty(values))
         {
-            for(Lang lang : values)
+            for (Lang lang : values)
             {
-                if(null != lang.getId())
+                if (null != lang.getId())
                 {
                     result.add(langRepository.save(lang));
                 }

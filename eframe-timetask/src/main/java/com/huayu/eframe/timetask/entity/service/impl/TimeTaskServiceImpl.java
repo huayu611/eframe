@@ -87,7 +87,7 @@ public class TimeTaskServiceImpl implements TimeTaskService
     @Override
     public TimeTaskDetail queryTimeTaskByCode(String timeTaskCode)
     {
-        if(StringUtils.isNullOrEmpty(timeTaskCode))
+        if (StringUtils.isNullOrEmpty(timeTaskCode))
         {
             return null;
         }
@@ -99,14 +99,14 @@ public class TimeTaskServiceImpl implements TimeTaskService
     public PageObject queryTimeTaskByPage(TimeTaskDetail timeTaskDetail, PagingRequest pagingRequest)
     {
         TimeTaskBO timeTaskBO = new TimeTaskBO();
-        putInformation(timeTaskBO,timeTaskDetail);
+        putInformation(timeTaskBO, timeTaskDetail);
         FramePaging framePaging = new FramePaging();
         if (null != pagingRequest)
         {
             framePaging.setPage(pagingRequest.getPage());
             framePaging.setSize(pagingRequest.getSize());
         }
-        Page<TimeTaskBO> timeTaskPaging =  timeTaskAtom.queryTimeTaskByPage(timeTaskBO,framePaging);
+        Page<TimeTaskBO> timeTaskPaging = timeTaskAtom.queryTimeTaskByPage(timeTaskBO, framePaging);
 
         PagingResponse pagingResponse = new PagingResponse();
         pagingResponse.setTotal(timeTaskPaging.getTotalElements());
@@ -143,9 +143,9 @@ public class TimeTaskServiceImpl implements TimeTaskService
         TimeTaskBO timeTask = timeTaskAtom.queryTimeTaskByCode(timeTaskDetail.getTimeTaskCode());
         if (null == timeTask)
         {
-            throw new IFPException(TimeTaskErrorCode.RUNTING_TIME_TASK_CODE_NOT_EXIST,"Time task not exist");
+            throw new IFPException(TimeTaskErrorCode.RUNTING_TIME_TASK_CODE_NOT_EXIST, "Time task not exist");
         }
-        timeTaskAtom.updateTimeTaskAddExecuteTime(timeTask.getId(),timeTaskDetail.getNextTime());
+        timeTaskAtom.updateTimeTaskAddExecuteTime(timeTask.getId(), timeTaskDetail.getNextTime());
         LocalAttribute.addNeedRefreshCache(TimeTaskCache.CACHE_NAME);
 
 
@@ -156,7 +156,7 @@ public class TimeTaskServiceImpl implements TimeTaskService
     {
         TimeTaskInstance timeTaskInstance = new TimeTaskInstance();
         TimeTaskBO timeTaskBO = timeTaskAtom.queryTimeTaskByCode(timeTaskInstanceDetail.getTimeTaskCode());
-        if(null == timeTaskBO)
+        if (null == timeTaskBO)
         {
             return null;
         }
@@ -167,7 +167,7 @@ public class TimeTaskServiceImpl implements TimeTaskService
             framePaging.setPage(pagingRequest.getPage());
             framePaging.setSize(pagingRequest.getSize());
         }
-        Page<TimeTaskInstance> timeTaskPaging =  timeTaskInstanceAtom.queryTimeTaskInstanceByPage(timeTaskInstance,framePaging);
+        Page<TimeTaskInstance> timeTaskPaging = timeTaskInstanceAtom.queryTimeTaskInstanceByPage(timeTaskInstance, framePaging);
 
         PagingResponse pagingResponse = new PagingResponse();
         pagingResponse.setTotal(timeTaskPaging.getTotalElements());
@@ -175,7 +175,7 @@ public class TimeTaskServiceImpl implements TimeTaskService
         pagingResponse.setTotalPage(timeTaskPaging.getTotalPages());
         PageObject pageObject = new PageObject();
         pageObject.setPagingResponse(pagingResponse);
-        pageObject.setResponse(buildTimeTaskInstanceDetailList(timeTaskPaging.getContent(),timeTaskBO));
+        pageObject.setResponse(buildTimeTaskInstanceDetailList(timeTaskPaging.getContent(), timeTaskBO));
         return pageObject;
     }
 
@@ -261,9 +261,10 @@ public class TimeTaskServiceImpl implements TimeTaskService
     private List<TimeTaskDetail> buildTimeTaskDetailList(List<TimeTaskBO> timeTaskBOList)
     {
         List<TimeTaskDetail> details = new ArrayList<>();
-        CollectionUtils.iterator(timeTaskBOList,(c,v,i)->{
+        CollectionUtils.iterator(timeTaskBOList, (c, v, i) ->
+        {
             TimeTaskDetail timeTaskDetail = buildTimeTaskDetail(v);
-            if(null != timeTaskDetail)
+            if (null != timeTaskDetail)
             {
                 details.add(timeTaskDetail);
             }
@@ -292,12 +293,13 @@ public class TimeTaskServiceImpl implements TimeTaskService
         return timeTaskDetail;
     }
 
-    private List<TimeTaskInstanceDetail> buildTimeTaskInstanceDetailList(List<TimeTaskInstance> timeTaskInstances,TimeTaskBO timeTaskBO)
+    private List<TimeTaskInstanceDetail> buildTimeTaskInstanceDetailList(List<TimeTaskInstance> timeTaskInstances, TimeTaskBO timeTaskBO)
     {
         List<TimeTaskInstanceDetail> details = new ArrayList<>();
-        CollectionUtils.iterator(timeTaskInstances,(c,v,i)->{
-            TimeTaskInstanceDetail timeTaskInstanceDetail = buildTimeTaskInstanceDetail(v,timeTaskBO);
-            if(null != timeTaskInstanceDetail)
+        CollectionUtils.iterator(timeTaskInstances, (c, v, i) ->
+        {
+            TimeTaskInstanceDetail timeTaskInstanceDetail = buildTimeTaskInstanceDetail(v, timeTaskBO);
+            if (null != timeTaskInstanceDetail)
             {
                 details.add(timeTaskInstanceDetail);
             }
@@ -306,9 +308,9 @@ public class TimeTaskServiceImpl implements TimeTaskService
         return details;
     }
 
-    private TimeTaskInstanceDetail buildTimeTaskInstanceDetail(TimeTaskInstance timeTaskInstance,TimeTaskBO timeTaskBO)
+    private TimeTaskInstanceDetail buildTimeTaskInstanceDetail(TimeTaskInstance timeTaskInstance, TimeTaskBO timeTaskBO)
     {
-        if(null == timeTaskInstance)
+        if (null == timeTaskInstance)
         {
             return null;
         }

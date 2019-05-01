@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Created by Leo on 2019/1/7.
  */
-@XmlRootElement(name="value")
+@XmlRootElement(name = "value")
 public class DictDetail
 {
 
@@ -16,7 +16,7 @@ public class DictDetail
 
     private String name;
 
-    @XmlAttribute(name="code")
+    @XmlAttribute(name = "code")
     public String getCode()
     {
         return code;
@@ -26,7 +26,8 @@ public class DictDetail
     {
         this.code = code;
     }
-    @XmlAttribute(name="lang")
+
+    @XmlAttribute(name = "lang")
     public String getLangCode()
     {
         return langCode;
@@ -37,7 +38,7 @@ public class DictDetail
         this.langCode = langCode;
     }
 
-    @XmlAttribute(name="name")
+    @XmlAttribute(name = "name")
     public String getName()
     {
         return name;

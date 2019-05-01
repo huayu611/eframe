@@ -18,6 +18,7 @@ public class VersionNotRightException extends AuthenticationException implements
     {
         super(msg, t);
     }
+
     @Override
     public String getErrorCode()
     {

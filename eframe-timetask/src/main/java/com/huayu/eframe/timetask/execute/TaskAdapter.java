@@ -9,7 +9,7 @@ import java.util.Map;
 public abstract class TaskAdapter implements Task
 {
 
-    private static Map<Task,String> storeWitheBeanMap = new HashMap<>();
+    private static Map<Task, String> storeWitheBeanMap = new HashMap<>();
 
     private Object obj = new Object();
 
@@ -24,10 +24,9 @@ public abstract class TaskAdapter implements Task
     {
         synchronized (obj)
         {
-            storeWitheBeanMap.put(this,name);
+            storeWitheBeanMap.put(this, name);
         }
     }
-
 
 
 }

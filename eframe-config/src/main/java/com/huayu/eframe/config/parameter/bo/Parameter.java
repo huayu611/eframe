@@ -10,29 +10,29 @@ import java.util.Date;
 public class Parameter extends StandardLang
 {
     @Id
-    @Column(name="ID", length=20)
+    @Column(name = "ID", length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="PARAMETER_CODE", length=255)
+    @Column(name = "PARAMETER_CODE", length = 255)
     private String parameterCode;
 
-    @Column(name="PARAMETER_NAME", length=255)
+    @Column(name = "PARAMETER_NAME", length = 255)
     private String parameterName;
 
-    @Column(name="CATEGORY_CODE", length=255)
+    @Column(name = "CATEGORY_CODE", length = 255)
     private String category;
 
-    @Column(name="NAME_CODE", length=255)
+    @Column(name = "NAME_CODE", length = 255)
     private String nameCode;
 
-    @Column(name="VALUE", length=255)
+    @Column(name = "VALUE", length = 255)
     private String value;
 
-    @Column(name="LAST_UPDATE_TIME", length=255)
+    @Column(name = "LAST_UPDATE_TIME", length = 255)
     private Date lastUpdateTime;
 
-    @Column(name="LAST_UPDATE_OPERATOR", length=255)
+    @Column(name = "LAST_UPDATE_OPERATOR", length = 255)
     private Long operatorId;
 
     public Long getId()

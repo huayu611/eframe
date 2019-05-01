@@ -50,7 +50,7 @@ public class PermissionServiceImpl implements PermissionService
     {
         Permission rp = new Permission();
         rp.setPermissionCode(code);
-        List<Permission> urlList = permissionAtom.queryPermission(rp,LocalAttribute.getNow());
+        List<Permission> urlList = permissionAtom.queryPermission(rp, LocalAttribute.getNow());
         return CollectionUtils.getFirstElement(urlList);
     }
 
@@ -120,7 +120,7 @@ public class PermissionServiceImpl implements PermissionService
     public PermissionDetail queryPermissionByCode(String roleCode)
     {
         Permission permission = getPermissionByCode(roleCode);
-        if(null == permission)
+        if (null == permission)
         {
             return null;
         }
@@ -129,20 +129,20 @@ public class PermissionServiceImpl implements PermissionService
     }
 
     @Override
-    public PageObject queryPermissionByPage(PermissionDetail permissionDetail,PagingRequest pagingRequest)
+    public PageObject queryPermissionByPage(PermissionDetail permissionDetail, PagingRequest pagingRequest)
     {
 
         Date now = LocalAttribute.getNow();
         FramePaging framePaging = null;
         Permission permission = null;
 
-        if(null != permissionDetail)
+        if (null != permissionDetail)
         {
             permission = new Permission();
             permission.setPermissionCode(permissionDetail.getCode());
             permission.setPermissionName(permissionDetail.getName());
         }
-        if(null != pagingRequest)
+        if (null != pagingRequest)
         {
             framePaging = new FramePaging();
             framePaging.setSize(pagingRequest.getSize());
@@ -154,9 +154,9 @@ public class PermissionServiceImpl implements PermissionService
         List<Permission> permissionList = resultList.getContent();
         List<PermissionDetail> detailList = new ArrayList<>();
         pageObject.setResponse(detailList);
-        if(CollectionUtils.isNotEmpty(permissionList))
+        if (CollectionUtils.isNotEmpty(permissionList))
         {
-            for(Permission per : permissionList)
+            for (Permission per : permissionList)
             {
                 detailList.add(securityServiceImplUtil.getPermissionDetail(per));
             }
@@ -181,8 +181,8 @@ public class PermissionServiceImpl implements PermissionService
     private PermissionDetail buildPermissionDetail(Long permissionId)
     {
 
-        Permission permission =getPermissionByID(permissionId);
-        if(null == permission)
+        Permission permission = getPermissionByID(permissionId);
+        if (null == permission)
         {
             return null;
         }
@@ -193,15 +193,15 @@ public class PermissionServiceImpl implements PermissionService
 
     private List<PermissionDetail> getPermissionDetails(List<Permission> resultList)
     {
-        if(CollectionUtils.isEmpty(resultList))
+        if (CollectionUtils.isEmpty(resultList))
         {
             return null;
         }
         List<PermissionDetail> result = new ArrayList<>();
-        for(Permission p : resultList)
+        for (Permission p : resultList)
         {
             PermissionDetail detail = securityServiceImplUtil.getPermissionDetail(p);
-            if(null != detail)
+            if (null != detail)
             {
                 result.add(detail);
             }
@@ -210,12 +210,11 @@ public class PermissionServiceImpl implements PermissionService
     }
 
 
-
-
     private void checkPermissionExist(String permissionCode)
     {
         Permission permission = getPermissionByCode(permissionCode);
-        if (null != permission) {
+        if (null != permission)
+        {
             String[] paramArr = new String[]{permissionCode};
             throw new IFPException(ManagementErrorCode.ADD_PERMISSION_CODE_EXIST_ALREADY, "Permission exist already!", paramArr);
         }

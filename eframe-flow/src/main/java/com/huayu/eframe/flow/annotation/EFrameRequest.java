@@ -1,7 +1,5 @@
 package com.huayu.eframe.flow.annotation;
 
-import com.huayu.eframe.server.tool.util.CollectionUtils;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

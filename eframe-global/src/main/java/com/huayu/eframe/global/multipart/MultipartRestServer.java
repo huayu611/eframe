@@ -1,21 +1,16 @@
 package com.huayu.eframe.global.multipart;
 
+import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.global.multipart.download.DownloadBusiness;
 import com.huayu.eframe.global.multipart.download.DownloadRequest;
-import com.huayu.eframe.server.common.ConfigurationUtils;
-import com.huayu.eframe.flow.Flow;
-import com.huayu.eframe.global.system.currentlogin.QueryCurrentLoginBusiness;
 import com.huayu.eframe.global.multipart.upload.UploadBusiness;
 import com.huayu.eframe.global.multipart.upload.UploadRequest;
-import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.*;
 
 /**
  * Created by Leo on 2019/1/18.
@@ -29,8 +24,8 @@ public class MultipartRestServer
     @RequestMapping(value = "/upload/{type}",
             method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Object uploadTemp(MultipartFile file,@PathVariable("type") String type,
-                         EasyParam easyParam)
+    public Object uploadTemp(MultipartFile file, @PathVariable("type") String type,
+                             EasyParam easyParam)
     {
         UploadRequest uploadRequest = new UploadRequest();
         uploadRequest.setMultipartFile(file);
@@ -47,13 +42,13 @@ public class MultipartRestServer
     public Object uploadAdvance(MultipartFile file,
                                 @PathVariable("type") String type,
                                 @PathVariable("temp") String temp,
-                         EasyParam easyParam)
+                                EasyParam easyParam)
     {
         UploadRequest uploadRequest = new UploadRequest();
         uploadRequest.setMultipartFile(file);
         uploadRequest.setType(type);
 
-        uploadRequest.setTemp(StringUtils.equalString(temp,"true"));
+        uploadRequest.setTemp(StringUtils.equalString(temp, "true"));
         Object obj = Flow.execute(UploadBusiness.class, uploadRequest, easyParam);
         return obj;
     }

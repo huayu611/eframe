@@ -19,7 +19,7 @@ public interface TimeTaskService
 
     String deleteTimeTask(String code);
 
-    void  updateTimeTaskExecute(TimeTaskDetail timeTaskDetail);
+    void updateTimeTaskExecute(TimeTaskDetail timeTaskDetail);
 
     PageObject queryTimeTaskInstanceByPage(TimeTaskInstanceDetail timeTaskDetail, PagingRequest pagingRequest);
 

@@ -31,20 +31,21 @@ public class SwitchDebugBusiness extends AbstractExecuteBusiness
         switchLog(switchDebugRequest.getLevel());
     }
 
-    private  void switchLog(Integer level)
+    private void switchLog(Integer level)
     {
         Set<String> logger = logLevelCustomization.getLogger();
-        CollectionUtils.iterator(logger,(c,v,i)->{
-            switchLogs(v,level);
+        CollectionUtils.iterator(logger, (c, v, i) ->
+        {
+            switchLogs(v, level);
         });
     }
 
 
-    private void switchLogs(String clazz,Integer levelValue)
+    private void switchLogs(String clazz, Integer levelValue)
     {
         Logger logger = LoggerFactory.getLogger(clazz);
         Level level = Level.toLevel(levelValue);
-        if(logger instanceof ch.qos.logback.classic.Logger)
+        if (logger instanceof ch.qos.logback.classic.Logger)
         {
             ch.qos.logback.classic.Logger classicLogger = (ch.qos.logback.classic.Logger) logger;
             classicLogger.setLevel(level);
@@ -52,10 +53,9 @@ public class SwitchDebugBusiness extends AbstractExecuteBusiness
     }
 
 
-
     private Long getDurationForSwitchDebug()
     {
-        String timeDuration = ParameterUtil.getParameterValueByCode("system_debug_open_duration","300");
+        String timeDuration = ParameterUtil.getParameterValueByCode("system_debug_open_duration", "300");
         return Long.valueOf(timeDuration);
     }
 

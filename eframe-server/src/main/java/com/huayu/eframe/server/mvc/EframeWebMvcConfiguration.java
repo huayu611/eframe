@@ -24,7 +24,8 @@ public class EframeWebMvcConfiguration extends DelegatingWebMvcConfiguration
     }
 
     @Override
-    protected void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+    protected void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+    {
         argumentResolvers.add(new EFrameHandlerMethodReturnValueHandler());
     }
 }

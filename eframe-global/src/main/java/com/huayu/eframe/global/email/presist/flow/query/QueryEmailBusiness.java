@@ -36,22 +36,22 @@ public class QueryEmailBusiness extends AbstractExecuteBusiness
     {
         QueryEmailRequest request = param.getRequest();
         EmailDetail emailDetail = buildEmailDetail(request);
-        PageObject pageResult = emailService.queryEmailByPage(request.getPage(),emailDetail);
+        PageObject pageResult = emailService.queryEmailByPage(request.getPage(), emailDetail);
         param.addParameter(RESULT, pageResult.getResponse());
-        param.addParameter(PAGE_OBJECT,pageResult);
+        param.addParameter(PAGE_OBJECT, pageResult);
     }
 
     @Override
     protected Object tidyData(BusinessParameter param)
     {
-        return   param.getParameter(RESULT);
+        return param.getParameter(RESULT);
     }
 
     @Override
     protected void tidyResponse(RestfulResponse response, BusinessParameter param)
     {
-        PageObject pageObject =  param.getParameter(PAGE_OBJECT);
-        tidyPagingResponse(pageObject,response);
+        PageObject pageObject = param.getParameter(PAGE_OBJECT);
+        tidyPagingResponse(pageObject, response);
     }
 
     private EmailDetail buildEmailDetail(QueryEmailRequest queryEmailRequest)
