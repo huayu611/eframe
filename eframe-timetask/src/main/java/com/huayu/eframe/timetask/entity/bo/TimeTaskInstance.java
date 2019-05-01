@@ -1,5 +1,6 @@
 package com.huayu.eframe.timetask.entity.bo;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**

@@ -2,6 +2,7 @@ package com.huayu.eframe.timetask.entity.bo;
 
 import com.huayu.eframe.server.common.standard.ValidTime;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
