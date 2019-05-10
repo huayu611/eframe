@@ -10,7 +10,7 @@ public class DownloadRequest
     @EFrameRequest(required = true, length = 32)
     private String type;
 
-    @EFrameRequest(required = true, length = 128)
+    @EFrameRequest(required = true, length = 256)
     private String fileName;
 
     public String getType()

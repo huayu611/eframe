@@ -69,9 +69,9 @@ public class AESEncrypt
 
     public static void main(String[] args) throws Exception
     {
-        String sessionKey = "NuUojFKl3t0tcrdsPjvl+A==";
-        String encryptedData = "Hi2voV8UOuFqKzyAdNr1tUzG9+TP6yk1f1fvGXzixfYCCf2CehOY/ubiLK6a4zqN5pR4VBG4ZEMmyx0aHLaE8Qq23YBr6do1//PJeA8Xe4cp7qwLCx0zZv495rISPoqxc7BVAD8laNxNvot8A1ogPFKvfXS5j9EmuylYfhhRivbbwZ8HBZlsjpXQbCZ6IdHA5yWA7Zs0U6L0WtBzLuk+rnjHDUgQoHezDmbT8y8nsKFxKOC7dGQDWLigYm80ZoAGqr7APVsYq79m52EnBZzYXb8QcVOT/g6sAA4fCNQ7NKCc9Ow3Il4v0jm6223Lqfb/B6s2msuuXR/cbrOjEOTO+3Aadgj9uZHR8lQ4sggnAoLEJdYSxm81isepmYbNByfSSP4PVwynEfNSASGmltx+8Z+uVEZn1L4x9hq15+UkoPpqk0WKcHTh1npR/tkmUxO8OrhhIkxefnb8eoEgRDXnYI4myNWBfLw5pFv16MAPeyo=";
-        String iv = "dmaptaQz856OTZreR03gTw==";
+        String sessionKey = "EGROtYEiw5HZ/9c+CvKe8A==";
+        String encryptedData = "UMoKZMt60Wat3wfMfFli3ekUSeliDAW6dqZfViev1zBGGxPXFm/OO5KSKTrq7cl5vxhk3wzcDjbeMO/2/PTD3wGft8J+4NJHSwTqQbNhLSeABXl3T4f0yL7yFi4yCTUOny9juurubmhYiNeDaft+ClqE6HsZErZg0Mpe3ZhmdpdmLk2/Uqig6cmELKT67uLZ8u9zo1V6QbrLQoxnBBZ0U8+Jq5y9uz6+slR/ovRxr4+T1xdYr6Aiaump5ilO3vMVy6wPTdt5PaNNUfJtJ/ibQtKFYccA88xHYojlHEzZ3x09AUS/Oi4qYOstHXur36/m6V5XxQkmnAT3fmLvwxqQoJ2S7MT8HQmaOkXy4iMldc2EGtuDR277S+LMTRKmx6RUy+w48cSOfEy2WUtp27AElDoiBrqBJLFGVbbymA5OGPc3TYkK9LHSN1jVTqScBx/OKjGzoMw4625788FCtVrwpKznsvOsTXApcW5SI2WL73Q=";
+        String iv = "Em365hWJRt19lpEL0ArCNw==";
 
 
         String a = aesCbcDecodeByString(encryptedData,sessionKey,iv);

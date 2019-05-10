@@ -26,5 +26,8 @@ public interface UploadRuler
         return "/eframe/multipart-manager/download/";
     }
 
+    //仅对多文件上传有效，验证文件本批量最大个数
+    default int getFileNumber(){return 9;}
+
     ;
 }

@@ -1,11 +1,14 @@
 package com.huayu.eframe.global.multipart;
 
 import com.huayu.eframe.global.multipart.upload.ruler.UploadRuler;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.tool.basic.StringUtils;
+import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Leo on 2019/4/14.
@@ -13,6 +16,9 @@ import java.io.IOException;
 
 public class MultipartResolve
 {
+
+    private final static LogDebug logDebug =  new LogDebug(MultipartResolve.class);
+
     public static void use(String fullPath, UploadRuler uploadRuler)
     {
 
@@ -24,6 +30,13 @@ public class MultipartResolve
         }
 
         useByFileName(uploadRuler, fileName);
+    }
+
+    public static void useMore(List<String> fullPaths, UploadRuler uploadRuler)
+    {
+        CollectionUtils.iterator(fullPaths,(c,v,i)->{
+            use(v,uploadRuler);
+        });
     }
 
     public static void useByFileName(UploadRuler uploadRuler, String fileName)
@@ -41,8 +54,15 @@ public class MultipartResolve
         }
         catch (IOException e)
         {
-            ;
+            ;logDebug.errorLog(e);
         }
+    }
+
+    public static void useByFileNames(UploadRuler uploadRuler, List<String> fileNames)
+    {
+      CollectionUtils.iterator(fileNames,(c,v,i)->{
+          useByFileName(uploadRuler,v);
+      });
     }
 
 }

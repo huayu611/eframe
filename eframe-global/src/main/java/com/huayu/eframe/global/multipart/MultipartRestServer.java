@@ -4,6 +4,8 @@ import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.global.multipart.download.DownloadBusiness;
 import com.huayu.eframe.global.multipart.download.DownloadRequest;
 import com.huayu.eframe.global.multipart.upload.UploadBusiness;
+import com.huayu.eframe.global.multipart.upload.UploadMultipleBusiness;
+import com.huayu.eframe.global.multipart.upload.UploadMultipleRequest;
 import com.huayu.eframe.global.multipart.upload.UploadRequest;
 import com.huayu.eframe.server.mvc.handler.EasyParam;
 import com.huayu.eframe.server.tool.basic.StringUtils;
@@ -11,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * Created by Leo on 2019/1/18.
@@ -36,6 +40,21 @@ public class MultipartRestServer
     }
 
     @ResponseBody
+    @RequestMapping(value = "/upload-multiple/{type}",
+            method = RequestMethod.POST,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object uploadMultipleFile(List<MultipartFile> file, @PathVariable("type") String type,
+                                     EasyParam easyParam)
+    {
+        UploadMultipleRequest uploadMultipleRequest = new UploadMultipleRequest();
+        uploadMultipleRequest.setMultipartFiles(file);
+        uploadMultipleRequest.setTemp(true);
+        uploadMultipleRequest.setType(type);
+        Object obj = Flow.execute(UploadMultipleBusiness.class, uploadMultipleRequest, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/upload/{type}/temp",
             method = RequestMethod.POST,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -53,6 +72,25 @@ public class MultipartRestServer
         return obj;
     }
 
+
+    @ResponseBody
+    @RequestMapping(value = "/upload-multiple/{type}/temp",
+            method = RequestMethod.POST,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object uploadMultipleAdvance(List<MultipartFile> files,
+                                @PathVariable("type") String type,
+                                @PathVariable("temp") String temp,
+                                EasyParam easyParam)
+    {
+        UploadMultipleRequest uploadMultipleRequest = new UploadMultipleRequest();
+        uploadMultipleRequest.setMultipartFiles(files);
+        uploadMultipleRequest.setType(type);
+
+        uploadMultipleRequest.setTemp(StringUtils.equalString(temp, "true"));
+        Object obj = Flow.execute(UploadMultipleBusiness.class, uploadMultipleRequest, easyParam);
+        return obj;
+    }
+
     //文件下载相关代码
     @RequestMapping(value = "/download/{type}/{fileName:.+}*", method = RequestMethod.GET)
     public String downloadImage(@PathVariable("type") String type,
@@ -64,61 +102,6 @@ public class MultipartRestServer
         downloadRequest.setType(type);
         Flow.execute(DownloadBusiness.class, downloadRequest, easyParam);
         return null;
-//        String fileNameInSystem = type + File.separator + fileName;
-//        File file = new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
-//        debug.log(file.exists());
-//        debug.log(file.getAbsolutePath());
-//        if (file.exists())
-//        {
-//            easyParam.getResponse().addHeader("Content-Disposition",
-//                    "attachment;fileName="+fileName);// 设置文件名
-//            byte[] buffer = new byte[1024];
-//            FileInputStream fis = null;
-//            BufferedInputStream bis = null;
-//            try
-//            {
-//                fis = new FileInputStream(file);
-//                bis = new BufferedInputStream(fis);
-//                OutputStream os = easyParam.getResponse().getOutputStream();
-//                int i = bis.read(buffer);
-//                while (i != -1)
-//                {
-//                    os.write(buffer, 0, i);
-//                    i = bis.read(buffer);
-//                }
-//                System.out.println("success");
-//            }
-//            catch (Exception e)
-//            {
-//                e.printStackTrace();
-//            }
-//            finally
-//            {
-//                if (bis != null)
-//                {
-//                    try
-//                    {
-//                        bis.close();
-//                    }
-//                    catch (IOException e)
-//                    {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                if (fis != null)
-//                {
-//                    try
-//                    {
-//                        fis.close();
-//                    }
-//                    catch (IOException e)
-//                    {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        }
-//        return null;
     }
 
 

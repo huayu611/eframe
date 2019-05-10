@@ -52,4 +52,18 @@ public class JSonUtils
         }
         return newJson;
     }
+
+    public static <T> T jsonToObject(String jsonStr, Class<T> valueType)
+    {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try
+        {
+            return objectMapper.readValue(jsonStr, valueType);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

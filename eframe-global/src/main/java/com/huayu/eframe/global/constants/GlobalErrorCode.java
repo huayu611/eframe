@@ -25,4 +25,6 @@ public interface GlobalErrorCode
 
     String UPLOAD_FILE_SUFFIX_ERROR = "15010";
 
+    String UPLOAD_FILE_REACH_MAX_FILE_NUMBER = "15011";
+
 }
