@@ -264,8 +264,17 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     }
 
     //v1.1.0添加，为了一些不需要事务的操作。以免系统额外开支
+    //v1.1.0默认get都不添加事务
     protected boolean isNeedTransaction()
     {
-        return true;
+        HttpServletRequest request = LocalAttribute.getValue(FlowConstant.HTTP_REQUEST);
+        if(null == request)
+        {
+            return false;
+        }
+        String method = request.getMethod();
+        return !StringUtils.equalStringNoCareUpperAndLower(method,"GET");
+
+
     }
 }

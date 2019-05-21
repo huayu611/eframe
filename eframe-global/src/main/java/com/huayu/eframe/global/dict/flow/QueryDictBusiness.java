@@ -41,6 +41,10 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
         {
             for (DictDetail dictDetail : result)
             {
+                if(null == dictDetail || StringUtils.equalStringNoCareUpperAndLower(dictDetail.getDisplay(),"false"))
+                {
+                    continue;
+                }
                 Dict dict = new Dict();
                 dict.setKey(dictDetail.getCode());
 
@@ -87,4 +91,5 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
     {
         return param.getParameter(RESULT);
     }
+
 }

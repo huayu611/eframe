@@ -10,8 +10,9 @@
         <value code="2" lang="COMMON_MARITAL_STATUS_YES"/>
     </dict>
     <dict code="global-gender">
+        <value code="0" lang="COMMON_GENDER_UNKNOW" display="false"/>
         <value code="1" lang="COMMON_GENDER_MALE"/>
-        <value code="0" lang="COMMON_GENDER_FEMALE"/>
+        <value code="2" lang="COMMON_GENDER_FEMALE"/>
     </dict>
     <dict code="global-default-language">
         <value code="zh" lang="COMMON_LANGUAGE_ZH"/>

@@ -16,6 +16,8 @@ public class DictDetail
 
     private String name;
 
+    private String display;
+
     @XmlAttribute(name = "code")
     public String getCode()
     {
@@ -47,5 +49,16 @@ public class DictDetail
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    @XmlAttribute(name = "display")
+    public String getDisplay()
+    {
+        return display;
+    }
+
+    public void setDisplay(String display)
+    {
+        this.display = display;
     }
 }

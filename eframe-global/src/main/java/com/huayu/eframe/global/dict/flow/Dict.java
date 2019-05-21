@@ -9,6 +9,8 @@ public class Dict
 
     private String name;
 
+    private String display;
+
     public String getKey()
     {
         return key;
@@ -27,5 +29,15 @@ public class Dict
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getDisplay()
+    {
+        return display;
+    }
+
+    public void setDisplay(String display)
+    {
+        this.display = display;
     }
 }
