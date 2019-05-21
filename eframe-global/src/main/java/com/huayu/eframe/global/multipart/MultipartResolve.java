@@ -22,8 +22,9 @@ public class MultipartResolve
     public static void use(String fullPath, UploadRuler uploadRuler)
     {
 
-        String downLoadPath = uploadRuler.downLoadPath();
-        String fileName = StringUtils.cutPrefix(fullPath, downLoadPath);
+        StringBuilder pathCut = new StringBuilder();
+        pathCut.append(uploadRuler.downLoadPath()).append(uploadRuler.getUploadType()).append("/");
+        String fileName = StringUtils.cutPrefix(fullPath, pathCut.toString());
         if (StringUtils.isNullOrEmpty(fileName))
         {
             return;
@@ -47,6 +48,12 @@ public class MultipartResolve
         {
             return;
         }
+        File folder = new File(MultipartUtil.getSystemPath() + File.separator + uploadRuler.getUploadType());
+        if(!folder.exists())
+        {
+            folder.mkdir();
+        }
+
         File newFile = new File(MultipartUtil.getSystemPath() + File.separator + fileNameInSystem);
         try
         {

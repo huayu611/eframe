@@ -1,15 +1,13 @@
 package com.huayu.eframe.global.multipart.upload;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
-import com.huayu.eframe.flow.BusinessParameter;
 import com.huayu.eframe.global.constants.GlobalErrorCode;
 import com.huayu.eframe.global.multipart.MultipartUtil;
 import com.huayu.eframe.global.multipart.upload.ruler.UploadRuler;
-import com.huayu.eframe.global.multipart.upload.ruler.UploadRulerExecute;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -51,7 +49,7 @@ public abstract class AbstractUploadBusiness  extends AbstractExecuteBusiness
     protected String saveFile(String path, MultipartFile file, boolean temp)
     {
         String fileName = file.getOriginalFilename();
-        String name = RandomUtils.getUUID() + fileName;
+        String name = RandomUtils.getUUID() + StringUtils.cutLastString(fileName,5);
         debug.log(name);
         String filePath = "";
         if (temp)

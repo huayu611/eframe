@@ -224,6 +224,21 @@ public class StringUtils
         return value.substring(0, pos);
     }
 
+    public static String cutLastString(String value,int pos)
+    {
+        if (isNullOrEmpty(value))
+        {
+            return value;
+        }
+        int length = getLength(value);
+        if (length <= pos)
+        {
+            return value;
+        }
+        int begin = length - pos;
+        return value.substring(begin);
+    }
+
     public static String cutLastLengthString(String value, int pos)
     {
         if (isNullOrEmpty(value))
@@ -253,9 +268,8 @@ public class StringUtils
         {
             return value;
         }
-        return cutLengthString(value, prefix.length());
+        return value.substring(prefix.length(),value.length());
     }
-
 
     public static String hiddenPart(String value, int start, int end)
     {

@@ -59,26 +59,5 @@
             <version>6.0.6</version>
         </dependency>
     </dependencies>
-    <build>
-        <defaultGoal>compile</defaultGoal>
-        <sourceDirectory>src</sourceDirectory>
-        <finalName>springboot-package</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                    <mainClass>com.huayu.eframe.server.boot.StartApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
