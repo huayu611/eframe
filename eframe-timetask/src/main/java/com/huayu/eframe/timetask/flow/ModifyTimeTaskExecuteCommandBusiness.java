@@ -30,4 +30,11 @@ public class ModifyTimeTaskExecuteCommandBusiness extends AbstractExecuteBusines
     {
         return false;
     }
+
+    @Override
+    protected boolean isNeedTransaction()
+    {
+        //没有get。所有要单独加一个事务处理
+        return true;
+    }
 }
