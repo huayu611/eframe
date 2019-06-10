@@ -97,4 +97,17 @@ public abstract class AbstractUploadBusiness  extends AbstractExecuteBusiness
         validFileSuffix(upload, file);
     }
 
+    protected String getHttpResponse(UploadRuler upload)
+    {
+        String http = upload.getFileHttpLink();
+        if(StringUtils.isNullOrEmpty(http))
+        {
+            http =  MultipartUtil.getFileSystemUrlPath();
+        }
+
+        http = StringUtils.removeLastString(http,"/");
+
+        return http;
+    }
+
 }

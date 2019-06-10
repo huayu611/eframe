@@ -82,13 +82,18 @@ public class UploadMultipleBusiness extends AbstractUploadBusiness
 
         UploadRuler upload = param.getParameter(UPLOAD_RULER);
         List<String> fullPaths = new ArrayList<>();
+        List<String> httpPaths = new ArrayList<>();
         CollectionUtils.iterator(fullPaths,(c,v,i)->{
             String res = upload.downLoadPath() + uploadRequest.getType() + "/" + v;
             fullPaths.add(res);
+            httpPaths.add(getHttpResponse(upload)+res);
         });
 
         uploadResponse.setFullPaths(fullPaths);
+        uploadResponse.setHttpPaths(httpPaths);
         return uploadResponse;
+
+        // uploadResponse.setHttpPath(getHttpResponse(upload)+res);
     }
 
 

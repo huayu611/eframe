@@ -13,6 +13,8 @@ public class UploadMultipleResponse
 
     private List<String> fullPaths;
 
+    private List<String> httpPaths;
+
     public List<String> getNames()
     {
         return names;
@@ -41,5 +43,15 @@ public class UploadMultipleResponse
     public void setFullPaths(List<String> fullPaths)
     {
         this.fullPaths = fullPaths;
+    }
+
+    public List<String> getHttpPaths()
+    {
+        return httpPaths;
+    }
+
+    public void setHttpPaths(List<String> httpPaths)
+    {
+        this.httpPaths = httpPaths;
     }
 }

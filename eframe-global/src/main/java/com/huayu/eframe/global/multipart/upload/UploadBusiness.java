@@ -65,8 +65,11 @@ public class UploadBusiness extends AbstractUploadBusiness
         UploadRuler upload = param.getParameter(UPLOAD_RULER);
         String res = upload.downLoadPath() + uploadRequest.getType() + "/" + result;
         uploadResponse.setFullPath(res);
+        uploadResponse.setHttpPath(getHttpResponse(upload)+res);
         return uploadResponse;
     }
+
+
 
 
 }

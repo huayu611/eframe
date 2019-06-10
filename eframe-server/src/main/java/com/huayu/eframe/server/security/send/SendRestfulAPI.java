@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.security.send;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,33 +15,45 @@ public class SendRestfulAPI
 {
 
     @Autowired
-    private RestTemplate restTemplate;
+    @Qualifier("JsonRestTemplate")
+    private RestTemplate jsonRestTemplate;
+
+    @Autowired
+    @Qualifier("XmlRestTemplate")
+    private RestTemplate xmlRestTemplate;
+
 
 
     public <RequestType,ResponseType> ResponseType sendPostRestful(String url,RequestType data,Class<ResponseType> responseClass)
     {
-        return restTemplate.postForObject(url,data,responseClass);
+        return jsonRestTemplate.postForObject(url,data,responseClass);
     }
 
 
     public <ResponseType> ResponseType sendGetRestful(String url,Class<ResponseType> responseClass)
     {
-       return restTemplate.getForObject(url, responseClass);
+       return jsonRestTemplate.getForObject(url, responseClass);
     }
 
     public void sendDeleteRestful(String url)
     {
-        restTemplate.delete(url);
+        jsonRestTemplate.delete(url);
     }
 
     public void sendUpdateRestful(String url,Object data)
     {
-        restTemplate.put(url,data);
+        jsonRestTemplate.put(url,data);
     }
 
     public RestTemplate getRestTemplate()
     {
-        return restTemplate;
+        return jsonRestTemplate;
+    }
+
+
+    public <RequestType,ResponseType> ResponseType sendXmlPostRestful(String url,RequestType data,Class<ResponseType> responseClass)
+    {
+        return xmlRestTemplate.postForObject(url,data,responseClass);
     }
 
 }

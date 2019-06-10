@@ -105,11 +105,8 @@ public class RandomUtils
     {
         Long now = DateUtils.getCurrentTimeMillis();
         String nowValue = StringUtils.getString(now);
-
         String randomNum = getRandomCharString(5);
-
         String createValue = StringUtils.getString(number.getAndIncrement());
-
         return nowValue + randomNum + createValue;
 
     }

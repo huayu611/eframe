@@ -11,6 +11,8 @@ public class UploadResponse
 
     private String fullPath;
 
+    private String httpPath;
+
     public String getName()
     {
         return name;
@@ -39,5 +41,15 @@ public class UploadResponse
     public void setFullPath(String fullPath)
     {
         this.fullPath = fullPath;
+    }
+
+    public String getHttpPath()
+    {
+        return httpPath;
+    }
+
+    public void setHttpPath(String httpPath)
+    {
+        this.httpPath = httpPath;
     }
 }

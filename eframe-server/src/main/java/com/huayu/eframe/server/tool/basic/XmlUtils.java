@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -135,6 +136,44 @@ public class XmlUtils
         {
             return obj;
         }
+    }
+
+    public static String parasToXml(Class clazz,Object xmlObject)
+    {
+        return parasToXml(clazz,xmlObject,true);
+    }
+
+    public static String parasToXml(Class clazz,Object xmlObject,boolean needXmlHeader)
+    {
+        StringWriter sw = new StringWriter();
+        try{
+            JAXBContext context = JAXBContext.newInstance(clazz);
+            Marshaller marshaller = context.createMarshaller();
+            if(!needXmlHeader)
+            {
+                marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+            }
+            marshaller.marshal(xmlObject,sw);
+        }catch(Exception e)
+        {
+            throw new RuntimeException("XML parse failed.");
+        }
+        return sw.toString();
+    }
+
+    public static <T> T parasToObject(Class<T> clazz,String xml)
+    {
+        T ret = null;
+        try{
+            JAXBContext context = JAXBContext.newInstance(clazz);
+            Unmarshaller marshaller = context.createUnmarshaller();
+            InputStream is = new ByteArrayInputStream(xml.getBytes());
+            ret = (T)marshaller.unmarshal(is);
+        }catch(Exception e)
+        {
+            throw new RuntimeException("XML parse failed.");
+        }
+        return ret;
     }
 
 }

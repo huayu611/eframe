@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -14,8 +15,8 @@ import java.util.Arrays;
 @Configuration
 public class RestfulTemplateBean
 {
-    @Bean
-    public RestTemplate restTemplate() {
+    @Bean("JsonRestTemplate")
+    public RestTemplate restJsonTemplate() {
 
         //这个restful 的添加TEXT_PLAIN作为json返回 ，部分大厂，返回text-plain作为json。
         RestTemplate restTemplate =  new RestTemplate();
@@ -25,7 +26,15 @@ public class RestfulTemplateBean
         return restTemplate;
     }
 
+    @Bean("XmlRestTemplate")
+    public RestTemplate restXmlTemplate() {
 
+        RestTemplate restTemplate =  new RestTemplate();
+        MappingJackson2XmlHttpMessageConverter mappingJackson2XmlHttpMessageConverter = new MappingJackson2XmlHttpMessageConverter();
+        mappingJackson2XmlHttpMessageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_XML,MediaType.TEXT_PLAIN));
+        restTemplate.getMessageConverters().add(mappingJackson2XmlHttpMessageConverter);
+        return restTemplate;
+    }
 
 
 }
