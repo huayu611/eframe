@@ -34,7 +34,7 @@ public class MenuRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/menu", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/menu", method = RequestMethod.GET,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryMenu(EasyParam easyParam)
     {
         QueryMenuRequest request = new QueryMenuRequest();
@@ -43,7 +43,7 @@ public class MenuRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/menu/{code}", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/menu/{code}", method = RequestMethod.GET,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryMenuByCode(@PathVariable String code, EasyParam easyParam)
     {
         QueryMenuRequest request = new QueryMenuRequest();

@@ -139,7 +139,7 @@ public class AuthenticationRestServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/permission", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/permission", method = RequestMethod.GET,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryPermission(
             @RequestParam(name = "size", required = false) Integer size,
             @RequestParam(name = "page", required = false) Integer page,

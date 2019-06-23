@@ -28,8 +28,8 @@ public class SystemControlServer
     @ResponseBody
     @RequestMapping(value = "/current/login",
             method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+           )
     public Object getCurrentLogin(EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
@@ -69,8 +69,8 @@ public class SystemControlServer
     @ResponseBody
     @RequestMapping(value = "/system-tokens",
             method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+           )
     public Object getCurrentTokens(EasyParam easyParam)
     {
         Object obj = Flow.execute(QuerySystemTokensBusiness.class, null, easyParam);

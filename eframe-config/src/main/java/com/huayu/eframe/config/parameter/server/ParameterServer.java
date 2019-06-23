@@ -27,7 +27,7 @@ public class ParameterServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/parameter", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/parameter", method = RequestMethod.GET,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object queryParameter(EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryParameterBusiness.class, null, easyParam);

@@ -37,7 +37,6 @@ public class CopRestfulServer
     @ResponseBody
     @RequestMapping(value = "/information",
             method = RequestMethod.GET,
-            consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {
                     MediaType.APPLICATION_JSON_VALUE,
                     MediaType.APPLICATION_XML_VALUE
