@@ -28,6 +28,8 @@ public class LogDetail
 
     private String code;
 
+    private String statusName;
+
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date inTime;
 
@@ -203,5 +205,15 @@ public class LogDetail
     public void setKey(String key)
     {
         this.key = key;
+    }
+
+    public String getStatusName()
+    {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName)
+    {
+        this.statusName = statusName;
     }
 }

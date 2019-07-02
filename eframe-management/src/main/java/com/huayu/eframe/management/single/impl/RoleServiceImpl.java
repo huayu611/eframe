@@ -1,5 +1,6 @@
 package com.huayu.eframe.management.single.impl;
 
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
 import com.huayu.eframe.management.atom.PermissionAtom;
 import com.huayu.eframe.management.atom.RoleAtom;
 import com.huayu.eframe.management.atom.RolePermissionAtom;
@@ -267,6 +268,8 @@ public class RoleServiceImpl implements RoleService
         roleDetail.setEff(role.getEffectiveTime());
         roleDetail.setExp(role.getExpireTime());
         roleDetail.setStatus(role.getStatus());
+        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("role_status",role.getStatus());
+        roleDetail.setStatusName(statusName);
         Role parentRole = getRleByRoleID(role.getParentRoleId());
         Role topRole = getRleByRoleID(role.getTopRoleId());
         if (null != parentRole)

@@ -43,7 +43,7 @@ public class ParameterServer
     }
 
     @ResponseBody
-    @RequestMapping(value = "/parameter/{codes}", method = RequestMethod.DELETE, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/parameter/{codes}", method = RequestMethod.DELETE,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Object deleteParameter(@PathVariable String codes, EasyParam easyParam)
     {
         DeleteParameterRequest deleteParameterRequest = new DeleteParameterRequest();

@@ -2,6 +2,7 @@ package com.huayu.eframe.global.dict.flow;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
 import com.huayu.eframe.global.dict.reader.DictDetail;
 import com.huayu.eframe.global.dict.reader.DictLangService;
 import com.huayu.eframe.global.dict.reader.DictionaryService;
@@ -48,7 +49,7 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
                 Dict dict = new Dict();
                 dict.setKey(dictDetail.getCode());
 
-                String value = buildDictName(dictDetail);
+                String value = DictionaryUtils.buildDictName(dictDetail);
                 dict.setName(value);
                 dicts.add(dict);
             }
@@ -57,34 +58,6 @@ public class QueryDictBusiness extends AbstractExecuteBusiness
         param.addParameter(RESULT, dicts);
     }
 
-    private String buildDictName(DictDetail dic)
-    {
-        String lang = dic.getLangCode();
-        String name = dic.getName();
-        if (StringUtils.isNotNullAndEmpty(name))
-        {
-            return name;
-        }
-        Locale l = null;
-        if (null == LocalAttribute.getToken() || null == LocalAttribute.getToken().getLocale())
-        {
-            l = CommonHelper.getDefaultLocal();
-        }
-        else
-        {
-            l = LocalAttribute.getToken().getLocale();
-        }
-        String inName = "";
-        try
-        {
-            inName = DictLangService.getDictName(lang, null, l);
-        }
-        catch (Exception e)
-        {
-            debug.log(e);
-        }
-        return inName;
-    }
 
     @Override
     protected Object tidyData(BusinessParameter param)

@@ -4,12 +4,16 @@ import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
 import com.huayu.eframe.flow.presist.service.LogDetail;
 import com.huayu.eframe.flow.presist.service.LogService;
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
 import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.RestfulResponse;
 import com.huayu.eframe.server.tool.basic.StringUtils;
+import com.huayu.eframe.server.tool.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by Leo on 2019/2/18.
@@ -63,6 +67,20 @@ public class QueryOperatorLogBusiness extends AbstractExecuteBusiness
     @Override
     protected Object tidyData(BusinessParameter param)
     {
+        Object obj = param.getParameter(RESULT);
+        if(obj instanceof List)
+        {
+            List logList = (List)obj;
+            CollectionUtils.iterator(logList,(c,v,i)->{
+                    if(v instanceof LogDetail)
+                    {
+                        LogDetail log = (LogDetail)v;
+
+                        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("operator_log_status",log.getStatus());
+                        log.setStatusName(statusName);
+                    }
+            });
+        }
         return param.getParameter(RESULT);
     }
 

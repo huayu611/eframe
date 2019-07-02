@@ -2,7 +2,7 @@ package com.huayu.eframe.server.tool.basic;
 
 public class StringUtils
 {
-    private static final String BLANK = "";
+    public static final String BLANK = "";
 
     public static String getString(Object value)
     {

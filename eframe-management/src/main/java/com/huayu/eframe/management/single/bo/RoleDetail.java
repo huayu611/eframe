@@ -29,6 +29,8 @@ public class RoleDetail
 
     private String status;
 
+    private String statusName;
+
     private String remark;
 
 
@@ -120,5 +122,15 @@ public class RoleDetail
     public void setRemark(String remark)
     {
         this.remark = remark;
+    }
+
+    public String getStatusName()
+    {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName)
+    {
+        this.statusName = statusName;
     }
 }

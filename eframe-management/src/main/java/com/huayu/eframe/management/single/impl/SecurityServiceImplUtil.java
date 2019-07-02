@@ -1,5 +1,6 @@
 package com.huayu.eframe.management.single.impl;
 
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
 import com.huayu.eframe.management.bo.Permission;
 import com.huayu.eframe.management.bo.Role;
 import com.huayu.eframe.management.single.bo.PermissionDetail;
@@ -33,6 +34,12 @@ public class SecurityServiceImplUtil
         permissionDetail.setType(permission.getPermissionType());
         permissionDetail.setName(permission.getPermissionName());
         permissionDetail.setStatus(permission.getStatus());
+        String typeName = DictionaryUtils.getDictNameDictKeyAndValue("permission_white",permissionDetail.getWhite());
+        String permissionStatusName = DictionaryUtils.getDictNameDictKeyAndValue("permission_status",permissionDetail.getStatus());
+        String whiteName = DictionaryUtils.getDictNameDictKeyAndValue("permission_white",permissionDetail.getWhite());
+        permissionDetail.setStatusName(permissionStatusName);
+        permissionDetail.setTypeName(typeName);
+        permissionDetail.setWhiteName(whiteName);
         return permissionDetail;
     }
 

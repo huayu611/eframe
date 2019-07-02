@@ -1,5 +1,6 @@
 package com.huayu.eframe.management.single.impl;
 
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
 import com.huayu.eframe.management.atom.RoleAtom;
 import com.huayu.eframe.management.atom.RoleStaffAtom;
 import com.huayu.eframe.management.atom.StaffAtom;
@@ -458,6 +459,8 @@ public class StaffServiceImpl implements StaffService
             detail.setEmail(staff.getEmail());
             detail.setTel(staff.getTelNumber());
             detail.setRoles(buildRoleDetailList(staff.getId()));
+            String statusName = DictionaryUtils.getDictNameDictKeyAndValue("staff_status",staff.getStatus());
+            detail.setStatusName(statusName);
             resultStaffDetail.add(detail);
         }
         return resultStaffDetail;

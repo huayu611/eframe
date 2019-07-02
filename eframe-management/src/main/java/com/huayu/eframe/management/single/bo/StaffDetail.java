@@ -57,6 +57,8 @@ public class StaffDetail
 
     private String hiddenIdentity;
 
+    private String statusName;
+
     private List<RoleDetail> roles;
 
     public String getName()
@@ -287,5 +289,15 @@ public class StaffDetail
     public void setHiddenIdentity(String hiddenIdentity)
     {
         this.hiddenIdentity = hiddenIdentity;
+    }
+
+    public String getStatusName()
+    {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName)
+    {
+        this.statusName = statusName;
     }
 }
