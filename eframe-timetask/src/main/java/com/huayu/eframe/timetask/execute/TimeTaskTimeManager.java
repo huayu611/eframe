@@ -1,5 +1,6 @@
 package com.huayu.eframe.timetask.execute;
 
+import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.timetask.common.Constants;
@@ -36,6 +37,12 @@ public class TimeTaskTimeManager
         //不用switch case,switch case是对大写写强匹配。这里不需要强匹配。
         // 并且当前只支持固定时间,比如生效时间为12：00：00，每天执行一次，那么就是每天12：00：00执行。这里面的问题是，如果本次没有执行完，下一次已经启动。会延迟执行。
         Date currentTime = timeTaskBO.getNextTime();
+        //@2019 07-19添加INTERVAL类型，下一次的执行时间为本次执行结束的间隔
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.TimeTaskType.INTERVAL, timeTaskBO.getTimeTaskType()))
+        {
+            currentTime = LocalAttribute.getNow();
+        }
+
         if (StringUtils.equalStringNoCareUpperAndLower(Constants.Unit.YEAR, unit))
         {
             return DateUtils.modifyYears(currentTime, timeTaskBO.getCycle());

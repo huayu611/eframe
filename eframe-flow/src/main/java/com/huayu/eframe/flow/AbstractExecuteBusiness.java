@@ -53,6 +53,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         before(param);
 
         doTrans(param);
+        refreshCache();
 
 
     }
@@ -84,7 +85,6 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
     @Override
     public void after(BusinessParameter param)
     {
-        refreshCache();
         beforeAfter(param);
         afterAfter(param);
     }

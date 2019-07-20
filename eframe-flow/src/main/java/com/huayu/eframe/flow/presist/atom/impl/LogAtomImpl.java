@@ -116,21 +116,11 @@ public class LogAtomImpl implements LogAtom
     {
         Sort sort = new Sort(Sort.Direction.ASC, "inTime");
         PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
-        Specification<LogEntity> querySpecific = new Specification<LogEntity>()
+        Specification<LogEntity> querySpecific = (Specification<LogEntity>) (root, criteriaQuery, criteriaBuilder) ->
         {
-
-            @Override
-            public Predicate toPredicate(Root<LogEntity> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
-            {
-                List<Predicate> predicates = new ArrayList<>();
-
-
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("createTime").as(Date.class), deletionTime));
-
-                return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            }
-
-            ;
+            List<Predicate> predicates = new ArrayList<>();
+            predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("createTime").as(Date.class), deletionTime));
+            return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
         };
         Page<LogEntity> resultList = this.logRepository.findAll(querySpecific, pageRequest);
         return resultList;

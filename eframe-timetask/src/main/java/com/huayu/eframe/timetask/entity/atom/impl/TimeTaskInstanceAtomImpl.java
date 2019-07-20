@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,6 +48,28 @@ public class TimeTaskInstanceAtomImpl implements TimeTaskInstanceAtom
         return timeTaskInstanceRepository.findAll(special, pageRequest);
     }
 
+    @Override
+    public Page<TimeTaskInstance> queryWillDeleteTaskInstanceByPage(FramePaging fp, Date deletionTime)
+    {
+        Sort sort = new Sort(Sort.Direction.ASC, "endTime");
+        PageRequest pageRequest = PageRequest.of(fp.getPage(), fp.getSize(), sort);
+        Specification<TimeTaskInstance> querySpecific = (Specification<TimeTaskInstance>) (root, criteriaQuery, criteriaBuilder) ->
+        {
+            List<Predicate> predicates = new ArrayList<>();
+            predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("endTime").as(Date.class), deletionTime));
+            predicates.add(criteriaBuilder.equal(root.get("status").as(String.class), "2"));
+            return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
+        };
+        Page<TimeTaskInstance> resultList = timeTaskInstanceRepository.findAll(querySpecific, pageRequest);
+        return resultList;
+    }
+
+    @Override
+    public void batchDeleteTaskInstance(List<TimeTaskInstance> timeTaskInstances)
+    {
+        timeTaskInstanceRepository.deleteInBatch(timeTaskInstances);
+    }
+
     private Specification<TimeTaskInstance> buildSpecification(TimeTaskInstance condition)
     {
         return (Specification<TimeTaskInstance>) (root, criteriaQuery, criteriaBuilder) ->
@@ -59,5 +82,6 @@ public class TimeTaskInstanceAtomImpl implements TimeTaskInstanceAtom
             return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
         };
     }
+
 
 }

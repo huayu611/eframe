@@ -16,6 +16,7 @@
     <dict code="time-task-type">
         <value code="once" lang="TIME_TASK_TYPE_ONCE"/>
         <value code="cycle" lang="TIME_TASK_TYPE_CYCLE"/>
+        <value code="interval" lang="TIME_TASK_TYPE_INTERVAL"/>
     </dict>
     <dict code="time-task-instance-status">
         <value code="0" lang="TIME_TASK_INSTANCE_STAUS_INIT"/>

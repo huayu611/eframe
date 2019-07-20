@@ -10,6 +10,8 @@ public interface Constants
         String ONCE = "once";
 
         String CYCLE = "cycle";
+
+        String INTERVAL = "interval";
     }
 
     interface Unit

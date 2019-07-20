@@ -21,16 +21,16 @@ public class MultipartResolve
 
     public static void use(String fullPath, UploadRuler uploadRuler)
     {
-
-        StringBuilder pathCut = new StringBuilder();
-        pathCut.append(uploadRuler.downLoadPath()).append(uploadRuler.getUploadType()).append("/");
-        String fileName = StringUtils.cutPrefix(fullPath, pathCut.toString());
-        if (StringUtils.isNullOrEmpty(fileName))
+        String[] ret = org.springframework.util.StringUtils.tokenizeToStringArray( fullPath,"/\\");
+        if(ret.length>0)
         {
-            return;
+            String fileName =ret[ret.length-1];
+            if (StringUtils.isNullOrEmpty(fileName))
+            {
+                return;
+            }
+            useByFileName(uploadRuler, fileName);
         }
-
-        useByFileName(uploadRuler, fileName);
     }
 
     public static void useMore(List<String> fullPaths, UploadRuler uploadRuler)
