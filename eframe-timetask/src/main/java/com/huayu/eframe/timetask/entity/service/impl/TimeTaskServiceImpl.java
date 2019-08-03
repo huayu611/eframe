@@ -1,6 +1,8 @@
 package com.huayu.eframe.timetask.entity.service.impl;
 
 import com.huayu.eframe.flow.constant.FlowErrorCode;
+import com.huayu.eframe.global.dict.common.DictionaryUtils;
+import com.huayu.eframe.global.dict.flow.Dict;
 import com.huayu.eframe.server.common.FramePaging;
 import com.huayu.eframe.server.common.found.CurrentEntity;
 import com.huayu.eframe.server.common.found.CurrentObject;
@@ -290,6 +292,8 @@ public class TimeTaskServiceImpl implements TimeTaskService
         timeTaskDetail.setCycle(timeTaskBO.getCycle());
         timeTaskDetail.setStatus(timeTaskBO.getStatus());
         timeTaskDetail.setService(timeTaskBO.getServiceBean());
+        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("time-task-status",timeTaskDetail.getStatus());
+        timeTaskDetail.setStatusName(statusName);
         return timeTaskDetail;
     }
 
@@ -319,7 +323,9 @@ public class TimeTaskServiceImpl implements TimeTaskService
         timeTaskInstanceDetail.setEndTime(timeTaskInstance.getEndTime());
         timeTaskInstanceDetail.setStartTime(timeTaskInstance.getStartTime());
         timeTaskInstanceDetail.setStatus(timeTaskInstance.getStatus());
+        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("time-task-instance-status",timeTaskInstance.getStatus());
         timeTaskInstanceDetail.setErrorStack(timeTaskInstance.getErrorStack());
+        timeTaskInstanceDetail.setStatusName(statusName);
         return timeTaskInstanceDetail;
 
     }

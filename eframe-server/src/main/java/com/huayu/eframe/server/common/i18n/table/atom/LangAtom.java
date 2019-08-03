@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.common.i18n.table.atom;
 
 import com.huayu.eframe.server.common.i18n.table.bo.Lang;
+import com.huayu.eframe.server.common.i18n.table.bo.LangDefine;
 
 import java.util.List;
 
@@ -9,15 +10,26 @@ import java.util.List;
  */
 public interface LangAtom
 {
-    List<Lang> getAll();
+    Lang addLangValue(Lang lang);
 
-    List<Lang> save(String langCode, List<Lang> values);
+    List<Lang> batchAddLangValue(List<Lang> lang);
 
-    Lang save(Lang lang);
+    List<Lang> batchUpdateLangValue(List<Lang> lang);
 
-    List<Lang> update(String langCode, List<Lang> values);
+    List<Lang> queryLangValueByLang(LangDefine langDefine);
 
-    void delete(Lang lang);
+    List<Lang> queryLangValueByCode(String fCode);
 
-    List<Lang> getLangsByCode(String langCode);
+    Lang queryLangValueByLangAndCode(LangDefine langDefine,String fCode);
+
+    Lang queryLangValueByPrimaryCode(String code);
+
+    Lang updateLangValue(Lang lang);
+
+    void removeLangValue(Lang lang);
+
+    void batchRemoveLangValue(List<Lang> lang);
+
+
+    List<Lang> queryLangValue();
 }

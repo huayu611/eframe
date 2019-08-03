@@ -1,17 +1,17 @@
 package com.huayu.eframe.server.common.i18n.table.service;
 
-import com.huayu.eframe.server.common.i18n.table.bo.LangValue;
-
-import java.util.List;
-
 public interface LangService
 {
 
-    List<LangValue> save(String langCode, List<LangValue> values);
+    LangValue addLangValue(LangValue langValue);
 
-    List<LangValue> update(String langCode, List<LangValue> values);
+    LangValue batchAddLangValue(LangValue langValue);
 
-    void delete(String langCode);
+    LangValue batchModifyLangValue(LangValue langValue);
+
+    LangValue updateLangValue(LangValue langValue);
+
+    String removeLangValueByCode(String primaryCode);
 
 
 }

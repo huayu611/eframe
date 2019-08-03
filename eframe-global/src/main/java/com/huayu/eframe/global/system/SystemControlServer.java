@@ -2,6 +2,8 @@ package com.huayu.eframe.global.system;
 
 import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.global.system.currentlogin.QueryCurrentLoginBusiness;
+import com.huayu.eframe.global.system.lang.QuerySystemLangBusiness;
+import com.huayu.eframe.global.system.lang.QuerySystemLangRequest;
 import com.huayu.eframe.global.system.log.flow.QueryOperatorLogBusiness;
 import com.huayu.eframe.global.system.log.message.QueryOperatorLogRequest;
 import com.huayu.eframe.global.system.refreshcache.RefreshCacheBusiness;
@@ -29,7 +31,7 @@ public class SystemControlServer
     @RequestMapping(value = "/current/login",
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-           )
+    )
     public Object getCurrentLogin(EasyParam easyParam)
     {
         Object obj = Flow.execute(QueryCurrentLoginBusiness.class, null, easyParam);
@@ -70,7 +72,7 @@ public class SystemControlServer
     @RequestMapping(value = "/system-tokens",
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-           )
+    )
     public Object getCurrentTokens(EasyParam easyParam)
     {
         Object obj = Flow.execute(QuerySystemTokensBusiness.class, null, easyParam);
@@ -96,6 +98,18 @@ public class SystemControlServer
     public Object refreshCache(@RequestBody RefreshCacheRequest refreshCacheRequest, EasyParam easyParam)
     {
         Object obj = Flow.execute(RefreshCacheBusiness.class, refreshCacheRequest, easyParam);
+        return obj;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/languages",
+            method = RequestMethod.GET,
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public Object getSystemSupportLanguages(EasyParam easyParam)
+    {
+        QuerySystemLangRequest querySystemLangRequest = new QuerySystemLangRequest();
+        Object obj = Flow.execute(QuerySystemLangBusiness.class, querySystemLangRequest, easyParam);
         return obj;
     }
 }

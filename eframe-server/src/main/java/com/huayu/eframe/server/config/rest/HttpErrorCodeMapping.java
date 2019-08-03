@@ -44,7 +44,7 @@ public class HttpErrorCodeMapping implements InitializingBean
             }
             catch (IOException e)
             {
-                System.out.print("System paramter load file and file name is " + resource.getFilename());
+                System.out.print("System parameter load file and file name is " + resource.getFilename());
             }
         }
     }

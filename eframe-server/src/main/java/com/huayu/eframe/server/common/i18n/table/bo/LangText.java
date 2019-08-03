@@ -2,9 +2,12 @@ package com.huayu.eframe.server.common.i18n.table.bo;
 
 import javax.persistence.*;
 
+/**
+ * Created by Leo on 2019/8/3.
+ */
 @Entity
-@Table(name = "SYS_LANG")
-public class Lang
+@Table(name = "sys_lang_text")
+public class LangText
 {
     @Id
     @Column(name = "ID", length = 20)
@@ -21,7 +24,7 @@ public class Lang
     @JoinColumn(name = "LANG_LANGUAGE", referencedColumnName = "ID")
     private LangDefine langDefine;
 
-    @Column(name = "VALUE", length = 1024)
+    @Column(name = "VALUE")
     private String value;
 
     public Long getId()
@@ -32,6 +35,16 @@ public class Lang
     public void setId(Long id)
     {
         this.id = id;
+    }
+
+    public String getPrimaryCode()
+    {
+        return primaryCode;
+    }
+
+    public void setPrimaryCode(String primaryCode)
+    {
+        this.primaryCode = primaryCode;
     }
 
     public String getLangCode()
@@ -62,15 +75,5 @@ public class Lang
     public void setValue(String value)
     {
         this.value = value;
-    }
-
-    public String getPrimaryCode()
-    {
-        return primaryCode;
-    }
-
-    public void setPrimaryCode(String primaryCode)
-    {
-        this.primaryCode = primaryCode;
     }
 }

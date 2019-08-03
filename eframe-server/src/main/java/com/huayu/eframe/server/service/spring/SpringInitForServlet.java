@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import java.util.Enumeration;
 
+@Deprecated
 public class SpringInitForServlet
 {
     public static void startSpring(ServletContextEvent event)

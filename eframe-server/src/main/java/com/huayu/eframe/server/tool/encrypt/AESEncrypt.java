@@ -67,17 +67,6 @@ public class AESEncrypt
         return secretKey;
     }
 
-    public static void main(String[] args) throws Exception
-    {
-        String sessionKey = "EGROtYEiw5HZ/9c+CvKe8A==";
-        String encryptedData = "UMoKZMt60Wat3wfMfFli3ekUSeliDAW6dqZfViev1zBGGxPXFm/OO5KSKTrq7cl5vxhk3wzcDjbeMO/2/PTD3wGft8J+4NJHSwTqQbNhLSeABXl3T4f0yL7yFi4yCTUOny9juurubmhYiNeDaft+ClqE6HsZErZg0Mpe3ZhmdpdmLk2/Uqig6cmELKT67uLZ8u9zo1V6QbrLQoxnBBZ0U8+Jq5y9uz6+slR/ovRxr4+T1xdYr6Aiaump5ilO3vMVy6wPTdt5PaNNUfJtJ/ibQtKFYccA88xHYojlHEzZ3x09AUS/Oi4qYOstHXur36/m6V5XxQkmnAT3fmLvwxqQoJ2S7MT8HQmaOkXy4iMldc2EGtuDR277S+LMTRKmx6RUy+w48cSOfEy2WUtp27AElDoiBrqBJLFGVbbymA5OGPc3TYkK9LHSN1jVTqScBx/OKjGzoMw4625788FCtVrwpKznsvOsTXApcW5SI2WL73Q=";
-        String iv = "Em365hWJRt19lpEL0ArCNw==";
-
-
-        String a = aesCbcDecodeByString(encryptedData,sessionKey,iv);
-        System.out.println(a);
-    }
-
     public static String AesCbcEncode(String plainText, String keyWord, String IVParameter)
     {
         try

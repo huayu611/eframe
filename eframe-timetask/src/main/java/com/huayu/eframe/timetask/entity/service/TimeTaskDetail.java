@@ -20,6 +20,8 @@ public class TimeTaskDetail
 
     private String status;
 
+    private String statusName;
+
     private Integer cycle;
 
     private String unit;
@@ -140,5 +142,15 @@ public class TimeTaskDetail
     public void setCount(Integer count)
     {
         this.count = count;
+    }
+
+    public String getStatusName()
+    {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName)
+    {
+        this.statusName = statusName;
     }
 }

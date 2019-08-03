@@ -35,6 +35,20 @@ public class CollectionUtils
         return null;
     }
 
+    public static <T> List<T> coverArrayToList(T[] t)
+    {
+        List<T> result = new ArrayList<>();
+        if(t.length == 0)
+        {
+            return result;
+        }
+        for(T ti : t)
+        {
+            result.add(ti);
+        }
+        return result;
+    }
+
     public static int getSize(Collection coll)
     {
         return isEmpty(coll) ? 0 : coll.size();

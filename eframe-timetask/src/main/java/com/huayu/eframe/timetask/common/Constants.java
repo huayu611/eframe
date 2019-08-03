@@ -26,7 +26,7 @@ public interface Constants
 
         String HOUR = "hour";
 
-        String MINUTE = "minute";
+        String MINUTE = "minuter";
 
         String SECOND = "second";
     }

@@ -6,7 +6,6 @@ import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 /**
  * Created by Leo on 2019/3/14.
@@ -14,18 +13,18 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 @Service
 public class FreeMarkerService
 {
-
     private static final LogDebug debug = new LogDebug(FreeMarkerService.class);
-
     private static final String FILE_SUFFIX = ".ftl";
+
+
     @Autowired
-    private FreeMarkerConfigurer freemarkerConfig;
+    private EFrameFreeMarkerConfiguration eFrameFreeMarkerConfiguration;
 
     public String getFreeMarkerText(String ftl, Object model)
     {
         try
         {
-            Configuration config = freemarkerConfig.getConfiguration();
+            Configuration config = eFrameFreeMarkerConfiguration.getFreeMarkerConfigurer().getConfiguration();
             if (!ftl.endsWith(FILE_SUFFIX))
             {
                 ftl = ftl + FILE_SUFFIX;
@@ -33,7 +32,6 @@ public class FreeMarkerService
             Template t = config.getTemplate(ftl);
             String text = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);
             return text;
-
         }
         catch (Exception e)
         {
@@ -44,4 +42,20 @@ public class FreeMarkerService
 
     }
 
+    public String buildFreeMarker(String primaryCode,String source,Object model)
+    {
+        try
+        {
+            eFrameFreeMarkerConfiguration.putStringElement(primaryCode, source);
+            Template t = eFrameFreeMarkerConfiguration.getFreeMarkerConfigurer().getConfiguration().getTemplate(primaryCode);
+            String text = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);
+            return text;
+        }
+        catch (Exception e)
+        {
+            debug.errorLog("error in FreeMakerService");
+            debug.printErr(e);
+            return null;
+        }
+    }
 }

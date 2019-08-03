@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class LocalAttribute
 {
-    private static ThreadLocal<LocalContext> local = new ThreadLocal<LocalContext>();
+    private static ThreadLocal<LocalContext> local = new ThreadLocal<>();
 
     private final static String TOKEN_FLAG = "_EFRAME_SESSION_TOKEN";
 

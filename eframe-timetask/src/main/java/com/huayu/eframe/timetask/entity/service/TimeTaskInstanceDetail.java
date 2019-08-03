@@ -13,6 +13,8 @@ public class TimeTaskInstanceDetail
 
     private String status;
 
+    private String statusName;
+
     private String errorStack;
 
     private String timeTaskCode;
@@ -65,5 +67,15 @@ public class TimeTaskInstanceDetail
     public void setTimeTaskCode(String timeTaskCode)
     {
         this.timeTaskCode = timeTaskCode;
+    }
+
+    public String getStatusName()
+    {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName)
+    {
+        this.statusName = statusName;
     }
 }

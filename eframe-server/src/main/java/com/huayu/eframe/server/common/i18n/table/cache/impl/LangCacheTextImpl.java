@@ -4,8 +4,12 @@ import com.huayu.eframe.server.cache.frame.AbstractFrameCache;
 import com.huayu.eframe.server.cache.frame.DefaultIndex;
 import com.huayu.eframe.server.cache.frame.Index;
 import com.huayu.eframe.server.common.i18n.table.atom.LangAtom;
+import com.huayu.eframe.server.common.i18n.table.atom.LangTextAtom;
 import com.huayu.eframe.server.common.i18n.table.bo.Lang;
+import com.huayu.eframe.server.common.i18n.table.bo.LangText;
 import com.huayu.eframe.server.common.i18n.table.cache.LangCache;
+import com.huayu.eframe.server.common.i18n.table.cache.LangTextCache;
+import com.huayu.eframe.server.common.i18n.table.service.LangTextValue;
 import com.huayu.eframe.server.common.i18n.table.service.LangValue;
 import com.huayu.eframe.server.common.i18n.table.service.LangValueDetail;
 import com.huayu.eframe.server.common.i18n.table.util.LangUtils;
@@ -23,17 +27,17 @@ import java.util.Map;
  * Created by Leo on 2018/9/2.
  */
 @Service
-public class LangCacheImpl extends AbstractFrameCache<LangValue> implements LangCache
+public class LangCacheTextImpl extends AbstractFrameCache<LangTextValue> implements LangTextCache
 {
     @Autowired
-    private LangAtom langAtom;
+    private LangTextAtom langTextAtom;
 
-    public LangCacheImpl()
+    public LangCacheTextImpl()
     {
-        registerIndex(new ForeignCodeIndex());
+        registerIndex(new TextForeignCodeIndex());
     }
 
-    static class ForeignCodeIndex implements Index<LangValue>
+    static class TextForeignCodeIndex implements Index<LangValue>
     {
         @Override
         public String getIndex(LangValue lang)
@@ -43,12 +47,12 @@ public class LangCacheImpl extends AbstractFrameCache<LangValue> implements Lang
     }
 
     @Override
-    public List<LangValue> load()
+    public List<LangTextValue> load()
     {
-        List<Lang> allLangValue = langAtom.queryLangValue();
-        Map<String,List<Lang>> buildMap = new HashMap<>();
+        List<LangText> allLangValue = langTextAtom.queryLangText();
+        Map<String,List<LangText>> buildMap = new HashMap<>();
         CollectionUtils.iterator(allLangValue,(c,v,i)->{
-            List<Lang> ret = buildMap.get(v.getLangCode());
+            List<LangText> ret = buildMap.get(v.getLangCode());
             if(null == ret)
             {
                 ret = new ArrayList<>();
@@ -56,9 +60,9 @@ public class LangCacheImpl extends AbstractFrameCache<LangValue> implements Lang
             }
             ret.add(v);
         });
-        List<LangValue> langValuesRet = new ArrayList<>();
+        List<LangTextValue> langValuesRet = new ArrayList<>();
         MapUtils.iterator(buildMap,(m,k,v)->{
-            LangValue vRet = LangUtils.buildListLangValue(k, v);
+            LangTextValue vRet = LangUtils.buildListLangText(k, v);
             langValuesRet.add(vRet);
         });
         return langValuesRet;
@@ -71,26 +75,26 @@ public class LangCacheImpl extends AbstractFrameCache<LangValue> implements Lang
     }
 
     @Override
-    public LangValue getLangByLangCode(String langCode)
+    public LangTextValue getLangTextByLangCode(String langCode)
     {
-        LangValue langValue = new LangValue();
-        langValue.setForeignCode(langCode);
-        List<LangValue> langValues = getResultByIndex(ForeignCodeIndex.class, langValue);
+        LangTextValue langText = new LangTextValue();
+        langText.setForeignCode(langCode);
+        List<LangTextValue> langValues = getResultByIndex(TextForeignCodeIndex.class, langText);
         return CollectionUtils.getFirstElement(langValues);
     }
 
     @Override
-    public List<LangValue> queryAll()
+    public List<LangTextValue> queryAll()
     {
-        LangValue langValue = new LangValue();
-        List<LangValue> langValues = getResultByIndex(DefaultIndex.class, langValue);
+        LangTextValue langValue = new LangTextValue();
+        List<LangTextValue> langValues = getResultByIndex(DefaultIndex.class, langValue);
         return langValues;
     }
 
     @Override
-    public String getLangValueByLangCodeAndLanguage(String langCode,String langDef)
+    public String getLangTextByLangCodeAndLanguage(String langCode, String langDef)
     {
-        LangValue langValue = getLangByLangCode(langCode);
+        LangTextValue langValue = getLangTextByLangCode(langCode);
         if(null != langValue && null != langValue.getValues())
         {
             LangValueDetail detail = langValue.getValues().get(langDef);
