@@ -2,7 +2,7 @@ package com.huayu.eframe.config.lang.flow;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.common.i18n.table.service.LangDefineService;
+import com.huayu.eframe.config.lang.entity.service.LangDefineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

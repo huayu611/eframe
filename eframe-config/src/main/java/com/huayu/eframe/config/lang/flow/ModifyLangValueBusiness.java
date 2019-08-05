@@ -1,9 +1,9 @@
 package com.huayu.eframe.config.lang.flow;
 
+import com.huayu.eframe.config.lang.entity.service.LangShortService;
+import com.huayu.eframe.config.lang.entity.service.LangShortValue;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.common.i18n.table.service.LangService;
-import com.huayu.eframe.server.common.i18n.table.service.LangValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +16,13 @@ public class ModifyLangValueBusiness extends AbstractExecuteBusiness
     private final static String RESULT = "ModifyLangValueBusiness_RESULT";
 
     @Autowired
-    private LangService langService;
+    private LangShortService langService;
 
     @Override
     public void execute(BusinessParameter param)
     {
         ModifyLangValueRequest modifyLangValueRequest = param.getRequest();
-        LangValue result = langService.batchModifyLangValue(buildLangValue(modifyLangValueRequest));
+        LangShortValue result = langService.batchModifyLangValue(buildLangValue(modifyLangValueRequest));
         param.addParameter(RESULT,result);
     }
 
@@ -32,9 +32,9 @@ public class ModifyLangValueBusiness extends AbstractExecuteBusiness
         return param.getParameter(RESULT);
     }
 
-    private LangValue buildLangValue(ModifyLangValueRequest modifyLangValueRequest)
+    private LangShortValue buildLangValue(ModifyLangValueRequest modifyLangValueRequest)
     {
-        LangValue langValue = new LangValue();
+        LangShortValue langValue = new LangShortValue();
         langValue.setForeignCode(modifyLangValueRequest.getForeignCode());
         langValue.setValues(modifyLangValueRequest.getValues());
         return langValue;

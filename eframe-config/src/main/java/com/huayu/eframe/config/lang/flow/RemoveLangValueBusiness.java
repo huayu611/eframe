@@ -1,8 +1,8 @@
 package com.huayu.eframe.config.lang.flow;
 
+import com.huayu.eframe.config.lang.entity.service.LangShortService;
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
-import com.huayu.eframe.server.common.i18n.table.service.LangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class RemoveLangValueBusiness extends AbstractExecuteBusiness
     private final static String RESULT = "RemoveLangValueBusiness_RESULT";
 
     @Autowired
-    private LangService langService;
+    private LangShortService langService;
 
     @Override
     public void execute(BusinessParameter param)

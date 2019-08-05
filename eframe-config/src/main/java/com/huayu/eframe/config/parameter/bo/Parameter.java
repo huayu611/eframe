@@ -1,6 +1,6 @@
 package com.huayu.eframe.config.parameter.bo;
 
-import com.huayu.eframe.server.common.i18n.table.bo.StandardLang;
+import com.huayu.eframe.config.lang.entity.bo.StandardLang;
 
 import javax.persistence.*;
 import java.util.Date;

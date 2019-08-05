@@ -1,48 +1,50 @@
-
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for sys_email
+-- Table structure for sys_lang_define
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_email`;
-CREATE TABLE `sys_email`  (
+DROP TABLE IF EXISTS `sys_lang_define`;
+CREATE TABLE `sys_lang_define`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `EMAIL_CODE` varchar(125) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_USERNAME` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_PASSWORD` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_PROTOCOL` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_HOST` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_PORT` int(8) NULL DEFAULT NULL,
-  `EMAIL_TIMEOUT` bigint(20) NULL DEFAULT NULL,
-  `AUTH` varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `STATUS` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `EMAIL_SENDER` varchar(125) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `PERSONAL` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `SUBJECT` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `CREATE_TIME` datetime(0) NULL DEFAULT NULL,
-  `CREATE_OBJ_TYPE` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `CREATE_OBJ_ID` bigint(20) NULL DEFAULT NULL,
-  `LAST_UPDATE_TIME` datetime(0) NULL DEFAULT NULL,
-  `LAST_UPDATE_OBJ_TYPE` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `LAST_UPDATE_OBJ_ID` bigint(20) NULL DEFAULT NULL,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_lang_define
+-- ----------------------------
+INSERT INTO `sys_lang_define` VALUES (1, 'en', 'English');
+INSERT INTO `sys_lang_define` VALUES (2, 'zh', '中文');
+
+-- ----------------------------
+-- Table structure for sys_lang_text
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_lang_text`;
+CREATE TABLE `sys_lang_text`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `lang_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `primary_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `LANG_LANGUAGE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `VALUE` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 
 -- ----------------------------
--- Table structure for sys_lang
+-- Table structure for sys_lang_value
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_lang`;
-CREATE TABLE `sys_lang`  (
+DROP TABLE IF EXISTS `sys_lang_value`;
+CREATE TABLE `sys_lang_value`  (
   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `primary_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `LANG_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `LANG_LANGUAGE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `VALUE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `VALUE` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
 
 -- ----------------------------
 -- Table structure for sys_log
@@ -50,24 +52,25 @@ CREATE TABLE `sys_lang`  (
 DROP TABLE IF EXISTS `sys_log`;
 CREATE TABLE `sys_log`  (
   `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `log_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `method` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `request` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `request_parameter` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `request_ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `response` varchar(4096) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `log_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `method` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `request` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `request_parameter` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `request_ip` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `response` varchar(4096) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `in_millionsecond` bigint(255) NULL DEFAULT NULL,
   `in_time` datetime(0) NULL DEFAULT NULL,
   `out_millionsecond` bigint(255) NULL DEFAULT NULL,
   `out_time` datetime(0) NULL DEFAULT NULL,
-  `oper_obj_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `oper_obj_type` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `oper_obj_id` bigint(20) NULL DEFAULT NULL,
   `create_time` datetime(0) NULL DEFAULT NULL,
-  `status` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `errorstack` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `status` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `errorstack` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`log_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2266 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5718 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -94,31 +97,29 @@ CREATE TABLE `sys_menu`  (
   `LAST_UPDATE_STAFF` bigint(20) NULL DEFAULT NULL,
   `EXT_INFO` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`MENU_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 52 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES (1, 'MANAGER', '管理系统', '/', '../layouts/BasicLayout', NULL, NULL, 0, 0, 0, NULL, '0', '2018-08-19 13:58:50', '2098-12-31 16:00:00', '2018-08-19 13:58:50', '2019-03-05 08:42:58', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (3, 'MANAGER2', 'dashboard', '/dashboard', '', NULL, 'dashboard', 1, 1, 1, NULL, '0', '2018-08-19 13:58:50', '2098-12-31 16:00:00', '2018-08-19 13:58:50', '2018-08-19 13:58:50', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (4, 'MANAGER3', '分析页', '/dashboard/analysis', './Dashboard/Analysis', NULL, '', 2, 3, 1, NULL, '0', '2018-08-19 13:58:50', '2098-12-31 16:00:00', '2018-08-19 13:58:50', '2019-02-13 13:33:19', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (5, 'MENU_CODE_15499589338624a7iB0', '用户首页', '/user', '../layouts/UserLayout', NULL, NULL, 0, NULL, NULL, NULL, '0', '2019-02-12 08:08:53', '2098-12-31 16:00:00', '2019-02-12 08:08:53', '2019-02-12 08:08:53', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (7, 'MENU_CODE_1549959237922Ka8ki2', '注册', '/user/register', './User/Register', NULL, NULL, 1, 5, NULL, NULL, '0', '2019-02-12 08:13:57', '2098-12-31 16:00:00', '2019-02-12 08:13:57', '2019-02-12 08:13:57', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (8, 'MENU_CODE_1549959479883RAnBP3', '注册结果', '/user/register-result', './User/RegisterResult', NULL, NULL, 1, 5, NULL, NULL, '0', '2019-02-12 08:17:59', '2098-12-31 16:00:00', '2019-02-12 08:17:59', '2019-02-12 08:17:59', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (9, 'MENU_CODE_1549981792210C4oUQ0', '登陆', '/user/login', './User/Login', NULL, NULL, 1, 5, NULL, NULL, '0', '2019-02-12 14:29:52', '2098-12-31 16:00:00', '2019-02-12 14:29:52', '2019-02-12 14:29:52', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (10, 'MENU_CODE_1549982067257E0wnQ1', '监控页', '/dashboard/monitor', './Dashboard/Monitor', NULL, '', 2, 3, NULL, NULL, '0', '2019-02-12 14:34:27', '2098-12-31 16:00:00', '2019-02-12 14:34:27', '2019-02-13 13:33:15', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (11, 'MENU_CODE_1549982105258tUCVZ2', '工作台', '/dashboard/workplace', './Dashboard/Workplace', NULL, '', 2, 3, NULL, NULL, '0', '2019-02-12 14:35:05', '2098-12-31 16:00:00', '2019-02-12 14:35:05', '2019-02-13 13:33:10', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (12, 'MENU_CODE_1549982179270czkuM3', '管理员管理', '/manager', NULL, NULL, 'table', 1, 1, NULL, NULL, '0', '2019-02-12 14:36:19', '2098-12-31 16:00:00', '2019-02-12 14:36:19', '2019-02-12 14:36:19', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (13, 'MENU_CODE_1549982212322QMjCV4', '权限管理', '/manager/permission/PermissionTableList', './manager/permission/PermissionTableList', NULL, NULL, 2, 12, NULL, NULL, '0', '2019-02-12 14:36:52', '2098-12-31 16:00:00', '2019-02-12 14:36:52', '2019-02-12 14:36:52', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (14, 'MENU_CODE_1549982255086pC4xY5', '角色管理', '/manager/role/RoleTableList', './manager/role/RoleTableList', NULL, NULL, 2, 12, NULL, NULL, '0', '2019-02-12 14:37:35', '2098-12-31 16:00:00', '2019-02-12 14:37:35', '2019-02-12 14:37:35', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (15, 'MENU_CODE_1549982296506AIDmR6', '员工管理', '/manager/staff/StaffTableList', './manager/staff/StaffTableList', NULL, NULL, 2, 12, NULL, NULL, '0', '2019-02-12 14:38:16', '2098-12-31 16:00:00', '2019-02-12 14:38:16', '2019-02-12 14:38:16', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (16, 'MENU_CODE_15499823270858ZpRm7', '菜单管理', '/manager/setting/MenuTableList', './manager/SystemConfiguration/menu/MenuTableList', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-02-12 14:38:47', '2098-12-31 16:00:00', '2019-02-12 14:38:47', '2019-03-11 02:17:06', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (17, 'MENU_CODE_1549982367033eyW9r8', '系统管理', '/enterprise', NULL, NULL, 'profile', 1, 1, NULL, NULL, '0', '2019-02-12 14:39:27', '2098-12-31 16:00:00', '2019-02-12 14:39:27', '2019-02-12 14:39:27', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (18, 'MENU_CODE_1549982400028dpo8R9', '基本信息管理', '/Enterprise/baseinfo', './Enterprise/baseinfo/EnterpriseBasicInfo', NULL, NULL, 2, 17, NULL, NULL, '0', '2019-02-12 14:40:00', '2098-12-31 16:00:00', '2019-02-12 14:40:00', '2019-02-12 14:40:00', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (21, 'MENU_CODE_1550473105411qHDZY7', '日志查询 ', '/manager/log/LogTableList', './manager/log/LogTableList', NULL, NULL, 2, 12, NULL, NULL, '0', '2019-02-18 06:58:25', '2098-12-31 16:00:00', '2019-02-18 06:58:25', '2019-02-18 06:58:25', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (28, 'MENU_CODE_1551342774158QtJC64', '系统参数', '/manager/setting/SettingTableList', './manager/SystemConfiguration/setting/SettingTableList', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-02-28 08:32:54', '2098-12-31 16:00:00', '2019-02-28 08:32:54', '2019-03-10 09:20:39', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (31, 'MENU_CODE_155220959704696gAz1', '系统设置', '/manager/setting', NULL, '/manager/setting/SettingTableList', NULL, 2, 12, NULL, NULL, '0', '2019-03-10 09:19:56', '2098-12-31 16:00:00', '2019-03-10 09:19:56', '2019-03-10 09:20:45', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (32, 'MENU_CODE_1552209812142tV6oG5', '邮件管理', '/manager/setting/EmailSetting', './manager/SystemConfiguration/Email/EmailTableList', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-03-10 09:23:32', '2098-12-31 16:00:00', '2019-03-10 09:23:32', '2019-03-10 09:23:32', NULL, NULL);
-INSERT INTO `sys_menu` VALUES (44, 'MENU_CODE_15552973369890FQJ41', '定时任务', '/manager/setting/TimeTaskManager', './manager/SystemConfiguration/TimeTask/SystemTimeTask', NULL, NULL, 3, 31, NULL, NULL, '0', '2019-04-15 03:02:16', '2098-12-31 16:00:00', '2019-04-15 03:02:16', '2019-04-15 03:05:20', NULL, NULL);
+INSERT INTO `sys_menu` VALUES (1, 'MANAGER', '管理系统', '/', '', NULL, NULL, 5, 0, 0, 0, NULL, '0', '2018-08-19 13:58:50', '2098-12-31 16:00:00', '2018-08-19 13:58:50', '2019-03-05 08:42:58', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (2, 'MENU_CODE_1549982212322QMjCV4', '权限管理', '/web/manager/main/permission/view', './manager/SystemManager/permission/PermissionTableList', NULL, NULL, 5, 3, 31, NULL, NULL, '0', '2019-02-12 14:36:52', '2098-12-31 16:00:00', '2019-02-12 14:36:52', '2019-07-20 06:12:33', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (3, 'MENU_CODE_1549982255086pC4xY5', '角色管理', '/web/manager/main/role/view', './manager/SystemManager/role/RoleTableList', NULL, NULL, 5, 3, 31, NULL, NULL, '0', '2019-02-12 14:37:35', '2098-12-31 16:00:00', '2019-02-12 14:37:35', '2019-07-20 06:12:46', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (4, 'MENU_CODE_1549982296506AIDmR6', '员工管理', '/web/manager/main/staff/view', './manager/SystemManager/staff/StaffTableList', NULL, NULL, 5, 3, 31, NULL, NULL, '0', '2019-02-12 14:38:16', '2098-12-31 16:00:00', '2019-02-12 14:38:16', '2019-07-20 06:12:52', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (5, 'MENU_CODE_15499823270858ZpRm7', '菜单管理', '/web/manager/setting/menu', './manager/SystemConfiguration/menu/MenuTableList', NULL, NULL, 5, 3, 45, NULL, NULL, '0', '2019-02-12 14:38:47', '2098-12-31 16:00:00', '2019-02-12 14:38:47', '2019-07-20 06:13:12', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (6, 'MENU_CODE_1551342774158QtJC64', '系统参数', '/web/manager/setting/parameter', './manager/SystemConfiguration/setting/SettingTableList', NULL, NULL, 5, 3, 45, NULL, NULL, '0', '2019-02-28 08:32:54', '2098-12-31 16:00:00', '2019-02-28 08:32:54', '2019-07-20 06:13:30', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (7, 'MENU_CODE_1552209812142tV6oG5', '邮件管理', '/web/manager/setting/EmailSetting', './manager/SystemConfiguration/Email/EmailTableList', NULL, NULL, 5, 3, 45, NULL, NULL, 'D', '2019-03-10 09:23:32', '2019-07-20 06:13:57', '2019-03-10 09:23:32', '2019-07-20 06:13:57', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (8, 'MENU_CODE_15552973369890FQJ41', '定时任务', '/web/manager/setting/time-task', './manager/SystemConfiguration/TimeTask/SystemTimeTask', NULL, NULL, 5, 3, 45, NULL, NULL, '0', '2019-04-15 03:02:16', '2098-12-31 16:00:00', '2019-04-15 03:02:16', '2019-07-20 06:13:53', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (9, 'MENU_CODE_1555899943003Zlz8U3', '个人信息查看', '/web/manager/center/information/view', './manager/StaffInformation/WebAccount/WebAccountManager', NULL, NULL, 5, 3, 46, NULL, NULL, '0', '2019-04-22 02:25:42', '2098-12-31 16:00:00', '2019-04-22 02:25:42', '2019-07-20 06:11:50', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (10, 'MENU_CODE_1555913109559MPfPS3', '个人信息修改', '/web/manager/center/information/edit', './manager/StaffInformation/InformationEdit/StaffInformationEdit', NULL, NULL, 5, 3, 46, NULL, NULL, '0', '2019-04-22 06:05:09', '2098-12-31 16:00:00', '2019-04-22 06:05:09', '2019-07-20 06:12:24', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (11, 'MENU_CODE_1564813770704FjCod4', '语言定义', '/web/manager/lang/lang-define', NULL, NULL, NULL, 16, 3, 74, NULL, NULL, '0', '2019-08-03 06:29:30', '2098-12-31 16:00:00', '2019-08-03 06:29:30', '2019-08-03 06:29:30', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (12, 'MENU_CODE_1564824529595vcJfM3', '多语言值', '/web/manager/lang/lang-value', NULL, NULL, NULL, 16, 3, 74, NULL, NULL, '0', '2019-08-03 09:28:49', '2098-12-31 16:00:00', '2019-08-03 09:28:49', '2019-08-03 09:50:06', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (13, 'MENU_CODE_1564970336142kV4De2', '多语言文本', '/web/manager/lang/lang-text', NULL, NULL, NULL, 16, 3, 74, NULL, NULL, '0', '2019-08-05 01:58:56', '2098-12-31 16:00:00', '2019-08-05 01:58:56', '2019-08-05 01:58:56', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (14, 'MENU_CODE_1550473105411qHDZY7', '日志查询', '/web/manager/log/log-table', './manager/log/LogTableList', NULL, NULL, 5, 2, 12, NULL, NULL, '0', '2019-02-18 06:58:25', '2098-12-31 16:00:00', '2019-02-18 06:58:25', '2019-07-20 06:11:10', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (15, 'MENU_CODE_1555898582196reR2W1', '系统管理', '/web/manager/main', NULL, NULL, NULL, 1, 2, 12, NULL, NULL, '0', '2019-04-22 02:03:02', '2098-12-31 16:00:00', '2019-04-22 02:03:02', '2019-04-22 09:11:17', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (16, 'MENU_CODE_155220959704696gAz1', '系统设置', '/web/manager/setting', NULL, '/manager/setting/SettingTableList', NULL, 2, 2, 12, NULL, NULL, '0', '2019-03-10 09:19:56', '2098-12-31 16:00:00', '2019-03-10 09:19:56', '2019-04-22 09:11:22', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (17, 'MENU_CODE_1555899885311VoCaq1', '个人中心', '/web/manager/center', './manager/StaffInformation/StaffInformationMain', NULL, NULL, 3, 2, 12, NULL, NULL, '0', '2019-04-22 02:24:45', '2098-12-31 16:00:00', '2019-04-22 02:24:45', '2019-04-22 09:11:26', NULL, NULL);
+INSERT INTO `sys_menu`(`MENU_ID`, `CODE`, `MENU_NAME`, `MENU_PATH`, `COMPONENT`, `REDIRECT`, `ICON`, `MENU_RANGE`, `MENU_LEVEL`, `PARENT_MENU`, `TOP_MENU`, `MENU_DESCRIPTION`, `STATUS`, `CREATE_TIME`, `EXPIRE_TIME`, `EFFECTIVE_TIME`, `LAST_UPDATE_TIME`, `LAST_UPDATE_STAFF`, `EXT_INFO`) VALUES (18, 'MENU_CODE_1564813744515T6Pt72', '系统语言', '/web/manager/lang', NULL, NULL, NULL, 3, 2, 12, NULL, NULL, '0', '2019-08-03 06:29:04', '2098-12-31 16:00:00', '2019-08-03 06:29:04', '2019-08-03 09:28:00', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_parameter
@@ -137,31 +138,10 @@ CREATE TABLE `sys_parameter`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Table structure for sys_parameter_category
+-- Records of sys_parameter
 -- ----------------------------
-DROP TABLE IF EXISTS `sys_parameter_category`;
-CREATE TABLE `sys_parameter_category`  (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `CATEGORY_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `LEVEL` int(10) NULL DEFAULT NULL,
-  `PARENT_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `TOP_PARENT_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `CATEGORY_NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `CATEGORY_NAME_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for sys_parameter_desc
--- ----------------------------
-DROP TABLE IF EXISTS `sys_parameter_desc`;
-CREATE TABLE `sys_parameter_desc`  (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `PARAMETER_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `VALUE` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `NAME_CODE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+INSERT INTO `sys_parameter` VALUES (3, 'FileSystemPath', '上传文件目录', NULL, NULL, 'E:\\filesystem', NULL, NULL);
+INSERT INTO `sys_parameter` VALUES (5, 'FileSystemPathTemp', '上传文件临时目录', NULL, NULL, 'E:\\filesystem_temp', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission
@@ -181,14 +161,12 @@ CREATE TABLE `sys_permission`  (
   `STATUS` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `LAST_UPDATE_TIME` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`PERMISSION_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_permission
 -- ----------------------------
 INSERT INTO `sys_permission` VALUES (1, '/**', '所有权限', 'ALL', '1', 'ALL', 'N', '2018-08-04 07:54:14', '2018-08-04 07:54:14', '2098-12-31 16:00:00', '0', '2019-02-22 05:49:14');
-INSERT INTO `sys_permission` VALUES (2, '/eframe/manage/login', '登陆', 'LOGIN', '1', 'POST', 'Y', '2018-08-04 07:54:14', '2018-08-04 07:54:14', '2098-12-31 16:00:00', '0', '2018-11-14 13:59:38');
-INSERT INTO `sys_permission` VALUES (4, '/eframe/multipart-manager/**', '下载图片', 'PERCODE_1551085964590K2XYw1', '1', 'GET', 'Y', '2019-02-25 09:12:44', '2019-02-25 09:12:44', '2098-12-31 16:00:00', '0', '2019-03-06 01:38:43');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -207,12 +185,12 @@ CREATE TABLE `sys_role`  (
   `STATUS` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `LAST_UPDATE_TIME` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`ROLE_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES (1, '超级管理员', 'root', '超级管理员', 4, 4, '2018-08-04 07:52:06', '2018-08-04 07:52:06', '2098-12-31 16:00:00', '0', '2019-04-08 05:48:27');
+INSERT INTO `sys_role` VALUES (1, '超级管理员', 'root', '超级管理员', 4, 4, '2018-08-04 07:52:06', '2018-08-04 07:52:06', '2099-01-01 16:00:00', '0', '2019-06-25 16:21:29');
 
 -- ----------------------------
 -- Table structure for sys_role_permission
@@ -223,7 +201,7 @@ CREATE TABLE `sys_role_permission`  (
   `ROLE_ID` bigint(20) NULL DEFAULT NULL,
   `PERMISSION_ID` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`ROLE_PERMISSION_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_role_permission
@@ -239,7 +217,7 @@ CREATE TABLE `sys_role_staff`  (
   `ROLE_ID` bigint(20) NULL DEFAULT NULL,
   `STAFF_ID` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`ROLE_STAFF_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_role_staff
@@ -267,14 +245,39 @@ CREATE TABLE `sys_staff`  (
   `LAST_UPDATE_TIME` datetime(0) NULL DEFAULT NULL,
   `REMARK` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`STAFF_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_staff
 -- ----------------------------
-INSERT INTO `sys_staff` VALUES (1, 'admin', '超级管理员', 'huayu611@sina.com', '18652064082', 'zh', '1e2d332704495b11cc8fb4f342ad8f25', 'ugmtnZt1JXLVs1Kt', '2018-12-18 21:18:37', '0', '2019-04-09 01:55:48', '2018-06-27 22:57:29', '2020-12-31 22:57:53', '2019-04-08 05:48:35', '我是超级管理员。.');
+INSERT INTO `sys_staff` VALUES (1, 'admin', '超级管理员', 'huayu611@sina.com', '18652064082', 'zh', '1e2d332704495b11cc8fb4f342ad8f25', 'ugmtnZt1JXLVs1Kt', '2018-12-18 21:18:37', '0', '2019-08-05 06:11:44', '2018-06-27 22:57:29', '2020-12-31 22:57:53', '2019-07-02 12:07:59', '个人开发');
+-- ----------------------------
+-- Table structure for sys_staff_ext
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_staff_ext`;
+CREATE TABLE `sys_staff_ext`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `staff_id` bigint(20) NULL DEFAULT NULL,
+  `gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `real_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `identity_id` varchar(28) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `nick_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `qq` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `wechat` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `weibo` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `remark` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `signature` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `other_tel_number` varchar(19) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `alipay` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `birthday` date NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
-
+-- ----------------------------
+-- Records of sys_staff_ext
+-- ----------------------------
+INSERT INTO `sys_staff_ext` VALUES (1, 1, '1', '李志华', '342425198706112019', '悔格拉', '56565666', 'huayu611', 'huayu611', 'http://192.168.1.6:8080/eframe/multipart-manager/download/staff-avatar/b5eae3b5-67bc-48ed-b16d-9dd69499b85ao.png', '个人开发', '试着就只是做你自己，并且要优雅地放手所有不属于你的东西。生活不是用来幻想和回忆的，生活是用来思考和追求的！生活如茶不仅要懂得如何泡制，更是要懂得如何去品尝！', '18652064082', 'huayu611@sina.com', '2019-04-03');
 
 
 -- ----------------------------
@@ -301,31 +304,12 @@ CREATE TABLE `sys_timetask`  (
   `execute_count` int(10) NULL DEFAULT NULL,
   `next_execute_time` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
-
-DROP TABLE IF EXISTS `sys_staff_ext`;
-CREATE TABLE `sys_staff_ext`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `staff_id` bigint(20) NULL DEFAULT NULL,
-  `gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `real_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `identity_id` varchar(28) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `nick_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `qq` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `wechat` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `weibo` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `remark` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `signature` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `other_tel_number` varchar(19) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `alipay` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `birthday` date NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
-
-
+-- ----------------------------
+-- Records of sys_timetask
+-- ----------------------------
+INSERT INTO `sys_timetask` VALUES (1, 'timetask_15553166000817R0AC1', '清理数据', 'Clean Up Deletion Data', '2019-04-15 16:00:00', '2098-12-31 16:00:00', '2', 1, 'day', 'cycle', '2019-04-15 08:23:19', 'STAFF', 1, '2019-07-24 06:17:54', 'STAFF', 1, 539, '2019-08-05 16:42:39');
 -- ----------------------------
 -- Table structure for sys_timetask_instance
 -- ----------------------------
@@ -339,5 +323,6 @@ CREATE TABLE `sys_timetask_instance`  (
   `error_stack` varchar(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `retry_time` int(10) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1248 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
 SET FOREIGN_KEY_CHECKS = 1;

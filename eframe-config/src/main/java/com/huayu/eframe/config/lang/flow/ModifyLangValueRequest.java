@@ -1,7 +1,7 @@
 package com.huayu.eframe.config.lang.flow;
 
 import com.huayu.eframe.flow.annotation.EFrameRequest;
-import com.huayu.eframe.server.common.i18n.table.service.LangValueDetail;
+import com.huayu.eframe.config.lang.entity.service.LangValueDetail;
 
 import java.util.Map;
 

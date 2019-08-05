@@ -54,7 +54,7 @@ public class DownloadBusiness extends AbstractExecuteBusiness
                     os.write(buffer, 0, i);
                     i = bis.read(buffer);
                 }
-                System.out.println("success");
+
             }
             catch (Exception e)
             {
