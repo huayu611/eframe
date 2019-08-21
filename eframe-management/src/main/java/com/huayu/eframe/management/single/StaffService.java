@@ -2,6 +2,7 @@ package com.huayu.eframe.management.single;
 
 import com.huayu.eframe.management.bo.Staff;
 import com.huayu.eframe.management.single.bo.StaffDetail;
+import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 
@@ -46,5 +47,7 @@ public interface StaffService
     PageObject queryStaffListByPage(StaffDetail queryStaffDetail, PagingRequest pagingRequest);
 
     void changePassword(String loginCode, String password);
+
+    MenuDetail queryCurrentStaffMenuDetail();
 
 }

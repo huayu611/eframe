@@ -56,27 +56,30 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
         try
         {
             lock.lock();
-
-            List<T> allRecord = load();
-            if (CollectionUtils.isEmpty(indexList))
+            if(!loaded)
             {
-                return;
-            }
-            for (Index index : indexList)
-            {
-
-                if (CollectionUtils.isEmpty(allRecord))
+                List<T> allRecord = load();
+                if (CollectionUtils.isEmpty(indexList))
                 {
-                    continue;
+                    return;
                 }
-
-                CacheElement cacheElement = memberRecord.get(index);
-                for (T t : allRecord)
+                for (Index index : indexList)
                 {
-                    cacheElement.putValue(t);
+
+                    if (CollectionUtils.isEmpty(allRecord))
+                    {
+                        continue;
+                    }
+
+                    CacheElement cacheElement = memberRecord.get(index);
+                    for (T t : allRecord)
+                    {
+                        cacheElement.putValue(t);
+                    }
                 }
+                loaded = true;
             }
-            loaded = true;
+
         }
         finally
         {

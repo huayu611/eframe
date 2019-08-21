@@ -1,6 +1,7 @@
 package com.huayu.eframe.management.single.bo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.huayu.eframe.menu.service.MenuDetail;
 
 import java.util.Date;
 import java.util.List;
@@ -13,7 +14,6 @@ public class RoleDetail
 {
 
     private List<PermissionDetail> permissions;
-
 
     private String name;
 
@@ -33,6 +33,35 @@ public class RoleDetail
 
     private String remark;
 
+    private List<String> addMenus;
+
+    private List<String> removeMenus;
+
+    private List<String> currentMenus;
+
+    private String roleMenus;
+
+    private List<MenuDetail> menus;
+
+    public List<MenuDetail> getMenus()
+    {
+        return menus;
+    }
+
+    public void setMenus(List<MenuDetail> menus)
+    {
+        this.menus = menus;
+    }
+
+    public String getRoleMenus()
+    {
+        return roleMenus;
+    }
+
+    public void setRoleMenus(String roleMenus)
+    {
+        this.roleMenus = roleMenus;
+    }
 
     public List<PermissionDetail> getPermissions()
     {
@@ -132,5 +161,36 @@ public class RoleDetail
     public void setStatusName(String statusName)
     {
         this.statusName = statusName;
+    }
+
+
+    public List<String> getAddMenus()
+    {
+        return addMenus;
+    }
+
+    public void setAddMenus(List<String> addMenus)
+    {
+        this.addMenus = addMenus;
+    }
+
+    public List<String> getRemoveMenus()
+    {
+        return removeMenus;
+    }
+
+    public void setRemoveMenus(List<String> removeMenus)
+    {
+        this.removeMenus = removeMenus;
+    }
+
+    public List<String> getCurrentMenus()
+    {
+        return currentMenus;
+    }
+
+    public void setCurrentMenus(List<String> currentMenus)
+    {
+        this.currentMenus = currentMenus;
     }
 }

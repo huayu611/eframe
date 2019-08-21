@@ -16,6 +16,8 @@ public interface MenuAtom
 
     List<Menu> queryMenu(Date now, Integer level);
 
+    List<Menu> queryAllMenu();
+
     List<Menu> queryMenuByParent(Date now, Long parentMenu);
 
     Menu queryMenuById(Long id);

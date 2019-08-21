@@ -37,7 +37,6 @@ public class StartApplication
 
     public static void main(String[] args)
     {
-
         start(args);
     }
 
@@ -48,6 +47,7 @@ public class StartApplication
         resolvePassword();
         SpringApplication.run(StartApplication.class, args);
         debug.debug("Boot Start success");
+        System.out.println("Start up finish!");
     }
 
 

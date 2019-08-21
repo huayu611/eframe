@@ -1,26 +1,24 @@
 package com.huayu.eframe.management.single.impl;
 
 import com.huayu.eframe.global.dict.common.DictionaryUtils;
-import com.huayu.eframe.management.atom.RoleAtom;
-import com.huayu.eframe.management.atom.RoleStaffAtom;
-import com.huayu.eframe.management.atom.StaffAtom;
-import com.huayu.eframe.management.atom.StaffExtAtom;
-import com.huayu.eframe.management.bo.Role;
-import com.huayu.eframe.management.bo.RoleStaff;
-import com.huayu.eframe.management.bo.Staff;
-import com.huayu.eframe.management.bo.StaffExt;
+import com.huayu.eframe.management.atom.*;
+import com.huayu.eframe.management.bo.*;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
 import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.single.StaffService;
 import com.huayu.eframe.management.single.bo.RoleDetail;
 import com.huayu.eframe.management.single.bo.StaffDetail;
+import com.huayu.eframe.menu.bo.Menu;
+import com.huayu.eframe.menu.cache.MenuMetaCache;
+import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.server.common.FramePaging;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
+import com.huayu.eframe.server.mvc.token.Token;
 import com.huayu.eframe.server.service.exception.IFPException;
 import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.RandomUtils;
@@ -56,6 +54,12 @@ public class StaffServiceImpl implements StaffService
 
     @Autowired
     private StaffExtAtom staffExtAtom;
+
+    @Autowired
+    private RoleMenuAtom roleMenuAtom;
+
+    @Autowired
+    private MenuMetaCache menuMetaCache;
 
     @Autowired
     private SecurityServiceImplUtil securityServiceImplUtil;
@@ -507,6 +511,90 @@ public class StaffServiceImpl implements StaffService
         String passwordEncry = Encrypt.getMD5Code(password + staff.getSalt() + loginCode);
         staff.setPassword(passwordEncry);
         staffAtom.update(staff);
+
+    }
+
+    @Override
+    public MenuDetail queryCurrentStaffMenuDetail()
+    {
+        Token token = LocalAttribute.getToken();
+        String loginCode = token.getPrimaryCode();
+        if(StringUtils.isNullOrEmpty(loginCode))
+        {
+            return null;
+        }
+        List<Staff> staff = staffAtom.queryStaffByLogin(loginCode, LocalAttribute.getNow());
+        Staff current = CollectionUtils.getFirstElement(staff);
+        if(null == current)
+        {
+            return null;
+        }
+        List<RoleStaff> roles = roleStaffAtom.queryRoleStaffByStaffId(current.getId());
+        List<Role> roleQuery = new ArrayList<>();
+        CollectionUtils.iterator(roles,(c,v,i)->{
+            Role roleQ = new Role();
+            roleQ.setId(v.getRoleId());
+            roleQuery.add(roleQ);
+        });
+        List<RoleMenu> roleMenu = roleMenuAtom.queryAllRoleMenuInRoles(roleQuery);
+        List<Long> result = new ArrayList<>();
+        CollectionUtils.iterator(roleMenu,(c,v,i)->{
+            result.add(v.getMenu().getMenuId());
+        });
+
+
+        Menu menu = menuMetaCache.queryMenuByCode("MANAGER");
+        return buildMenuDetail(menu,result);
+    }
+
+    private MenuDetail buildMenuDetail(Menu menu, List<Long>  ids)
+    {
+        MenuDetail menuDetail = new MenuDetail();
+        menuDetail.setCode(menu.getCode());
+        menuDetail.setComponent(menu.getComponent());
+        menuDetail.setName(menu.getMenuName());
+        menuDetail.setPath(menu.getMenuPath());
+        menuDetail.setRedirect(menu.getRedirect());
+        menuDetail.setIcon(menu.getIcon());
+        menuDetail.setKey(menu.getCode());
+        menuDetail.setRange(menu.getRange());
+        Long parent = menu.getParentMenu();
+        if (null != parent && !Long.valueOf(0).equals(parent))
+        {
+            Menu parentMenu = menuMetaCache.queryMenuById(parent);
+            menuDetail.setParentMenu(null != parentMenu ? parentMenu.getCode() : null);
+        }
+
+        //routes
+        List<Menu> sonMenu = menuMetaCache.queryMenuByParent( menu.getMenuId());
+        if (CollectionUtils.isEmpty(sonMenu))
+        {
+            if(ids.contains(menu.getMenuId()))
+            {
+                return menuDetail;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+        List<MenuDetail> sonMenuDetail = new ArrayList<>();
+        for (Menu son : sonMenu)
+        {
+            MenuDetail sonDetail = buildMenuDetail(son,ids);
+            if(null != sonDetail)
+            {
+                sonMenuDetail.add(sonDetail);
+            }
+
+        }
+        menuDetail.setRoutes(sonMenuDetail);
+        if(CollectionUtils.isNotEmpty(sonMenuDetail))
+        {
+            return menuDetail;
+        }
+        return null;
 
     }
 

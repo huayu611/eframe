@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huayu.eframe.flow.annotation.EFrameRequest;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Leo on 2018/10/2.
@@ -35,6 +36,24 @@ public class ModifyRoleRequest
 
     @EFrameRequest(length = 512)
     private String remark;
+
+    @EFrameRequest(length = 2048)
+    private String roleMenus;
+
+    public String getRoleMenus()
+    {
+        return roleMenus;
+    }
+
+    public void setRoleMenus(String roleMenus)
+    {
+        this.roleMenus = roleMenus;
+    }
+
+    private List<String> addMenus;
+
+    private List<String> removeMenus;
+
 
     public String getName()
     {
@@ -126,5 +145,25 @@ public class ModifyRoleRequest
     public void setExp(Date exp)
     {
         this.exp = exp;
+    }
+
+    public List<String> getAddMenus()
+    {
+        return addMenus;
+    }
+
+    public void setAddMenus(List<String> addMenus)
+    {
+        this.addMenus = addMenus;
+    }
+
+    public List<String> getRemoveMenus()
+    {
+        return removeMenus;
+    }
+
+    public void setRemoveMenus(List<String> removeMenus)
+    {
+        this.removeMenus = removeMenus;
     }
 }

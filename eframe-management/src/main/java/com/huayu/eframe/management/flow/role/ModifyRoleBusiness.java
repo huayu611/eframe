@@ -42,9 +42,12 @@ public class ModifyRoleBusiness extends AbstractExecuteBusiness
         roleDetail.setCode(roleRequest.getCode());
         roleDetail.setExp(roleRequest.getExp());
         roleDetail.setName(roleRequest.getName());
+        roleDetail.setAddMenus(roleRequest.getAddMenus());
+        roleDetail.setRemoveMenus(roleRequest.getRemoveMenus());
         roleDetail.setParent(roleRequest.getParent());
         roleDetail.setRemark(roleRequest.getRemark());
         roleDetail.setStatus(roleRequest.getStatus());
+        roleDetail.setRoleMenus(roleRequest.getRoleMenus());
         return roleDetail;
     }
 

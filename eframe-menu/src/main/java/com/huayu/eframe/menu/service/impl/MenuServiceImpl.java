@@ -2,6 +2,8 @@ package com.huayu.eframe.menu.service.impl;
 
 import com.huayu.eframe.menu.atom.MenuAtom;
 import com.huayu.eframe.menu.bo.Menu;
+import com.huayu.eframe.menu.cache.MenuDetailCache;
+import com.huayu.eframe.menu.cache.MenuMetaCache;
 import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.menu.service.MenuService;
 import com.huayu.eframe.server.context.LocalAttribute;
@@ -64,6 +66,8 @@ public class MenuServiceImpl implements MenuService
         }
         Menu resultMenu = menuAtom.addMenu(menu);
         MenuDetail menuDetailResult = buildMenuDetail(resultMenu);
+        LocalAttribute.addNeedRefreshCache(MenuDetailCache.CACHE_NAME);
+        LocalAttribute.addNeedRefreshCache(MenuMetaCache.CACHE_NAME);
         return menuDetailResult;
     }
 
@@ -74,6 +78,8 @@ public class MenuServiceImpl implements MenuService
         buildModifyMenu(menu, menuDetail);
         Menu newMenu = menuAtom.updateMenu(menu);
         MenuDetail newMenuDetail = buildMenuDetail(newMenu);
+        LocalAttribute.addNeedRefreshCache(MenuDetailCache.CACHE_NAME);
+        LocalAttribute.addNeedRefreshCache(MenuMetaCache.CACHE_NAME);
         return newMenuDetail;
     }
 
@@ -85,9 +91,12 @@ public class MenuServiceImpl implements MenuService
             return "";
         }
         Menu menu = getMenuByCode(menuCode);
+
         if (null != menu)
         {
             Menu expireMenu = expireMenu(menu);
+            LocalAttribute.addNeedRefreshCache(MenuDetailCache.CACHE_NAME);
+            LocalAttribute.addNeedRefreshCache(MenuMetaCache.CACHE_NAME);
             return expireMenu.getCode();
         }
         return "";
@@ -99,6 +108,8 @@ public class MenuServiceImpl implements MenuService
         menu.setExpireTime(LocalAttribute.getNow());
         fixUpdateItem(menu);
         Menu result = menuAtom.updateMenu(menu);
+        LocalAttribute.addNeedRefreshCache(MenuDetailCache.CACHE_NAME);
+        LocalAttribute.addNeedRefreshCache(MenuMetaCache.CACHE_NAME);
         return result;
     }
 
@@ -159,7 +170,6 @@ public class MenuServiceImpl implements MenuService
         menu.setMenuName(menuDetail.getName());
         menu.setStatus("0");
         menu.setRedirect(menuDetail.getRedirect());
-        //parent menu
         Menu parentMenu = getMenuByCode(menuDetail.getParentMenu());
         if (null != parentMenu)
         {
@@ -180,8 +190,6 @@ public class MenuServiceImpl implements MenuService
     {
         buildBaseInfo(menuDetail, menu);
         fixUpdateItem(menu);
-
-        //parentMenu
     }
 
     private void fixCreateItem(Menu menu)

@@ -66,6 +66,8 @@ public class AddRoleBusiness extends AbstractExecuteBusiness
         roleDetail.setParent(request.getParent());
         roleDetail.setRemark(request.getRemark());
         roleDetail.setStatus(request.getStatus());
+        roleDetail.setAddMenus(request.getAddMenus());
+        roleDetail.setRemoveMenus(request.getRemoveMenus());
         return roleDetail;
     }
 }

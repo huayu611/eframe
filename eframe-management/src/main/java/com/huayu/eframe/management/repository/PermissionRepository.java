@@ -15,11 +15,5 @@ import java.util.List;
  */
 public interface PermissionRepository extends JpaRepository<Permission, Long>, JpaSpecificationExecutor<Permission>
 {
-    List<Permission> findByPermissionCodeLike(String name);
 
-
-    @Query(value = "SELECT * FROM SYS_PERMISSION WHERE  and EXPIRE_TIME >?1 and STATUS<>'D'",
-            countQuery = "SELECT COUNT(1) FROM SYS_PERMISSION WHERE  and EXPIRE_TIME >?1 and STATUS<>'D'",
-            nativeQuery = true)
-    Page<Permission> findAllByPage(Date currentTime, Pageable pageable);
 }

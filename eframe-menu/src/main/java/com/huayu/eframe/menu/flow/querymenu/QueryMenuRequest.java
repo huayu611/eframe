@@ -10,6 +10,9 @@ public class QueryMenuRequest
     @EFrameRequest(length = 128)
     private String code;
 
+    @EFrameRequest(length = 512)
+    private String path;
+
     public String getCode()
     {
         return code;
@@ -18,5 +21,15 @@ public class QueryMenuRequest
     public void setCode(String code)
     {
         this.code = code;
+    }
+
+    public String getPath()
+    {
+        return path;
+    }
+
+    public void setPath(String path)
+    {
+        this.path = path;
     }
 }

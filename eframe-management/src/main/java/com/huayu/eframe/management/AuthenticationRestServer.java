@@ -4,6 +4,8 @@ package com.huayu.eframe.management;
 import com.huayu.eframe.flow.Flow;
 import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.flow.login.LoginBusiness;
+import com.huayu.eframe.management.flow.menu.QueryStaffMenuBusiness;
+import com.huayu.eframe.management.flow.menu.QueryStaffMenuRequest;
 import com.huayu.eframe.management.flow.permission.*;
 import com.huayu.eframe.management.flow.role.AddRoleBusiness;
 import com.huayu.eframe.management.flow.role.DeleteRoleBusiness;
@@ -220,6 +222,15 @@ public class AuthenticationRestServer
         {
             return Flow.execute(ChangePasswordBusiness.class, request, easyParam);
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/staff-menu", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object deleteStaff( EasyParam easyParam)
+    {
+        QueryStaffMenuRequest queryStaffMenuRequest = new QueryStaffMenuRequest();
+        Object obj = Flow.execute(QueryStaffMenuBusiness.class, queryStaffMenuRequest, easyParam);
+        return obj;
     }
 
 

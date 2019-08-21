@@ -14,5 +14,7 @@ public class SecurityCacheFacade
         LocalAttribute.addNeedRefreshCache(PermissionCache.CACHE_NAME);
         LocalAttribute.addNeedRefreshCache(RoleStaffCache.CACHE_NAME);
         LocalAttribute.addNeedRefreshCache(RolePermissionCache.CACHE_NAME);
+        LocalAttribute.addNeedRefreshCache(RoleMenuCache.CACHE_NAME);
+
     }
 }

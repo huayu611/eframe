@@ -51,6 +51,17 @@ public class MenuRestServer
         Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
         return obj;
     }
+    @ResponseBody
+    @RequestMapping(value = "/menu-path", method = RequestMethod.GET,  produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Object queryMenuByUrl(
+            @RequestParam(name = "path", required = false) String path,
+            EasyParam easyParam)
+    {
+        QueryMenuRequest request = new QueryMenuRequest();
+        request.setPath(path);
+        Object obj = Flow.execute(QueryMenuBusiness.class, request, easyParam);
+        return obj;
+    }
 
     @ResponseBody
     @RequestMapping(value = "/menu", method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})

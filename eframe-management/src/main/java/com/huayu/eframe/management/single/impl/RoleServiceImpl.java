@@ -1,20 +1,17 @@
 package com.huayu.eframe.management.single.impl;
 
 import com.huayu.eframe.global.dict.common.DictionaryUtils;
-import com.huayu.eframe.management.atom.PermissionAtom;
-import com.huayu.eframe.management.atom.RoleAtom;
-import com.huayu.eframe.management.atom.RolePermissionAtom;
-import com.huayu.eframe.management.atom.RoleStaffAtom;
-import com.huayu.eframe.management.bo.Permission;
-import com.huayu.eframe.management.bo.Role;
-import com.huayu.eframe.management.bo.RolePermission;
-import com.huayu.eframe.management.bo.RoleStaff;
+import com.huayu.eframe.management.atom.*;
+import com.huayu.eframe.management.bo.*;
 import com.huayu.eframe.management.cache.SecurityCacheFacade;
 import com.huayu.eframe.management.common.constants.ManagementErrorCode;
 import com.huayu.eframe.management.constant.SecurityConstant;
 import com.huayu.eframe.management.single.RoleService;
 import com.huayu.eframe.management.single.bo.PermissionDetail;
 import com.huayu.eframe.management.single.bo.RoleDetail;
+import com.huayu.eframe.menu.bo.Menu;
+import com.huayu.eframe.menu.cache.MenuMetaCache;
+import com.huayu.eframe.menu.service.MenuDetail;
 import com.huayu.eframe.server.common.FramePaging;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
@@ -54,6 +51,12 @@ public class RoleServiceImpl implements RoleService
     private RoleStaffAtom roleStaffAtom;
 
     @Autowired
+    private RoleMenuAtom roleMenuAtom;
+
+    @Autowired
+    private MenuMetaCache menuMetaCache;
+
+    @Autowired
     private SecurityServiceImplUtil securityServiceImplUtil;
 
     @Override
@@ -71,9 +74,12 @@ public class RoleServiceImpl implements RoleService
             roleTemp = roleAtom.update(role);
 
         }
-        SecurityCacheFacade.refreshByLocalFlow();
-        RoleDetail roleDetailReturn = getRoleDetail(roleTemp);
+
+
+        List<RoleMenu> resultRoleMenu = processRoleMenu(roleTemp,roleDetail);
+        RoleDetail roleDetailReturn = getRoleDetail(roleTemp,resultRoleMenu);
         roleDetailReturn.setPermissions(processPermission(role, permissionCodes));
+        SecurityCacheFacade.refreshByLocalFlow();
         return roleDetailReturn;
     }
 
@@ -108,6 +114,7 @@ public class RoleServiceImpl implements RoleService
             String[] exceptionParam = new String[]{modifyRole.getCode()};
             throw new IFPException(ManagementErrorCode.ROLE_ROLE_CODE_NOT_EXIST, "Role code not exist", exceptionParam);
         }
+
         if (StringUtils.isNotNullAndEmpty(modifyRole.getName()))
         {
             role.setName(modifyRole.getName());
@@ -126,8 +133,17 @@ public class RoleServiceImpl implements RoleService
         }
         role.setLastUpdateTime(LocalAttribute.getNow());
         Role roleReturn = roleAtom.update(role);
-        SecurityCacheFacade.refreshByLocalFlow();
-        RoleDetail roleDetailReturn = getRoleDetail(roleReturn);
+
+
+
+
+        List<RoleMenu> resultRoleMenu = processRoleMenu(roleReturn,modifyRole);
+        RoleDetail roleDetailReturn = getRoleDetail(roleReturn,resultRoleMenu);
+        if(StringUtils.isNotNullAndEmpty(modifyRole.getRoleMenus()))
+        {
+            List<MenuDetail> result = processMenuCodes(role,modifyRole.getRoleMenus());
+            roleDetailReturn.setMenus(result);
+        }
         debug.log(permissions);
         if (null == permissions)
         {
@@ -135,6 +151,7 @@ public class RoleServiceImpl implements RoleService
         }
         List<PermissionDetail> pds = processPermissionCodes(roleReturn, permissions);
         roleDetailReturn.setPermissions(pds);
+        SecurityCacheFacade.refreshByLocalFlow();
         return roleDetailReturn;
     }
 
@@ -262,13 +279,18 @@ public class RoleServiceImpl implements RoleService
 
     private RoleDetail getRoleDetail(Role role)
     {
+        return getRoleDetail(role,null);
+    }
+
+    private RoleDetail getRoleDetail(Role role,List<RoleMenu> roleMenus)
+    {
         RoleDetail roleDetail = new RoleDetail();
         roleDetail.setName(role.getName());
         roleDetail.setCode(role.getRoleCode());
         roleDetail.setEff(role.getEffectiveTime());
         roleDetail.setExp(role.getExpireTime());
         roleDetail.setStatus(role.getStatus());
-        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("role_status",role.getStatus());
+        String statusName = DictionaryUtils.getDictNameDictKeyAndValue("role_status", role.getStatus());
         roleDetail.setStatusName(statusName);
         Role parentRole = getRleByRoleID(role.getParentRoleId());
         Role topRole = getRleByRoleID(role.getTopRoleId());
@@ -280,8 +302,17 @@ public class RoleServiceImpl implements RoleService
         {
             roleDetail.setTop(topRole.getRoleCode());
         }
+
         roleDetail.setRemark(role.getRemark());
         roleDetail.setPermissions(coverPermissionDetailList(role.getId()));
+        if(CollectionUtils.isNotEmpty(roleMenus))
+        {
+            List<String> currentList = new ArrayList<>();
+            CollectionUtils.iterator(roleMenus,(c,v,i)->{
+                currentList.add(v.getMenu().getCode());
+            });
+            roleDetail.setCurrentMenus(currentList);
+        }
         return roleDetail;
     }
 
@@ -516,5 +547,164 @@ public class RoleServiceImpl implements RoleService
         roleStaff.setRoleId(roleId);
         List<RoleStaff> allRoleStaff = roleStaffAtom.queryRoleStaff(roleStaff);
         roleStaffAtom.delete(allRoleStaff);
+    }
+
+    private List<RoleMenu> processRoleMenu(Role role, RoleDetail roleDetail)
+    {
+        List<String> addMenu = roleDetail.getAddMenus();
+        List<String> removeMenu = roleDetail.getRemoveMenus();
+
+        if(CollectionUtils.isEmpty(addMenu)&&CollectionUtils.isEmpty(removeMenu))
+        {
+            return roleMenuAtom.queryRoleMenuByRole(role);
+
+        }
+
+
+        List<RoleMenu> roleMenu = roleMenuAtom.queryRoleMenuByRole(role);
+
+        //转map
+        Map<String, RoleMenu> roleMenuMap = new HashMap<>();
+        CollectionUtils.iterator(roleMenu, (c, v, i) ->
+        {
+            if (null != v && null != v.getMenu())
+            {
+                roleMenuMap.put(v.getMenu().getCode(), v);
+            }
+        });
+
+        List<RoleMenu> addRoleMenu = new ArrayList<>();
+        List<RoleMenu> removeRoleMenu = new ArrayList<>();
+
+        CollectionUtils.iterator(addMenu,(c,v,i)->{
+            String addMenuCode = v;
+            if(StringUtils.isNotNullAndEmpty(addMenuCode))
+            {
+                if(!roleMenuMap.containsKey(addMenuCode))
+                {
+                    Menu menuInfo = menuMetaCache.queryMenuByCode(addMenuCode);
+                    if(null ==  menuInfo)
+                    {
+                        throw new IFPException();
+                    }
+                    RoleMenu roleMenuForAddTemp = new RoleMenu();
+                    roleMenuForAddTemp.setRole(role);
+                    roleMenuForAddTemp.setMenu(menuInfo);
+                    addRoleMenu.add(roleMenuForAddTemp);
+                }
+
+            }
+        });
+        CollectionUtils.iterator(removeMenu,(c,v,i)->{
+            String removeMenuCode = v;
+            if(StringUtils.isNotNullAndEmpty(removeMenuCode))
+            {
+                RoleMenu roleMenuInfo = roleMenuMap.get(removeMenuCode);
+                if(null !=  roleMenuInfo)
+                {
+                    removeRoleMenu.add(roleMenuInfo);
+                }
+
+            }
+        });
+        if(CollectionUtils.isNotEmpty(addRoleMenu))
+        {
+            roleMenuAtom.batchAddRoleMenu(addRoleMenu);
+        }
+        if(CollectionUtils.isNotEmpty(removeRoleMenu))
+        {
+            roleMenuAtom.batchRemoveRoleMenu(removeRoleMenu);
+        }
+        return roleMenuAtom.queryRoleMenuByRole(role);
+    }
+
+
+    private List<RoleMenu> getRoleMenuByRoleId(Role role)
+    {
+        List<RoleMenu> roleMenuCondition = roleMenuAtom.queryRoleMenuByRole(role);
+        return roleMenuCondition;
+    }
+
+    private Map<Long, RoleMenu> mappingRoleMenu(List<RoleMenu> allRoleMenu)
+    {
+        Map<Long, RoleMenu> result = new HashMap<>();
+        if (CollectionUtils.isNotEmpty(allRoleMenu))
+        {
+            for (RoleMenu rm : allRoleMenu)
+            {
+                result.put(rm.getMenu().getMenuId(), rm);
+            }
+        }
+        return result;
+    }
+
+    public List<MenuDetail> processMenuCodes(Role role, String codes)
+    {
+        debug.log(codes);
+        List<RoleMenu> roleMenuList = getRoleMenuByRoleId(role);
+        Map<Long, RoleMenu> roleMap = mappingRoleMenu(roleMenuList);
+        List<RoleMenu> removeList = new ArrayList<>();
+        List<Long> addList = new ArrayList<>();
+        List<Long> updateRoleMenu = new ArrayList<>();
+        if (StringUtils.isNotNullAndEmpty(codes))
+        {
+            String[] codeArr = org.springframework.util.StringUtils.tokenizeToStringArray(codes, MULTI_VALUE_ATTRIBUTE_DELIMITERS);
+            for (String menuCode : codeArr)
+            {
+                debug.log(menuCode);
+                Menu menu = menuMetaCache.queryMenuByCode(menuCode);
+                if (null == menu)
+                {
+                    continue;
+                }
+                RoleMenu roleMenu  = roleMap.get(menu.getMenuId());
+                if (null == roleMenu)
+                {
+                    addList.add(menu.getMenuId());
+                }
+                updateRoleMenu.add(menu.getMenuId());
+            }
+        }
+        if (CollectionUtils.isNotEmpty(roleMenuList))
+        {
+            for (RoleMenu roleMenu : roleMenuList)
+            {
+                if (!updateRoleMenu.contains(roleMenu.getMenu().getMenuId()))
+                {
+                    removeList.add(roleMenu);
+                }
+            }
+        }
+        List<RoleMenu> addRoleMenuList = new ArrayList<>();
+        CollectionUtils.iterator(addList,(c,v,i)->{
+            RoleMenu roleMenu = new RoleMenu();
+            roleMenu.setRole(role);
+            Menu menu = menuMetaCache.queryMenuById(v);
+            roleMenu.setMenu(menu);
+            addRoleMenuList.add(roleMenu);
+        });
+        roleMenuAtom.batchRemoveRoleMenu(removeList);
+        roleMenuAtom.batchAddRoleMenu(addRoleMenuList);
+
+        List<RoleMenu> roleMenuUpdate = roleMenuAtom.queryRoleMenuByRole(role);
+        return buildMenuCodeString(roleMenuUpdate);
+    }
+
+    private List<MenuDetail> buildMenuCodeString(List<RoleMenu> roleMenus)
+    {
+        List<MenuDetail> menuDetails = new ArrayList<>();
+        CollectionUtils.iterator(roleMenus,(c,v,i)->{
+            MenuDetail menuDetail =buildMenuDetail(v.getMenu());
+            menuDetails.add(menuDetail);
+        });
+        return menuDetails;
+    }
+
+    private MenuDetail buildMenuDetail(Menu menu)
+    {
+        MenuDetail menuDetail = new MenuDetail();
+        menuDetail.setCode(menu.getCode());
+        menuDetail.setPath(menu.getMenuPath());
+        return menuDetail;
     }
 }

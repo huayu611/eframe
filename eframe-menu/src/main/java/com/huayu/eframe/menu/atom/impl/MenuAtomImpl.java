@@ -48,6 +48,14 @@ public class MenuAtomImpl implements MenuAtom
     }
 
     @Override
+    public List<Menu> queryAllMenu()
+    {
+        Menu menu = new Menu();
+        Specification<Menu> specificationMenu = buildSpecification(menu);
+        return menuRepository.findAll(specificationMenu);
+    }
+
+    @Override
     public List<Menu> queryMenuByParent(Date now, Long parentMenu)
     {
         Menu menu = new Menu();
@@ -80,41 +88,35 @@ public class MenuAtomImpl implements MenuAtom
     private List<Menu> queryValidPermissionByPage(Date now, Menu condition)
     {
         Sort sort = new Sort(Sort.Direction.ASC, "range");
-        Specification<Menu> querySpecific = new Specification<Menu>()
-        {
-
-            @Override
-            public Predicate toPredicate(Root<Menu> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder)
-            {
-                List<Predicate> predicates = new ArrayList<>();
-                if (null != now)
-                {
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("expireTime").as(Date.class), now));
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("effectiveTime").as(Date.class), now));
-                }
-                if (null != condition && null != condition.getMenuName())
-                {
-                    predicates.add(criteriaBuilder.like(root.get("menuName").as(String.class), "%" + condition.getMenuName() + "%"));
-                }
-                if (null != condition && null != condition.getCode())
-                {
-                    predicates.add(criteriaBuilder.equal(root.get("code").as(String.class), condition.getCode()));
-                }
-                if (null != condition && null != condition.getMenuLevel())
-                {
-                    predicates.add(criteriaBuilder.equal(root.get("menuLevel").as(Integer.class), condition.getMenuLevel()));
-                }
-                if (null != condition && null != condition.getParentMenu())
-                {
-                    predicates.add(criteriaBuilder.equal(root.get("parentMenu").as(Long.class), condition.getParentMenu()));
-                }
-                predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
-                return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
-            }
-
-            ;
-        };
+        Specification<Menu> querySpecific = buildSpecification(condition);
         List<Menu> resultList = this.menuRepository.findAll(querySpecific, sort);
         return resultList;
+    }
+
+    private Specification<Menu> buildSpecification(Menu condition)
+    {
+        Specification<Menu> querySpecific =  (root, criteriaQuery, criteriaBuilder) ->
+        {
+            List<Predicate> predicates = new ArrayList<>();
+            if (null != condition && null != condition.getMenuName())
+            {
+                predicates.add(criteriaBuilder.like(root.get("menuName").as(String.class), "%" + condition.getMenuName() + "%"));
+            }
+            if (null != condition && null != condition.getCode())
+            {
+                predicates.add(criteriaBuilder.equal(root.get("code").as(String.class), condition.getCode()));
+            }
+            if (null != condition && null != condition.getMenuLevel())
+            {
+                predicates.add(criteriaBuilder.equal(root.get("menuLevel").as(Integer.class), condition.getMenuLevel()));
+            }
+            if (null != condition && null != condition.getParentMenu())
+            {
+                predicates.add(criteriaBuilder.equal(root.get("parentMenu").as(Long.class), condition.getParentMenu()));
+            }
+            predicates.add(criteriaBuilder.notEqual(root.get("status").as(String.class), "D"));
+            return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
+        };
+        return querySpecific;
     }
 }
