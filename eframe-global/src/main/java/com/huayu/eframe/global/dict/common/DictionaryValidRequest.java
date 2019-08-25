@@ -2,6 +2,8 @@ package com.huayu.eframe.global.dict.common;
 
 import com.huayu.eframe.flow.valid.ValidBeanParamDefined;
 import com.huayu.eframe.global.constants.GlobalErrorCode;
+import com.huayu.eframe.global.dict.entity.cache.DictEntityCache;
+import com.huayu.eframe.global.dict.flow.Dict;
 import com.huayu.eframe.global.dict.reader.DictDetail;
 import com.huayu.eframe.global.dict.reader.DictionaryService;
 import com.huayu.eframe.server.log.LogDebug;
@@ -25,12 +27,34 @@ public class DictionaryValidRequest implements ValidBeanParamDefined
     @Autowired
     private DictionaryService dictionaryService;
 
+    @Autowired
+    private DictEntityCache dictEntityCache;
+
     @Override
     public void process(Field field, Object value, Object request, String parameter)
     {
         String valueString = StringUtils.getString(value);
         if (StringUtils.isNullOrEmpty(valueString) || StringUtils.isNullOrEmpty(parameter))
         {
+            return;
+        }
+        List<Dict> dicts = dictEntityCache.queryDictByDictCode(parameter);
+        if(null != dicts)
+        {
+            boolean right = false;
+            for(Dict dict : dicts)
+            {
+                if(StringUtils.equalString(dict.getName(),valueString))
+                {
+                    right = true;
+                    break;
+                }
+            }
+            if(!right)
+            {
+                debug.log(valueString);
+                throw new IFPException(GlobalErrorCode.VALUE_IN_REQUEST_NOT_SUIT_DICT, "value not in dictionary", new String[]{field.getName()});
+            }
             return;
         }
         List<DictDetail> result = dictionaryService.getDict(parameter);

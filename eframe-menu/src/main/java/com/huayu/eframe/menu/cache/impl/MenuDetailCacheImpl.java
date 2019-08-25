@@ -81,20 +81,8 @@ public class MenuDetailCacheImpl extends AbstractFrameCache<MenuDetail> implemen
     {
         List<Menu> allMenu = menuAtom.queryAllMenu();
         Map<Long, List<Menu>> mapObject = keepInMap(allMenu);
-        List<MenuDetail> allTree = new ArrayList<>();
-        int i = 0;
-        while(true)
-        {
-            List<MenuDetail> resultTree = putTopElement(mapObject, Long.valueOf(i));
-            if(CollectionUtils.isEmpty(resultTree))
-            {
-                break;
-            }
-            i++;
-            allTree.addAll(resultTree);
-        }
-
-        return allTree;
+        List<MenuDetail> resultTree = putTopElement(mapObject, Long.valueOf(0));
+        return resultTree;
     }
 
     @Override

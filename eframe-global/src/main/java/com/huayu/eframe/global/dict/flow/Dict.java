@@ -1,8 +1,11 @@
 package com.huayu.eframe.global.dict.flow;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Created by Leo on 2019/1/7.
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Dict
 {
     private String key;

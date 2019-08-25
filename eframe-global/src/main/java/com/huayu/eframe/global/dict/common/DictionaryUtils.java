@@ -1,5 +1,7 @@
 package com.huayu.eframe.global.dict.common;
 
+import com.huayu.eframe.global.dict.entity.cache.DictEntityCache;
+import com.huayu.eframe.global.dict.flow.Dict;
 import com.huayu.eframe.global.dict.reader.DictDetail;
 import com.huayu.eframe.global.dict.reader.DictLangService;
 import com.huayu.eframe.global.dict.reader.DictionaryService;
@@ -22,6 +24,25 @@ public class DictionaryUtils
 
     public static String getDictNameDictKeyAndValue(String code,String param)
     {
+        if(StringUtils.isNullOrEmpty(code))
+        {
+            return "";
+        }
+        DictEntityCache dictEntityCache = BeanPool.getService(DictEntityCache.class);
+        List<Dict> dictFromEntity = dictEntityCache.queryDictByDictCode(code);
+        if(null != dictFromEntity)
+        {
+            String returnValue = "";
+            for(Dict dict : dictFromEntity)
+            {
+                if(StringUtils.equalString(dict.getKey(),param))
+                {
+                    returnValue = dict.getName();
+                    break;
+                }
+            }
+            return returnValue;
+        }
         DictionaryService dictionaryService = BeanPool.getService(DictionaryService.class);
         List<DictDetail> result = dictionaryService.getDict(code);
         if(CollectionUtils.isEmpty(result))
