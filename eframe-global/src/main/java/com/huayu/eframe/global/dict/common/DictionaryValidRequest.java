@@ -44,7 +44,7 @@ public class DictionaryValidRequest implements ValidBeanParamDefined
             boolean right = false;
             for(Dict dict : dicts)
             {
-                if(StringUtils.equalString(dict.getName(),valueString))
+                if(StringUtils.equalString(dict.getKey(),valueString))
                 {
                     right = true;
                     break;
