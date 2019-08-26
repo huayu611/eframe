@@ -313,6 +313,9 @@ public class RoleServiceImpl implements RoleService
             });
             roleDetail.setCurrentMenus(currentList);
         }
+        List<RoleMenu> roleMenuUpdate = roleMenuAtom.queryRoleMenuByRole(role);
+        List<MenuDetail> menu = buildMenuCodeString(roleMenuUpdate);
+        roleDetail.setMenus(menu);
         return roleDetail;
     }
 
