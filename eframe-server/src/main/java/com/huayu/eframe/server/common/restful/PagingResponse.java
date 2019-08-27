@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.common.restful;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.data.domain.Page;
 
 /**
  * Created by Leo on 2018/10/15.
@@ -13,6 +14,18 @@ public class PagingResponse
     private int totalPage;
 
     private int currentPage;
+
+    public PagingResponse()
+    {
+
+    }
+
+    public PagingResponse(Page page)
+    {
+        total = page.getTotalElements();
+        currentPage = page.getNumber();
+        totalPage = page.getTotalPages();
+    }
 
     public Long getTotal()
     {

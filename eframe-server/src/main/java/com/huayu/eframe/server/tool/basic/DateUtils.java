@@ -353,5 +353,23 @@ public class DateUtils
         return "20990101000000";
     }
 
+    public static Date getFirstTimeOfDate(Date date)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR,0);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND,0);
+        return calendar.getTime();
+    }
 
+    public static Date getLastTimeOfDate(Date date)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR,23);
+        calendar.set(Calendar.MINUTE,59);
+        calendar.set(Calendar.SECOND,59);
+        return calendar.getTime();
+    }
 }
