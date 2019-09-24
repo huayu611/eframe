@@ -30,4 +30,7 @@ public @interface EFrameRequest
 
     int length() default -1;
 
+    boolean trim() default false;
+
+
 }
