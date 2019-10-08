@@ -51,8 +51,9 @@ public class MenuAtomImpl implements MenuAtom
     public List<Menu> queryAllMenu()
     {
         Menu menu = new Menu();
+        Sort sort = new Sort(Sort.Direction.ASC, "range");
         Specification<Menu> specificationMenu = buildSpecification(menu);
-        return menuRepository.findAll(specificationMenu);
+        return menuRepository.findAll(specificationMenu,sort);
     }
 
     @Override
