@@ -18,4 +18,6 @@ public interface MenuMetaCache
     Menu queryMenuByPath(String path);
 
     List<Menu> queryMenuByParent(Long id);
+
+    List<Menu> queryAllMenu();
 }

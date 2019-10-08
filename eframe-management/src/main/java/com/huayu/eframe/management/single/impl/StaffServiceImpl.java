@@ -16,6 +16,7 @@ import com.huayu.eframe.server.common.FramePaging;
 import com.huayu.eframe.server.common.restful.PageObject;
 import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
+import com.huayu.eframe.server.config.properties.SystemConfig;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.mvc.token.Token;
@@ -42,6 +43,11 @@ public class StaffServiceImpl implements StaffService
     private static final LogDebug debug = new LogDebug(StaffServiceImpl.class);
 
     private static final String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
+
+
+    private final static String HIGHEST_PRIVILEGE_STAFF_LOGIN_NAME = "sys_staff_default_root_login_name";
+
+    private final static String HIGHEST_PRIVILEGE_STAFF_LOGIN_NAME_DEFAULT_STAFF_NAME = "admin";
 
     @Autowired
     private StaffAtom staffAtom;
@@ -536,19 +542,36 @@ public class StaffServiceImpl implements StaffService
             roleQ.setId(v.getRoleId());
             roleQuery.add(roleQ);
         });
-        List<RoleMenu> roleMenu = roleMenuAtom.queryAllRoleMenuInRoles(roleQuery);
-        List<Long> result = new ArrayList<>();
-        CollectionUtils.iterator(roleMenu,(c,v,i)->{
-            result.add(v.getMenu().getMenuId());
-        });
 
+        String staffLoginName = SystemConfig.getValue(HIGHEST_PRIVILEGE_STAFF_LOGIN_NAME, HIGHEST_PRIVILEGE_STAFF_LOGIN_NAME_DEFAULT_STAFF_NAME);
 
         Menu menu = menuMetaCache.queryMenuByCode("MANAGER");
+        List<Menu> allMenu = menuMetaCache.queryAllMenu();
+        List<Long> result = new ArrayList<>();
+        if(staffLoginName.equals(loginCode))
+        {
+            CollectionUtils.iterator(allMenu,(c,v,i)->{
+                result.add(v.getMenuId());
+            });
+        }
+        else
+        {
+            List<RoleMenu> roleMenu = roleMenuAtom.queryAllRoleMenuInRoles(roleQuery);
+            CollectionUtils.iterator(roleMenu,(c,v,i)->{
+                result.add(v.getMenu().getMenuId());
+            });
+
+        }
+
+
+
         return buildMenuDetail(menu,result);
     }
 
     private MenuDetail buildMenuDetail(Menu menu, List<Long>  ids)
     {
+
+
         MenuDetail menuDetail = new MenuDetail();
         menuDetail.setCode(menu.getCode());
         menuDetail.setComponent(menu.getComponent());

@@ -4,6 +4,7 @@ import com.huayu.eframe.menu.atom.MenuAtom;
 import com.huayu.eframe.menu.bo.Menu;
 import com.huayu.eframe.menu.cache.MenuMetaCache;
 import com.huayu.eframe.server.cache.frame.AbstractFrameCache;
+import com.huayu.eframe.server.cache.frame.DefaultIndex;
 import com.huayu.eframe.server.cache.frame.Index;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
@@ -98,6 +99,14 @@ public class MenuMetaCacheImpl extends AbstractFrameCache<Menu> implements MenuM
         Menu menu = new Menu();
         menu.setParentMenu(id);
         List<Menu> menus = getResultByIndex(MenuMetaCacheParentIdIndex.class, menu);
+        return menus;
+    }
+
+    @Override
+    public List<Menu> queryAllMenu()
+    {
+        Menu menu = new Menu();
+        List<Menu> menus = getResultByIndex(DefaultIndex.class, menu);
         return menus;
     }
 
