@@ -16,6 +16,17 @@ public class CalculateNumber
         bigDecimal = new BigDecimal("0");
     }
 
+
+    public static CalculateNumber getInstance()
+    {
+        return new CalculateNumber();
+    }
+
+    public static CalculateNumber getInstance(String value)
+    {
+        return new CalculateNumber(value);
+    }
+
     public CalculateNumber(String value)
     {
         if (StringUtils.isNullOrEmpty(value))
