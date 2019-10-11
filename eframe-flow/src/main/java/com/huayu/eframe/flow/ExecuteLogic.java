@@ -1,9 +1,11 @@
 package com.huayu.eframe.flow;
 
 import com.huayu.eframe.flow.constant.FlowErrorCode;
+import com.huayu.eframe.flow.intercept.ProcessStep;
 import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.service.exception.ErrorCode;
 import com.huayu.eframe.server.service.exception.IFPException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +16,9 @@ public class ExecuteLogic
 {
 
     private static final LogDebug debug = new LogDebug(ExecuteLogic.class);
+
+    @Autowired
+    private ProcessStep processStep;
 
     public Object execute(ExecuteBusiness busniessInstance, Object request)
     {
@@ -29,6 +34,7 @@ public class ExecuteLogic
         }
         try
         {
+            processStep.execute(param);
             busniessInstance.process(param);
         }
         catch (IFPException e)
