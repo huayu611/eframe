@@ -29,7 +29,7 @@ public class EframeWebSecurityConfig
 
         http.authorizeRequests().antMatchers("/manage/Login", "/static/**", "/main/**").permitAll()
                 .anyRequest().authenticated();
-        http.exceptionHandling().authenticationEntryPoint(new EFrameRestfulAuthenticationEntryPoint());
+//        http.exceptionHandling().authenticationEntryPoint(new EFrameRestfulAuthenticationEntryPoint());
         http.headers().frameOptions().disable();
 
         http.addFilterBefore(eFrameFilterSecurityInterceptor, FilterSecurityInterceptor.class)

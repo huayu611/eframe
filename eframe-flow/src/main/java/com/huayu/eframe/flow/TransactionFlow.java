@@ -24,4 +24,12 @@ public class TransactionFlow
         business.execute(param);
         debug.log("End transaction");
     }
+
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
+    public <T> void executeTransaction(ExecuteTransaction<T> executeTransaction,T t)
+    {
+        debug.log("Start transaction");
+        executeTransaction.execute(t);
+        debug.log("End transaction");
+    }
 }

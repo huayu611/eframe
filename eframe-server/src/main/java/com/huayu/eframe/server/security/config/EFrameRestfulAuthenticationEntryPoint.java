@@ -16,7 +16,8 @@ import java.io.IOException;
 /**
  * Created by Leo on 2018/10/12.
  */
-public class EFrameRestfulAuthenticationEntryPoint implements AuthenticationEntryPoint
+public class EFrameRestfulAuthenticationEntryPoint
+        implements AuthenticationEntryPoint
 {
 
     private static final LogDebug debug = new LogDebug(EFrameRestfulAuthenticationEntryPoint.class);
