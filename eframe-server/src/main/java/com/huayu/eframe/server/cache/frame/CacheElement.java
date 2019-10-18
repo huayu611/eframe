@@ -50,4 +50,9 @@ public class CacheElement<T>
             value.clear();
         }
     }
+
+    public Map<String, List<T>> getValue()
+    {
+        return value;
+    }
 }

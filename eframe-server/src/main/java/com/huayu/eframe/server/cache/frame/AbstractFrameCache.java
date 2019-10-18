@@ -20,6 +20,8 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
 
     private boolean loaded = false;
 
+    private List<T> allRecordForQuery = null;
+
     private ReentrantLock lock = new ReentrantLock();
 
 
@@ -59,6 +61,7 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
             if(!loaded)
             {
                 List<T> allRecord = load();
+                allRecordForQuery = allRecord;
                 if (CollectionUtils.isEmpty(indexList))
                 {
                     return;
@@ -138,6 +141,11 @@ public abstract class AbstractFrameCache<T> implements Cache<T>
         {
             lock.unlock();
         }
+    }
+
+    public List<T> getCacheElement()
+    {
+        return allRecordForQuery;
     }
 
 }

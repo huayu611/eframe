@@ -1,4 +1,4 @@
-package com.huayu.eframe.global.system.refreshcache;
+package com.huayu.eframe.global.system.cache.refresh;
 
 import com.huayu.eframe.flow.AbstractExecuteBusiness;
 import com.huayu.eframe.flow.BusinessParameter;
