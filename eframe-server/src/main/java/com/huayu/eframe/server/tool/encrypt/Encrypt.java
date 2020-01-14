@@ -12,7 +12,6 @@ public class Encrypt
         return MD5.GetMD5Code(password);
     }
 
-
     public static String encodeBase64(String value)
     {
         if (StringUtils.isNullOrEmpty(value))
@@ -33,5 +32,10 @@ public class Encrypt
 
         String decode = new String(Base64.getDecoder().decode(value), StandardCharsets.UTF_8);
         return decode;
+    }
+
+    public static String sha256(String value)
+    {
+        return Sha256.getSHA256(value);
     }
 }

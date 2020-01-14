@@ -372,4 +372,19 @@ public class DateUtils
         calendar.set(Calendar.SECOND,59);
         return calendar.getTime();
     }
+
+    public static long getCurrentUnixTime()
+    {
+        long time = System.currentTimeMillis();
+        long v = time / 1000;
+        return v;
+    }
+
+    public static long getUnixTime(Date date)
+    {
+        long time = date.getTime();
+        long v = time / 1000;
+        return v;
+    }
+
 }

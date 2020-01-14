@@ -15,6 +15,16 @@ import java.util.Arrays;
 @Configuration
 public class RestfulTemplateBean
 {
+    @Bean("JsonRestTemplateOnlyJson")
+    public RestTemplate restJsonTemplateAllJson() {
+        RestTemplate restTemplate =  new RestTemplate();
+        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
+        mappingJackson2HttpMessageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON_UTF8));
+        restTemplate.getMessageConverters().add(mappingJackson2HttpMessageConverter);
+        return restTemplate;
+    }
+
+
     @Bean("JsonRestTemplate")
     public RestTemplate restJsonTemplate() {
 
