@@ -9,6 +9,17 @@ public class PagingRequest
 
     private Integer size;
 
+    public PagingRequest()
+    {
+
+    }
+
+    public PagingRequest(Integer p,Integer s)
+    {
+        this.page = p;
+        this.size = s;
+    }
+
     public Integer getPage()
     {
         return page;

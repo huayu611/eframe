@@ -12,6 +12,7 @@ import java.util.Date;
 /**
  * Created by Administrator on 2018/8/4.
  */
+@Deprecated
 public class EffExpValid
 {
     private static final LogDebug debug = new LogDebug(EffExpValid.class);

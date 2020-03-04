@@ -11,6 +11,8 @@ public class RandomUtils
 
     private static AtomicInteger number = new AtomicInteger();
 
+    private static AtomicInteger number_1 = new AtomicInteger();
+
     public static int getRandomInteger()
     {
         Random random = new Random();
@@ -109,6 +111,13 @@ public class RandomUtils
         String createValue = StringUtils.getString(number.getAndIncrement());
         return nowValue + randomNum + createValue;
 
+    }
+
+    public static String getRandomNumber()
+    {
+        String tim = DateUtils.getNowTimeStr();
+        String r = StringUtils.getString(number_1.getAndIncrement());
+        return tim +r;
     }
 
 

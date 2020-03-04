@@ -198,6 +198,28 @@ public class CommonBeanProcess
         return v;
     }
 
+    @Bean("_e_set_random_number")
+    public ValidBeanParamDefined generateRandomNumber()
+    {
+        ValidBeanParamDefined v = (field, value, request, prefix) ->
+        {
+            String valueString = StringUtils.getString(value);
+            if (StringUtils.isNullOrEmpty(valueString))
+            {
+                String nowStr = prefix + RandomUtils.getRandomNumber();
+                try
+                {
+                    field.set(request, nowStr);
+                }
+                catch (IllegalAccessException e)
+                {
+                    debug.log("Set default generate code fault");
+                }
+            }
+        };
+        return v;
+    }
+
     @Bean("_e_expressions")
     public ValidBeanParamDefined validRegString()
     {

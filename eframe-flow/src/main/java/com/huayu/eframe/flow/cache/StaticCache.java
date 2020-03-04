@@ -13,7 +13,7 @@ public class StaticCache
 {
     private static Map<String, Map<String, EFrameRequest>> eframeRequestAnnoStaticCache;
 
-    private static Object eframeRequestAnnoStaticCacheLock = new Object();
+    private static Object eFrameRequestAnnoStaticCacheLock = new Object();
 
     public static Map<String, EFrameRequest> getAnnoRequest(Class classKey)
     {
@@ -28,14 +28,14 @@ public class StaticCache
     public static void putAnnoRequest(Class classKey, String field, EFrameRequest eframeRequest)
     {
         String key = classKey.getName();
-        synchronized (eframeRequestAnnoStaticCacheLock)
+        synchronized (eFrameRequestAnnoStaticCacheLock)
         {
             if (null == eframeRequestAnnoStaticCache)
             {
                 eframeRequestAnnoStaticCache = new HashMap<>();
             }
-            Map<String, EFrameRequest> keycache = eframeRequestAnnoStaticCache.get(key);
-            if (null == keycache)
+            Map<String, EFrameRequest> keyCache = eframeRequestAnnoStaticCache.get(key);
+            if (null == keyCache)
             {
                 eframeRequestAnnoStaticCache.put(key, new HashMap<>());
             }

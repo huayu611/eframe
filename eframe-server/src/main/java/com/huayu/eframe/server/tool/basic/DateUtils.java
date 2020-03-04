@@ -357,9 +357,9 @@ public class DateUtils
     {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.set(Calendar.HOUR,0);
-        calendar.set(Calendar.MINUTE,0);
-        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
     }
 
@@ -367,9 +367,9 @@ public class DateUtils
     {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.set(Calendar.HOUR,23);
-        calendar.set(Calendar.MINUTE,59);
-        calendar.set(Calendar.SECOND,59);
+        calendar.set(Calendar.HOUR, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
         return calendar.getTime();
     }
 
@@ -385,6 +385,12 @@ public class DateUtils
         long time = date.getTime();
         long v = time / 1000;
         return v;
+    }
+
+    public static String getNowTimeStr()
+    {
+        Date date = getCurrentDate();
+        return dateToString(date, "yyyyMMddHHmmssSSS");
     }
 
 }
