@@ -5,6 +5,7 @@ import com.huayu.eframe.server.tool.basic.StringUtils;
 import java.math.BigDecimal;
 
 /**
+ * 计算类， 用于double,float等计算，防止精度丢失
  * Created by Leo on 2019/9/23.
  */
 public class CalculateNumber

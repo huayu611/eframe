@@ -62,6 +62,6 @@ public class Sensitive implements InitializingBean
 
     public String filterJsonSensitive(String json)
     {
-        return JSonUtils.replaseSens(sensitiveDate, json);
+        return JSonUtils.replaceSens(sensitiveDate, json);
     }
 }

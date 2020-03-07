@@ -27,7 +27,7 @@ public class JSonUtils
         return jsonList;
     }
 
-    public static String replaseSens(List<String> sens, String json)
+    public static String replaceSens(List<String> sens, String json)
     {
         if(CollectionUtils.isEmpty(sens))
         {

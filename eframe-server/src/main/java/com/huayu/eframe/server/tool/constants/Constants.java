@@ -10,4 +10,6 @@ public interface Constants
 
     Long DEFAULT_LONG_VALUE = Long.valueOf("0");
 
+    String MULTI_VALUE_ATTRIBUTE_DELIMITERS = ",; ";
+
 }
