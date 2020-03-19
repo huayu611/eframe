@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
  * Created by Leo on 2019/8/14.
  */
 @Service
-public class ProcessInterceptAdapt implements  ProcessIntercept
+public class ProcessInterceptAdapt implements ProcessIntercept
 {
     @Override
     public void execute(BusinessParameter param)

@@ -1,5 +1,7 @@
 package com.huayu.eframe.server.tool.basic;
 
+import java.math.BigDecimal;
+
 public class StringUtils
 {
     public static final String BLANK = "";
@@ -301,5 +303,46 @@ public class StringUtils
             return "%" + content + "%";
         }
         return null;
+    }
+
+    public static String getFloatValue(Double f,int length)
+    {
+        if(null == f)
+        {
+            return "";
+        }
+        return getNumberString(StringUtils.getString(f),length);
+    }
+
+    public static String getNumberString(String s,int length)
+    {
+        if(null == s)
+        {
+            return "";
+        }
+        String orign = "000000000000000000000000000000000";
+        String suffix = cutLengthString(orign,length);
+        BigDecimal b = new BigDecimal(s);
+        double f1 = b.setScale(15, BigDecimal.ROUND_HALF_UP).doubleValue();
+        String value = String.valueOf(f1);
+        String[] last = value.split("\\.");
+        if (last.length > 1)
+        {
+            String lastValue = last[1];
+            if (lastValue.length() < length)
+            {
+                lastValue = lastValue + suffix;
+            }
+            if (lastValue.length() > length)
+            {
+                lastValue = lastValue.substring(0, length);
+            }
+            return last[0] + "." + lastValue;
+
+        }
+        else
+        {
+            return value + "." + suffix;
+        }
     }
 }
