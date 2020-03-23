@@ -45,6 +45,7 @@ public class StartApplication
         debug.info("start..........");
         readSystemProperty();
         resolvePassword();
+        putDefaultValue();
         SpringApplication.run(StartApplication.class, args);
         debug.debug("Boot Start success");
         System.out.println("Start up finish!");
@@ -87,6 +88,15 @@ public class StartApplication
         List<String> result = new ArrayList<>();
         result.add("mysql.password");
         return result;
+    }
+
+    private static void putDefaultValue()
+    {
+        String value =  System.getProperty("mysql.timezone");
+        if(null == value || "".equals(value))
+        {
+            System.setProperty("mysql.timezone","UTC");
+        }
     }
 
 }
