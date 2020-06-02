@@ -6,18 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eframe-config" />
         <module name="eframe-flow" />
-        <module name="eframe-global" />
-        <module name="eframe-integration" />
-        <module name="eframe-management" />
-        <module name="eframe-menu" />
         <module name="eframe-server" />
+        <module name="eframe-management" />
+        <module name="eframe-integration" />
+        <module name="eframe-config" />
+        <module name="eframe-global" />
+        <module name="eframe-menu" />
         <module name="eframe-timetask" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eframe-copinfo" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eframe-config" options="-parameters" />
+      <module name="eframe-flow" options="-parameters" />
+      <module name="eframe-global" options="-parameters" />
+      <module name="eframe-integration" options="-parameters" />
+      <module name="eframe-management" options="-parameters" />
+      <module name="eframe-menu" options="-parameters" />
+      <module name="eframe-server" options="-parameters" />
+      <module name="eframe-timetask" options="-parameters" />
+    </option>
   </component>
 </project>

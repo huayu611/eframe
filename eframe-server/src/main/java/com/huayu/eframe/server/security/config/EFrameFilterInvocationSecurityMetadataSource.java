@@ -113,6 +113,7 @@ public class EFrameFilterInvocationSecurityMetadataSource implements FilterInvoc
             return;
         }
         String version = request.getHeader(versionHeaderName);
+        debug.log(version);
         if (StringUtils.isNotNullAndEmpty(version) && StringUtils.equalStringNoCareUpperAndLower(versionConfig, version))
         {
             return;

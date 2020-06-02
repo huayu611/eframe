@@ -357,7 +357,7 @@ public class DateUtils
     {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
@@ -367,7 +367,7 @@ public class DateUtils
     {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.set(Calendar.HOUR, 23);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
         calendar.set(Calendar.MINUTE, 59);
         calendar.set(Calendar.SECOND, 59);
         return calendar.getTime();
@@ -392,5 +392,6 @@ public class DateUtils
         Date date = getCurrentDate();
         return dateToString(date, "yyyyMMddHHmmssSSS");
     }
+
 
 }

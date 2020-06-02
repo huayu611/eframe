@@ -172,6 +172,7 @@ public class CalculateNumber
 
     public CalculateNumber divide(Object value)
     {
+
         return divide(value, 2, BigDecimal.ROUND_HALF_UP);
 
     }
@@ -183,7 +184,17 @@ public class CalculateNumber
         {
             vet = "1";
         }
-        bigDecimal = bigDecimal.divide(new BigDecimal(vet), dot, halfUp);
+        if(StringUtils.equalString("0",vet))
+        {
+            vet = "1";
+        }
+        try
+        {
+            bigDecimal = bigDecimal.divide(new BigDecimal(vet), dot, halfUp);
+        }catch(Exception e)
+        {
+
+        }
         return this;
     }
 

@@ -20,6 +20,8 @@ public class RestfulResponse
 
     private Object data;
 
+    private Object ext;
+
     public String getCode()
     {
         return code;
@@ -78,5 +80,15 @@ public class RestfulResponse
     public void setTotalPage(Integer totalPage)
     {
         this.totalPage = totalPage;
+    }
+
+    public Object getExt()
+    {
+        return ext;
+    }
+
+    public void setExt(Object ext)
+    {
+        this.ext = ext;
     }
 }

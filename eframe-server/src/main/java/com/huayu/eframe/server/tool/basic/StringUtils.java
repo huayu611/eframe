@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.tool.basic;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class StringUtils
 {
@@ -300,7 +301,7 @@ public class StringUtils
     {
         if (null != content)
         {
-            return "%" + content + "%";
+            return "%" + getTrimString(content) + "%";
         }
         return null;
     }
@@ -320,7 +321,7 @@ public class StringUtils
         {
             return "";
         }
-        String orign = "000000000000000000000000000000000";
+        String orign = "0000000000000000000000000000000000000000000000";
         String suffix = cutLengthString(orign,length);
         BigDecimal b = new BigDecimal(s);
         double f1 = b.setScale(15, BigDecimal.ROUND_HALF_UP).doubleValue();
@@ -345,4 +346,50 @@ public class StringUtils
             return value + "." + suffix;
         }
     }
+
+    public static int compareString(String value1,String value2)
+    {
+        if(StringUtils.isNullOrEmpty(value1))
+        {
+            return -1;
+        }
+        if(StringUtils.isNullOrEmpty(value2))
+        {
+            return 1;
+        }
+        int ret = 0;
+        for(int i = 0;i<5000;i++)
+        {
+            if(value1.length()<i+1)
+            {
+                ret = -1;
+                break;
+            }
+            if(value2.length()<i+1)
+            {
+                ret = 1;
+                break;
+            }
+            char v1 = value1.charAt(i);
+            char v2 = value2.charAt(i);
+            ret =  (int)v1 - (int)v2;
+            if(0 != ret)
+            {
+                break;
+            }
+        }
+        return ret;
+    }
+
+    public static String parasDoubleText(Double doubleValue)
+    {
+        if(null == doubleValue)
+        {
+            return "0";
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("###################.###########");
+        String ret = decimalFormat.format(doubleValue);
+        return ret;
+    }
+
 }

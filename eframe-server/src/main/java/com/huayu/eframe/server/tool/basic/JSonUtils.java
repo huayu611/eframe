@@ -1,9 +1,15 @@
 package com.huayu.eframe.server.tool.basic;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,6 +64,7 @@ public class JSonUtils
     public static <T> T jsonToObject(String jsonStr, Class<T> valueType)
     {
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try
         {
             return objectMapper.readValue(jsonStr, valueType);
@@ -67,5 +74,43 @@ public class JSonUtils
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static <T> Map<String,T> jsonToMapObject(String jsonStr)
+    {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(jsonStr, new TypeReference<HashMap<String, T>>()
+            {
+            });
+        } catch (Exception var4) {
+            var4.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List coverToSimple(String jsonStr)
+    {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(jsonStr, new TypeReference<ArrayList>()
+            {
+            });
+        } catch (Exception var4) {
+            var4.printStackTrace();
+            return null;
+        }
+    }
+
+    public static <T> List<T> jsonToListObject(String jsonStr,Class<T> valueType)
+    {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            JavaType jt = objectMapper.getTypeFactory().constructParametricType(ArrayList.class, valueType);
+            return  objectMapper.readValue(jsonStr, jt);
+        } catch (Exception var4) {
+            var4.printStackTrace();
+            return null;
+        }
     }
 }

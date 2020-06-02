@@ -1,6 +1,7 @@
 package com.huayu.eframe.server.mvc.handler;
 
 import com.alibaba.dubbo.common.utils.IOUtils;
+import com.huayu.eframe.server.log.LogDebug;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -24,6 +25,8 @@ import java.util.Map;
 public class EFrameHandlerMethodReturnValueHandler implements HandlerMethodArgumentResolver
 {
 
+    private final static LogDebug log = new LogDebug(EFrameHandlerMethodReturnValueHandler.class);
+
     private static final String JSONBODYATTRIBUTE = "JSON_REQUEST_BODY";
 
     @Override
@@ -45,12 +48,14 @@ public class EFrameHandlerMethodReturnValueHandler implements HandlerMethodArgum
         while (headers.hasNext())
         {
             String headerName = headers.next();
+            log.log(headerName);
             String value = nativeWebRequest.getHeader(headerName);
             if (StringUtils.isNotNullAndEmpty(value))
             {
                 map.put(headerName, value);
             }
-
+            log.log(headerName);
+            log.log(value);
             String[] values = nativeWebRequest.getHeaderValues(headerName);
             if (values.length > 0)
             {

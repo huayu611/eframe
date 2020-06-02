@@ -22,6 +22,9 @@ public class EframeTrim extends AbstractExecuteEFrameRequest
             String valueString = StringUtils.getString(value);
             if(StringUtils.isNotNullAndEmpty(valueString))
             {
+
+                //重大BUG
+//                valueString = valueString.replaceAll("\\s*", "");
                 String valueTrim = StringUtils.getTrimString(valueString);
                 field.set(request, valueTrim);
             }
@@ -36,12 +39,7 @@ public class EframeTrim extends AbstractExecuteEFrameRequest
         {
             if (field.getType().isAssignableFrom(String.class))
             {
-                Object value = getValueInField(field, request);
-                String valueString = StringUtils.getString(value);
-                if(StringUtils.isNotNullAndEmpty(valueString) && valueString.startsWith(" ")&& valueString.endsWith(" "))
-                {
-                    return true;
-                }
+                return true;
             }
         }
         return false;

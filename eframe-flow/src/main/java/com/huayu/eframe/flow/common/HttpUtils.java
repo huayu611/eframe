@@ -71,6 +71,26 @@ public class HttpUtils
         return ip;
     }
 
+    public static String getRequestURL()
+    {
+        EasyParam easyParam = LocalAttribute.getValue(FlowConstant.EASY_SERVLET);
+        if (null == easyParam)
+        {
+            return "";
+        }
+        HttpServletRequest request = easyParam.getRequest();
+        if (null == request)
+        {
+            return "";
+        }
+        StringBuffer url = request.getRequestURL();
+        if(null == url)
+        {
+            return "";
+        }
+        return url.toString();
+    }
+
     public static String getIpFromEasyParam(HttpServletRequest request)
     {
 
