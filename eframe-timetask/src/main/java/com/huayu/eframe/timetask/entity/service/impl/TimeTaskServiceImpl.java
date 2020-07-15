@@ -11,8 +11,10 @@ import com.huayu.eframe.server.common.restful.PagingRequest;
 import com.huayu.eframe.server.common.restful.PagingResponse;
 import com.huayu.eframe.server.context.LocalAttribute;
 import com.huayu.eframe.server.service.exception.IFPException;
+import com.huayu.eframe.server.tool.basic.DateUtils;
 import com.huayu.eframe.server.tool.basic.StringUtils;
 import com.huayu.eframe.server.tool.util.CollectionUtils;
+import com.huayu.eframe.timetask.common.Constants;
 import com.huayu.eframe.timetask.common.TimeTaskErrorCode;
 import com.huayu.eframe.timetask.entity.atom.TimeTaskAtom;
 import com.huayu.eframe.timetask.entity.atom.TimeTaskInstanceAtom;
@@ -57,8 +59,17 @@ public class TimeTaskServiceImpl implements TimeTaskService
             throw new IFPException(FlowErrorCode.REQUEST_IS_NULL, "Request is null");
         }
         TimeTaskBO timeTaskBO = buildCreateTimeTaskBO(timeTaskDetail);
-        Date nextTime = timeTaskTimeManager.nextTime(timeTaskBO);
-        timeTaskBO.setNextTime(nextTime);
+
+        if (StringUtils.equalStringNoCareUpperAndLower(Constants.TimeTaskType.ONCE, timeTaskBO.getTimeTaskType()))
+        {
+            timeTaskBO.setNextTime(LocalAttribute.getNow());
+        }
+        else
+        {
+            Date nextTime = timeTaskTimeManager.nextTime(timeTaskBO);
+            timeTaskBO.setNextTime(nextTime);
+        }
+
         timeTaskBO.setCount(0);
         TimeTaskBO newResult = timeTaskAtom.addTimeTask(timeTaskBO);
         if (null == newResult)

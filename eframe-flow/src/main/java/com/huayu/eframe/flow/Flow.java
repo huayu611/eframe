@@ -29,6 +29,8 @@ public class Flow
     private static final String MULTI_LANGUAGE = "sys_eframe_language_request_header";
 
     private static final String MULTI_LANGUAGE_DEFAULT = "ELang";
+
+    private static final String HEAD_CHANNEL = "channel";
     @SuppressWarnings("unchecked")
     private static Object executeService(Class serviceName, Object request)
     {
@@ -96,6 +98,14 @@ public class Flow
                 customerLang = "zh";
             }
             LocalAttribute.addValue(Constant.HEAD_CUSTOMER_REQUEST_LANGUAGE, customerLang);
+
+            String channelName = header.get(HEAD_CHANNEL);
+            if(StringUtils.isNullOrEmpty(channelName))
+            {
+                channelName = "DEFAULT";
+            }
+            LocalAttribute.addValue(Constant.REQUEST_CHANNEL, channelName);
+
         }
 
         Object result = executeService(serviceName, request);

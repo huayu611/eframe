@@ -17,6 +17,7 @@ import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Leo on 2019/4/15.
@@ -48,6 +49,21 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
         }
         TimeTaskBO timeTaskBO = new TimeTaskBO();
         timeTaskBO.setCode(code);
+        Specification<TimeTaskBO> specification = buildSpecification(timeTaskBO);
+
+        List<TimeTaskBO> timeTaskList = timeTaskRepository.findAll(specification);
+        return CollectionUtils.getFirstElement(timeTaskList);
+    }
+
+    @Override
+    public TimeTaskBO queryTimeTaskById(Long id)
+    {
+        if (null == id)
+        {
+            return null;
+        }
+        TimeTaskBO timeTaskBO = new TimeTaskBO();
+        timeTaskBO.setId(id);
         Specification<TimeTaskBO> specification = buildSpecification(timeTaskBO);
 
         List<TimeTaskBO> timeTaskList = timeTaskRepository.findAll(specification);
@@ -94,6 +110,10 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
             if (null != condition.getCode())
             {
                 predicates.add(criteriaBuilder.equal(root.get("code").as(String.class), condition.getCode()));
+            }
+            if (null != condition.getId())
+            {
+                predicates.add(criteriaBuilder.equal(root.get("id").as(Long.class), condition.getId()));
             }
             if (null != condition.getStatus())
             {

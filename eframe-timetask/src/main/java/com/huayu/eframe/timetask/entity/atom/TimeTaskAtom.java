@@ -18,6 +18,8 @@ public interface TimeTaskAtom
 
     TimeTaskBO queryTimeTaskByCode(String code);
 
+    TimeTaskBO queryTimeTaskById(Long id);
+
     Page<TimeTaskBO> queryTimeTaskByPage(TimeTaskBO timeTaskBO, FramePaging fp);
 
     List<TimeTaskBO> queryAllTimeTask();

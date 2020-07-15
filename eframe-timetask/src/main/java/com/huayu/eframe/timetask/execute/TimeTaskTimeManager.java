@@ -20,7 +20,7 @@ public class TimeTaskTimeManager
     {
         if (StringUtils.equalStringNoCareUpperAndLower(Constants.TimeTaskType.ONCE, timeTaskBO.getTimeTaskType()))
         {
-            return null == timeTaskBO.getNextTime() ? timeTaskBO.getEffectiveTime() : DateUtils.getDefaultExpireDate();
+            return DateUtils.getDefaultExpireDate();
         }
         String unit = timeTaskBO.getUnit();
         if (StringUtils.isNullOrEmpty(unit))
