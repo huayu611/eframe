@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66aecdf6-5a5f-43e4-af0f-021e88a2b224" name="Default Changelist" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/redis/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/redis/RedisUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/Flow.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/Flow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/common/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/common/HttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/valid/impl/EframeTrim.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-flow/src/main/java/com/huayu/eframe/flow/valid/impl/EframeTrim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/lang/eframe_global_dict.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/lang/eframe_global_dict.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/lang/eframe_global_dict_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-global/src/main/resources/META-INF/config/dict/lang/eframe_global_dict_zh.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/boot/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/boot/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/common/restful/RestfulResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/common/restful/RestfulResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/mvc/handler/EFrameHandlerMethodReturnValueHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/security/config/EFrameFilterInvocationSecurityMetadataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/JSonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/basic/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CalculateNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CalculateNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CollectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CollectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/TimeTaskAtomImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/TimeTaskAtomImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/TimeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/TimeTaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/execute/ExecuteTimeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/execute/ExecuteTimeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandBusiness.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +89,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574427915833" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/cache" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/common/transaction" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -114,6 +109,7 @@
       <recent name="com.huayu.eframe.server.common.i18n.table.cache" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\common\transaction" />
       <recent name="D:\source\code\eframe\eframe-flow\src\main\java\com\huayu\eframe\flow\intercept" />
       <recent name="D:\source\code\eframe\eframe-management\src\main\resources\META-INF\config" />
       <recent name="D:\source\code\eframe\eframe-management\src\main\java\com\huayu\eframe\management\flow" />
@@ -342,6 +338,38 @@
       <workItem from="1589644351949" duration="723000" />
       <workItem from="1590564028956" duration="935000" />
       <workItem from="1590580750289" duration="1001000" />
+      <workItem from="1591174214005" duration="57000" />
+      <workItem from="1591229915917" duration="612000" />
+      <workItem from="1591319657295" duration="529000" />
+      <workItem from="1591667040188" duration="1340000" />
+      <workItem from="1591691791077" duration="1209000" />
+      <workItem from="1591769109211" duration="5227000" />
+      <workItem from="1592970860388" duration="599000" />
+      <workItem from="1594535005736" duration="4033000" />
+      <workItem from="1594617691066" duration="794000" />
+      <workItem from="1594773799669" duration="360000" />
+      <workItem from="1595166081620" duration="188000" />
+      <workItem from="1595204691303" duration="3887000" />
+      <workItem from="1595309047210" duration="12000" />
+      <workItem from="1596522136119" duration="2487000" />
+      <workItem from="1596543526803" duration="2004000" />
+      <workItem from="1596679565390" duration="630000" />
+      <workItem from="1597035245787" duration="1375000" />
+      <workItem from="1597050050893" duration="600000" />
+      <workItem from="1597112261178" duration="109000" />
+      <workItem from="1597133685688" duration="667000" />
+      <workItem from="1597149454561" duration="65000" />
+      <workItem from="1597286173651" duration="757000" />
+      <workItem from="1597905579836" duration="252000" />
+      <workItem from="1598071058085" duration="3168000" />
+      <workItem from="1598105224503" duration="1223000" />
+      <workItem from="1598189477432" duration="71000" />
+      <workItem from="1598318202900" duration="3683000" />
+      <workItem from="1598338697683" duration="49000" />
+      <workItem from="1598339269923" duration="103000" />
+      <workItem from="1598340640409" duration="1419000" />
+      <workItem from="1598401510667" duration="145000" />
+      <workItem from="1598488646503" duration="3237000" />
     </task>
     <task id="LOCAL-00001" summary="修改get去掉。contentType">
       <created>1561282795978</created>

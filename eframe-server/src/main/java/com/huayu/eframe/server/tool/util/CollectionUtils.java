@@ -35,6 +35,16 @@ public class CollectionUtils
         return null;
     }
 
+    public static <T> T getLastElement(Collection<T> coll)
+    {
+       int size =  getSize(coll);
+       if(size <=0)
+       {
+           return null;
+       }
+       return (T) coll.toArray()[size-1];
+    }
+
     public static <T> List<T> coverArrayToList(T[] t)
     {
         List<T> result = new ArrayList<>();

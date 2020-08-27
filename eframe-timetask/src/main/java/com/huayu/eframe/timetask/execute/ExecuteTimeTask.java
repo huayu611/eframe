@@ -87,7 +87,7 @@ public class ExecuteTimeTask extends TimerTask
     {
         ModifyTimeTaskExecuteCommandRequest modifyTimeTaskExecuteCommandRequest = new ModifyTimeTaskExecuteCommandRequest();
         modifyTimeTaskExecuteCommandRequest.setTimeTaskCode(timeTaskBO.getCode());
-        modifyTimeTaskExecuteCommandRequest.setNextTime(getNextTime(timeTaskBO));
+//        modifyTimeTaskExecuteCommandRequest.setNextTime(getNextTime(timeTaskBO));
 
         //这一步会修改定时 任务状态，所以放在锁内执行。以免串锁
         Object obj = Flow.execute(ModifyTimeTaskExecuteCommandBusiness.class, modifyTimeTaskExecuteCommandRequest, TimeTaskEasyParam.buildEasyParam());

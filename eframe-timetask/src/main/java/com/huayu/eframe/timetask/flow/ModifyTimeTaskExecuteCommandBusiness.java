@@ -22,7 +22,7 @@ public class ModifyTimeTaskExecuteCommandBusiness extends AbstractExecuteBusines
         ModifyTimeTaskExecuteCommandRequest modifyTimeTaskExecuteCommandRequest = param.getRequest();
         TimeTaskDetail timeTaskDetail = new TimeTaskDetail();
         timeTaskDetail.setTimeTaskCode(modifyTimeTaskExecuteCommandRequest.getTimeTaskCode());
-        timeTaskDetail.setNextTime(modifyTimeTaskExecuteCommandRequest.getNextTime());
+//        timeTaskDetail.setNextTime(modifyTimeTaskExecuteCommandRequest.getNextTime());
         timeTaskService.updateTimeTaskExecute(timeTaskDetail);
     }
 

@@ -93,7 +93,7 @@ public class TimeTaskAtomImpl implements TimeTaskAtom
     @Override
     public void updateTimeTaskAddExecuteTime(Long id, Date date)
     {
-        timeTaskRepository.updateTimeTaskAddExecuteCount(id, date);
+        timeTaskRepository.updateTimeTaskAddExecuteCount(id);
     }
 
 
