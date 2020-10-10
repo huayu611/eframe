@@ -1,5 +1,6 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.after.AfterProcessFlowExecute;
 import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.server.common.ConfigurationUtils;
 import com.huayu.eframe.server.common.Constant;
@@ -43,6 +44,7 @@ public class Flow
         }
         catch (Exception e)
         {
+            AfterProcessFlowExecute.process();
             debug.printErr(e);
             RestfulResponse error = new RestfulResponse();
             if (e instanceof IFPException)

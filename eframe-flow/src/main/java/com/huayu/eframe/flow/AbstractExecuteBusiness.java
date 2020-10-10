@@ -1,5 +1,8 @@
 package com.huayu.eframe.flow;
 
+import com.huayu.eframe.flow.after.AfterProcessFlowExecute;
+import com.huayu.eframe.flow.after.AfterSuccessProcessFlow;
+import com.huayu.eframe.flow.after.AfterSuccessProcessFlowExecute;
 import com.huayu.eframe.flow.common.FlowConstant;
 import com.huayu.eframe.flow.presist.constant.LogConstants;
 import com.huayu.eframe.flow.presist.logic.LogRecordLogic;
@@ -54,6 +57,7 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
 
         doTrans(param);
         refreshCache();
+        processAfter();
 
 
     }
@@ -204,6 +208,12 @@ public abstract class AbstractExecuteBusiness extends FrameCommonAPI implements 
         {
             new EffExpValid(((EffectiveExpireDateTime) request).getEff(), ((EffectiveExpireDateTime) request).getExp()).validExpireDate().validExpireAndEffective();
         }
+    }
+
+    private void processAfter()
+    {
+        AfterProcessFlowExecute.process();
+        AfterSuccessProcessFlowExecute.process();
     }
 
     private void refreshCache()

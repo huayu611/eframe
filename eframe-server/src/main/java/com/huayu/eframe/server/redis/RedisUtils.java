@@ -4,6 +4,8 @@ import com.huayu.eframe.server.service.spring.BeanPool;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.CollectionUtils;
 
+import java.time.Duration;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -81,10 +83,9 @@ public class RedisUtils
         }
     }
 
-    public static Object get(String key) {
+    public static <T> T get(String key) {
         RedisTemplate<String, Object> redisTemplate = getRedisTemplate();
-        return key == null ? null : redisTemplate.opsForValue().get(key);
-
+        return key == null ? null : (T)redisTemplate.opsForValue().get(key);
     }
 
     public static boolean set(String key, Object value) {
@@ -112,6 +113,18 @@ public class RedisUtils
             }
             return true;
         } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean setNXLock(String  key,String value,long expireTime)
+    {
+        try
+        {
+            RedisTemplate<String, Object> redisTemplate = getRedisTemplate();
+            return redisTemplate.opsForValue().setIfAbsent(key, value, Duration.ofMillis(expireTime));
+        }catch (Exception e) {
             e.printStackTrace();
             return false;
         }
