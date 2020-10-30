@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66aecdf6-5a5f-43e4-af0f-021e88a2b224" name="Default Changelist" comment="fix bug">
-      <change afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/redis/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/redis/RedisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousAfterSuccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousInnerJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousJobUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/ProcessAsynchronousRetry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/impl/AsynchronousInnerJobImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/AsynchronousOrderAtom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/AsynchronousOrderAtomImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/bo/AsynchronousOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/AsynchronousOrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CollectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CollectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/TimeTaskAtomImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/TimeTaskAtomImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/TimeTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/TimeTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/execute/ExecuteTimeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/execute/ExecuteTimeTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandBusiness.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574427915833" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe-global/src/main/java/com/huayu/eframe/global/system/cache" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/common/transaction" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -102,11 +103,11 @@
       <recent name="com.huayu.eframe.config.lang.entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.huayu.eframe.flow.after" />
       <recent name="com.huayu.eframe.server.tool.basic" />
       <recent name="com.huayu.eframe.server.tool.util" />
       <recent name="com.huayu.eframe.config.lang.flow" />
       <recent name="com.huayu.eframe.server.common.i18n.table.cache.impl" />
-      <recent name="com.huayu.eframe.server.common.i18n.table.cache" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\source\code\eframe\eframe-server\src\main\java\com\huayu\eframe\server\common\transaction" />
@@ -370,6 +371,23 @@
       <workItem from="1598340640409" duration="1419000" />
       <workItem from="1598401510667" duration="145000" />
       <workItem from="1598488646503" duration="3237000" />
+      <workItem from="1598497028039" duration="709000" />
+      <workItem from="1598519686551" duration="3491000" />
+      <workItem from="1598574674957" duration="1205000" />
+      <workItem from="1598598117396" duration="2038000" />
+      <workItem from="1598600834134" duration="4350000" />
+      <workItem from="1598606033912" duration="1301000" />
+      <workItem from="1598619107689" duration="110000" />
+      <workItem from="1598693240738" duration="1169000" />
+      <workItem from="1598922041598" duration="1447000" />
+      <workItem from="1598946222614" duration="13000" />
+      <workItem from="1600432955770" duration="1352000" />
+      <workItem from="1600480752398" duration="525000" />
+      <workItem from="1600490551679" duration="1702000" />
+      <workItem from="1601216219735" duration="728000" />
+      <workItem from="1601219672128" duration="1282000" />
+      <workItem from="1604041835370" duration="3992000" />
+      <workItem from="1604046033030" duration="251000" />
     </task>
     <task id="LOCAL-00001" summary="修改get去掉。contentType">
       <created>1561282795978</created>
