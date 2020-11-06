@@ -207,6 +207,48 @@ public class CalculateNumber
         return this;
     }
 
+    public String getLongString()
+    {
+        double   f1   =   bigDecimal.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
+        return StringUtils.getString(f1);
+    }
+
+    public String getNumberString()
+    {
+        String nowStr = getLongString();
+        if(nowStr.endsWith(".0000"))
+        {
+            nowStr = nowStr.substring(0,nowStr.length()-5);
+        }
+        else if(nowStr.endsWith(".000"))
+        {
+            nowStr = nowStr.substring(0,nowStr.length()-4);
+        }
+        else if(nowStr.endsWith(".00"))
+        {
+            nowStr = nowStr.substring(0,nowStr.length()-3);
+        }
+        else  if(nowStr.endsWith(".0"))
+        {
+            nowStr = nowStr.substring(0,nowStr.length()-2);
+        }
+        return nowStr;
+    }
+
+    public String getYunString()
+    {
+        String nowStr = getNumberString();
+        if(!nowStr.contains("."))
+        {
+            return nowStr + ".00";
+        }
+        if(nowStr.endsWith(".0"))
+        {
+            return nowStr + "0";
+        }
+        return nowStr;
+    }
+
     public CalculateNumber divide(CalculateNumber value)
     {
         return divide(value, 2, BigDecimal.ROUND_HALF_UP);

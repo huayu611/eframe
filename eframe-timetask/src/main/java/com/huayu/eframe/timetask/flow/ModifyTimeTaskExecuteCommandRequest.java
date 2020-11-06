@@ -12,9 +12,6 @@ public class ModifyTimeTaskExecuteCommandRequest
     @EFrameRequest(required = true, length = 128)
     private String timeTaskCode;
 
-    @EFrameRequest(required = true)
-    private Date nextTime;
-
     public String getTimeTaskCode()
     {
         return timeTaskCode;
@@ -25,13 +22,4 @@ public class ModifyTimeTaskExecuteCommandRequest
         this.timeTaskCode = timeTaskCode;
     }
 
-    public Date getNextTime()
-    {
-        return nextTime;
-    }
-
-    public void setNextTime(Date nextTime)
-    {
-        this.nextTime = nextTime;
-    }
 }

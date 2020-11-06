@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66aecdf6-5a5f-43e4-af0f-021e88a2b224" name="Default Changelist" comment="fix bug">
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousAfterSuccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousInnerJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousJobUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/AsynchronousProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/ProcessAsynchronousRetry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/async/impl/AsynchronousInnerJobImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/AsynchronousOrderAtom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/atom/impl/AsynchronousOrderAtomImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/bo/AsynchronousOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/entity/repository/AsynchronousOrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CalculateNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/java/com/huayu/eframe/server/tool/util/CalculateNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-server/src/main/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-server/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eframe-timetask/src/main/java/com/huayu/eframe/timetask/flow/ModifyTimeTaskExecuteCommandRequest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JSonUtils">
+  <component name="RunManager" selected="Application.StartApplication">
     <configuration name="DateUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.server.tool.basic.DateUtils" />
       <module name="eframe-server" />
@@ -168,12 +161,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.integration.boot.Start" />
-      <module name="eframe-integration" />
+    <configuration name="StartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.huayu.eframe.server.boot.StartApplication" />
+      <module name="eframe-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.huayu.eframe.integration.boot.*" />
+          <option name="PATTERN" value="com.huayu.eframe.server.boot.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,19 +188,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Start (1)" />
       <item itemvalue="Application.DateUtils" />
       <item itemvalue="Application.Encrypt" />
       <item itemvalue="Application.StringUtils" />
       <item itemvalue="Application.JSonUtils" />
+      <item itemvalue="Application.StartApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartApplication" />
         <item itemvalue="Application.JSonUtils" />
         <item itemvalue="Application.DateUtils" />
         <item itemvalue="Application.StringUtils" />
         <item itemvalue="Application.Encrypt" />
-        <item itemvalue="Application.Start (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -388,6 +381,12 @@
       <workItem from="1601219672128" duration="1282000" />
       <workItem from="1604041835370" duration="3992000" />
       <workItem from="1604046033030" duration="251000" />
+      <workItem from="1604456541087" duration="1297000" />
+      <workItem from="1604457886519" duration="39000" />
+      <workItem from="1604497783017" duration="6000" />
+      <workItem from="1604547012845" duration="202000" />
+      <workItem from="1604561908282" duration="1519000" />
+      <workItem from="1604641487677" duration="262000" />
     </task>
     <task id="LOCAL-00001" summary="修改get去掉。contentType">
       <created>1561282795978</created>
@@ -578,6 +577,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eframe$StartApplication.ic" NAME="StartApplication Coverage Results" MODIFIED="1604456825696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.huayu.eframe.server.boot.*</FILTER>
+    </SUITE>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
